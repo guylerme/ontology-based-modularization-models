@@ -1,0 +1,29 @@
+@startuml
+'3 occurrencies
+'8 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Phase>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class PublicCompany <<Phase>>
+StateCompany <|-- PublicCompany
+class StateCompany <<Phase>>
+PublicEntity <|-- StateCompany
+Company <|-- StateCompany
+class PublicEntity <<Category>>
+PublicOrganization <|-- PublicEntity
+class PublicOrganization <<Category>>
+OrganizationalUnit <|-- PublicOrganization
+Organization <|-- PublicOrganization
+class OrganizationalUnit <<Category>>
+class Organization <<Category>>
+class Company <<Kind>>
+Organization <|-- Company
+class MixedEconomyCompany <<Phase>>
+StateCompany <|-- MixedEconomyCompany
+@enduml

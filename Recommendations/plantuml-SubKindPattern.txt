@@ -1,0 +1,41 @@
+@startuml
+'11 occurrencies
+'13 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<SubKind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Recommendation_Referencing_Recomendation <<SubKind>>
+Recommendation_Version <|-- Recommendation_Referencing_Recomendation
+class Recommendation_Version <<Kind>>
+class Problematic_Concetp <<SubKind>>
+Concept <|-- Problematic_Concetp
+class Concept <<Kind>>
+class Referenced_Concept <<SubKind>>
+Concept <|-- Referenced_Concept
+class Concept_Referencing_Recommendation <<SubKind>>
+Recommendation_Version <|-- Concept_Referencing_Recommendation
+class Possibly_Problematic_Recommendation <<SubKind>>
+Recommendation_Referencing_Recomendation <|-- Possibly_Problematic_Recommendation
+class Concept_Defining_Recommendation <<SubKind>>
+Recommendation_Version <|-- Concept_Defining_Recommendation
+class Problematic_Recommendation <<SubKind>>
+Recommendation_Version <|-- Problematic_Recommendation
+class Recommendation_Referenced_Recomendation <<SubKind>>
+Recommendation_Version <|-- Recommendation_Referenced_Recomendation
+class Indirectly_Recommendation_Referenced_Recomendation <<SubKind>>
+Recommendation_Referenced_Recomendation <|-- Indirectly_Recommendation_Referenced_Recomendation
+class Indirectly_Recommendation_Referencing_Recomendation <<SubKind>>
+Recommendation_Referencing_Recomendation <|-- Indirectly_Recommendation_Referencing_Recomendation
+class Correct_Concept <<SubKind>>
+Concept <|-- Correct_Concept
+Recommendation_Version "1..*" -- "1..*" Concept : usesConcept
+Concept_Referencing_Recommendation "1..*" -- "1..*" Referenced_Concept : referencesConcept
+Indirectly_Recommendation_Referencing_Recomendation "1..*" -- "1..*" Indirectly_Recommendation_Referenced_Recomendation : indirectlyReferencesRecommendation
+Recommendation_Referencing_Recomendation "1..*" -- "1..*" Recommendation_Referenced_Recomendation : directlyReferencesRecommendation
+@enduml

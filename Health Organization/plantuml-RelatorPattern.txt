@@ -1,0 +1,19 @@
+@startuml
+'1 occurrencies
+'3 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class HealthAppointment <<Relator>>
+class HealthProfessional <<Role>>
+class Patient <<Role>>
+HealthAppointment "1..*" -- "1..1" HealthProfessional : 
+HealthAppointment "1..*" -- "1..1" Patient : 
+Patient "1..1" -- "1..1" HealthProfessional : treats
+@enduml

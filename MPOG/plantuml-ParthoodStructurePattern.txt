@@ -1,0 +1,20 @@
+@startuml
+'2 occurrencies
+'4 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class PublicOrganization <<Category>>
+Organization <|-- PublicOrganization
+class PublicAdministrativeUnit <<SubKind>>
+UnityOfOrganization <|-- PublicAdministrativeUnit
+class Organization <<Category>>
+class UnityOfOrganization <<Kind>>
+Organization "1..*" o-- "1..1" UnityOfOrganization : composedBy
+PublicOrganization "1..1" o-- "1..*" PublicAdministrativeUnit : composedBy
+@enduml

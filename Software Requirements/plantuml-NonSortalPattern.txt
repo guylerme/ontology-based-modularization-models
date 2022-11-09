@@ -1,0 +1,26 @@
+@startuml
+'1 occurrencies
+'6 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Artifact <<Category>>
+class UseCase <<Kind>>
+Artifact <|-- UseCase
+class Requirement <<Kind>>
+Artifact <|-- Requirement
+class EntityType <<Kind>>
+Artifact <|-- EntityType
+class TestCase <<Kind>>
+Artifact <|-- TestCase
+class Module <<Kind>>
+Artifact <|-- Module
+EntityType "0..*" -- "0..*" UseCase : usedIn
+UseCase "0..*" -- "0..1" Module : alocatedFor
+UseCase "0..*" -- "1..*" Requirement : fulfills
+@enduml

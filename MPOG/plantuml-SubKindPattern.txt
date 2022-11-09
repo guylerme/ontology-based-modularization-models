@@ -1,0 +1,23 @@
+@startuml
+'3 occurrencies
+'6 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<SubKind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Foundation <<SubKind>>
+NonEmpresarialPublicEntity <|-- Foundation
+class NonEmpresarialPublicEntity <<Kind>>
+class PublicAdministrativeUnit <<SubKind>>
+UnityOfOrganization <|-- PublicAdministrativeUnit
+OrganizationalUnit <|-- PublicAdministrativeUnit
+class OrganizationalUnit <<Category>>
+class UnityOfOrganization <<Kind>>
+class Autarchy <<SubKind>>
+NonEmpresarialPublicEntity <|-- Autarchy
+@enduml

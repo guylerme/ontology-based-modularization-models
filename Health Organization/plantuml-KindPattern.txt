@@ -1,0 +1,21 @@
+@startuml
+'6 occurrencies
+'6 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Kind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Document <<Kind>>
+class Person <<Kind>>
+class Neighborhood <<Kind>>
+class Region <<Kind>>
+class HealthUnit <<Kind>>
+class Diagnosis <<Kind>>
+HealthUnit "1..*" -- "1..1" Region : located_in
+Neighborhood "1..1" -- "1..*" Region : located_in
+@enduml

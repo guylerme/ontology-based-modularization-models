@@ -1,0 +1,23 @@
+@startuml
+'7 occurrencies
+'7 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Kind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Condition <<Kind>>
+class TestCase <<Kind>>
+class Project <<Kind>>
+class Module <<Kind>>
+class UseCase <<Kind>>
+class EntityType <<Kind>>
+class Requirement <<Kind>>
+EntityType "0..*" -- "0..*" UseCase : usedIn
+UseCase "0..*" -- "0..1" Module : alocatedFor
+UseCase "0..*" -- "1..*" Requirement : fulfills
+@enduml

@@ -1,0 +1,48 @@
+@startuml
+class Autarchy <<SubKind>>
+NonEmpresarialPublicEntity <|-- Autarchy
+class Company <<Kind>>
+Organization <|-- Company
+class Foundation <<SubKind>>
+NonEmpresarialPublicEntity <|-- Foundation
+class MixedEconomyCompany <<Phase>>
+StateCompany <|-- MixedEconomyCompany
+class NonEmpresarialPublicEntity <<Kind>>
+PublicEntity <|-- NonEmpresarialPublicEntity
+class Organization <<Category>>
+class OrganizationalUnit <<Category>>
+class PublicAdministrativeUnit <<SubKind>>
+UnityOfOrganization <|-- PublicAdministrativeUnit
+OrganizationalUnit <|-- PublicAdministrativeUnit
+class PublicCompany <<Phase>>
+StateCompany <|-- PublicCompany
+class PublicEntity <<Category>>
+PublicOrganization <|-- PublicEntity
+class PublicOrganization <<Category>>
+OrganizationalUnit <|-- PublicOrganization
+Organization <|-- PublicOrganization
+class StateCompany <<Phase>>
+PublicEntity <|-- StateCompany
+Company <|-- StateCompany
+class UnityOfOrganization <<Kind>>
+class Órgão <<Kind>>
+PublicOrganization <|-- Órgão
+class Órgão_Colegiado <<Kind>>
+OrganizationalUnit <|-- Órgão_Colegiado
+class composedBy <<ComponentOf>>
+class subordinatedTo <<Formal>>
+class composedBy <<ComponentOf>>
+class relatedTo <<Formal>>
+class representedBy <<Formal>>
+class subordinatedTo <<Formal>>
+class subordinatedTo <<Formal>>
+
+
+
+
+Organization "1..*" o-- "1..1" UnityOfOrganization : composedBy
+PublicOrganization "1..1" o-- "1..*" PublicAdministrativeUnit : composedBy
+PublicEntity "0..*" -- "1..1" Órgão : relatedTo
+PublicOrganization "1..*" -- "0..*" Órgão_Colegiado : representedBy
+Órgão_Colegiado "0..*" -- "1..1" Órgão : subordinatedTo
+@enduml

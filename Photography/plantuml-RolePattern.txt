@@ -1,0 +1,28 @@
+@startuml
+'4 occurrencies
+'8 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Document_Operated <<Role>>
+Document <|-- Document_Operated
+class Document <<Kind>>
+class Operator <<Role>>
+Individual <|-- Operator
+class Individual <<Kind>>
+class ArchiveManaged <<Role>>
+Archive <|-- ArchiveManaged
+class Archive <<SubKind>>
+Organization <|-- Archive
+class Organization <<Kind>>
+class Archivist <<Role>>
+Individual <|-- Archivist
+ArchiveManaged "1..*" -- "1..*" Archivist : ArchivistManagedMaterial
+Operator "1..*" -- "1..*" Document_Operated : OperateDocumentOperator
+@enduml

@@ -1,0 +1,66 @@
+@startuml
+class AlternativeFlow <<Mode>>
+EventFlow <|-- AlternativeFlow
+class Artifact <<Category>>
+class BasicFlow <<Mode>>
+EventFlow <|-- BasicFlow
+class BusinessRule <<SubKind>>
+Requirement <|-- BusinessRule
+class Class <<SubKind>>
+EntityType <|-- Class
+class ClassTestCase <<Role>>
+TestCase <|-- ClassTestCase
+class Condition <<Kind>>
+class EntityType <<Kind>>
+Artifact <|-- EntityType
+class EventFlow <<Mode>>
+class FunctionalRequirement <<SubKind>>
+Requirement <|-- FunctionalRequirement
+class Module <<Kind>>
+Artifact <|-- Module
+class NonFunctionalRequirement <<SubKind>>
+Requirement <|-- NonFunctionalRequirement
+class Postcondition <<Role>>
+Condition <|-- Postcondition
+class Precondition <<Role>>
+Condition <|-- Precondition
+class Project <<Kind>>
+class Requirement <<Kind>>
+Artifact <|-- Requirement
+class RequirementTestCase <<Role>>
+TestCase <|-- RequirementTestCase
+class TestCase <<Kind>>
+Artifact <|-- TestCase
+class UseCase <<Kind>>
+Artifact <|-- UseCase
+class UseCaseTestCase <<Role>>
+TestCase <|-- UseCaseTestCase
+class regarding <<Association>>
+class  <<Association>>
+class producedIn <<Association>>
+class  <<Association>>
+class  <<Association>>
+class usedIn <<Association>>
+class  <<Association>>
+class  <<Association>>
+class  <<Association>>
+class alocatedFor <<Association>>
+class dependsOn <<Association>>
+class conflictsWith <<Association>>
+class fulfills <<Association>>
+class  <<Association>>
+class  <<Association>>
+AlternativeFlow "1..*" -- "0..*" BasicFlow : regarding
+UseCase "1..1" -- "0..*" AlternativeFlow : 
+Artifact "0..*" -- "0..1" Project : producedIn
+UseCase "1..1" -- "1..*" BasicFlow : 
+ClassTestCase "0..*" -- "1..*" Class : 
+EntityType "0..*" -- "0..*" UseCase : usedIn
+EventFlow "1..*" -- "0..*" Postcondition : 
+UseCase "1..1" -- "1..*" EventFlow : 
+Precondition "0..*" -- "1..*" EventFlow : 
+UseCase "0..*" -- "0..1" Module : alocatedFor
+UseCase "0..*" -- "1..*" Requirement : fulfills
+RequirementTestCase "0..*" -- "1..*" Requirement : 
+UseCaseTestCase "0..*" -- "1..*" UseCase : 
+@enduml

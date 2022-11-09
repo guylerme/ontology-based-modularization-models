@@ -1,0 +1,24 @@
+@startuml
+'10 occurrencies
+'10 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Theory_of_the_Tree_Ages <<Kind>>
+class Document <<Kind>>
+class Principle_of_Provance <<Kind>>
+class Traditional <<Kind>>
+class Principle_of_Respect_for_Original_Order <<Kind>>
+class Funds <<Collective>>
+class Individual <<Kind>>
+class Organization <<Kind>>
+class Collections <<Collective>>
+class Digital <<Kind>>
+Document "1..1" o-- "1..1" Collections : DocumentColletcion
+Document "1..1" o-- "1..1" Funds : DocumentFunds
+@enduml

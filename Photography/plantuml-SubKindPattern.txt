@@ -1,0 +1,19 @@
+@startuml
+'2 occurrencies
+'4 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<SubKind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Photography <<SubKind>>
+Document <|-- Photography
+class Document <<Kind>>
+class Archive <<SubKind>>
+Organization <|-- Archive
+class Organization <<Kind>>
+@enduml

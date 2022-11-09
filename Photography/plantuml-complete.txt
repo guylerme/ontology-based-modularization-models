@@ -1,0 +1,57 @@
+@startuml
+class Archive <<SubKind>>
+Organization <|-- Archive
+class ArchiveManaged <<Role>>
+Archive <|-- ArchiveManaged
+class Archivist <<Role>>
+Individual <|-- Archivist
+class Collections <<Collective>>
+class Digital <<Kind>>
+Photography <|-- Digital
+class Document <<Kind>>
+class Document_Operated <<Role>>
+Document <|-- Document_Operated
+class Funds <<Collective>>
+class Individual <<Kind>>
+class Management <<Relator>>
+class Manipulation <<Relator>>
+class Operation <<Relator>>
+class Operator <<Role>>
+Individual <|-- Operator
+class Organization <<Kind>>
+class Photography <<SubKind>>
+Document <|-- Photography
+class Principle_of_Provance <<Kind>>
+class Principle_of_Respect_for_Original_Order <<Kind>>
+class Theory_of_the_Tree_Ages <<Kind>>
+class Traditional <<Kind>>
+Photography <|-- Traditional
+class TheoryofTheTreeAgesArchive <<MemberOf>>
+class PrincipleofProvanceArchive <<MemberOf>>
+class PrincipleofRespectiveforOriginalOrderArchive <<MemberOf>>
+class ArchiveManagedArchives <<Mediation>>
+class ManagementArchivist <<Mediation>>
+class DocumentColletcion <<MemberOf>>
+class DocumentFunds <<MemberOf>>
+class  <<Mediation>>
+class DocumentOperetedOperation <<Mediation>>
+class  <<Mediation>>
+class OperationOperatorMediation <<Mediation>>
+class ArchivistManagedMaterial <<Material>>
+class OperateDocumentOperator <<Material>>
+class  <<Derivation>>
+class  <<Derivation>>
+Archive "1..1" o-- "1..1" Theory_of_the_Tree_Ages : TheoryofTheTreeAgesArchive
+Archive "1..1" o-- "1..1" Principle_of_Provance : PrincipleofProvanceArchive
+Archive "1..1" o-- "1..1" Principle_of_Respect_for_Original_Order : PrincipleofRespectiveforOriginalOrderArchive
+Management "1..*" -- "1..1" ArchiveManaged : ArchiveManagedArchives
+Management "1..*" -- "1..1" Archivist : ManagementArchivist
+Document "1..1" o-- "1..1" Collections : DocumentColletcion
+Document "1..1" o-- "1..1" Funds : DocumentFunds
+Manipulation "1..1" -- "1..1" Document : 
+Operation "1..*" -- "1..1" Document_Operated : DocumentOperetedOperation
+Manipulation "1..1" -- "1..1" Individual : 
+Operation "1..*" -- "1..1" Operator : OperationOperatorMediation
+ArchiveManaged "1..*" -- "1..*" Archivist : ArchivistManagedMaterial
+Operator "1..*" -- "1..*" Document_Operated : OperateDocumentOperator
+@enduml

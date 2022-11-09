@@ -1,0 +1,21 @@
+@startuml
+'8 occurrencies
+'8 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Kind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Theory_of_the_Tree_Ages <<Kind>>
+class Document <<Kind>>
+class Principle_of_Provance <<Kind>>
+class Traditional <<Kind>>
+class Principle_of_Respect_for_Original_Order <<Kind>>
+class Individual <<Kind>>
+class Organization <<Kind>>
+class Digital <<Kind>>
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+'4 occurrencies
+'6 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<SubKind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Class <<SubKind>>
+EntityType <|-- Class
+class EntityType <<Kind>>
+class FunctionalRequirement <<SubKind>>
+Requirement <|-- FunctionalRequirement
+class Requirement <<Kind>>
+class BusinessRule <<SubKind>>
+Requirement <|-- BusinessRule
+class NonFunctionalRequirement <<SubKind>>
+Requirement <|-- NonFunctionalRequirement
+@enduml

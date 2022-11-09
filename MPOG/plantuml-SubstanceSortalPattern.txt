@@ -1,0 +1,18 @@
+@startuml
+'5 occurrencies
+'5 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class UnityOfOrganization <<Kind>>
+class NonEmpresarialPublicEntity <<Kind>>
+class Órgão_Colegiado <<Kind>>
+class Company <<Kind>>
+class Órgão <<Kind>>
+Órgão_Colegiado "0..*" -- "1..1" Órgão : subordinatedTo
+@enduml

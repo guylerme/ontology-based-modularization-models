@@ -1,0 +1,17 @@
+@startuml
+'3 occurrencies
+'3 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Recomendation <<Kind>>
+class Recommendation_Version <<Kind>>
+class Concept <<Kind>>
+Recommendation_Version "1..*" -- "1..*" Concept : usesConcept
+Recomendation "1..1" -- "1..*" Recommendation_Version : hasVersion
+@enduml

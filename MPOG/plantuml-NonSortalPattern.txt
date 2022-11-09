@@ -1,0 +1,36 @@
+@startuml
+'4 occurrencies
+'10 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class PublicEntity <<Category>>
+PublicOrganization <|-- PublicEntity
+class StateCompany <<Phase>>
+PublicEntity <|-- StateCompany
+Company <|-- StateCompany
+class NonEmpresarialPublicEntity <<Kind>>
+PublicEntity <|-- NonEmpresarialPublicEntity
+class OrganizationalUnit <<Category>>
+class Órgão_Colegiado <<Kind>>
+OrganizationalUnit <|-- Órgão_Colegiado
+class PublicOrganization <<Category>>
+OrganizationalUnit <|-- PublicOrganization
+Organization <|-- PublicOrganization
+class PublicAdministrativeUnit <<SubKind>>
+OrganizationalUnit <|-- PublicAdministrativeUnit
+class Organization <<Category>>
+class Company <<Kind>>
+Organization <|-- Company
+class Órgão <<Kind>>
+PublicOrganization <|-- Órgão
+PublicOrganization "1..1" o-- "1..*" PublicAdministrativeUnit : composedBy
+PublicEntity "0..*" -- "1..1" Órgão : relatedTo
+PublicOrganization "1..*" -- "0..*" Órgão_Colegiado : representedBy
+Órgão_Colegiado "0..*" -- "1..1" Órgão : subordinatedTo
+@enduml

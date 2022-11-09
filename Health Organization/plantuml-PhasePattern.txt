@@ -1,0 +1,26 @@
+@startuml
+'5 occurrencies
+'7 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Phase>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Elder <<Phase>>
+Person <|-- Elder
+class Person <<Kind>>
+class Adult <<Phase>>
+Person <|-- Adult
+class Child <<Phase>>
+Person <|-- Child
+class PregnantWoman <<Phase>>
+Woman <|-- PregnantWoman
+class Woman <<SubKind>>
+Person <|-- Woman
+class Teenager <<Phase>>
+Person <|-- Teenager
+@enduml

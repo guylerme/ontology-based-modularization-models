@@ -1,0 +1,28 @@
+@startuml
+'13 occurrencies
+'13 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Document <<Kind>>
+class Person <<Kind>>
+class RespiratorySystem <<Collective>>
+class DigestiveSystem <<Collective>>
+class Neighborhood <<Kind>>
+class NervousSystem <<Collective>>
+class Diagnosis <<Kind>>
+class Region <<Kind>>
+class CirculatorySystem <<Collective>>
+class HealthUnit <<Kind>>
+class MetabolicDisease <<Collective>>
+class MedicalSpecialization <<Collective>>
+class DocumentType <<Collective>>
+Document "0..*" -- "1..1" DocumentType : hasType
+HealthUnit "1..*" -- "1..1" Region : located_in
+Neighborhood "1..1" -- "1..*" Region : located_in
+@enduml

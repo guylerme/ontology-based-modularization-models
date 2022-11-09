@@ -1,0 +1,68 @@
+@startuml
+class Adult <<Phase>>
+Person <|-- Adult
+class Child <<Phase>>
+Person <|-- Child
+class CirculatorySystem <<Collective>>
+ICD <|-- CirculatorySystem
+class Diagnosis <<Kind>>
+class DigestiveSystem <<Collective>>
+ICD <|-- DigestiveSystem
+class Document <<Kind>>
+class DocumentType <<Collective>>
+class Elder <<Phase>>
+Person <|-- Elder
+class HealthAppointment <<Relator>>
+class HealthProfessional <<Role>>
+Person <|-- HealthProfessional
+class HealthUnit <<Kind>>
+class ICD <<Category>>
+class Man <<SubKind>>
+Person <|-- Man
+class MedicalSpecialization <<Collective>>
+class MetabolicDisease <<Collective>>
+ICD <|-- MetabolicDisease
+class Neighborhood <<Kind>>
+class NervousSystem <<Collective>>
+ICD <|-- NervousSystem
+class Patient <<Role>>
+Person <|-- Patient
+class Person <<Kind>>
+class PregnantWoman <<Phase>>
+Woman <|-- PregnantWoman
+class Region <<Kind>>
+class RespiratorySystem <<Collective>>
+ICD <|-- RespiratorySystem
+class Teenager <<Phase>>
+Person <|-- Teenager
+class Woman <<SubKind>>
+Person <|-- Woman
+class has <<Formal>>
+class performs <<Material>>
+class hasType <<Formal>>
+class generates <<Formal>>
+class  <<Mediation>>
+class  <<Mediation>>
+class has <<Formal>>
+class works_in <<Material>>
+class located_in <<Material>>
+class located_in <<Material>>
+class lives_in <<Material>>
+class treats <<Material>>
+
+
+
+class  <<Derivation>>
+Diagnosis "1..1" -- "1..1" ICD : has
+HealthProfessional "1..1" -- "1..*" Diagnosis : performs
+Document "0..*" -- "1..1" DocumentType : hasType
+HealthAppointment "0..*" -- "0..*" Document : generates
+HealthAppointment "1..*" -- "1..1" HealthProfessional : 
+HealthAppointment "1..*" -- "1..1" Patient : 
+HealthProfessional "0..*" -- "0..*" MedicalSpecialization : has
+HealthProfessional "1..*" -- "1..*" HealthUnit : works_in
+HealthUnit "1..*" -- "1..1" Region : located_in
+Neighborhood "1..1" -- "1..*" Region : located_in
+Patient "1..*" -- "1..1" Neighborhood : lives_in
+Patient "1..1" -- "1..1" HealthProfessional : treats
+@enduml

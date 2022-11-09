@@ -1,0 +1,26 @@
+@startuml
+'2 occurrencies
+'6 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Concept_Definition <<Relator>>
+class Concept <<Kind>>
+class Concept_Defining_Recommendation <<SubKind>>
+Recommendation_Version <|-- Concept_Defining_Recommendation
+class Publication <<Relator>>
+class Recomendation <<Kind>>
+class Recommendation_Version <<Kind>>
+Concept_Definition "1..1" -- "1..1" Concept : defines
+Recommendation_Version "1..*" -- "1..*" Concept : usesConcept
+Concept_Definition "1..*" -- "1..1" Concept_Defining_Recommendation : hasDefinition
+Publication "1..*" -- "1..1" Recomendation : hasPublication
+Publication "1..1" -- "1..1" Recommendation_Version : publishesVersion
+Recomendation "1..1" -- "1..*" Recommendation_Version : hasVersion
+@enduml

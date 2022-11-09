@@ -1,0 +1,66 @@
+@startuml
+'16 occurrencies
+'28 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class National_Society <<Kind>>
+class Formal_Organization <<Kind>>
+class Composite_Line_Unit <<SubKind>>
+Line_Unit <|-- Composite_Line_Unit
+class Line_Unit <<SubKind>>
+class Collective_Whole <<Mixin>>
+class Member <<Mixin>>
+class Complex_Action <<Class>>
+class /Paricipation_Individual <<Class>>
+class Public_Organization <<Class>>
+Multi_Functional_Organization <|-- Public_Organization
+class Regional_Public_Organization <<SubKind>>
+Complex_Standalone_Functional_Organization <|-- Regional_Public_Organization
+class Composed_Missionary_Organization <<SubKind>>
+Missionary_Organization <|-- Composed_Missionary_Organization
+class Missionary_Organization <<SubKind>>
+Formal_Organization <|-- Missionary_Organization
+class Public_Administrative_Unit <<SubKind>>
+Organizational_Unit <|-- Public_Administrative_Unit
+class Multi_Functional_Organization <<SubKind>>
+Functional_Organization <|-- Multi_Functional_Organization
+class Functional_Organization <<SubKind>>
+Formal_Organization <|-- Functional_Organization
+class Interaction <<Class>>
+Complex_Action <|-- Interaction
+class Contribution_(Performance) <<Class>>
+/Paricipation_Individual <|-- Contribution_(Performance)
+class Natural_Person <<Kind>>
+class SubCollection <<Mixin>>
+class Quantity_Whole <<Mixin>>
+class Quantity_Part <<Mixin>>
+class Complex_Standalone_Missionary_Organization <<SubKind>>
+class Organizational_Unit <<Kind>>
+class Collective_Social_Agent <<Category>>
+class Member_of_Collective_Social_Agent <<RoleMixin>>
+class Functional_Complex_Whole <<Mixin>>
+class Functional_Part <<Mixin>>
+class Complex_Standalone_Functional_Organization <<SubKind>>
+Regional_Public_Organization "1..1" o-- "2..*" Public_Administrative_Unit : 
+Public_Organization "1..1" o-- "2..*" Regional_Public_Organization : 
+Complex_Standalone_Functional_Organization "0..1" o-- "2..*" Organizational_Unit : 
+Complex_Standalone_Missionary_Organization "0..1" o-- "2..*" Organizational_Unit : 
+Composed_Missionary_Organization "0..1" o-- "2..*" Missionary_Organization : 
+Composite_Line_Unit "0..1" o-- "2..*" Line_Unit : 
+National_Society "1..1" o-- "1..1" Formal_Organization : 
+Multi_Functional_Organization "0..1" o-- "2..*" Functional_Organization : 
+National_Society "1..1" o-- "1..1" Natural_Person : 
+Complex_Action "1..1" o-- "1..1" /Paricipation_Individual : 
+Collective_Social_Agent "1..*" o-- "2..*" Member_of_Collective_Social_Agent : 
+Interaction "0..*" o-- "2..*" Contribution_(Performance) : 
+Collective_Whole "1..*" o-- "2..*" Member : 
+Collective_Whole "1..*" o-- "0..*" SubCollection : 
+Functional_Complex_Whole "1..*" o-- "2..*" Functional_Part : 
+Quantity_Whole "1..*" o-- "2..*" Quantity_Part : 
+@enduml

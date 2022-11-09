@@ -1,0 +1,33 @@
+@startuml
+'20 occurrencies
+'20 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Installation <<Kind>>
+class Job_Plan <<Kind>>
+class Environment <<Kind>>
+class Geographical_Region <<Kind>>
+class Function_of_Role <<Kind>>
+class Impact <<Kind>>
+class OE_Process_Definition_Document <<Kind>>
+class OE_Process_Definition_Document <<Kind>>
+class E_Standard_Process_Definition_Document <<Kind>>
+class OE_Process_Definition_Document <<Kind>>
+class Organization <<Kind>>
+class Regulatory_Organization <<Kind>>
+class E_Standard_Process_Definition_Document <<Kind>>
+class Emergency_Team <<Collective>>
+class Civil_Defense_Organization <<Kind>>
+class Regulatory_Organization <<Kind>>
+class Civil_Defense_Organization <<Kind>>
+class Positions_Plan <<Kind>>
+class Person <<Kind>>
+class E_Standard_Process_Definition_Document <<Kind>>
+Installation "0..*" -- "1..1" Geographical_Region : is_located_in
+@enduml

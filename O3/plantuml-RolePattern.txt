@@ -1,0 +1,199 @@
+@startuml
+'48 occurrencies
+'85 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Organizing_Institution <<Role>>
+Institute <|-- Organizing_Institution
+class Institute <<SubKind>>
+Standalone_Missionary_Organization <|-- Institute
+class Standalone_Missionary_Organization <<SubKind>>
+Missionary_Organization <|-- Standalone_Missionary_Organization
+class Missionary_Organization <<SubKind>>
+Formal_Organization <|-- Missionary_Organization
+class Formal_Organization <<Kind>>
+Organization <|-- Formal_Organization
+class Business_Analyst <<Role>>
+Structural_Unit_Member <|-- Business_Analyst
+class Structural_Unit_Member <<Role>>
+Formal_Organization_Member <|-- Structural_Unit_Member
+Group_Member <|-- Structural_Unit_Member
+class Information_Technology_Analyst <<Role>>
+Formal_Organization_Member <|-- Information_Technology_Analyst
+class Formal_Organization_Member <<Role>>
+Organizational_Member <|-- Formal_Organization_Member
+class System_Business_Object <<Role>>
+System_Object <|-- System_Business_Object
+Business_Object <|-- System_Business_Object
+class Business_Object <<RoleMixin>>
+class System_Object <<Category>>
+Object <|-- System_Object
+class Object <<Category>>
+Substance <|-- Object
+class Substance <<Category>>
+Endurant <|-- Substance
+class Endurant <<Category>>
+Individual <|-- Endurant
+class Individual <<Category>>
+class Missionary_Unit_Member <<Role>>
+Structural_Unit_Member <|-- Missionary_Unit_Member
+Group_Member <|-- Missionary_Unit_Member
+class Group_Member <<RoleMixin>>
+class Candidate <<Role>>
+Natural_Person <|-- Candidate
+class Natural_Person <<Kind>>
+Physical_Agent <|-- Natural_Person
+class Missionary_Allocation_Unit <<Role>>
+Missionary_Unit <|-- Missionary_Allocation_Unit
+class Missionary_Unit <<SubKind>>
+Organizational_Unit <|-- Missionary_Unit
+class Organizational_Unit <<Kind>>
+Organization <|-- Organizational_Unit
+class Missionary_Headquarters <<Role>>
+Standalone_Missionary_Organization <|-- Missionary_Headquarters
+class Auditor <<Role>>
+Missionary_Unit_Member <|-- Auditor
+class Individual_Nominator <<Role>>
+Natural_Person <|-- Individual_Nominator
+Nominator <|-- Individual_Nominator
+class Nominator <<Mixin>>
+class Functional_Headquarters <<Role>>
+Standalone_Functional_Organization <|-- Functional_Headquarters
+class Standalone_Functional_Organization <<SubKind>>
+Functional_Organization <|-- Standalone_Functional_Organization
+class Functional_Organization <<SubKind>>
+Formal_Organization <|-- Functional_Organization
+class Government_Employee <<Role>>
+Formal_Organization_Member <|-- Government_Employee
+class Structural_Unit_Member_Authority_Delegatee <<Role>>
+Structural_Unit_Member <|-- Structural_Unit_Member_Authority_Delegatee
+Delegatee <|-- Structural_Unit_Member_Authority_Delegatee
+class Delegatee <<RoleMixin>>
+Physical_Agent_in_Social_Relation <|-- Delegatee
+class Physical_Agent_in_Social_Relation <<RoleMixin>>
+Agent_in_Social_Relation <|-- Physical_Agent_in_Social_Relation
+Physical_Agent <|-- Physical_Agent_in_Social_Relation
+class Physical_Agent <<Category>>
+Agent <|-- Physical_Agent
+class Agent <<Category>>
+Substance <|-- Agent
+class Agent_in_Social_Relation <<RoleMixin>>
+Agent <|-- Agent_in_Social_Relation
+class Analista_Ambiental <<Role>>
+class Individual_Elector <<Role>>
+Natural_Person <|-- Individual_Elector
+Elector <|-- Individual_Elector
+class Elector <<Mixin>>
+class Social_Agent_External_Collaborator <<Role>>
+External_Collaborator <|-- Social_Agent_External_Collaborator
+Formal_Organization <|-- Social_Agent_External_Collaborator
+class External_Collaborator <<RoleMixin>>
+class Organizational_Owner <<Role>>
+Organization <|-- Organizational_Owner
+class Organization <<Category>>
+Social_Entity <|-- Organization
+Social_Agent <|-- Organization
+class Social_Agent <<Category>>
+Nominator <|-- Social_Agent
+Agent <|-- Social_Agent
+Elector <|-- Social_Agent
+class Social_Entity <<Mixin>>
+class Physical_Agent_Internal_Collaborator <<Role>>
+Formal_Organization_Member <|-- Physical_Agent_Internal_Collaborator
+Internal_Collaborator <|-- Physical_Agent_Internal_Collaborator
+class Internal_Collaborator <<RoleMixin>>
+class Structural_Allocation_Unit <<Role>>
+Structural_Unit <|-- Structural_Allocation_Unit
+class Structural_Unit <<SubKind>>
+Organizational_Unit <|-- Structural_Unit
+class Analista_de_Gestão_Corporativa <<Role>>
+class Social_Agent_Internal_Collaborator <<Role>>
+Organizational_Unit <|-- Social_Agent_Internal_Collaborator
+Internal_Collaborator <|-- Social_Agent_Internal_Collaborator
+class Gerente_de_Projeto <<Role>>
+Missionary_Unit_Member <|-- Gerente_de_Projeto
+class Collegiate_Body_Requester <<Role>>
+Collegiate_Body <|-- Collegiate_Body_Requester
+Public_Formal_Requester <|-- Collegiate_Body_Requester
+class Collegiate_Body <<SubKind>>
+Simple_Standalone_Missionary_Organization <|-- Collegiate_Body
+Public_Organizational_Unit <|-- Collegiate_Body
+class Simple_Standalone_Missionary_Organization <<SubKind>>
+Standalone_Missionary_Organization <|-- Simple_Standalone_Missionary_Organization
+class Public_Organizational_Unit <<Class>>
+class Public_Formal_Requester <<RoleMixin>>
+class Analista_de_Desenvolvimento_Regional <<Role>>
+class Missionary_Unit_Head <<Role>>
+Missionary_Unit_Member <|-- Missionary_Unit_Head
+class Analista_de_Sistemas <<Role>>
+class Support_Analyst <<Role>>
+Social_Agent_Internal_Collaborator <|-- Support_Analyst
+class General_Regiment_Government_Employee <<Role>>
+Government_Employee <|-- General_Regiment_Government_Employee
+class Relationship_Analyst <<Role>>
+Social_Agent_Internal_Collaborator <|-- Relationship_Analyst
+class Structural_Unit_Member_Responsibility_Delegator <<Role>>
+Structural_Unit_Member <|-- Structural_Unit_Member_Responsibility_Delegator
+Delegator <|-- Structural_Unit_Member_Responsibility_Delegator
+class Delegator <<RoleMixin>>
+Physical_Agent_in_Social_Relation <|-- Delegator
+class Organization_Head <<Role>>
+Formal_Organization_Member <|-- Organization_Head
+class Organizational_Member <<Role>>
+Natural_Person <|-- Organizational_Member
+Social_Entity <|-- Organizational_Member
+class Structural_Unit_Member_Responsibility_Delegatee <<Role>>
+Structural_Unit_Member <|-- Structural_Unit_Member_Responsibility_Delegatee
+Delegatee <|-- Structural_Unit_Member_Responsibility_Delegatee
+class Physical_Agent_External_Collaborator <<Role>>
+External_Collaborator <|-- Physical_Agent_External_Collaborator
+Natural_Person <|-- Physical_Agent_External_Collaborator
+class System_Analyst <<Role>>
+Structural_Unit_Member <|-- System_Analyst
+class Gerente_de_Riscos <<Role>>
+Missionary_Unit_Member <|-- Gerente_de_Riscos
+class Gerente_de_Escopo <<Role>>
+Missionary_Unit_Member <|-- Gerente_de_Escopo
+class Employer <<Role>>
+Formal_Organization <|-- Employer
+class Statutory_Government_Employee <<Role>>
+Government_Employee <|-- Statutory_Government_Employee
+class Analista_de_Pesquisa_Energética <<Role>>
+class Project_Leader <<Role>>
+Missionary_Unit_Member <|-- Project_Leader
+class Administrative_Assistant <<Role>>
+Formal_Organization_Member <|-- Administrative_Assistant
+class Structural_Unit_Member_Authority_Delegator <<Role>>
+Structural_Unit_Member <|-- Structural_Unit_Member_Authority_Delegator
+Delegator <|-- Structural_Unit_Member_Authority_Delegator
+class Structural_Unit_Head <<Role>>
+Structural_Unit_Member <|-- Structural_Unit_Head
+class Physical_Business_Object <<Role>>
+Business_Object <|-- Physical_Business_Object
+Physical_Object <|-- Physical_Business_Object
+class Physical_Object <<Category>>
+Object <|-- Physical_Object
+class Public_Organization_Requester <<Role>>
+Public_Formal_Requester <|-- Public_Organization_Requester
+Public_Organization <|-- Public_Organization_Requester
+class Public_Organization <<Class>>
+Multi_Functional_Organization <|-- Public_Organization
+Public_Organizational_Unit <|-- Public_Organization
+class Multi_Functional_Organization <<SubKind>>
+Functional_Organization <|-- Multi_Functional_Organization
+Collegiate_Body "0..*" -- "1..*" Public_Organization : represented_by
+Organization_Head "1..1" -- "1..*" Formal_Organization : head_of
+Functional_Headquarters "1..1" -- "1..1" Functional_Organization : head_of
+Multi_Functional_Organization "0..1" o-- "2..*" Functional_Organization : 
+Missionary_Headquarters "1..1" -- "1..1" Missionary_Organization : head_of
+Missionary_Unit_Head "1..1" -- "1..*" Missionary_Unit : head_of
+Structural_Unit_Head "1..1" -- "1..*" Structural_Unit : head_of
+Delegator "1..*" -- "1..*" Delegatee : delegates_to
+@enduml

@@ -1,0 +1,38 @@
+@startuml
+'2 occurrencies
+'11 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class MaterialEntity <<Category>>
+class BioticEntity <<Kind>>
+MaterialEntity <|-- BioticEntity
+class AbioticEntity <<Quantity>>
+MaterialEntity <|-- AbioticEntity
+class TaxonomicElement <<Category>>
+class Species <<Kind>>
+TaxonomicElement <|-- Species
+class Kingdom <<Kind>>
+TaxonomicElement <|-- Kingdom
+class Genus <<Kind>>
+TaxonomicElement <|-- Genus
+class Order <<Kind>>
+TaxonomicElement <|-- Order
+class Classis <<Kind>>
+TaxonomicElement <|-- Classis
+class Family <<Kind>>
+TaxonomicElement <|-- Family
+class Phylum <<Kind>>
+TaxonomicElement <|-- Phylum
+Classis "1..1" -- "1..*" Order : Specializes
+Phylum "1..1" -- "1..*" Classis : Specializes
+Family "1..1" -- "1..*" Genus : Specializes
+Order "1..1" -- "1..*" Family : Specializes
+Genus "1..1" -- "1..*" Species : Specializes
+Kingdom "1..1" -- "1..*" Phylum : Speciealizes
+@enduml

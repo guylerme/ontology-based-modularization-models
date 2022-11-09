@@ -1,0 +1,45 @@
+@startuml
+'8 occurrencies
+'15 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<SubKind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Top_Path_Layer <<SubKind>>
+Client_PathLayer_Network <|-- Top_Path_Layer
+class Client_PathLayer_Network <<SubKind>>
+Path_Layer_Network <|-- Client_PathLayer_Network
+class Path_Layer_Network <<Kind>>
+Layer_Network <|-- Path_Layer_Network
+class Intermediate_Path_Layer <<SubKind>>
+Server_Layer_Network <|-- Intermediate_Path_Layer
+Client_PathLayer_Network <|-- Intermediate_Path_Layer
+class Server_Layer_Network <<Category>>
+Layer_Network <|-- Server_Layer_Network
+class Layer_Network <<Category>>
+Architectural_Component <|-- Layer_Network
+class Architectural_Component <<Category>>
+class Essential_Sink_TTF <<SubKind>>
+Sink_TTF <|-- Essential_Sink_TTF
+class Sink_TTF <<Kind>>
+class Essential_Source_TTF <<SubKind>>
+Source_TTF <|-- Essential_Source_TTF
+class Source_TTF <<Kind>>
+class Single_PathLayer_Network <<SubKind>>
+Path_Layer_Network <|-- Single_PathLayer_Network
+class Server_Transmission_Layer <<SubKind>>
+Server_Layer_Network <|-- Server_Transmission_Layer
+Transmission_Media_Layer_Network <|-- Server_Transmission_Layer
+class Transmission_Media_Layer_Network <<Kind>>
+Layer_Network <|-- Transmission_Media_Layer_Network
+class Single_Transmission_Layer <<SubKind>>
+Transmission_Media_Layer_Network <|-- Single_Transmission_Layer
+Client_PathLayer_Network "1..*" -- "1..*" Server_Layer_Network : /client-server_Layer_related
+Layer_Network "1..1" o-- "1..1" Essential_Sink_TTF : A_LayerNetwork_EssentialSinkTTF
+Layer_Network "1..1" o-- "1..1" Essential_Source_TTF : A_LayerNetwork_EssentialSourceTTF
+@enduml

@@ -1,0 +1,123 @@
+@startuml
+'21 occurrencies
+'49 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Visitor <<Role>>
+User <|-- Visitor
+class User <<Role>>
+Person <|-- User
+class EP_Agent_delegator <<Role>>
+EP_Agent <|-- EP_Agent_delegator
+Delegator <|-- EP_Agent_delegator
+class EP_Agent <<Category>>
+Agent <|-- EP_Agent
+class Agent <<Category>>
+Substance <|-- Agent
+class Substance <<Category>>
+Endurant <|-- Substance
+class Endurant <<Category>>
+Individual <|-- Endurant
+class Individual <<Category>>
+class Delegator <<RoleMixin>>
+Physical_Agent_in_Social_Relation <|-- Delegator
+class Physical_Agent_in_Social_Relation <<RoleMixin>>
+Agent_in_Social_Relation <|-- Physical_Agent_in_Social_Relation
+Physical_Agent <|-- Physical_Agent_in_Social_Relation
+class Physical_Agent <<Category>>
+Agent <|-- Physical_Agent
+class Agent_in_Social_Relation <<RoleMixin>>
+Agent <|-- Agent_in_Social_Relation
+class Person <<Kind>>
+Physical_Agent <|-- Person
+class EP_Agent_delegatee <<Role>>
+EP_Agent <|-- EP_Agent_delegatee
+Delegatee <|-- EP_Agent_delegatee
+class Delegatee <<RoleMixin>>
+Physical_Agent_in_Social_Relation <|-- Delegatee
+class Human_Resource <<Role>>
+Person <|-- Human_Resource
+class RoESPDD <<Role>>
+Regulatory_Organization <|-- RoESPDD
+Recognizer <|-- RoESPDD
+class Recognizer <<RoleMixin>>
+Agent <|-- Recognizer
+class Regulatory_Organization <<Class>>
+ <|-- Regulatory_Organization
+class  <<Category>>
+Individual_Social_Agent <|-- 
+class Individual_Social_Agent <<Category>>
+Social_Agent <|-- Individual_Social_Agent
+class Social_Agent <<Category>>
+Agent <|-- Social_Agent
+class Businessman <<Role>>
+Holder <|-- Businessman
+class Holder <<RoleMixin>>
+class Business_Non_Emergency_Human_Resource <<Role>>
+Business_Human_Resource <|-- Business_Non_Emergency_Human_Resource
+User <|-- Business_Non_Emergency_Human_Resource
+class Business_Human_Resource <<Role>>
+Human_Resource <|-- Business_Human_Resource
+class Evacuation_Geographical_Region <<Role>>
+Geographical_Region <|-- Evacuation_Geographical_Region
+Evacuation_Local <|-- Evacuation_Geographical_Region
+class Geographical_Region <<Kind>>
+class Evacuation_Local <<RoleMixin>>
+class Organization_Holder <<Role>>
+EP_Agent <|-- Organization_Holder
+class Business_Emergency_Human_Resource <<Role>>
+Business_Human_Resource <|-- Business_Emergency_Human_Resource
+class Organization_Holder <<Role>>
+ <|-- Organization_Holder
+Holder <|-- Organization_Holder
+class Person_Holder <<Role>>
+Person <|-- Person_Holder
+Holder <|-- Person_Holder
+class Place_of_Business <<Role>>
+Resource <|-- Place_of_Business
+class Resource <<RoleMixin>>
+Participant <|-- Resource
+Object <|-- Resource
+class Object <<Category>>
+Substance <|-- Object
+class Participant <<RoleMixin>>
+Substance <|-- Participant
+class RoESPDD <<Role>>
+Regulatory_Organization <|-- RoESPDD
+class Evacuation_Installation <<Role>>
+Installation <|-- Evacuation_Installation
+Evacuation_Local <|-- Evacuation_Installation
+class Installation <<Kind>>
+Physical_Component <|-- Installation
+class RoESPDD <<Role>>
+Regulatory_Organization <|-- RoESPDD
+Recognizer <|-- RoESPDD
+class Under_Protection_Person <<Role>>
+Under_Protection_Natural_Object <|-- Under_Protection_Person
+Person <|-- Under_Protection_Person
+class Under_Protection_Natural_Object <<RoleMixin>>
+Natural_Component <|-- Under_Protection_Natural_Object
+Under_Protection_Component <|-- Under_Protection_Natural_Object
+class Natural_Component <<Category>>
+Physical_Component <|-- Natural_Component
+class Physical_Component <<Category>>
+Object <|-- Physical_Component
+Component <|-- Physical_Component
+class Component <<Category>>
+class Under_Protection_Component <<RoleMixin>>
+Object <|-- Under_Protection_Component
+Component <|-- Under_Protection_Component
+class Public_Emergency_Human_Resource <<Role>>
+Human_Resource <|-- Public_Emergency_Human_Resource
+class RoESPDD <<Role>>
+Regulatory_Organization <|-- RoESPDD
+Installation "0..*" -- "1..1" Geographical_Region : is_located_in
+User "1..1" -- "0..*" Installation : located_in
+@enduml

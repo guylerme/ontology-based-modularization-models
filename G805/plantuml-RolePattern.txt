@@ -1,0 +1,97 @@
+@startuml
+'28 occurrencies
+'41 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Connected_Source_AF_Input <<Role>>
+Source_AF_Input <|-- Connected_Source_AF_Input
+class Source_AF_Input <<Kind>>
+class AF-TTF_ConnectedSource_TTF <<Role>>
+Source_TTF <|-- AF-TTF_ConnectedSource_TTF
+class Source_TTF <<Kind>>
+class PM-SoAF_Connected_Physical_Matrix <<Role>>
+Physical_Matrix <|-- PM-SoAF_Connected_Physical_Matrix
+class Physical_Matrix <<Kind>>
+class Connected_Source_TTF_Input <<Role>>
+Source_TTF_Input <|-- Connected_Source_TTF_Input
+class Source_TTF_Input <<Kind>>
+class Sink_TTF_Bidirectional_Component <<Role>>
+Sink_TTF <|-- Sink_TTF_Bidirectional_Component
+class Sink_TTF <<Kind>>
+class Source_PM_TTF_Output <<Role>>
+Source_TTF_Output <|-- Source_PM_TTF_Output
+class Source_TTF_Output <<Kind>>
+class PM_connected_Sink_AF_Output <<Role>>
+Sink_AF_Output <|-- PM_connected_Sink_AF_Output
+class Sink_AF_Output <<Kind>>
+class TTF_Source_Connected_Physical_Matrix <<Role>>
+Physical_Matrix <|-- TTF_Source_Connected_Physical_Matrix
+class TTF-AF_ConnectedSource_AF <<Role>>
+Source_TTF <|-- TTF-AF_ConnectedSource_AF
+Source_AF <|-- TTF-AF_ConnectedSource_AF
+class Source_AF <<Kind>>
+class Source_End_TTF_Output <<Role>>
+Source_TTF_Output <|-- Source_End_TTF_Output
+class AF-TTF_Connected_Source_AF <<Role>>
+Source_AF <|-- AF-TTF_Connected_Source_AF
+class Connected_Source_AF_Output <<Role>>
+Source_AF_Output <|-- Connected_Source_AF_Output
+class Source_AF_Output <<Kind>>
+class TTF_Connected_PM_Input <<Role>>
+PM_Input <|-- TTF_Connected_PM_Input
+class PM_Input <<Kind>>
+PM-SkAF_Connected_PM_Input <|-- PM_Input
+class TTF-End_ConnectedSource_TTF <<Role>>
+Source_TTF <|-- TTF-End_ConnectedSource_TTF
+class PM-SoAF_Connected_PM_Output <<Role>>
+class Sink_AF_Bidirectional_Component <<Role>>
+Sink_AF <|-- Sink_AF_Bidirectional_Component
+class Sink_AF <<Kind>>
+class PM-SkAF_Connected_PM_Input <<Role>>
+class Connected_Sink_AF_Output <<Role>>
+Sink_AF_Output <|-- Connected_Sink_AF_Output
+class TTF-AF_Connected_Source_AF <<Role>>
+Source_AF <|-- TTF-AF_Connected_Source_AF
+class Source_Path_TTF_Output <<Role>>
+Source_TTF_Output <|-- Source_Path_TTF_Output
+class TTF-AF_ConnectedSource_TTF <<Role>>
+Source_TTF <|-- TTF-AF_ConnectedSource_TTF
+class MC-SkAF_Connected_Physical_Matrix <<Role>>
+Physical_Matrix <|-- MC-SkAF_Connected_Physical_Matrix
+class Connected_Physical_Link_Input <<Role>>
+Physical_Link_Input <|-- Connected_Physical_Link_Input
+class Physical_Link_Input <<Kind>>
+class PM_connected_Source_AF_Input <<Role>>
+Source_AF_Input <|-- PM_connected_Source_AF_Input
+class Source_AF_Bidirectional_Component <<Role>>
+Source_AF <|-- Source_AF_Bidirectional_Component
+class Source_TTF_Bidirectional_Component <<Role>>
+Source_TTF <|-- Source_TTF_Bidirectional_Component
+class TTF-End_Source_Connected_Physical_Link <<Role>>
+Physical_Link <|-- TTF-End_Source_Connected_Physical_Link
+class Physical_Link <<Kind>>
+class TTF-PM_ConnectedSource_TTF <<Role>>
+Source_TTF <|-- TTF-PM_ConnectedSource_TTF
+AF-TTF_Connected_Source_AF "1..1" -- "1..*" AF-TTF_ConnectedSource_TTF : /AF-TTF_source_connection
+MC-SkAF_Connected_Physical_Matrix "1..*" -- "1..*" Sink_AF : /PM-AF_sink_connection
+PM-SoAF_Connected_Physical_Matrix "1..*" -- "1..*" Source_AF : /PM-AF_source_connection
+Sink_AF "1..1" o-- "1..*" Sink_AF_Output : A_SinkAF_SinkAFOutput
+Source_AF "1..1" o-- "1..*" Source_AF_Output : A_SourceAF_SourceAFOutput
+Source_TTF "1..1" o-- "1..1" Source_TTF_Input : A_SourceTTF_SourceTTFInput
+TTF-AF_ConnectedSource_AF "1..*" -- "1..*" TTF-AF_Connected_Source_AF : /TTF-AF_source_connection
+Physical_Matrix "1..1" o-- "1..*" PM_Input : A_PhysicalMatrix_PMInput
+Sink_AF "1..1" -- "1..1" Source_AF : /sink-source_CP_connection
+Source_AF "1..1" o-- "1..*" Source_AF_Input : A_SourceAF_SourceAFInput
+Source_TTF "1..1" o-- "1..*" Source_TTF_Output : A_SourceTTF_SourceTTFOutput
+Physical_Link "1..1" o-- "1..1" Physical_Link_Input : A_PhysicalLink_PhysicalLinkInput
+TTF-PM_ConnectedSource_TTF "1..*" -- "1..*" TTF_Source_Connected_Physical_Matrix : /TTF-PM_source_connection
+TTF-AF_ConnectedSource_TTF "1..*" -- "1..*" TTF-AF_ConnectedSource_AF : /TTF-AF_source_connection
+TTF-End_ConnectedSource_TTF "1..1" -- "1..*" TTF-End_Source_Connected_Physical_Link : /TTF-End_source_connection
+@enduml

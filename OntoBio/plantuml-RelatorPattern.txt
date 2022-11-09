@@ -1,0 +1,53 @@
+@startuml
+'10 occurrencies
+'19 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Financing <<Relator>>
+Link <|-- Financing
+class TaxonomicClassification <<Relator>>
+class Specimen <<Kind>>
+class TaxonomyOfSpecimen <<Collective>>
+class Donation <<Relator>>
+Acquisition <|-- Donation
+class ObjectiveInterest <<Relator>>
+Link <|-- ObjectiveInterest
+class Exchange <<Relator>>
+Acquisition <|-- Exchange
+class Acquisition <<Relator>>
+class BioticEntity <<Kind>>
+class ResearchInstitution <<Kind>>
+class Link <<Relator>>
+class Project <<Kind>>
+class Programme <<Kind>>
+class Person <<SubKind>>
+Specimen <|-- Person
+class Legacy <<Relator>>
+Acquisition <|-- Legacy
+class Expedition <<Relator>>
+Acquisition <|-- Expedition
+class Protocol <<Kind>>
+class SpatialLocation <<Kind>>
+class Purchase <<Relator>>
+Acquisition <|-- Purchase
+Expedition "1..*" -- "1..*" Person : IsComposedBy
+Expedition "1..1" -- "1..*" Protocol : Comprises
+BioticEntity "1..1" -- "1..1" Specimen : Instantiates
+Link "1..1" -- "1..*" Person : Relates
+Link "1..*" -- "1..*" Programme : Relates
+Link "1..*" -- "1..*" Project : Relates
+Acquisition "1..1" -- "1..*" BioticEntity : MayHave
+Acquisition "1..*" -- "1..*" ResearchInstitution : BelongsToA
+Link "1..*" -- "1..1" ResearchInstitution : Relates
+Expedition "1..*" -- "1..1" SpatialLocation : OccursOnA
+TaxonomicClassification "1..1" -- "1..1" TaxonomyOfSpecimen : Relates
+TaxonomicClassification "1..*" -- "1..1" Specimen : Classify
+TaxonomyOfSpecimen "1..1" -- "1..*" Specimen : IsClassifiedAs
+@enduml

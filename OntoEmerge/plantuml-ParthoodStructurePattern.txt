@@ -1,0 +1,57 @@
+@startuml
+'14 occurrencies
+'26 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Collective_Whole <<Mixin>>
+class Member <<Mixin>>
+class Complex_Installation <<SubKind>>
+Installation <|-- Complex_Installation
+class Installation <<Kind>>
+class Quantity_Whole <<Mixin>>
+class Quantity_Part <<Mixin>>
+class Environmental_Vulnerability <<Class>>
+class Individual_Vulnerability <<Class>>
+class Interaction <<Class>>
+Complex_Action <|-- Interaction
+class Contribution_(Performance) <<Class>>
+/Paricipation_Individual <|-- Contribution_(Performance)
+class Environment <<Kind>>
+class Component <<Category>>
+class Emergency_Team <<Collective>>
+Collective_Social_Agent <|-- Emergency_Team
+class Human_Resource <<Role>>
+class Functional_Complex_Whole <<Mixin>>
+class Functional_Part <<Mixin>>
+class SubCollection <<Mixin>>
+class Collective_Social_Agent <<Category>>
+class Agent <<Category>>
+class Component <<Category>>
+class Complex_Action <<Class>>
+class /Paricipation_Individual <<Class>>
+class Specific_E_Standard_Process <<Class>>
+class E_Standard_Activity <<Class>>
+class Specific_E_Standard_Process <<Class>>
+class E_Standard_Activity <<Class>>
+Complex_Action "1..1" o-- "1..1" /Paricipation_Individual : 
+Collective_Social_Agent "0..1" o-- "2..*" Agent : 
+Interaction "0..*" o-- "2..*" Contribution_(Performance) : 
+Collective_Whole "1..*" o-- "2..*" Member : 
+Collective_Whole "1..*" o-- "0..*" SubCollection : 
+Functional_Complex_Whole "1..*" o-- "2..*" Functional_Part : 
+Quantity_Whole "1..*" o-- "2..*" Quantity_Part : 
+Specific_E_Standard_Process "1..*" o-- "2..*" E_Standard_Activity : 
+Specific_E_Standard_Process "1..*" o-- "2..*" E_Standard_Activity : 
+Complex_Installation "0..1" o-- "2..*" Installation : 
+Emergency_Team "1..1" o-- "2..*" Human_Resource : 
+Environment "0..*" o-- "2..*" Component : 
+Environmental_Vulnerability "0..*" -- "1..1" Environment : 
+Environment "0..*" o-- "2..*" Component : 
+Environmental_Vulnerability "1..1" o-- "1..*" Individual_Vulnerability : 
+@enduml

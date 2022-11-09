@@ -1,0 +1,100 @@
+@startuml
+'33 occurrencies
+'37 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<SubKind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Foundation <<SubKind>>
+Non_Corporate_Public_Entity <|-- Foundation
+class Non_Corporate_Public_Entity <<SubKind>>
+Public_Entity <|-- Non_Corporate_Public_Entity
+class Public_Entity <<SubKind>>
+Public_Organization <|-- Public_Entity
+class Public_Organization <<Class>>
+Multi_Functional_Organization <|-- Public_Organization
+Public_Organizational_Unit <|-- Public_Organization
+class Multi_Functional_Organization <<SubKind>>
+Functional_Organization <|-- Multi_Functional_Organization
+class Public_Organizational_Unit <<Class>>
+class Regional_Public_Organization <<SubKind>>
+Complex_Standalone_Functional_Organization <|-- Regional_Public_Organization
+class Complex_Standalone_Functional_Organization <<SubKind>>
+Standalone_Functional_Organization <|-- Complex_Standalone_Functional_Organization
+class Standalone_Functional_Organization <<SubKind>>
+Functional_Organization <|-- Standalone_Functional_Organization
+class Functional_Organization <<SubKind>>
+Formal_Organization <|-- Functional_Organization
+class Working_Group <<SubKind>>
+Missionary_Unit <|-- Working_Group
+class Missionary_Unit <<SubKind>>
+Organizational_Unit <|-- Missionary_Unit
+class Public_Company <<SubKind>>
+State_Company <|-- Public_Company
+class State_Company <<SubKind>>
+Public_Entity <|-- State_Company
+class Simple_Standalone_Functional_Organization <<SubKind>>
+Standalone_Functional_Organization <|-- Simple_Standalone_Functional_Organization
+class Complex_Standalone_Missionary_Organization <<SubKind>>
+Standalone_Missionary_Organization <|-- Complex_Standalone_Missionary_Organization
+class Standalone_Missionary_Organization <<SubKind>>
+Missionary_Organization <|-- Standalone_Missionary_Organization
+class Collegiate_Body <<SubKind>>
+Simple_Standalone_Missionary_Organization <|-- Collegiate_Body
+Public_Organizational_Unit <|-- Collegiate_Body
+class Simple_Standalone_Missionary_Organization <<SubKind>>
+Standalone_Missionary_Organization <|-- Simple_Standalone_Missionary_Organization
+class Structural_Unit <<SubKind>>
+Organizational_Unit <|-- Structural_Unit
+class Organizational_Unit <<Kind>>
+class Missionary_Organization <<SubKind>>
+Formal_Organization <|-- Missionary_Organization
+class Formal_Organization <<Kind>>
+class Commission <<SubKind>>
+Missionary_Organization <|-- Commission
+class Council <<SubKind>>
+Functional_Organization <|-- Council
+class Holding <<SubKind>>
+Functional_Organization <|-- Holding
+class Staff_Unit <<SubKind>>
+Structural_Unit <|-- Staff_Unit
+class Composed_Missionary_Organization <<SubKind>>
+Missionary_Organization <|-- Composed_Missionary_Organization
+class Line_Unit <<SubKind>>
+Structural_Unit <|-- Line_Unit
+class Public_Administrative_Unit <<SubKind>>
+Organizational_Unit <|-- Public_Administrative_Unit
+Public_Organizational_Unit <|-- Public_Administrative_Unit
+class Committee <<SubKind>>
+Missionary_Unit <|-- Committee
+class Institute <<SubKind>>
+Standalone_Missionary_Organization <|-- Institute
+class Board <<SubKind>>
+Line_Unit <|-- Board
+class Mixed_Economy_Company <<SubKind>>
+State_Company <|-- Mixed_Economy_Company
+class Composite_Line_Unit <<SubKind>>
+Line_Unit <|-- Composite_Line_Unit
+class Autarchy <<SubKind>>
+Non_Corporate_Public_Entity <|-- Autarchy
+class Government_Agency <<SubKind>>
+Public_Organization <|-- Government_Agency
+Collegiate_Body "0..*" -- "1..1" Government_Agency : subordinated_to
+Collegiate_Body "0..*" -- "1..*" Public_Organization : represented_by
+Public_Entity "0..*" -- "1..1" Government_Agency : bounded_to
+Regional_Public_Organization "1..1" o-- "2..*" Public_Administrative_Unit : 
+Public_Organization "1..1" o-- "2..*" Regional_Public_Organization : 
+Board "0..*" -- "1..*" Structural_Unit : deliberates_to
+Complex_Standalone_Functional_Organization "0..1" o-- "2..*" Organizational_Unit : 
+Complex_Standalone_Missionary_Organization "0..1" o-- "2..*" Organizational_Unit : 
+Composed_Missionary_Organization "0..1" o-- "2..*" Missionary_Organization : 
+Composite_Line_Unit "0..1" o-- "2..*" Line_Unit : 
+Council "0..*" -- "1..*" Formal_Organization : deliberates_to
+Multi_Functional_Organization "0..1" o-- "2..*" Functional_Organization : 
+Staff_Unit "0..*" -- "1..1" Line_Unit : staff_of
+@enduml

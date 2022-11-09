@@ -1,0 +1,302 @@
+@startuml
+'84 occurrencies
+'122 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class EP_Agent <<Category>>
+Agent <|-- EP_Agent
+class EP_Agent_delegator <<Role>>
+EP_Agent <|-- EP_Agent_delegator
+Delegator <|-- EP_Agent_delegator
+class EP_Agent_delegatee <<Role>>
+EP_Agent <|-- EP_Agent_delegatee
+Delegatee <|-- EP_Agent_delegatee
+class Civil_Defense_Organization <<Kind>>
+EP_Agent <|-- Civil_Defense_Organization
+class Organization_Holder <<Role>>
+EP_Agent <|-- Organization_Holder
+class Collective_Social_Agent <<Category>>
+Social_Agent <|-- Collective_Social_Agent
+class Emergency_Team <<Collective>>
+Collective_Social_Agent <|-- Emergency_Team
+class Built_Component <<Category>>
+Physical_Component <|-- Built_Component
+class Under_Protection_Built_Object <<RoleMixin>>
+Built_Component <|-- Under_Protection_Built_Object
+Under_Protection_Component <|-- Under_Protection_Built_Object
+class Impacted_Environment <<RoleMixin>>
+Resource <|-- Impacted_Environment
+class Damaged_Environment <<RoleMixin>>
+Resource <|-- Damaged_Environment
+Impacted_Environment <|-- Damaged_Environment
+class Endurant <<Category>>
+Individual <|-- Endurant
+class Substance <<Category>>
+Endurant <|-- Substance
+class Situation_Individual <<Class>>
+Endurant <|-- Situation_Individual
+class Situation_Individual <<Class>>
+Endurant <|-- Situation_Individual
+class Moment_Individual <<Category>>
+Endurant <|-- Moment_Individual
+class Non_Political_Region <<Category>>
+Geographical_Region <|-- Non_Political_Region
+class Endangered_Component <<RoleMixin>>
+Component <|-- Endangered_Component
+Under_Protection_Component <|-- Endangered_Component
+class Normative_Description <<Category>>
+Social_Component <|-- Normative_Description
+class Positions_Plan <<Kind>>
+Normative_Description <|-- Positions_Plan
+class Job_Plan <<Kind>>
+Normative_Description <|-- Job_Plan
+class Function_of_Role <<Kind>>
+Normative_Description <|-- Function_of_Role
+class  <<Category>>
+Normative_Description <|-- 
+class OE_Process_Definition_Document <<Kind>>
+ <|-- OE_Process_Definition_Document
+class E_Standard_Process_Definition_Document <<Kind>>
+ <|-- E_Standard_Process_Definition_Document
+class OE_Process_Definition_Document <<Class>>
+ <|-- OE_Process_Definition_Document
+class Intrinsic_Moment_Individual <<Category>>
+Moment_Individual <|-- Intrinsic_Moment_Individual
+class Quality_Individual <<Category>>
+Intrinsic_Moment_Individual <|-- Quality_Individual
+class Disposition <<Class>>
+Intrinsic_Moment_Individual <|-- Disposition
+class Qua_Individual <<Category>>
+Intrinsic_Moment_Individual <|-- Qua_Individual
+class Mode_Individual <<Category>>
+Intrinsic_Moment_Individual <|-- Mode_Individual
+class  <<Category>>
+Individual_Social_Agent <|-- 
+class Main_Organization <<Class>>
+ <|-- Main_Organization
+class Organization_Holder <<Role>>
+ <|-- Organization_Holder
+Holder <|-- Organization_Holder
+class Civil_Defense_Organization <<Kind>>
+ <|-- Civil_Defense_Organization
+class Regulatory_Organization <<Class>>
+ <|-- Regulatory_Organization
+class Object <<Category>>
+Substance <|-- Object
+class Apt <<Phase>>
+Substance <|-- Apt
+class Participant <<RoleMixin>>
+Substance <|-- Participant
+class Inapt <<Phase>>
+Substance <|-- Inapt
+class Functional_Complex_Individual <<Category>>
+Substance <|-- Functional_Complex_Individual
+class Quantity_Individual <<Category>>
+Substance <|-- Quantity_Individual
+class Agent <<Category>>
+Substance <|-- Agent
+class Collective_Individual <<Category>>
+Substance <|-- Collective_Individual
+class Agent <<Category>>
+Substance <|-- Agent
+class Public_Emergency_Material_Resource <<RoleMixin>>
+Material_Resource <|-- Public_Emergency_Material_Resource
+class Under_Protection_Component <<RoleMixin>>
+Object <|-- Under_Protection_Component
+Component <|-- Under_Protection_Component
+class Safe_Component <<RoleMixin>>
+Under_Protection_Component <|-- Safe_Component
+class Under_Protection_Natural_Object <<RoleMixin>>
+Natural_Component <|-- Under_Protection_Natural_Object
+Under_Protection_Component <|-- Under_Protection_Natural_Object
+class Under_Protection_Social_Object <<RoleMixin>>
+Social_Component <|-- Under_Protection_Social_Object
+Under_Protection_Component <|-- Under_Protection_Social_Object
+class Macro_Political_Region <<Category>>
+Political_Region <|-- Macro_Political_Region
+class SubQuantity <<Mixin>>
+Part <|-- SubQuantity
+class Abiotic_Component <<Category>>
+Natural_Component <|-- Abiotic_Component
+class Internal_Relation_Individual <<Category>>
+class Physical_Component <<Category>>
+Object <|-- Physical_Component
+Component <|-- Physical_Component
+class Social_Component <<Category>>
+Object <|-- Social_Component
+Component <|-- Social_Component
+class Resource <<RoleMixin>>
+Participant <|-- Resource
+Object <|-- Resource
+class Component <<Category>>
+Object <|-- Component
+class PartOfCollective <<Mixin>>
+Part <|-- PartOfCollective
+class Delegatee <<RoleMixin>>
+Physical_Agent_in_Social_Relation <|-- Delegatee
+class Quantity_Whole <<Mixin>>
+Whole_(Complex_Individual) <|-- Quantity_Whole
+class Individual <<Category>>
+class Atomic_Individual <<Mixin>>
+Individual <|-- Atomic_Individual
+class Part <<Mixin>>
+Individual <|-- Part
+class Event_Individual <<Class>>
+Individual <|-- Event_Individual
+class Whole_(Complex_Individual) <<Mixin>>
+Individual <|-- Whole_(Complex_Individual)
+class Performer <<RoleMixin>>
+Agent <|-- Performer
+Participant <|-- Performer
+class Functional_Part <<Mixin>>
+Part <|-- Functional_Part
+class Biotic_Component <<Category>>
+Natural_Component <|-- Biotic_Component
+class Person <<Kind>>
+Biotic_Component <|-- Person
+Physical_Agent <|-- Person
+class Place_of_Business <<Role>>
+Resource <|-- Place_of_Business
+class Geographical_Region <<Category>>
+Spatial_Location <|-- Geographical_Region
+class Political_Region <<Category>>
+Geographical_Region <|-- Political_Region
+Jurisdiction <|-- Political_Region
+class Jurisdiction <<Category>>
+Geographical_Region <|-- Jurisdiction
+Normatized_Social_Object <|-- Jurisdiction
+class Natural_Component <<Category>>
+Physical_Component <|-- Natural_Component
+class Evacuation_Closed_Area <<Category>>
+Evacuation_Local <|-- Evacuation_Closed_Area
+class Individual_Social_Agent <<Category>>
+Social_Agent <|-- Individual_Social_Agent
+class Authority <<Category>>
+Individual_Social_Agent <|-- Authority
+class Material_Resource <<Category>>
+Physical_Component <|-- Material_Resource
+class Business_Emergency_Material_Resource <<RoleMixin>>
+Material_Resource <|-- Business_Emergency_Material_Resource
+class Micro_Political_Region <<Category>>
+Political_Region <|-- Micro_Political_Region
+class Component <<Category>>
+class Political_Body <<Category>>
+Authority <|-- Political_Body
+class Category1 <<Category>>
+class Quantity_Part <<Mixin>>
+Part <|-- Quantity_Part
+class Spatial_Location <<Category>>
+Social_Component <|-- Spatial_Location
+class Geographical_Point <<Category>>
+Spatial_Location <|-- Geographical_Point
+class Collective_Whole <<Mixin>>
+Whole_(Complex_Individual) <|-- Collective_Whole
+class Complex_Event <<Class>>
+Event_Individual <|-- Complex_Event
+Whole_(Complex_Individual) <|-- Complex_Event
+class Functional_Complex_Whole <<Mixin>>
+Whole_(Complex_Individual) <|-- Functional_Complex_Whole
+class Protector <<RoleMixin>>
+Agent_in_Social_Relation <|-- Protector
+class Holder <<RoleMixin>>
+class Person_Holder <<Role>>
+Person <|-- Person_Holder
+Holder <|-- Person_Holder
+class Owner <<RoleMixin>>
+Holder <|-- Owner
+class Businessman <<Role>>
+Holder <|-- Businessman
+class Agent_in_Social_Relation <<RoleMixin>>
+Agent <|-- Agent_in_Social_Relation
+class Social_Agent <<Category>>
+Agent <|-- Social_Agent
+class Physical_Agent <<Category>>
+Agent <|-- Physical_Agent
+class Recognizer <<RoleMixin>>
+Agent <|-- Recognizer
+class Physical_Agent_in_Social_Relation <<RoleMixin>>
+Agent_in_Social_Relation <|-- Physical_Agent_in_Social_Relation
+Physical_Agent <|-- Physical_Agent_in_Social_Relation
+class Delegator <<RoleMixin>>
+Physical_Agent_in_Social_Relation <|-- Delegator
+class Under_Protection_Person <<Role>>
+Under_Protection_Natural_Object <|-- Under_Protection_Person
+Person <|-- Under_Protection_Person
+class Evacuation_Local <<RoleMixin>>
+class Evacuation_Installation <<Role>>
+Installation <|-- Evacuation_Installation
+Evacuation_Local <|-- Evacuation_Installation
+class Evacuation_Geographical_Region <<Role>>
+Evacuation_Local <|-- Evacuation_Geographical_Region
+class Evacuation_Open_Area <<SubKind>>
+Evacuation_Local <|-- Evacuation_Open_Area
+class Social_Agent_in_Agreement <<RoleMixin>>
+Agent_in_Social_Relation <|-- Social_Agent_in_Agreement
+Social_Agent <|-- Social_Agent_in_Agreement
+class RoESPDD <<Role>>
+Regulatory_Organization <|-- RoESPDD
+Recognizer <|-- RoESPDD
+class RoESPDD <<Role>>
+Regulatory_Organization <|-- RoESPDD
+Recognizer <|-- RoESPDD
+class Acess_Infrastructure <<Mixin>>
+Physical_Component <|-- Acess_Infrastructure
+class Installation <<Kind>>
+Physical_Component <|-- Installation
+class Normatized_Social_Object <<Mixin>>
+Social_Component <|-- Normatized_Social_Object
+class Enviromental_Vulnerability <<Class>>
+Quality_Individual <|-- Enviromental_Vulnerability
+class Hazard <<Mode>>
+Quality_Individual <|-- Hazard
+class Individual_Vulnerability <<Mode>>
+Quality_Individual <|-- Individual_Vulnerability
+class Vertical_Acess <<Mixin>>
+Acess_Infrastructure <|-- Vertical_Acess
+class Horizontal_Acess <<Mixin>>
+Acess_Infrastructure <|-- Horizontal_Acess
+class SubCollection <<Mixin>>
+Part <|-- SubCollection
+class Relator_Individual <<Category>>
+Moment_Individual <|-- Relator_Individual
+class Member <<Mixin>>
+Part <|-- Member
+class Part_of_Event <<Class>>
+Part <|-- Part_of_Event
+Event_Individual <|-- Part_of_Event
+class Atomic_Event <<Class>>
+Atomic_Individual <|-- Atomic_Event
+Event_Individual <|-- Atomic_Event
+Endurant "1..*" -- "1..*" Situation_Individual : present_in
+Disposition "1..1" -- "0..*" Atomic_Event : manifested_by
+Complex_Event "1..*" -- "2..*" Part_of_Event : 
+Apt "1..1" -- "1..*" Disposition : 
+Situation_Individual "0..*" -- "0..*" Disposition : activates
+Event_Individual "0..*" -- "1..1" Situation_Individual : brings_about
+Event_Individual "0..*" -- "1..1" Situation_Individual : enables
+Agent "0..*" -- "0..*" Event_Individual : perceives
+Collective_Social_Agent "0..1" o-- "2..*" Agent : 
+Normative_Description "1..1" -- "0..*" Normatized_Social_Object : defines
+Recognizer "1..*" -- "1..*" Normative_Description : 
+Collective_Whole "1..*" o-- "2..*" Member : 
+Collective_Whole "1..*" o-- "0..*" SubCollection : 
+Functional_Complex_Whole "1..*" o-- "2..*" Functional_Part : 
+Whole_(Complex_Individual) "1..*" -- "1..*" Part : 
+Quantity_Whole "1..*" o-- "2..*" Quantity_Part : 
+RoESPDD "1..*" -- "1..*" E_Standard_Process_Definition_Document : regonized_by
+Installation "1..1" -- "1..*" Acess_Infrastructure : has_acess
+Evacuation_Local "1..1" -- "1..*" Acess_Infrastructure : has_acess_by
+Evacuation_Installation "0..*" -- "1..1" Evacuation_Closed_Area : has_business_activity
+Evacuation_Open_Area "1..1" -- "1..1" Evacuation_Geographical_Region : acts_as
+Public_Emergency_Material_Resource "1..*" -- "1..1" Civil_Defense_Organization : belongs
+Business_Emergency_Material_Resource "1..*" -- "1..1" Organization_Holder : belongs
+Material_Resource "1..*" -- "1..1" Geographical_Region : located_in
+Jurisdiction "1..*" -- "1..*" Authority : controlled_by
+Political_Region "1..*" -- "1..*" Political_Body : controlled_by
+@enduml

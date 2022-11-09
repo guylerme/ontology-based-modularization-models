@@ -1,0 +1,29 @@
+@startuml
+'7 occurrencies
+'7 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Location <<Kind>>
+class Organizational_Unit <<Kind>>
+class Natural_Person <<Kind>>
+class National_Society <<Kind>>
+class Law <<Kind>>
+class Formal_Organization <<Kind>>
+class Internal_Regiment <<Kind>>
+Formal_Organization "0..*" -- "1..1" Location : located_at
+Formal_Organization "1..1" -- "1..*" Internal_Regiment : defines
+Law "1..*" -- "1..*" Formal_Organization : recognized_by
+National_Society "1..1" o-- "1..1" Formal_Organization : 
+Law "1..*" -- "0..*" Formal_Organization : formalizes
+Internal_Regiment "1..*" -- "1..*" Organizational_Unit : recognized_by
+Law "1..*" -- "1..*" Natural_Person : recognized_by
+Law "1..*" -- "1..*" Natural_Person : formalizes
+National_Society "1..*" -- "0..*" Law : defines
+National_Society "1..1" o-- "1..1" Natural_Person : 
+@enduml

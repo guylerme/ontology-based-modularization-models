@@ -1,0 +1,84 @@
+@startuml
+'24 occurrencies
+'29 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class BloodInHumanBody <<Kind>>
+class BloodInRightVentricle <<Kind>>
+class HisPurkinjeElectricalImpulse <<Kind>>
+class SAElectricalImpulse <<Kind>>
+class BloodInLeftAtrium <<Kind>>
+class BloodInLeftVentricle <<Kind>>
+class Heart <<Kind>>
+class RightAtrium <<Kind>>
+class HeartAsAPump <<Role>>
+Heart <|-- HeartAsAPump
+class RightAtriumAsAPump <<Role>>
+RightAtrium <|-- RightAtriumAsAPump
+class LeftAtriumAsAPump <<Role>>
+LeftAtrium <|-- LeftAtriumAsAPump
+class LeftAtrium <<Kind>>
+class AVElectricalImpulse <<Kind>>
+class HeartAsABloodContainer <<Role>>
+Heart <|-- HeartAsABloodContainer
+class RightVentricleAsABloodContainer <<Role>>
+RightVentricle <|-- RightVentricleAsABloodContainer
+class LeftAtriumAsABloodContainer <<Role>>
+LeftAtrium <|-- LeftAtriumAsABloodContainer
+class HumanBody <<Kind>>
+class Peripherals <<Kind>>
+class Lungs <<Kind>>
+class HeartCells <<Collective>>
+class BloodInRightAtrium <<Kind>>
+class RightVentricleAsAPump <<Role>>
+RightVentricle <|-- RightVentricleAsAPump
+class LeftVentricleAsAPump <<Role>>
+LeftVentricle <|-- LeftVentricleAsAPump
+class BloodInLungs <<Kind>>
+class LeftVentricle <<Kind>>
+class LeftVentricleAsABloodContainer <<Role>>
+LeftVentricle <|-- LeftVentricleAsABloodContainer
+class RightVentricle <<Kind>>
+class BloodInPeripherals <<Kind>>
+class RightAtriumAsABloodContainer <<Role>>
+RightAtrium <|-- RightAtriumAsABloodContainer
+HisPurkinjeElectricalImpulse "1..1" o-- "1..1" AVElectricalImpulse : 
+BloodInHumanBody "1..1" *-- "0..1" BloodInRightVentricle : 
+BloodInHumanBody "1..1" *-- "0..1" BloodInLeftVentricle : 
+BloodInHumanBody "1..1" *-- "0..1" BloodInLeftAtrium : 
+BloodInHumanBody "1..1" *-- "0..1" BloodInPeripherals : 
+BloodInHumanBody "1..1" *-- "0..1" BloodInLungs : 
+BloodInHumanBody "1..1" *-- "0..1" BloodInRightAtrium : 
+HeartAsAPump "1..1" -- "1..1" BloodInHumanBody : pumps
+BloodInLeftAtrium "1..1" -- "1..1" LeftVentricleAsABloodContainer : isMovedTo
+BloodInLungs "1..1" -- "1..1" BloodInLeftAtrium : isMovedTo
+BloodInPeripherals "1..1" -- "1..1" BloodInRightAtrium : isMovedTo
+BloodInRightAtrium "1..1" -- "1..1" RightVentricleAsABloodContainer : isMovedTo
+Heart "1..1" *-- "1..1" LeftVentricle : 
+Heart "1..1" *-- "1..1" RightVentricle : 
+Heart "1..1" *-- "1..1" LeftAtrium : 
+Heart "1..1" *-- "1..1" RightAtrium : 
+Heart "1..1" o-- "1..1" HeartCells : 
+HumanBody "1..1" o-- "1..1" Heart : 
+HeartAsABloodContainer "1..1" o-- "1..1" LeftVentricleAsABloodContainer : 
+HeartAsABloodContainer "1..1" o-- "1..1" RightAtriumAsABloodContainer : 
+HeartAsABloodContainer "1..1" o-- "1..1" LeftAtriumAsABloodContainer : 
+HeartAsABloodContainer "1..1" o-- "1..1" RightVentricleAsABloodContainer : 
+HeartAsAPump "1..1" o-- "0..1" RightAtriumAsAPump : 
+HeartAsAPump "1..1" o-- "1..1" LeftVentricleAsAPump : 
+HeartAsAPump "1..1" o-- "1..1" RightVentricleAsAPump : 
+HeartAsAPump "1..1" o-- "0..1" LeftAtriumAsAPump : 
+HisPurkinjeElectricalImpulse "1..1" o-- "1..1" SAElectricalImpulse : 
+HumanBody "1..1" o-- "1..1" Lungs : 
+HumanBody "1..1" *-- "1..1" Peripherals : 
+LeftAtriumAsABloodContainer "1..1" -- "1..1" BloodInLeftAtrium : storing
+LeftVentricleAsABloodContainer "1..1" -- "1..1" BloodInLeftVentricle : storing
+RightAtriumAsABloodContainer "1..1" -- "1..1" BloodInRightAtrium : storing
+RightVentricleAsABloodContainer "1..1" -- "1..1" BloodInRightVentricle : storing
+@enduml

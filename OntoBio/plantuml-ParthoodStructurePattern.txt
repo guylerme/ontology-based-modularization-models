@@ -1,0 +1,40 @@
+@startuml
+'11 occurrencies
+'16 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class County <<Collective>>
+class Locality <<Collective>>
+class GeographicalSpace <<Kind>>
+class AdministrativeDivision <<Kind>>
+class Continent <<Kind>>
+class Country <<Collective>>
+class State <<Collective>>
+class ResearchInstitution <<Kind>>
+class Collection <<Kind>>
+class GeographicalComponent <<Kind>>
+class TaxonomyOfSpecimen <<Collective>>
+class TaxonomicElement <<Category>>
+class Protocol <<Kind>>
+class CollectingMethod <<Kind>>
+class Thorp <<Kind>>
+class Ministry <<Kind>>
+Protocol "1..*" o-- "2..*" CollectingMethod : Has
+Country "1..1" o-- "2..*" State : IsComposedBy
+County "1..1" o-- "2..*" Locality : IsComposedBy
+State "1..1" o-- "2..*" County : IsComposedBy
+Locality "1..1" o-- "2..*" Thorp : HasASetOf
+AdministrativeDivision "1..1" -- "1..1" Country : Ranks
+GeographicalSpace "1..1" o-- "1..1" AdministrativeDivision : Has
+GeographicalSpace "1..1" o-- "1..1" Continent : IsComposedBy
+GeographicalSpace "1..1" o-- "1..1" GeographicalComponent : MayHave
+TaxonomyOfSpecimen "1..1" o-- "7..*" TaxonomicElement : Has
+ResearchInstitution "1..1" o-- "2..*" Collection : MayHave
+Ministry "1..1" o-- "2..*" ResearchInstitution : Coordinates
+@enduml

@@ -1,0 +1,53 @@
+@startuml
+'19 occurrencies
+'22 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Mode>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Intentional_Moment <<Mode>>
+class Agent <<Category>>
+class Cognitive_Skill <<Mode>>
+Skill <|-- Cognitive_Skill
+Belief <|-- Cognitive_Skill
+class Desire <<Mode>>
+Mental_Moment <|-- Desire
+class Open_Commitment <<Mode>>
+class Skill <<Mode>>
+class Natural_Person <<Kind>>
+class Social_Commitment <<Mode>>
+Social_Moment <|-- Social_Commitment
+class Intention <<Mode>>
+Mental_Moment <|-- Intention
+class Skill_Metric <<Mode>>
+class Atomic_Commitment <<Mode>>
+class Functional_Commitment <<Mode>>
+Social_Commitment <|-- Functional_Commitment
+class Complex_Commitment <<Mode>>
+class Claim <<Mode>>
+Social_Moment <|-- Claim
+class Mental_Moment <<Mode>>
+Intentional_Moment <|-- Mental_Moment
+class Belief <<Mode>>
+Mental_Moment <|-- Belief
+class Closed_Commitment <<Mode>>
+class Social_Moment <<Mode>>
+Intentional_Moment <|-- Social_Moment
+QuaIndividual <|-- Social_Moment
+class Agent_in_Social_Relation <<RoleMixin>>
+Agent <|-- Agent_in_Social_Relation
+class QuaIndividual <<Mode>>
+class Physical_Skill <<Mode>>
+Skill <|-- Physical_Skill
+class Appointment <<Mode>>
+Skill "0..*" -- "0..*" Natural_Person : has
+Skill "1..1" -- "1..1" Skill_Metric : mensured_by
+Intentional_Moment "1..*" -- "1..1" Agent : 
+Intention "1..*" -- "1..1" Agent : 
+Social_Moment "1..*" -- "1..1" Agent_in_Social_Relation : 
+@enduml

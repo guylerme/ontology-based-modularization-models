@@ -1,0 +1,739 @@
+@startuml
+class Integer <<PrimitiveType>>
+class Boolean <<PrimitiveType>>
+class String <<PrimitiveType>>
+class Unlimited_Natural <<PrimitiveType>>
+class Auditiva <<SubKind>>
+BuscaAtiva <|-- Auditiva
+class Visual <<SubKind>>
+BuscaAtiva <|-- Visual
+class Aleatoria <<SubKind>>
+CollectingMethod <|-- Aleatoria
+class ArmadilhaDeCola <<SubKind>>
+CollectingMethod <|-- ArmadilhaDeCola
+class ArmadilhaDePegadas <<SubKind>>
+CollectingMethod <|-- ArmadilhaDePegadas
+class ArmadilhaLuminosa <<SubKind>>
+CollectingMethod <|-- ArmadilhaLuminosa
+class BuscaAtiva <<SubKind>>
+CollectingMethod <|-- BuscaAtiva
+class Espingarda <<SubKind>>
+CollectingMethod <|-- Espingarda
+class ExtratorDeWinckler <<SubKind>>
+CollectingMethod <|-- ExtratorDeWinckler
+class ImpactoDeVoo <<SubKind>>
+CollectingMethod <|-- ImpactoDeVoo
+class Isca <<SubKind>>
+CollectingMethod <|-- Isca
+class LimitadaPorTempo <<SubKind>>
+CollectingMethod <|-- LimitadaPorTempo
+class Malaise <<SubKind>>
+CollectingMethod <|-- Malaise
+class Matapi <<SubKind>>
+CollectingMethod <|-- Matapi
+class Peneira <<SubKind>>
+CollectingMethod <|-- Peneira
+class Pitfall <<SubKind>>
+CollectingMethod <|-- Pitfall
+class PorParcelas <<SubKind>>
+CollectingMethod <|-- PorParcelas
+class Puca <<SubKind>>
+CollectingMethod <|-- Puca
+class RAP <<SubKind>>
+CollectingMethod <|-- RAP
+class Rede <<SubKind>>
+CollectingMethod <|-- Rede
+class RedeEntomologica <<SubKind>>
+CollectingMethod <|-- RedeEntomologica
+class Serrapilheira <<SubKind>>
+CollectingMethod <|-- Serrapilheira
+
+class CollectingMethod <<Kind>>
+class Donation <<Relator>>
+Acquisition <|-- Donation
+class Exchange <<Relator>>
+Acquisition <|-- Exchange
+class Expedition <<Relator>>
+Acquisition <|-- Expedition
+class Legacy <<Relator>>
+Acquisition <|-- Legacy
+class Protocol <<Kind>>
+class Purchase <<Relator>>
+Acquisition <|-- Purchase
+class Has <<ComponentOf>>
+class IsComposedBy <<Mediation>>
+class Comprises <<Mediation>>
+
+class Alpine <<Mode>>
+Climate <|-- Alpine
+class Arid <<Mode>>
+Climate <|-- Arid
+class Continental <<Mode>>
+Climate <|-- Continental
+class Desertic <<Mode>>
+Climate <|-- Desertic
+class Equatorial <<Mode>>
+Climate <|-- Equatorial
+class Mediterranean <<Mode>>
+Climate <|-- Mediterranean
+class Oceanic <<Mode>>
+Climate <|-- Oceanic
+class Polar <<Mode>>
+Climate <|-- Polar
+class Semiarid <<Mode>>
+Climate <|-- Semiarid
+class Subtropical <<Mode>>
+Climate <|-- Subtropical
+class Temperate <<Mode>>
+Climate <|-- Temperate
+class Tropical <<Mode>>
+Climate <|-- Tropical
+
+class MacroEnvironment <<SubKind>>
+Environment <|-- MacroEnvironment
+class MicroEnvironment <<SubKind>>
+Environment <|-- MicroEnvironment
+
+class High <<Mode>>
+Luminosity <|-- High
+class Low <<Mode>>
+Luminosity <|-- Low
+class Medium <<Mode>>
+Luminosity <|-- Medium
+class Null <<Mode>>
+Luminosity <|-- Null
+
+class Affluent <<SubKind>>
+Aquatic <|-- Affluent
+class AquamarineFields <<SubKind>>
+Aquatic <|-- AquamarineFields
+class Bay <<SubKind>>
+Aquatic <|-- Bay
+class Beach <<SubKind>>
+Aquatic <|-- Beach
+class ContinentalShelf <<SubKind>>
+Aquatic <|-- ContinentalShelf
+class CoralReef <<SubKind>>
+Aquatic <|-- CoralReef
+class CovePaused <<SubKind>>
+Aquatic <|-- CovePaused
+class Glacier <<SubKind>>
+Aquatic <|-- Glacier
+class Hangover <<SubKind>>
+Aquatic <|-- Hangover
+class Hole <<SubKind>>
+Aquatic <|-- Hole
+class Igapo <<SubKind>>
+Aquatic <|-- Igapo
+class Igarape <<SubKind>>
+Aquatic <|-- Igarape
+class Lake <<SubKind>>
+Aquatic <|-- Lake
+class MacrophytesBank <<SubKind>>
+Aquatic <|-- MacrophytesBank
+class Ocean <<SubKind>>
+Aquatic <|-- Ocean
+class RipTide <<SubKind>>
+Aquatic <|-- RipTide
+class River <<SubKind>>
+Aquatic <|-- River
+class RiverMouthOrLake <<SubKind>>
+Aquatic <|-- RiverMouthOrLake
+class Sea <<SubKind>>
+Aquatic <|-- Sea
+class Weir <<SubKind>>
+Aquatic <|-- Weir
+class Well <<SubKind>>
+Aquatic <|-- Well
+
+class Alpine <<SubKind>>
+Forest <|-- Alpine
+class PrimaryForest <<SubKind>>
+Forest <|-- PrimaryForest
+class SecondaryForest <<SubKind>>
+Forest <|-- SecondaryForest
+class Subtropical <<SubKind>>
+Forest <|-- Subtropical
+class Temperate <<SubKind>>
+Forest <|-- Temperate
+class Tropical <<SubKind>>
+Forest <|-- Tropical
+
+
+class High <<SubKind>>
+Prairies <|-- High
+class Low <<SubKind>>
+Prairies <|-- Low
+class Mixed <<SubKind>>
+Prairies <|-- Mixed
+
+class AlluvialForestOpen <<SubKind>>
+Terrestrial <|-- AlluvialForestOpen
+class Caating <<SubKind>>
+Terrestrial <|-- Caating
+class Cave <<SubKind>>
+Terrestrial <|-- Cave
+class Cerrado <<SubKind>>
+Terrestrial <|-- Cerrado
+class Corral <<SubKind>>
+Terrestrial <|-- Corral
+class DeforestedArea <<SubKind>>
+Terrestrial <|-- DeforestedArea
+class Desert <<SubKind>>
+Terrestrial <|-- Desert
+class EucalyptusPlantation <<SubKind>>
+Terrestrial <|-- EucalyptusPlantation
+class Fall <<SubKind>>
+Terrestrial <|-- Fall
+class Fen <<SubKind>>
+Terrestrial <|-- Fen
+class Field <<SubKind>>
+Terrestrial <|-- Field
+class Forest <<SubKind>>
+Terrestrial <|-- Forest
+class LooseStone <<SubKind>>
+Terrestrial <|-- LooseStone
+class Mainland <<SubKind>>
+Terrestrial <|-- Mainland
+class MatupaGrass <<SubKind>>
+Terrestrial <|-- MatupaGrass
+class OpenArea <<SubKind>>
+Terrestrial <|-- OpenArea
+class Pasture <<SubKind>>
+Terrestrial <|-- Pasture
+class Peak <<SubKind>>
+Terrestrial <|-- Peak
+class Prairies <<SubKind>>
+Terrestrial <|-- Prairies
+class RockyBottom <<SubKind>>
+Terrestrial <|-- RockyBottom
+class Savannah <<SubKind>>
+Terrestrial <|-- Savannah
+class Treetop <<SubKind>>
+Terrestrial <|-- Treetop
+class Tundra <<SubKind>>
+Terrestrial <|-- Tundra
+class Urban <<SubKind>>
+Terrestrial <|-- Urban
+class WoodRest <<SubKind>>
+Terrestrial <|-- WoodRest
+
+class Lowland <<SubKind>>
+Wetland <|-- Lowland
+class Mangrove <<SubKind>>
+Wetland <|-- Mangrove
+class Meadow <<SubKind>>
+Wetland <|-- Meadow
+class Swamp <<SubKind>>
+Wetland <|-- Swamp
+
+class Aquatic <<SubKind>>
+MacroEnvironment <|-- Aquatic
+class Terrestrial <<SubKind>>
+MacroEnvironment <|-- Terrestrial
+class Wetland <<SubKind>>
+MacroEnvironment <|-- Wetland
+
+class Clay <<SubKind>>
+MicroEnvironment <|-- Clay
+class CoarseSand <<SubKind>>
+MicroEnvironment <|-- CoarseSand
+class EarthBlack <<SubKind>>
+MicroEnvironment <|-- EarthBlack
+class FineSand <<SubKind>>
+MicroEnvironment <|-- FineSand
+class Gravel <<SubKind>>
+MicroEnvironment <|-- Gravel
+class Humous <<SubKind>>
+MicroEnvironment <|-- Humous
+class Leaf <<SubKind>>
+MicroEnvironment <|-- Leaf
+class Pebble <<SubKind>>
+MicroEnvironment <|-- Pebble
+class Rock <<SubKind>>
+MicroEnvironment <|-- Rock
+
+class CrescentMoon <<Mode>>
+MoonPhase <|-- CrescentMoon
+class Eclipse <<Mode>>
+MoonPhase <|-- Eclipse
+class FullMoon <<Mode>>
+MoonPhase <|-- FullMoon
+class NewMoon <<Mode>>
+MoonPhase <|-- NewMoon
+class WaningMoon <<Mode>>
+MoonPhase <|-- WaningMoon
+
+class AmazonRainforest <<Mode>>
+Vegetation <|-- AmazonRainforest
+class Aquatic <<Mode>>
+Vegetation <|-- Aquatic
+class AraucariaForest <<Mode>>
+Vegetation <|-- AraucariaForest
+class AtlanticForest <<Mode>>
+Vegetation <|-- AtlanticForest
+class Flooded <<Mode>>
+Vegetation <|-- Flooded
+class Marginal <<Mode>>
+Vegetation <|-- Marginal
+class SouthernFields <<Mode>>
+Vegetation <|-- SouthernFields
+
+class Climate <<Mode>>
+class Environment <<SubKind>>
+Ecosystem <|-- Environment
+class Luminosity <<Mode>>
+class MoonPhase <<Mode>>
+class Vegetation <<Mode>>
+class IsAComponentOf <<Characterization>>
+class IsAComponentOf <<Characterization>>
+class IsAComponentOf <<Characterization>>
+class IsAComponentOf <<Characterization>>
+
+class Arid <<SubKind>>
+Soil <|-- Arid
+class BlackPlainsAndPrairies <<SubKind>>
+Soil <|-- BlackPlainsAndPrairies
+class Calcareous <<SubKind>>
+Soil <|-- Calcareous
+class Clayey <<SubKind>>
+Soil <|-- Clayey
+class Dystrophic <<SubKind>>
+Soil <|-- Dystrophic
+class Humous <<SubKind>>
+Soil <|-- Humous
+class Hydromorphic <<SubKind>>
+Soil <|-- Hydromorphic
+class Leachate <<SubKind>>
+Soil <|-- Leachate
+class Litolitico <<SubKind>>
+Soil <|-- Litolitico
+class Mountain <<SubKind>>
+Soil <|-- Mountain
+class Organic <<SubKind>>
+Soil <|-- Organic
+class Rocky <<SubKind>>
+Soil <|-- Rocky
+class Sandy <<SubKind>>
+Soil <|-- Sandy
+class Silty <<SubKind>>
+Soil <|-- Silty
+
+class Aquiferous <<SubKind>>
+Sweet <|-- Aquiferous
+class OtherReservoirs <<SubKind>>
+Sweet <|-- OtherReservoirs
+class PolarIcecaps <<SubKind>>
+Sweet <|-- PolarIcecaps
+class RiversAndLakes <<SubKind>>
+Sweet <|-- RiversAndLakes
+
+class Brackish <<SubKind>>
+Water <|-- Brackish
+class Contaminated <<SubKind>>
+Water <|-- Contaminated
+class Distilled <<SubKind>>
+Water <|-- Distilled
+class Gaseous <<SubKind>>
+Water <|-- Gaseous
+class Mineral <<SubKind>>
+Water <|-- Mineral
+class Polluted <<SubKind>>
+Water <|-- Polluted
+class Saline <<SubKind>>
+Water <|-- Saline
+class Sulphurous <<SubKind>>
+Water <|-- Sulphurous
+class Sweet <<SubKind>>
+Water <|-- Sweet
+class Thermal <<SubKind>>
+Water <|-- Thermal
+
+class AtmosphericGases <<SubKind>>
+AbioticEntity <|-- AtmosphericGases
+class Minerals <<SubKind>>
+AbioticEntity <|-- Minerals
+class Soil <<SubKind>>
+AbioticEntity <|-- Soil
+class Water <<SubKind>>
+AbioticEntity <|-- Water
+
+class Monophagous <<Mode>>
+Phytophagous <|-- Monophagous
+class Polyphagous <<Mode>>
+Phytophagous <|-- Polyphagous
+
+class Folivoros <<Mode>>
+Herbivorous <|-- Folivoros
+class Frugivorous <<Mode>>
+Herbivorous <|-- Frugivorous
+class Granivorous <<Mode>>
+Herbivorous <|-- Granivorous
+class Mucivoros <<Mode>>
+Herbivorous <|-- Mucivoros
+class Nectivorous <<Mode>>
+Herbivorous <|-- Nectivorous
+class Phytophagous <<Mode>>
+Herbivorous <|-- Phytophagous
+class Polymers <<Mode>>
+Herbivorous <|-- Polymers
+
+class Carnivorous <<Mode>>
+EatingHabits <|-- Carnivorous
+class Detritivorous <<Mode>>
+EatingHabits <|-- Detritivorous
+class Hematophagous <<Mode>>
+EatingHabits <|-- Hematophagous
+class Herbivorous <<Mode>>
+EatingHabits <|-- Herbivorous
+class Omnivorous <<Mode>>
+EatingHabits <|-- Omnivorous
+
+class Adult <<Mode>>
+LifeStage <|-- Adult
+class Egg <<Mode>>
+LifeStage <|-- Egg
+class Embryo <<Mode>>
+LifeStage <|-- Embryo
+class Larva <<Mode>>
+LifeStage <|-- Larva
+class NotDetermined <<Mode>>
+LifeStage <|-- NotDetermined
+class Pupa <<Mode>>
+LifeStage <|-- Pupa
+class Young <<Mode>>
+LifeStage <|-- Young
+
+class AdvancedMaturation <<Mode>>
+MaturityStage <|-- AdvancedMaturation
+class AtRest <<Mode>>
+MaturityStage <|-- AtRest
+class Empty <<Mode>>
+MaturityStage <|-- Empty
+class Immature <<Mode>>
+MaturityStage <|-- Immature
+class InProduction <<Mode>>
+MaturityStage <|-- InProduction
+class InitialMaturation <<Mode>>
+MaturityStage <|-- InitialMaturation
+
+class Asexual <<Mode>>
+Sex <|-- Asexual
+class Bisexual <<Mode>>
+Sex <|-- Bisexual
+class Female <<Mode>>
+Sex <|-- Female
+class Hermaphrodite <<Mode>>
+Sex <|-- Hermaphrodite
+class Male <<Mode>>
+Sex <|-- Male
+class NotExamined <<Mode>>
+Sex <|-- NotExamined
+class Undetermined <<Mode>>
+Sex <|-- Undetermined
+
+class EatingHabits <<Mode>>
+class LifeStage <<Mode>>
+class MaturityStage <<Mode>>
+class Sex <<Mode>>
+class Cataloger <<Role>>
+Researcher <|-- Cataloger
+class Collector <<Role>>
+Researcher <|-- Collector
+class Coordinator <<Role>>
+Researcher <|-- Coordinator
+class Curator <<Role>>
+Researcher <|-- Curator
+class Determiner <<Role>>
+Researcher <|-- Determiner
+class ExpeditionLeader <<Role>>
+Researcher <|-- ExpeditionLeader
+class CollectingMember <<Role>>
+Person <|-- CollectingMember
+class CollectingParticipant <<Role>>
+Person <|-- CollectingParticipant
+class Researcher <<Role>>
+Person <|-- Researcher
+class AbioticEntity <<Quantity>>
+MaterialEntity <|-- AbioticEntity
+class BioticEntity <<Kind>>
+MaterialEntity <|-- BioticEntity
+class Person <<SubKind>>
+Specimen <|-- Person
+class Specimen <<Kind>>
+class TypeStatus <<Kind>>
+class Voucher <<SubKind>>
+Specimen <|-- Voucher
+class Instantiates <<Formal>>
+class Composes <<Characterization>>
+class Composes <<Characterization>>
+class Composes <<Characterization>>
+class ConsistsOf <<Formal>>
+class Composes <<Characterization>>
+class Relates <<Mediation>>
+class Has <<Formal>>
+
+
+
+class Botany <<SubKind>>
+Biological <|-- Botany
+class Zoological <<SubKind>>
+Biological <|-- Zoological
+
+class Biological <<SubKind>>
+Collection <|-- Biological
+
+class Financing <<Relator>>
+Link <|-- Financing
+class ObjectiveInterest <<Relator>>
+Link <|-- ObjectiveInterest
+
+class Conservation <<SubKind>>
+Programme <|-- Conservation
+class Preservation <<SubKind>>
+Programme <|-- Preservation
+class Protection <<SubKind>>
+Programme <|-- Protection
+class Research <<SubKind>>
+Programme <|-- Research
+
+class Collection <<Kind>>
+class Link <<Relator>>
+class Ministry <<Kind>>
+class Programme <<Kind>>
+class Project <<Kind>>
+class Relates <<Mediation>>
+class Relates <<Mediation>>
+class Country <<Collective>>
+class County <<Collective>>
+class Locality <<Collective>>
+class State <<Collective>>
+class Thorp <<Kind>>
+class IsComposedBy <<MemberOf>>
+class IsComposedBy <<MemberOf>>
+class IsComposedBy <<MemberOf>>
+class HasASetOf <<MemberOf>>
+class Citywide <<SubKind>>
+ConservationUnitType <|-- Citywide
+class Federal <<SubKind>>
+ConservationUnitType <|-- Federal
+class Statewide <<SubKind>>
+ConservationUnitType <|-- Statewide
+
+class BiologicalReserve <<SubKind>>
+IntegralProtection <|-- BiologicalReserve
+class EcologicalStation <<SubKind>>
+IntegralProtection <|-- EcologicalStation
+class NationalPark <<SubKind>>
+IntegralProtection <|-- NationalPark
+class NaturalMonument <<SubKind>>
+IntegralProtection <|-- NaturalMonument
+class WildLifeRefuge <<SubKind>>
+IntegralProtection <|-- WildLifeRefuge
+
+class AreaOfEcologicalInterest <<SubKind>>
+SustainableUse <|-- AreaOfEcologicalInterest
+class EnvironmentalProtectionArea <<SubKind>>
+SustainableUse <|-- EnvironmentalProtectionArea
+class ExtractivistReserve <<SubKind>>
+SustainableUse <|-- ExtractivistReserve
+class FaunaReserve <<SubKind>>
+SustainableUse <|-- FaunaReserve
+class NationalForest <<SubKind>>
+SustainableUse <|-- NationalForest
+class PrivateReserveOfNaturalPatrimony <<SubKind>>
+SustainableUse <|-- PrivateReserveOfNaturalPatrimony
+class SustainableDevelopmentReserve <<SubKind>>
+SustainableUse <|-- SustainableDevelopmentReserve
+
+class ConservationUnitType <<SubKind>>
+ConservationUnit <|-- ConservationUnitType
+class IntegralProtection <<SubKind>>
+ConservationUnit <|-- IntegralProtection
+class SustainableUse <<SubKind>>
+ConservationUnit <|-- SustainableUse
+
+class Community <<SubKind>>
+ProtectedArea <|-- Community
+class ConservationUnit <<SubKind>>
+ProtectedArea <|-- ConservationUnit
+class PrivateArea <<SubKind>>
+ProtectedArea <|-- PrivateArea
+class Settlement <<SubKind>>
+ProtectedArea <|-- Settlement
+class Village <<SubKind>>
+ProtectedArea <|-- Village
+
+class FederalArea <<SubKind>>
+CityLand <|-- FederalArea
+class IndigenousArea <<SubKind>>
+CityLand <|-- IndigenousArea
+class VacantArea <<SubKind>>
+CityLand <|-- VacantArea
+
+class CityLand <<SubKind>>
+UnionArea <|-- CityLand
+class FederalLand <<SubKind>>
+UnionArea <|-- FederalLand
+class StateLand <<SubKind>>
+UnionArea <|-- StateLand
+
+class ProtectedArea <<SubKind>>
+GeographicalComponent <|-- ProtectedArea
+class UnionArea <<SubKind>>
+GeographicalComponent <|-- UnionArea
+
+class AdministrativeDivision <<Kind>>
+class Continent <<Kind>>
+class GeographicalComponent <<Kind>>
+class GeographicalSpace <<Kind>>
+class GeographicCoordinate <<Datatype>>
+class Ranks <<Formal>>
+class Has <<ComponentOf>>
+class IsComposedBy <<ComponentOf>>
+class MayHave <<ComponentOf>>
+class Classis <<Kind>>
+TaxonomicElement <|-- Classis
+class Family <<Kind>>
+TaxonomicElement <|-- Family
+class Form <<Kind>>
+class Genus <<Kind>>
+TaxonomicElement <|-- Genus
+class Infraorder <<Kind>>
+class Kingdom <<Kind>>
+TaxonomicElement <|-- Kingdom
+class Order <<Kind>>
+TaxonomicElement <|-- Order
+class Phylum <<Kind>>
+TaxonomicElement <|-- Phylum
+class Species <<Kind>>
+TaxonomicElement <|-- Species
+class Subclassis <<Kind>>
+class Subfamily <<Kind>>
+class Subgenus <<Kind>>
+class Suborder <<Kind>>
+class Subphylum <<Kind>>
+class Subspecies <<Kind>>
+class Superfamily <<Kind>>
+class Supergenus <<Kind>>
+class Superspecies <<Kind>>
+class TaxonomicElement <<Category>>
+class TaxonomyOfSpecimen <<Collective>>
+class Tribe <<Kind>>
+class Variety <<Kind>>
+class Specializes <<Formal>>
+class MayHave <<Formal>>
+class Specializes <<Formal>>
+class MayHave <<Formal>>
+class MayHave <<Formal>>
+class MayHave <<Formal>>
+class Specializes <<Formal>>
+class MayHave <<Formal>>
+class MayHave <<Formal>>
+class MayHave <<Formal>>
+class Specializes <<Formal>>
+class MayHave <<Formal>>
+class MayHave <<Formal>>
+class Specializes <<Formal>>
+class MayHave <<Formal>>
+class MayHave <<Formal>>
+class MayHave <<Formal>>
+class MayHave <<Formal>>
+class Speciealizes <<Formal>>
+class MayHave <<Formal>>
+class MayHave <<Formal>>
+class MayHave <<Formal>>
+class MayHave <<Formal>>
+class MayHave <<Formal>>
+class MayHave <<Formal>>
+class MayHave <<Formal>>
+class MayHave <<Formal>>
+class Has <<MemberOf>>
+
+class Acquisition <<Relator>>
+class Ecosystem <<Kind>>
+class MaterialEntity <<Category>>
+class ResearchInstitution <<Kind>>
+class SpatialLocation <<Kind>>
+class TaxonomicClassification <<Relator>>
+class MayHave <<Mediation>>
+class BelongsToA <<Mediation>>
+class IsComposedBy <<Formal>>
+class MayHave <<ComponentOf>>
+class Coordinates <<ComponentOf>>
+class Relates <<Mediation>>
+class Has <<Formal>>
+class Has <<Formal>>
+class OccursOnA <<Mediation>>
+class IsClassifiedBy <<Formal>>
+class Relates <<Mediation>>
+class Classify <<Mediation>>
+class IsClassifiedAs <<Material>>
+class  <<Derivation>>
+Protocol "1..*" o-- "2..*" CollectingMethod : Has
+Expedition "1..*" -- "1..*" Person : IsComposedBy
+Expedition "1..1" -- "1..*" Protocol : Comprises
+Climate "1..1" -- "1..1" Environment : IsAComponentOf
+Vegetation "1..1" -- "1..1" Environment : IsAComponentOf
+Luminosity "1..1" -- "1..1" Environment : IsAComponentOf
+MoonPhase "1..1" -- "1..1" Environment : IsAComponentOf
+BioticEntity "1..1" -- "1..1" Specimen : Instantiates
+MaturityStage "1..1" -- "1..1" BioticEntity : Composes
+LifeStage "1..1" -- "1..1" BioticEntity : Composes
+Sex "1..1" -- "1..1" BioticEntity : Composes
+Collection "1..1" -- "1..*" BioticEntity : ConsistsOf
+EatingHabits "1..*" -- "1..1" BioticEntity : Composes
+Link "1..1" -- "1..*" Person : Relates
+Voucher "1..1" -- "1..1" TypeStatus : Has
+Link "1..*" -- "1..*" Programme : Relates
+Link "1..*" -- "1..*" Project : Relates
+Country "1..1" o-- "2..*" State : IsComposedBy
+County "1..1" o-- "2..*" Locality : IsComposedBy
+State "1..1" o-- "2..*" County : IsComposedBy
+Locality "1..1" o-- "2..*" Thorp : HasASetOf
+AdministrativeDivision "1..1" -- "1..1" Country : Ranks
+GeographicalSpace "1..1" o-- "1..1" AdministrativeDivision : Has
+GeographicalSpace "1..1" o-- "1..1" Continent : IsComposedBy
+GeographicalSpace "1..1" o-- "1..1" GeographicalComponent : MayHave
+Classis "1..1" -- "1..*" Order : Specializes
+Classis "1..1" -- "0..*" Subclassis : MayHave
+Phylum "1..1" -- "1..*" Classis : Specializes
+Subphylum "0..1" -- "1..*" Classis : MayHave
+Family "1..1" -- "0..*" Subfamily : MayHave
+Family "1..1" -- "0..*" Tribe : MayHave
+Family "1..1" -- "1..*" Genus : Specializes
+Superfamily "0..1" -- "1..*" Family : MayHave
+Infraorder "0..1" -- "1..*" Family : MayHave
+Suborder "0..1" -- "1..*" Family : MayHave
+Order "1..1" -- "1..*" Family : Specializes
+Species "1..1" -- "0..*" Form : MayHave
+Genus "1..1" -- "0..*" Subgenus : MayHave
+Genus "1..1" -- "1..*" Species : Specializes
+Tribe "0..1" -- "1..*" Genus : MayHave
+Subfamily "0..1" -- "1..*" Genus : MayHave
+Supergenus "0..1" -- "1..*" Genus : MayHave
+Suborder "1..1" -- "0..*" Infraorder : MayHave
+Kingdom "1..1" -- "1..*" Phylum : Speciealizes
+Order "1..1" -- "0..*" Suborder : MayHave
+Subclassis "0..1" -- "1..*" Order : MayHave
+Phylum "1..1" -- "0..*" Subphylum : MayHave
+Species "1..1" -- "0..*" Variety : MayHave
+Species "1..1" -- "0..*" Subspecies : MayHave
+Subgenus "0..1" -- "1..*" Species : MayHave
+Superspecies "0..1" -- "1..*" Species : MayHave
+Subfamily "1..1" -- "0..*" Tribe : MayHave
+TaxonomyOfSpecimen "1..1" o-- "7..*" TaxonomicElement : Has
+Acquisition "1..1" -- "1..*" BioticEntity : MayHave
+Acquisition "1..*" -- "1..*" ResearchInstitution : BelongsToA
+Environment "1..*" -- "1..*" MaterialEntity : IsComposedBy
+ResearchInstitution "1..1" o-- "2..*" Collection : MayHave
+Ministry "1..1" o-- "2..*" ResearchInstitution : Coordinates
+Link "1..*" -- "1..1" ResearchInstitution : Relates
+SpatialLocation "1..1" -- "1..1" Environment : Has
+SpatialLocation "1..1" -- "1..1" GeographicCoordinate : Has
+Expedition "1..*" -- "1..1" SpatialLocation : OccursOnA
+GeographicalSpace "1..1" -- "1..1" SpatialLocation : IsClassifiedBy
+TaxonomicClassification "1..1" -- "1..1" TaxonomyOfSpecimen : Relates
+TaxonomicClassification "1..*" -- "1..1" Specimen : Classify
+TaxonomyOfSpecimen "1..1" -- "1..*" Specimen : IsClassifiedAs
+@enduml

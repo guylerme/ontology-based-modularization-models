@@ -1,0 +1,1247 @@
+@startuml
+class Integer <<PrimitiveType>>
+class Boolean <<PrimitiveType>>
+class String <<PrimitiveType>>
+class Unlimited_Natural <<PrimitiveType>>
+class Anti_Rigid_Mixin <<Class>>
+Mixin <|-- Anti_Rigid_Mixin
+Anti_Rigid_Universal <|-- Anti_Rigid_Mixin
+class Anti_Rigid_Subkind <<Class>>
+Anti_Rigid_Universal <|-- Anti_Rigid_Subkind
+class Anti_Rigid_Universal <<Class>>
+Universal <|-- Anti_Rigid_Universal
+class Category_(Rigid_Mixin_or_SuperKind) <<Class>>
+Mixin <|-- Category_(Rigid_Mixin_or_SuperKind)
+Rigid_Universal <|-- Category_(Rigid_Mixin_or_SuperKind)
+class Characterization <<Class>>
+Internal_Relation <|-- Characterization
+class Collective <<Class>>
+Substance_Sortal_Kind <|-- Collective
+class Collective_Individual <<Category>>
+Substance <|-- Collective_Individual
+class Constitution <<Class>>
+Internal_Relation <|-- Constitution
+PartOf_(Meronymic_Relation_Universal) <|-- Constitution
+class Derivation <<Class>>
+Internal_Relation <|-- Derivation
+class Endurant <<Category>>
+Individual <|-- Endurant
+class Endurant_Kind <<Class>>
+Kind <|-- Endurant_Kind
+class Formal_(Domain_Formal_Relation)_(Comparative_Formal_Relation) <<Class>>
+Formal_Relation_Universal <|-- Formal_(Domain_Formal_Relation)_(Comparative_Formal_Relation)
+class Formal_Relation_Universal <<Class>>
+Relation_Universal <|-- Formal_Relation_Universal
+Kind <|-- Formal_Relation_Universal
+class Functional_Complex <<Class>>
+Substance_Sortal_Kind <|-- Functional_Complex
+class Functional_Complex_Individual <<Category>>
+Substance <|-- Functional_Complex_Individual
+class Individual <<Category>>
+class Instantiation <<Class>>
+Internal_Relation <|-- Instantiation
+class Internal_Relation <<Class>>
+Formal_Relation_Universal <|-- Internal_Relation
+class Internal_Relation_Individual <<Category>>
+class Intrinsic_Moment <<Class>>
+Moment_Kind <|-- Intrinsic_Moment
+class Intrinsic_Moment_Individual <<Category>>
+Moment_Individual <|-- Intrinsic_Moment_Individual
+class Kind <<Class>>
+Rigid_Universal <|-- Kind
+class Material <<Class>>
+Relation_Universal <|-- Material
+Kind <|-- Material
+class Mediation <<Class>>
+Internal_Relation <|-- Mediation
+class Mixin <<Class>>
+Universal <|-- Mixin
+class Mode <<Class>>
+Intrinsic_Moment <|-- Mode
+class Mode_Individual <<Category>>
+Intrinsic_Moment_Individual <|-- Mode_Individual
+class Moment_Individual <<Category>>
+Endurant <|-- Moment_Individual
+class Moment_Kind <<Class>>
+Endurant_Kind <|-- Moment_Kind
+class Phase <<Class>>
+Anti_Rigid_Subkind <|-- Phase
+class Phase_Mixin <<Class>>
+Anti_Rigid_Mixin <|-- Phase_Mixin
+class Qua_Individual <<Category>>
+Intrinsic_Moment_Individual <|-- Qua_Individual
+class Qua_type <<Class>>
+Intrinsic_Moment <|-- Qua_type
+class Quality <<Class>>
+Intrinsic_Moment <|-- Quality
+class Quality_Individual <<Category>>
+Intrinsic_Moment_Individual <|-- Quality_Individual
+class Quantity <<Class>>
+Substance_Sortal_Kind <|-- Quantity
+class Quantity_Individual <<Category>>
+Substance <|-- Quantity_Individual
+class Relation_Universal <<Class>>
+Universal <|-- Relation_Universal
+class Relator_(Relational_Moment) <<Class>>
+Moment_Kind <|-- Relator_(Relational_Moment)
+class Relator_Individual <<Category>>
+Moment_Individual <|-- Relator_Individual
+class Rigid_Universal <<Class>>
+Universal <|-- Rigid_Universal
+class Role <<Class>>
+Anti_Rigid_Subkind <|-- Role
+class Role_Mixin <<Class>>
+Anti_Rigid_Mixin <|-- Role_Mixin
+class Semi_Rigid_Mixin <<Class>>
+Mixin <|-- Semi_Rigid_Mixin
+Universal <|-- Semi_Rigid_Mixin
+class Subkind_(Rigid_Subkind) <<Class>>
+Rigid_Universal <|-- Subkind_(Rigid_Subkind)
+class Substance <<Category>>
+Endurant <|-- Substance
+class Substance_Sortal_Kind <<Class>>
+Endurant_Kind <|-- Substance_Sortal_Kind
+class Universal <<Class>>
+class present_in <<Formal>>
+class instance_of <<Formal>>
+class instance_of <<Formal>>
+class /Paricipation_Individual <<Class>>
+Event_Individual <|-- /Paricipation_Individual
+class Atomic_Event <<Class>>
+Atomic_Individual <|-- Atomic_Event
+Event_Individual <|-- Atomic_Event
+class Complex_Event <<Class>>
+Event_Individual <|-- Complex_Event
+Whole_(Complex_Individual) <|-- Complex_Event
+class Disposition <<Class>>
+Intrinsic_Moment_Individual <|-- Disposition
+class Event_Individual <<Class>>
+Individual <|-- Event_Individual
+class Event_Type <<Class>>
+class Part_of_Event <<Class>>
+Part <|-- Part_of_Event
+Event_Individual <|-- Part_of_Event
+class Participant <<RoleMixin>>
+Substance <|-- Participant
+class Participation <<Class>>
+class Plan_(Action_Universal) <<Class>>
+Kind <|-- Plan_(Action_Universal)
+class Situation <<Class>>
+Endurant_Kind <|-- Situation
+class Situation_Individual <<Class>>
+Endurant <|-- Situation_Individual
+class participation_of <<Formal>>
+class instantiates <<Formal>>
+class  <<ComponentOf>>
+class manifested_by <<Formal>>
+class  <<Association>>
+class  <<Characterization>>
+class activates <<Formal>>
+class /directly_causes <<Formal>>
+class brings_about <<Formal>>
+class enables <<Formal>>
+class causes <<Formal>>
+class perceives <<Formal>>
+class instantiates <<Formal>>
+class based_on <<Formal>>
+class defines <<Formal>>
+class satisfies <<Formal>>
+class  <<Category>>
+Normative_Description <|-- 
+class  <<Mode>>
+Commitment <|-- 
+class  <<Mode>>
+Commitment <|-- 
+Mental_Moment <|-- 
+class  <<Class>>
+Plan_(Action_Universal) <|-- 
+class Action <<Class>>
+Event_Individual <|-- Action
+class Agent <<Category>>
+Substance <|-- Agent
+class Agent_in_Social_Relation <<RoleMixin>>
+Agent <|-- Agent_in_Social_Relation
+class Appointment <<Mode>>
+Commitment <|-- Appointment
+class Appoitment_Goal <<Class>>
+Goal <|-- Appoitment_Goal
+class Apt <<Phase>>
+Substance <|-- Apt
+class Atomic_Action <<Class>>
+Action <|-- Atomic_Action
+Atomic_Event <|-- Atomic_Action
+class Atomic_Commitment <<Mode>>
+Commitment <|-- Atomic_Commitment
+class Atomic_Plan <<Class>>
+Plan_(Action_Universal) <|-- Atomic_Plan
+class Belief <<Mode>>
+Mental_Moment <|-- Belief
+class Change <<Class>>
+Resource_Participation <|-- Change
+class Claim <<Mode>>
+Social_Moment <|-- Claim
+class Collective_Social_Agent <<Category>>
+Social_Agent <|-- Collective_Social_Agent
+class Commitment <<Mode>>
+class Complex_Action <<Class>>
+Action <|-- Complex_Action
+Complex_Event <|-- Complex_Action
+class Complex_Commitment <<Mode>>
+Commitment <|-- Complex_Commitment
+class Contribution_(Performance) <<Class>>
+Action <|-- Contribution_(Performance)
+/Paricipation_Individual <|-- Contribution_(Performance)
+class Creation <<Class>>
+Resource_Participation <|-- Creation
+class Delegatee <<RoleMixin>>
+Physical_Agent_in_Social_Relation <|-- Delegatee
+class Delegator <<RoleMixin>>
+Physical_Agent_in_Social_Relation <|-- Delegator
+class Desire <<Mode>>
+Mental_Moment <|-- Desire
+class Goal <<Class>>
+Proposition_Individual <|-- Goal
+class Inapt <<Phase>>
+Substance <|-- Inapt
+class Individual_Social_Agent <<Category>>
+Social_Agent <|-- Individual_Social_Agent
+class Intentional_Moment <<Mode>>
+class Interaction <<Class>>
+Complex_Action <|-- Interaction
+class Mental_Moment <<Mode>>
+Intentional_Moment <|-- Mental_Moment
+class Normative_Description <<Category>>
+Social_Component <|-- Normative_Description
+class Normative_Description_Universal <<Class>>
+class Normatized_Social_Object <<Mixin>>
+Social_Component <|-- Normatized_Social_Object
+class Object <<Category>>
+Substance <|-- Object
+class Open_Commitment <<Mode>>
+Commitment <|-- Open_Commitment
+class Performer <<RoleMixin>>
+Agent <|-- Performer
+Participant <|-- Performer
+class Physical_Agent <<Category>>
+Agent <|-- Physical_Agent
+class Physical_Agent_in_Social_Relation <<RoleMixin>>
+Agent_in_Social_Relation <|-- Physical_Agent_in_Social_Relation
+Physical_Agent <|-- Physical_Agent_in_Social_Relation
+class Physical_Component <<Category>>
+Object <|-- Physical_Component
+Component <|-- Physical_Component
+class Plan_Description_Universal <<Class>>
+Normative_Description_Universal <|-- Plan_Description_Universal
+class Proposition_Individual <<Class>>
+class QuaIndividual <<Mode>>
+class Recognition <<Relator>>
+class Recognizer <<RoleMixin>>
+Agent <|-- Recognizer
+class Relator_Individual <<Relator>>
+class Resource <<RoleMixin>>
+Participant <|-- Resource
+Object <|-- Resource
+class Resource_Participation <<Class>>
+/Paricipation_Individual <|-- Resource_Participation
+class Social_Agent <<Category>>
+Agent <|-- Social_Agent
+class Social_Agent_in_Agreement <<RoleMixin>>
+Agent_in_Social_Relation <|-- Social_Agent_in_Agreement
+Social_Agent <|-- Social_Agent_in_Agreement
+class Social_Commitment <<Mode>>
+Social_Moment <|-- Social_Commitment
+Commitment <|-- Social_Commitment
+class Social_Component <<Category>>
+Object <|-- Social_Component
+Component <|-- Social_Component
+class Social_Moment <<Mode>>
+Intentional_Moment <|-- Social_Moment
+QuaIndividual <|-- Social_Moment
+class Social_Relator <<Relator>>
+Relator_Individual <|-- Social_Relator
+class Social_Role <<Class>>
+class Social_Role_Recognition <<Relator>>
+Recognition <|-- Social_Role_Recognition
+class Speech_Act <<Class>>
+Atomic_Action <|-- Speech_Act
+class Termination <<Class>>
+Resource_Participation <|-- Termination
+class Usage <<Class>>
+Resource_Participation <|-- Usage
+class instantiates <<Formal>>
+class describes <<Formal>>
+class  <<Characterization>>
+class caused_by <<Formal>>
+class instantiates <<Formal>>
+class causes <<Formal>>
+class creates <<Formal>>
+class  <<MemberOf>>
+class  <<Characterization>>
+class  <<Characterization>>
+class  <<Mediation>>
+class  <<Characterization>>
+class propositional_content_of <<Formal>>
+class instantiates <<Formal>>
+class  <<Association>>
+class propositional_content_of <<Formal>>
+class performance_of <<Formal>>
+class  <<ComponentOf>>
+class delegatee <<Formal>>
+class delegator <<Formal>>
+class propositional_content_of <<Formal>>
+class creates <<Formal>>
+class defines <<Formal>>
+class instantiates <<Formal>>
+class  <<Mediation>>
+class  <<Association>>
+class  <<Material>>
+class participates_as_resource <<Formal>>
+class  <<Association>>
+class  <<Mediation>>
+class  <<Material>>
+
+
+
+
+
+
+
+
+
+
+
+
+class  <<Derivation>>
+class Atomic_Individual <<Mixin>>
+Individual <|-- Atomic_Individual
+class Collective_Whole <<Mixin>>
+Whole_(Complex_Individual) <|-- Collective_Whole
+class ComponentOf <<Class>>
+PartOf_(Meronymic_Relation_Universal) <|-- ComponentOf
+class Functional_Complex_Whole <<Mixin>>
+Whole_(Complex_Individual) <|-- Functional_Complex_Whole
+class Functional_Part <<Mixin>>
+Part <|-- Functional_Part
+class Member <<Mixin>>
+Part <|-- Member
+class MemberOf <<Class>>
+PartOfCollective <|-- MemberOf
+class Meriological_Sum <<Class>>
+PartOf_(Meronymic_Relation_Universal) <|-- Meriological_Sum
+class Part <<Mixin>>
+Individual <|-- Part
+class PartOf_(Meronymic_Relation_Universal) <<Class>>
+Relation_Universal <|-- PartOf_(Meronymic_Relation_Universal)
+class PartOfCollective <<Mixin>>
+Part <|-- PartOfCollective
+class PartOfCollective <<Class>>
+PartOf_(Meronymic_Relation_Universal) <|-- PartOfCollective
+class Quantity_Part <<Mixin>>
+Part <|-- Quantity_Part
+class Quantity_Whole <<Mixin>>
+Whole_(Complex_Individual) <|-- Quantity_Whole
+class SubCollection <<Mixin>>
+Part <|-- SubCollection
+class SubCollectionOf <<Class>>
+PartOfCollective <|-- SubCollectionOf
+class SubQuantity <<Mixin>>
+Part <|-- SubQuantity
+class SubQuantityOf <<Class>>
+Formal_Relation_Universal <|-- SubQuantityOf
+PartOf_(Meronymic_Relation_Universal) <|-- SubQuantityOf
+class Whole_(Complex_Individual) <<Mixin>>
+Individual <|-- Whole_(Complex_Individual)
+class  <<MemberOf>>
+class  <<SubCollectionOf>>
+class  <<ComponentOf>>
+class  <<Association>>
+class  <<SubQuantityOf>>
+class Action <<Class>>
+class Action <<Class>>
+class Atomic_Commitment <<Mode>>
+class Atomic_E_Standard_Activity <<Class>>
+E_Standard_Activity <|-- Atomic_E_Standard_Activity
+Atomic_Plan <|-- Atomic_E_Standard_Activity
+class Atomic_E_Standard_Activity <<Class>>
+E_Standard_Activity <|-- Atomic_E_Standard_Activity
+class Atomic_OE_Activity <<Mode>>
+OE_Activity <|-- Atomic_OE_Activity
+Atomic_Commitment <|-- Atomic_OE_Activity
+class Atomic_OE_Activity <<Mode>>
+Atomic_Commitment <|-- Atomic_OE_Activity
+OE_Activity <|-- Atomic_OE_Activity
+class Business_Activity <<Class>>
+class Business_Activity_Type <<Class>>
+class Business_Emergency_Human_Resource <<Class>>
+class Business_Emergency_Material_Resource <<Class>>
+class Closed_Commitment <<Mode>>
+class Commitment <<Mode>>
+class Complex_Commitment <<Mode>>
+class Complex_E_Standard_Activity <<Class>>
+E_Standard_Activity <|-- Complex_E_Standard_Activity
+ <|-- Complex_E_Standard_Activity
+class Complex_E_Standard_Activity <<Class>>
+E_Standard_Activity <|-- Complex_E_Standard_Activity
+class Complex_OE_Activity <<Mode>>
+OE_Activity <|-- Complex_OE_Activity
+Complex_Commitment <|-- Complex_OE_Activity
+class Complex_OE_Activity <<Mode>>
+OE_Activity <|-- Complex_OE_Activity
+Complex_Commitment <|-- Complex_OE_Activity
+class E_Standard_Activity <<Class>>
+class E_Standard_Activity <<Class>>
+class E_Standard_Process <<Class>>
+class E_Standard_Process <<Class>>
+ <|-- E_Standard_Process
+class E_Standard_Process_Definition_Document <<Class>>
+class E_Standard_Process_Definition_Document <<Kind>>
+class E_Standard_Process_Definition_Document_Type <<Class>>
+class E_Standard_Process_Definition_Document_Type <<Class>>
+Plan_Description_Universal <|-- E_Standard_Process_Definition_Document_Type
+class General_E_Standard_Process <<Class>>
+E_Standard_Process <|-- General_E_Standard_Process
+class General_E_Standard_Process <<Class>>
+E_Standard_Process <|-- General_E_Standard_Process
+class General_OE_Process <<Mode>>
+OE_Process <|-- General_OE_Process
+class General_OE_Process <<Mode>>
+OE_Process <|-- General_OE_Process
+class Goal <<Class>>
+class Hazardous_Event <<Class>>
+class Hazardous_Event_Type <<Class>>
+class Human_Resource_Role <<Class>>
+class Impact <<Kind>>
+class Installation <<Class>>
+class Installation_Type <<Class>>
+class Intention <<Class>>
+class Intention_(Internal_Commitment) <<Mode>>
+class Material_Resource_Type <<Class>>
+class OE_Activity <<Mode>>
+ <|-- OE_Activity
+ <|-- OE_Activity
+class OE_Activity <<Class>>
+ <|-- OE_Activity
+Intention <|-- OE_Activity
+ <|-- OE_Activity
+class OE_Activity_Goal <<Class>>
+class OE_Activity_Goal <<Class>>
+Goal <|-- OE_Activity_Goal
+class OE_Activity_Goal <<Class>>
+Goal <|-- OE_Activity_Goal
+class OE_Process <<Class>>
+ <|-- OE_Process
+Intention <|-- OE_Process
+class OE_Process <<Mode>>
+ <|-- OE_Process
+class OE_Process_Definition_Document <<Kind>>
+class OE_Process_Definition_Document <<Class>>
+ <|-- OE_Process_Definition_Document
+class Organization <<Kind>>
+class Regulatory_Organization <<Class>>
+class RoESPDD <<Role>>
+Regulatory_Organization <|-- RoESPDD
+class RoESPDD <<Role>>
+Regulatory_Organization <|-- RoESPDD
+Recognizer <|-- RoESPDD
+class Specific_E_Standard_Process <<Class>>
+E_Standard_Process <|-- Specific_E_Standard_Process
+class Specific_OE_Process <<Mode>>
+OE_Process <|-- Specific_OE_Process
+class Specific_OE_Process <<Mode>>
+OE_Process <|-- Specific_OE_Process
+class Vulnerability <<Class>>
+class Main_Organization <<Class>>
+class Regulatory_Organization <<Kind>>
+class Enumeration1 <<Enumeration>>
+class caused_by <<Material>>
+class is_developed <<Formal>>
+class allowed_to_explore <<Formal>>
+class regulates <<Formal>>
+class is_to_be_performed_by <<Formal>>
+class is_to_be_performed_using <<Formal>>
+class propositional_content_of <<Formal>>
+class  <<Association>>
+class  <<Association>>
+class  <<Formal>>
+class is_to_be_performed_using <<Formal>>
+class is_to_be_performed_by <<Formal>>
+class tailors <<Formal>>
+class defines <<Formal>>
+class is_to_be_performed_by <<Formal>>
+class tailors_activities <<Formal>>
+class is_to_be_performed_using <<Formal>>
+class  <<ComponentOf>>
+class tailors <<Formal>>
+class tailors_processes <<Association>>
+class describes <<Formal>>
+class regulates <<Formal>>
+class recognized <<Formal>>
+class instantiates <<Formal>>
+class regonized_by <<Material>>
+class tailors_general_processes <<Association>>
+class tailors_general_processes <<Formal>>
+class  <<Association>>
+class subprocesses <<Formal>>
+class cause <<Formal>>
+class exposed_to <<Formal>>
+class exposed_to <<Formal>>
+class changes <<Formal>>
+class  <<Characterization>>
+class regulates <<Formal>>
+class is_to_be_performed_using <<Formal>>
+class is_to_be_performed_by <<Formal>>
+class  <<Association>>
+class propositional_content_of <<Formal>>
+class  <<Formal>>
+class treats <<Formal>>
+class dependence_of <<Formal>>
+class propositional_content_of <<Formal>>
+class propositional_content <<Formal>>
+class describes <<Formal>>
+class defined_for <<Characterization>>
+class defined_for <<Characterization>>
+class describes <<Association>>
+class  <<Mediation>>
+class tailors_specific_processes <<Association>>
+
+class Action <<Class>>
+class Action <<Class>>
+class Atomic_Commitment <<Mode>>
+class Atomic_E_Standard_Activity <<Class>>
+E_Standard_Activity <|-- Atomic_E_Standard_Activity
+class Atomic_E_Standard_Activity <<Class>>
+Atomic_Plan <|-- Atomic_E_Standard_Activity
+E_Standard_Activity <|-- Atomic_E_Standard_Activity
+class Atomic_OE_Activity <<Mode>>
+Atomic_Commitment <|-- Atomic_OE_Activity
+OE_Activity <|-- Atomic_OE_Activity
+class Atomic_OE_Activity <<Mode>>
+OE_Activity <|-- Atomic_OE_Activity
+Atomic_Commitment <|-- Atomic_OE_Activity
+class Closed_Commitment <<Mode>>
+class Commitment <<Mode>>
+class Complex_Commitment <<Mode>>
+class Complex_E_Standard_Activity <<Class>>
+E_Standard_Activity <|-- Complex_E_Standard_Activity
+class Complex_E_Standard_Activity <<Class>>
+E_Standard_Activity <|-- Complex_E_Standard_Activity
+ <|-- Complex_E_Standard_Activity
+class Complex_OE_Activity <<Mode>>
+OE_Activity <|-- Complex_OE_Activity
+Complex_Commitment <|-- Complex_OE_Activity
+class Complex_OE_Activity <<Mode>>
+OE_Activity <|-- Complex_OE_Activity
+Complex_Commitment <|-- Complex_OE_Activity
+class E_Standard_Activity <<Class>>
+class E_Standard_Activity <<Class>>
+class E_Standard_Process <<Class>>
+class E_Standard_Process <<Class>>
+ <|-- E_Standard_Process
+class E_Standard_Process_Definition_Document <<Kind>>
+class E_Standard_Process_Definition_Document <<Kind>>
+ <|-- E_Standard_Process_Definition_Document
+class E_Standard_Process_Definition_Document_Type <<Class>>
+class E_Standard_Process_Definition_Document_Type <<Class>>
+Plan_Description_Universal <|-- E_Standard_Process_Definition_Document_Type
+class General_E_Standard_Process <<Class>>
+E_Standard_Process <|-- General_E_Standard_Process
+class General_E_Standard_Process <<Class>>
+E_Standard_Process <|-- General_E_Standard_Process
+class General_OE_Process <<Mode>>
+OE_Process <|-- General_OE_Process
+class General_OE_Process <<Mode>>
+OE_Process <|-- General_OE_Process
+class Goal <<Class>>
+class Intention_(Internal_Commitment) <<Mode>>
+class OE_Activity <<Mode>>
+ <|-- OE_Activity
+ <|-- OE_Activity
+class OE_Activity <<Mode>>
+ <|-- OE_Activity
+ <|-- OE_Activity
+class OE_Activity_Goal <<Class>>
+Goal <|-- OE_Activity_Goal
+class OE_Activity_Goal <<Class>>
+Goal <|-- OE_Activity_Goal
+class OE_Process <<Mode>>
+ <|-- OE_Process
+class OE_Process <<Mode>>
+ <|-- OE_Process
+class OE_Process_Definition_Document <<Kind>>
+class OE_Process_Definition_Document <<Kind>>
+ <|-- OE_Process_Definition_Document
+class RoESPDD <<Role>>
+Regulatory_Organization <|-- RoESPDD
+class RoESPDD <<Role>>
+Regulatory_Organization <|-- RoESPDD
+Recognizer <|-- RoESPDD
+class Specific_E_Standard_Process <<Class>>
+E_Standard_Process <|-- Specific_E_Standard_Process
+class Specific_E_Standard_Process <<Class>>
+E_Standard_Process <|-- Specific_E_Standard_Process
+class Specific_OE_Process <<Mode>>
+OE_Process <|-- Specific_OE_Process
+class Specific_OE_Process <<Mode>>
+OE_Process <|-- Specific_OE_Process
+class Main_Organization <<Class>>
+class Regulatory_Organization <<Kind>>
+class Enumeration1 <<Enumeration>>
+class caused_by <<Material>>
+class caused_by <<Material>>
+class propositional_content_of <<Formal>>
+class  <<Association>>
+class  <<Association>>
+class is_to_be_performed_using <<Formal>>
+class is_to_be_performed_by <<Formal>>
+class  <<ComponentOf>>
+class  <<Formal>>
+class tailors_activities <<Formal>>
+class tailors_activities <<Formal>>
+class defines <<Formal>>
+class describes <<Formal>>
+class describes <<Formal>>
+class tailors_processes <<Association>>
+class tailors_processes <<Formal>>
+class instantiates <<Formal>>
+class regonized_by <<Material>>
+class instance_of <<Formal>>
+class regulates <<Formal>>
+class regulates <<Formal>>
+class instantiates <<Formal>>
+class instance_of <<Formal>>
+class regonized_by <<Material>>
+class tailors_general_processes <<Formal>>
+class tailors_general_processes <<Association>>
+class subprocesses <<Formal>>
+class  <<Association>>
+class dependenceof <<Formal>>
+class treats <<Formal>>
+class  <<Formal>>
+class propositional_content_of <<Formal>>
+class is_to_be_performed_by <<Formal>>
+class is_to_be_performed_using <<Formal>>
+class  <<Association>>
+class propositional_content_of <<Formal>>
+class defined_for <<Characterization>>
+class describes <<Formal>>
+class defined_for <<Characterization>>
+class describes <<Association>>
+class  <<Mediation>>
+class tailors_specific_processes <<Formal>>
+class tailors_specific_processes <<Association>>
+
+
+class PrimitiveType1 <<PrimitiveType>>
+class Category1 <<Category>>
+class Civil_Defense_Organization <<Kind>>
+EP_Agent <|-- Civil_Defense_Organization
+class Civil_Defense_Organization_Intention <<Mode>>
+ <|-- Civil_Defense_Organization_Intention
+class Closed_Commitment <<Mode>>
+class Delegation <<Class>>
+class Delegatum <<Class>>
+class EP_Agent <<Category>>
+Agent <|-- EP_Agent
+class EP_Agent_delegatee <<Role>>
+EP_Agent <|-- EP_Agent_delegatee
+Delegatee <|-- EP_Agent_delegatee
+class EP_Agent_delegator <<Role>>
+EP_Agent <|-- EP_Agent_delegator
+Delegator <|-- EP_Agent_delegator
+class EP_Delegatum <<Relator>>
+class EP_Goal <<Class>>
+Goal <|-- EP_Goal
+class EP_Goal_Delegation <<Class>>
+Delegation <|-- EP_Goal_Delegation
+class EP_Main_Goal <<Class>>
+EP_Goal <|-- EP_Main_Goal
+class EP_Plan <<Class>>
+Plan_(Action_Universal) <|-- EP_Plan
+class EP_Plan_Delegation <<Class>>
+Delegation <|-- EP_Plan_Delegation
+class EP_Situation_Individual <<Class>>
+Situation_Individual <|-- EP_Situation_Individual
+class Organization_Holder <<Role>>
+EP_Agent <|-- Organization_Holder
+class Organization_Holder_Intention <<Mode>>
+ <|-- Organization_Holder_Intention
+class  <<Characterization>>
+class propositional_content_of <<Formal>>
+class causes <<Formal>>
+class based_on <<Formal>>
+class derived_from <<Formal>>
+class delegatum <<Formal>>
+class satisfies <<Formal>>
+class propositional_content_of <<Formal>>
+class delegatum <<Formal>>
+class satisfies <<Formal>>
+class creates <<Formal>>
+class causes <<Formal>>
+class  <<Characterization>>
+class Acess_Infrastructure <<Mixin>>
+Physical_Component <|-- Acess_Infrastructure
+class Business_Activitiy <<Relator>>
+class Business_Activity_Type <<Class>>
+class Businessman <<Role>>
+Holder <|-- Businessman
+class Deployment <<Relator>>
+class Evacuation <<Relator>>
+class Evacuation_Closed_Area <<Category>>
+Evacuation_Local <|-- Evacuation_Closed_Area
+class Evacuation_Geographical_Region <<Role>>
+Geographical_Region <|-- Evacuation_Geographical_Region
+Evacuation_Local <|-- Evacuation_Geographical_Region
+class Evacuation_Installation <<Role>>
+Installation <|-- Evacuation_Installation
+Evacuation_Local <|-- Evacuation_Installation
+class Evacuation_Local <<RoleMixin>>
+class Evacuation_Open_Area <<SubKind>>
+Evacuation_Local <|-- Evacuation_Open_Area
+class Evacuation_at_Installation <<Relator>>
+class Geographical_Region <<Kind>>
+class Horizontal_Acess <<Mixin>>
+Acess_Infrastructure <|-- Horizontal_Acess
+class Installation_Type <<Class>>
+class Owner <<RoleMixin>>
+Holder <|-- Owner
+class Place_of_Business <<Role>>
+Resource <|-- Place_of_Business
+class Primary_Business_Activity <<Relator>>
+Business_Activitiy <|-- Primary_Business_Activity
+class Secondary_Business_Activity <<Relator>>
+Business_Activitiy <|-- Secondary_Business_Activity
+class Vertical_Acess <<Mixin>>
+Acess_Infrastructure <|-- Vertical_Acess
+class Atomic_Installation <<SubKind>>
+Installation <|-- Atomic_Installation
+class Civil_Defense_Organization <<Kind>>
+ <|-- Civil_Defense_Organization
+class Complex_Installation <<SubKind>>
+Installation <|-- Complex_Installation
+class Holder <<RoleMixin>>
+class Installation <<Kind>>
+Physical_Component <|-- Installation
+class Main_Organization <<Class>>
+ <|-- Main_Organization
+class  <<Category>>
+Individual_Social_Agent <|-- 
+class Organization_Holder <<Role>>
+ <|-- Organization_Holder
+Holder <|-- Organization_Holder
+class Person_Holder <<Role>>
+Person <|-- Person_Holder
+Holder <|-- Person_Holder
+class Possesion <<Relator>>
+class Regulatory_Organization <<Class>>
+ <|-- Regulatory_Organization
+class posses <<Formal>>
+class has_acess <<Formal>>
+class has_acess_by <<Formal>>
+class instantiates <<Formal>>
+class  <<Mediation>>
+class  <<Mediation>>
+class can_be_developed_in <<Formal>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class has_business_activity <<Formal>>
+class acts_as <<Formal>>
+class  <<Mediation>>
+class is_located_in <<Formal>>
+class instantiates <<Formal>>
+class  <<Mediation>>
+class belongs <<Material>>
+class  <<Mediation>>
+class  <<ComponentOf>>
+class located_in <<Formal>>
+class  <<Mediation>>
+class  <<Mediation>>
+class belongs <<Material>>
+
+
+
+
+class Job_Plan <<Kind>>
+Normative_Description <|-- Job_Plan
+class Material_Resource_Type <<Class>>
+class instantiates <<Formal>>
+class Allocation <<Relator>>
+class Business_Emergency_Human_Resource <<Role>>
+Business_Human_Resource <|-- Business_Emergency_Human_Resource
+class Business_Emergency_Material_Resource <<RoleMixin>>
+Material_Resource <|-- Business_Emergency_Material_Resource
+class Business_Human_Resource <<Role>>
+Human_Resource <|-- Business_Human_Resource
+class Business_Human_Resource_Role <<Class>>
+Human_Resource_Role <|-- Business_Human_Resource_Role
+class Business_Non_Emergency_Human_Resource <<Role>>
+Business_Human_Resource <|-- Business_Non_Emergency_Human_Resource
+User <|-- Business_Non_Emergency_Human_Resource
+class Emergency_Human_Resource_Role <<Class>>
+Human_Resource_Role <|-- Emergency_Human_Resource_Role
+class Emergency_Team <<Collective>>
+Collective_Social_Agent <|-- Emergency_Team
+class Function_of_Role <<Kind>>
+Normative_Description <|-- Function_of_Role
+class Human_Resource <<Role>>
+Person <|-- Human_Resource
+class Human_Resource_Role <<Class>>
+Social_Role <|-- Human_Resource_Role
+class Internal_Allocation <<Relator>>
+class Material_Resource <<Category>>
+Physical_Component <|-- Material_Resource
+class Positions_Plan <<Kind>>
+Normative_Description <|-- Positions_Plan
+class Public_Emergency_Human_Resource <<Role>>
+Human_Resource <|-- Public_Emergency_Human_Resource
+class Public_Emergency_Material_Resource <<RoleMixin>>
+Material_Resource <|-- Public_Emergency_Material_Resource
+class User <<Role>>
+Person <|-- User
+class Visitor <<Role>>
+User <|-- Visitor
+class Visitor_Type <<Class>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<MemberOf>>
+class defines_responsabilities_for <<Formal>>
+class located_in <<Formal>>
+class instantiates <<Formal>>
+class defines <<Formal>>
+class located_in <<Formal>>
+class located_in <<Formal>>
+class instantiates <<Formal>>
+
+
+
+class Abiotic_Component <<Category>>
+Natural_Component <|-- Abiotic_Component
+class Action_Universal <<Class>>
+class Agent <<Category>>
+Substance <|-- Agent
+class Agreement <<Relator>>
+class Biotic_Component <<Category>>
+Natural_Component <|-- Biotic_Component
+class Built_Component <<Category>>
+Physical_Component <|-- Built_Component
+class Component <<Category>>
+class EP_Goal <<Class>>
+Goal <|-- EP_Goal
+class EP_Main_Goal <<Class>>
+EP_Goal <|-- EP_Main_Goal
+EP_Goal <|-- EP_Main_Goal
+class EP_Situation_Individual <<Class>>
+Situation_Individual <|-- EP_Situation_Individual
+Situation_Individual <|-- EP_Situation_Individual
+class Endangered_Component <<RoleMixin>>
+Component <|-- Endangered_Component
+Under_Protection_Component <|-- Endangered_Component
+class Environment <<Kind>>
+class Intention <<Mode>>
+Commitment <|-- Intention
+Mental_Moment <|-- Intention
+class Natural_Component <<Category>>
+Physical_Component <|-- Natural_Component
+class Plan_(Action_Universal) <<Class>>
+Kind <|-- Plan_(Action_Universal)
+class Protect_Intention <<Mode>>
+Intention <|-- Protect_Intention
+ <|-- Protect_Intention
+UFO_C::Open_Commitment <|-- Protect_Intention
+class Protected_Environment <<Mode>>
+class Protection <<Class>>
+class Protection_Action <<Class>>
+Plan_(Action_Universal) <|-- Protection_Action
+Plan_(Action_Universal) <|-- Protection_Action
+class Protector <<RoleMixin>>
+Agent_in_Social_Relation <|-- Protector
+class Proteger <<Mode>>
+class Safe_Component <<RoleMixin>>
+Under_Protection_Component <|-- Safe_Component
+class Situation_Individual <<Class>>
+Endurant <|-- Situation_Individual
+class UFO_C::Open_Commitment <<Mode>>
+class Under_Protection_Built_Object <<RoleMixin>>
+Built_Component <|-- Under_Protection_Built_Object
+Under_Protection_Component <|-- Under_Protection_Built_Object
+class Under_Protection_Component <<RoleMixin>>
+Object <|-- Under_Protection_Component
+Component <|-- Under_Protection_Component
+class Under_Protection_Natural_Object <<RoleMixin>>
+Natural_Component <|-- Under_Protection_Natural_Object
+Under_Protection_Component <|-- Under_Protection_Natural_Object
+class Under_Protection_Person <<Role>>
+Under_Protection_Natural_Object <|-- Under_Protection_Person
+Person <|-- Under_Protection_Person
+class Under_Protection_Social_Object <<RoleMixin>>
+Social_Component <|-- Under_Protection_Social_Object
+Under_Protection_Component <|-- Under_Protection_Social_Object
+class Person <<Kind>>
+Biotic_Component <|-- Person
+Physical_Agent <|-- Person
+class instance_of <<Formal>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<ComponentOf>>
+class propositional_content_of <<Formal>>
+class satisfies <<Formal>>
+class  <<Characterization>>
+class  <<Characterization>>
+class  <<ComponentOf>>
+class changes <<Formal>>
+class has_location <<Formal>>
+class causes <<Formal>>
+class inherents_in <<Formal>>
+class caused_by <<Formal>>
+class creates <<Formal>>
+
+
+class EP_Plan <<Class>>
+EP_Plan <|-- EP_Plan
+class Emergency_Event_Type <<Class>>
+Event_Type <|-- Emergency_Event_Type
+class Emergency_Event_with_Planned_Type <<Class>>
+Emergency_Event_Type <|-- Emergency_Event_with_Planned_Type
+class Identified_Risk <<Relator>>
+Risk <|-- Identified_Risk
+class Impact_Type <<Class>>
+class Risk <<Relator>>
+class causes <<Formal>>
+class generically_dependent_on <<Formal>>
+class Component <<Category>>
+Object <|-- Component
+class Damage <<Class>>
+Impact <|-- Damage
+class Damage_Type <<Class>>
+class Damaged_Environment <<RoleMixin>>
+Resource <|-- Damaged_Environment
+Impacted_Environment <|-- Damaged_Environment
+class Emergency_Event_Type <<Class>>
+Plan_(Action_Universal) <|-- Emergency_Event_Type
+class Enviromental_Vulnerability <<Class>>
+Quality_Individual <|-- Enviromental_Vulnerability
+class Environmental_Vulnerability <<Class>>
+Vulnerability <|-- Environmental_Vulnerability
+class Event_Type <<Class>>
+class Hazard <<Class>>
+Situation_Individual <|-- Hazard
+class Hazard <<Mode>>
+Quality_Individual <|-- Hazard
+class Hazard_Type <<Class>>
+class Hazardous_Event <<Class>>
+Complex_Event <|-- Hazardous_Event
+class Hazardous_Event_Type <<Class>>
+Event_Type <|-- Hazardous_Event_Type
+class Impact <<Class>>
+Change <|-- Impact
+Atomic_Event <|-- Impact
+class Impact_Type <<Class>>
+class Impacted_Environment <<RoleMixin>>
+Resource <|-- Impacted_Environment
+Environment <|-- Impacted_Environment
+class Individual_Vulnerability <<Class>>
+Vulnerability <|-- Individual_Vulnerability
+class Individual_Vulnerability <<Mode>>
+Quality_Individual <|-- Individual_Vulnerability
+class Mitigation_activity <<Mode>>
+OE_Activity <|-- Mitigation_activity
+OE_Activity <|-- Mitigation_activity
+class Preventive_activity <<Mode>>
+OE_Activity <|-- Preventive_activity
+OE_Activity <|-- Preventive_activity
+class Risk <<Class>>
+Vulnerability <|-- Risk
+class Risk_Type <<Class>>
+class Transfer_activity <<Mode>>
+OE_Activity <|-- Transfer_activity
+OE_Activity <|-- Transfer_activity
+class Vulnerability <<Class>>
+Disposition <|-- Vulnerability
+class classifies <<Formal>>
+class  <<Formal>>
+class determines <<Formal>>
+class  <<Association>>
+class  <<ComponentOf>>
+class brings_about <<Formal>>
+class activates <<Formal>>
+class  <<Formal>>
+class classifies <<Formal>>
+class classifies <<Formal>>
+class  <<Association>>
+class can_cause <<Formal>>
+class classifies <<Formal>>
+class participationof_(changes) <<Formal>>
+class classifies <<Formal>>
+
+
+class Authority <<Category>>
+Individual_Social_Agent <|-- Authority
+class Geographical_Point <<Category>>
+Spatial_Location <|-- Geographical_Point
+class Jurisdiction <<Category>>
+Geographical_Region <|-- Jurisdiction
+Normatized_Social_Object <|-- Jurisdiction
+class Macro_Political_Region <<Category>>
+Political_Region <|-- Macro_Political_Region
+class Micro_Political_Region <<Category>>
+Political_Region <|-- Micro_Political_Region
+class Non_Political_Region <<Category>>
+Geographical_Region <|-- Non_Political_Region
+class Political_Body <<Category>>
+Authority <|-- Political_Body
+class Political_Region <<Category>>
+Geographical_Region <|-- Political_Region
+Jurisdiction <|-- Political_Region
+class Spatial_Location <<Category>>
+Social_Component <|-- Spatial_Location
+class Geographical_Region <<Category>>
+Spatial_Location <|-- Geographical_Region
+class Adress_Domain <<Datatype>>
+class Location_Coordinates <<Datatype>>
+class controlled_by <<Material>>
+class has_location <<Formal>>
+class  <<Formal>>
+class is_subordinated_to <<Material>>
+class controlled_by <<Material>>
+class has_location <<Formal>>
+class spatially_subsumes <<Formal>>
+class has_location <<Formal>>
+
+
+
+Endurant "1..*" -- "1..*" Situation_Individual : present_in
+Individual "1..*" -- "1..1" Kind : instance_of
+Universal "1..*" -- "1..*" Individual : instance_of
+/Paricipation_Individual "1..*" -- "1..1" Participant : participation_of
+/Paricipation_Individual "1..*" -- "1..1" Participation : instantiates
+Complex_Action "1..1" o-- "1..1" /Paricipation_Individual : 
+Disposition "1..1" -- "0..*" Atomic_Event : manifested_by
+Complex_Event "1..*" -- "2..*" Part_of_Event : 
+Apt "1..1" -- "1..*" Disposition : 
+Situation_Individual "0..*" -- "0..*" Disposition : activates
+Event_Individual "0..*" -- "1..1" Situation_Individual : brings_about
+Event_Individual "0..*" -- "1..1" Situation_Individual : enables
+Agent "0..*" -- "0..*" Event_Individual : perceives
+Action "0..*" -- "1..*" Plan_(Action_Universal) : instantiates
+ "0..*" -- "1..1" Plan_(Action_Universal) : based_on
+Normative_Description "0..1" -- "0..*" Plan_(Action_Universal) : defines
+Situation_Individual "1..*" -- "0..*" Goal : satisfies
+ "0..*" -- "1..*" Plan_Description_Universal : instantiates
+ "0..1" -- "1..*"  : describes
+ "1..*" -- "1..1" Agent : 
+Action "0..*" -- "1..1"  : caused_by
+Complex_Action "0..*" -- "1..*"  : instantiates
+Social_Commitment "0..*" -- "0..*" Action : causes
+Agent "1..*" -- "0..*" Action : creates
+Collective_Social_Agent "0..1" o-- "2..*" Agent : 
+Intention "1..*" -- "1..1" Agent : 
+Intentional_Moment "1..*" -- "1..1" Agent : 
+Social_Relator "1..1" -- "2..*" Agent_in_Social_Relation : 
+Social_Moment "1..*" -- "1..1" Agent_in_Social_Relation : 
+Appoitment_Goal "1..1" -- "1..*" Appointment : propositional_content_of
+Atomic_Action "0..*" -- "1..*" Atomic_Plan : instantiates
+Complex_Commitment "0..*" -- "2..*" Commitment : 
+Goal "1..1" -- "1..*" Commitment : propositional_content_of
+Contribution_(Performance) "1..*" -- "1..1" Performer : performance_of
+Interaction "0..*" o-- "2..*" Contribution_(Performance) : 
+Delegatee "1..1" -- "0..*" Delegation : delegatee
+Delegation "0..*" -- "1..1" Delegator : delegator
+Proposition_Individual "1..1" -- "0..*" Intentional_Moment : propositional_content_of
+Normative_Description "0..1" -- "1..1" Social_Role : creates
+Normative_Description "1..1" -- "0..*" Normatized_Social_Object : defines
+Normative_Description "0..*" -- "1..*" Normative_Description_Universal : instantiates
+Recognition "1..*" -- "1..1" Normative_Description : 
+Relator_Individual "1..1" -- "2..*" QuaIndividual : 
+Recognition "1..*" -- "1..1" Recognizer : 
+Resource_Participation "1..*" -- "1..1" Resource : participates_as_resource
+Social_Relator "1..1" -- "2..*" Social_Moment : 
+Social_Role_Recognition "0..1" -- "1..1" Social_Role : 
+Recognizer "1..*" -- "1..*" Normative_Description : 
+Collective_Whole "1..*" o-- "2..*" Member : 
+Collective_Whole "1..*" o-- "0..*" SubCollection : 
+Functional_Complex_Whole "1..*" o-- "2..*" Functional_Part : 
+Whole_(Complex_Individual) "1..*" -- "1..*" Part : 
+Quantity_Whole "1..*" o-- "2..*" Quantity_Part : 
+Specific_E_Standard_Process "1..1" -- "1..1" Action : caused_by
+Business_Activity "1..1" -- "1..*" Installation : is_developed
+Organization "1..*" -- "1..1" Business_Activity : allowed_to_explore
+E_Standard_Process_Definition_Document "1..*" -- "1..*" Business_Activity_Type : regulates
+OE_Activity "1..*" -- "1..*" Business_Emergency_Human_Resource : is_to_be_performed_by
+Business_Emergency_Material_Resource "1..*" -- "1..*" OE_Activity : is_to_be_performed_using
+Goal "1..1" -- "1..*" Commitment : propositional_content_of
+Complex_OE_Activity "0..*" -- "2..*" OE_Activity : 
+Complex_OE_Activity "0..*" -- "2..*" OE_Activity : 
+E_Standard_Activity "2..*" -- "1..1" E_Standard_Process : 
+E_Standard_Activity "1..*" -- "0..*" Material_Resource_Type : is_to_be_performed_using
+E_Standard_Activity "1..*" -- "1..*" Human_Resource_Role : is_to_be_performed_by
+E_Standard_Activity "1..1" -- "1..1" OE_Activity : tailors
+Job_Plan "1..1" -- "0..*" E_Standard_Activity : defines
+Human_Resource_Role "1..*" -- "1..*" E_Standard_Activity : is_to_be_performed_by
+OE_Activity "0..*" -- "0..*" E_Standard_Activity : tailors_activities
+Material_Resource_Type "1..*" -- "1..*" E_Standard_Activity : is_to_be_performed_using
+Specific_E_Standard_Process "1..*" o-- "2..*" E_Standard_Activity : 
+E_Standard_Process "1..1" -- "1..1" OE_Process : tailors
+OE_Process "0..*" -- "0..*" E_Standard_Process : tailors_processes
+E_Standard_Process_Definition_Document "1..1" -- "1..*" E_Standard_Process : describes
+E_Standard_Process_Definition_Document "1..*" -- "1..*" Installation_Type : regulates
+E_Standard_Process_Definition_Document "1..*" -- "1..1" Regulatory_Organization : recognized
+E_Standard_Process_Definition_Document "0..*" -- "1..*" E_Standard_Process_Definition_Document_Type : instantiates
+RoESPDD "1..*" -- "1..*" E_Standard_Process_Definition_Document : regonized_by
+General_OE_Process "0..*" -- "0..*" General_E_Standard_Process : tailors_general_processes
+General_OE_Process "0..*" -- "0..*" General_E_Standard_Process : tailors_general_processes
+General_OE_Process "1..1" -- "2..*" Specific_OE_Process : 
+General_OE_Process "1..1" -- "2..*" Specific_OE_Process : subprocesses
+Hazardous_Event "1..1" -- "1..1" Impact : cause
+Installation "1..*" -- "1..*" Hazardous_Event : exposed_to
+Installation_Type "1..*" -- "1..*" Hazardous_Event_Type : exposed_to
+Impact "1..1" -- "1..1" Installation : changes
+Installation "1..1" -- "1..1" Vulnerability : 
+OE_Process_Definition_Document "1..*" -- "1..1" Installation : regulates
+OE_Activity "0..*" -- "0..*" Business_Emergency_Material_Resource : is_to_be_performed_using
+OE_Activity "0..*" -- "0..*" Business_Emergency_Human_Resource : is_to_be_performed_by
+Specific_OE_Process "1..1" -- "2..*" OE_Activity : 
+OE_Activity_Goal "1..*" -- "1..*" OE_Activity : propositional_content_of
+OE_Activity "2..*" -- "1..1" OE_Process : 
+OE_Activity "1..*" -- "1..*" Risk : treats
+OE_Activity_Goal "1..*" -- "1..*" OE_Activity : propositional_content_of
+OE_Activity_Goal "1..*" -- "1..*" OE_Activity : propositional_content
+OE_Process "1..*" -- "1..1" OE_Process_Definition_Document : describes
+Main_Organization "1..1" -- "1..*" OE_Process : defined_for
+OE_Process "1..*" -- "1..1" Main_Organization : defined_for
+OE_Process "1..1" -- "1..1" OE_Process_Definition_Document : describes
+Deployment "1..1" -- "1..*" OE_Process_Definition_Document : 
+Specific_OE_Process "0..*" -- "0..*" Specific_E_Standard_Process : tailors_specific_processes
+Specific_E_Standard_Process "1..1" -- "1..1" Action : caused_by
+Specific_E_Standard_Process "1..1" -- "1..1" Action : caused_by
+Goal "1..1" -- "1..*" Commitment : propositional_content_of
+Complex_OE_Activity "0..*" -- "2..*" OE_Activity : 
+Complex_OE_Activity "0..*" -- "2..*" OE_Activity : 
+E_Standard_Activity "0..*" -- "0..*" Material_Resource_Type : is_to_be_performed_using
+E_Standard_Activity "1..1" -- "1..1" Human_Resource_Role : is_to_be_performed_by
+Specific_E_Standard_Process "1..*" o-- "2..*" E_Standard_Activity : 
+Specific_E_Standard_Process "1..*" -- "2..*" E_Standard_Activity : 
+OE_Activity "0..*" -- "0..*" E_Standard_Activity : tailors_activities
+OE_Activity "0..*" -- "0..*" E_Standard_Activity : tailors_activities
+Job_Plan "1..1" -- "0..*" E_Standard_Activity : defines
+E_Standard_Process_Definition_Document "1..*" -- "0..*" E_Standard_Process : describes
+E_Standard_Process_Definition_Document "1..*" -- "0..*" E_Standard_Process : describes
+OE_Process "0..*" -- "0..*" E_Standard_Process : tailors_processes
+OE_Process "0..*" -- "0..*" E_Standard_Process : tailors_processes
+E_Standard_Process_Definition_Document "0..*" -- "1..*" E_Standard_Process_Definition_Document_Type : instantiates
+RoESPDD "1..*" -- "1..*" E_Standard_Process_Definition_Document : regonized_by
+E_Standard_Process_Definition_Document "0..*" -- "1..*" E_Standard_Process_Definition_Document_Type : instance_of
+E_Standard_Process_Definition_Document "1..1" -- "1..*" Business_Activity_Type : regulates
+E_Standard_Process_Definition_Document "1..1" -- "1..*" Installation_Type : regulates
+E_Standard_Process_Definition_Document "0..*" -- "1..*" E_Standard_Process_Definition_Document_Type : instantiates
+E_Standard_Process_Definition_Document "0..*" -- "1..*" E_Standard_Process_Definition_Document_Type : instance_of
+RoESPDD "1..*" -- "1..*" E_Standard_Process_Definition_Document : regonized_by
+General_OE_Process "0..*" -- "0..*" General_E_Standard_Process : tailors_general_processes
+General_OE_Process "0..*" -- "0..*" General_E_Standard_Process : tailors_general_processes
+General_OE_Process "1..1" -- "2..*" Specific_OE_Process : subprocesses
+General_OE_Process "1..1" -- "2..*" Specific_OE_Process : 
+OE_Activity "1..*" -- "1..*" Risk : treats
+Specific_OE_Process "1..1" -- "2..*" OE_Activity : 
+OE_Activity_Goal "1..*" -- "1..*" OE_Activity : propositional_content_of
+OE_Activity "0..*" -- "0..*" Business_Emergency_Human_Resource : is_to_be_performed_by
+OE_Activity "0..*" -- "0..*" Business_Emergency_Material_Resource : is_to_be_performed_using
+Specific_OE_Process "1..1" -- "2..*" OE_Activity : 
+OE_Activity_Goal "1..*" -- "1..*" OE_Activity : propositional_content_of
+OE_Process "1..*" -- "1..1" Main_Organization : defined_for
+OE_Process_Definition_Document "1..*" -- "1..1" OE_Process : describes
+OE_Process "1..*" -- "1..1" Main_Organization : defined_for
+OE_Process "1..1" -- "1..1" OE_Process_Definition_Document : describes
+Deployment "1..1" -- "1..*" OE_Process_Definition_Document : 
+Specific_OE_Process "0..*" -- "0..*" Specific_E_Standard_Process : tailors_specific_processes
+Specific_OE_Process "0..*" -- "0..*" Specific_E_Standard_Process : tailors_specific_processes
+Civil_Defense_Organization_Intention "1..1" -- "1..1" Civil_Defense_Organization : 
+Civil_Defense_Organization_Intention "1..1" -- "1..*" EP_Main_Goal : propositional_content_of
+Civil_Defense_Organization_Intention "1..*" -- "1..*" EP_Plan : causes
+Closed_Commitment "0..*" -- "1..1" EP_Plan : based_on
+Delegation "0..*" -- "1..1" Delegatum : derived_from
+EP_Goal "1..1" -- "0..*" EP_Goal_Delegation : delegatum
+EP_Situation_Individual "1..*" -- "1..1" EP_Goal : satisfies
+Organization_Holder_Intention "1..1" -- "1..*" EP_Goal : propositional_content_of
+EP_Main_Goal "1..1" -- "0..*" EP_Plan_Delegation : delegatum
+EP_Situation_Individual "1..*" -- "1..*" EP_Main_Goal : satisfies
+EP_Plan "0..*" -- "1..*" EP_Situation_Individual : creates
+Organization_Holder_Intention "1..*" -- "1..*" EP_Plan : causes
+Organization_Holder_Intention "1..1" -- "1..1" Organization_Holder : 
+Geographical_Region "1..*" -- "0..*" Acess_Infrastructure : posses
+Installation "1..1" -- "1..*" Acess_Infrastructure : has_acess
+Evacuation_Local "1..1" -- "1..*" Acess_Infrastructure : has_acess_by
+Business_Activitiy "0..*" -- "1..*" Business_Activity_Type : instantiates
+Business_Activitiy "1..*" -- "1..*" Installation : 
+Business_Activitiy "1..*" -- "1..1" Businessman : 
+Business_Activity_Type "0..*" -- "0..*" Installation_Type : can_be_developed_in
+Primary_Business_Activity "1..1" -- "1..1" Businessman : 
+Secondary_Business_Activity "0..*" -- "1..1" Businessman : 
+Deployment "1..1" -- "1..*" Installation : 
+Evacuation "1..*" -- "1..1" Evacuation_Local : 
+Evacuation "1..*" -- "1..1" Installation : 
+Evacuation_at_Installation "1..1" -- "1..1" Evacuation_Closed_Area : 
+Evacuation_Installation "0..*" -- "1..1" Evacuation_Closed_Area : has_business_activity
+Evacuation_Open_Area "1..1" -- "1..1" Evacuation_Geographical_Region : acts_as
+Evacuation_at_Installation "1..1" -- "1..1" Installation : 
+Installation "0..*" -- "1..1" Geographical_Region : is_located_in
+Installation "0..*" -- "1..*" Installation_Type : instantiates
+Possesion "1..*" -- "1..1" Owner : 
+Public_Emergency_Material_Resource "1..*" -- "1..1" Civil_Defense_Organization : belongs
+Allocation "1..*" -- "1..1" Civil_Defense_Organization : 
+Complex_Installation "0..1" o-- "2..*" Installation : 
+User "1..1" -- "0..*" Installation : located_in
+Possesion "1..1" -- "1..*" Installation : 
+Internal_Allocation "1..*" -- "1..1" Organization_Holder : 
+Business_Emergency_Material_Resource "1..*" -- "1..1" Organization_Holder : belongs
+Business_Emergency_Material_Resource "0..*" -- "1..1" Material_Resource_Type : instantiates
+Allocation "1..*" -- "1..1" Public_Emergency_Human_Resource : 
+Internal_Allocation "1..*" -- "1..1" Business_Human_Resource : 
+Emergency_Team "1..1" o-- "2..*" Human_Resource : 
+Function_of_Role "1..*" -- "1..*" Human_Resource_Role : defines_responsabilities_for
+Human_Resource "1..*" -- "1..1" Geographical_Region : located_in
+Human_Resource "0..*" -- "1..1" Human_Resource_Role : instantiates
+Positions_Plan "1..1" -- "1..*" Human_Resource_Role : defines
+Material_Resource "1..*" -- "1..1" Geographical_Region : located_in
+User "1..*" -- "1..1" Geographical_Region : located_in
+Visitor "0..*" -- "1..*" Visitor_Type : instantiates
+Protection "1..1" -- "1..1" Action_Universal : instance_of
+Agreement "1..*" -- "1..1" Protector : 
+Agreement "1..*" -- "1..1" Under_Protection_Component : 
+Environment "0..*" o-- "2..*" Component : 
+Protect_Intention "1..*" -- "1..1" EP_Main_Goal : propositional_content_of
+Situation_Individual "1..*" -- "1..*" EP_Main_Goal : satisfies
+Endangered_Component "1..1" -- "1..1" Individual_Vulnerability : 
+Environmental_Vulnerability "0..*" -- "1..1" Environment : 
+Environment "0..*" o-- "2..*" Component : 
+Impact_Type "0..*" -- "0..*" Environment : changes
+Environment "0..*" -- "0..*" Geographical_Region : has_location
+Protect_Intention "1..*" -- "1..*" Protection_Action : causes
+Protector "1..1" -- "1..*" Protect_Intention : inherents_in
+Protection_Action "1..1" -- "1..1" Proteger : caused_by
+Protection_Action "0..*" -- "1..*" Situation_Individual : creates
+Emergency_Event_Type "0..*" -- "0..*" Impact_Type : causes
+Identified_Risk "1..*" -- "0..*" Emergency_Event_with_Planned_Type : generically_dependent_on
+Damage "1..*" -- "1..1" Damage_Type : classifies
+Damage "1..*" -- "1..1" Damaged_Environment : 
+Environmental_Vulnerability "1..1" -- "1..*" Damage : determines
+Hazardous_Event "1..1" -- "1..*" Damage : 
+Environmental_Vulnerability "1..1" o-- "1..*" Individual_Vulnerability : 
+Hazardous_Event "1..1" -- "1..1" Hazard : brings_about
+Hazard "0..*" -- "0..1" Vulnerability : activates
+Hazardous_Event "1..1" -- "1..1" Hazard : 
+Hazard_Type "1..1" -- "1..*" Hazard : classifies
+Hazardous_Event "1..*" -- "1..1" Hazardous_Event_Type : classifies
+Hazardous_Event "1..1" -- "1..*" Impact : 
+Hazardous_Event_Type "1..1" -- "1..*" Impact_Type : can_cause
+Impact "1..*" -- "1..1" Impact_Type : classifies
+Impacted_Environment "1..1" -- "1..*" Impact : participationof_(changes)
+Risk_Type "1..1" -- "1..*" Risk : classifies
+Jurisdiction "1..*" -- "1..*" Authority : controlled_by
+Geographical_Point "0..*" -- "1..1" Location_Coordinates : has_location
+Micro_Political_Region "0..*" -- "1..1" Adress_Domain : 
+Political_Region "1..*" -- "1..*" Political_Body : controlled_by
+Spatial_Location "0..*" -- "1..*" Location_Coordinates : has_location
+Geographical_Region "0..*" -- "2..*" Location_Coordinates : has_location
+@enduml

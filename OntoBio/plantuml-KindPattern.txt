@@ -1,0 +1,86 @@
+@startuml
+'37 occurrencies
+'37 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Kind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Order <<Kind>>
+class Variety <<Kind>>
+class Infraorder <<Kind>>
+class Family <<Kind>>
+class Supergenus <<Kind>>
+class Ecosystem <<Kind>>
+class CollectingMethod <<Kind>>
+class GeographicalComponent <<Kind>>
+class Species <<Kind>>
+class ResearchInstitution <<Kind>>
+class Superfamily <<Kind>>
+class Subgenus <<Kind>>
+class GeographicalSpace <<Kind>>
+class AdministrativeDivision <<Kind>>
+class Protocol <<Kind>>
+class Subspecies <<Kind>>
+class Suborder <<Kind>>
+class Kingdom <<Kind>>
+class Classis <<Kind>>
+class Thorp <<Kind>>
+class SpatialLocation <<Kind>>
+class Subclassis <<Kind>>
+class TypeStatus <<Kind>>
+class BioticEntity <<Kind>>
+class Ministry <<Kind>>
+class Tribe <<Kind>>
+class Project <<Kind>>
+class Subfamily <<Kind>>
+class Continent <<Kind>>
+class Phylum <<Kind>>
+class Collection <<Kind>>
+class Form <<Kind>>
+class Superspecies <<Kind>>
+class Specimen <<Kind>>
+class Subphylum <<Kind>>
+class Genus <<Kind>>
+class Programme <<Kind>>
+Protocol "1..*" o-- "2..*" CollectingMethod : Has
+BioticEntity "1..1" -- "1..1" Specimen : Instantiates
+Collection "1..1" -- "1..*" BioticEntity : ConsistsOf
+GeographicalSpace "1..1" o-- "1..1" AdministrativeDivision : Has
+GeographicalSpace "1..1" o-- "1..1" Continent : IsComposedBy
+GeographicalSpace "1..1" o-- "1..1" GeographicalComponent : MayHave
+Classis "1..1" -- "1..*" Order : Specializes
+Classis "1..1" -- "0..*" Subclassis : MayHave
+Phylum "1..1" -- "1..*" Classis : Specializes
+Subphylum "0..1" -- "1..*" Classis : MayHave
+Family "1..1" -- "0..*" Subfamily : MayHave
+Family "1..1" -- "0..*" Tribe : MayHave
+Family "1..1" -- "1..*" Genus : Specializes
+Superfamily "0..1" -- "1..*" Family : MayHave
+Infraorder "0..1" -- "1..*" Family : MayHave
+Suborder "0..1" -- "1..*" Family : MayHave
+Order "1..1" -- "1..*" Family : Specializes
+Species "1..1" -- "0..*" Form : MayHave
+Genus "1..1" -- "0..*" Subgenus : MayHave
+Genus "1..1" -- "1..*" Species : Specializes
+Tribe "0..1" -- "1..*" Genus : MayHave
+Subfamily "0..1" -- "1..*" Genus : MayHave
+Supergenus "0..1" -- "1..*" Genus : MayHave
+Suborder "1..1" -- "0..*" Infraorder : MayHave
+Kingdom "1..1" -- "1..*" Phylum : Speciealizes
+Order "1..1" -- "0..*" Suborder : MayHave
+Subclassis "0..1" -- "1..*" Order : MayHave
+Phylum "1..1" -- "0..*" Subphylum : MayHave
+Species "1..1" -- "0..*" Variety : MayHave
+Species "1..1" -- "0..*" Subspecies : MayHave
+Subgenus "0..1" -- "1..*" Species : MayHave
+Superspecies "0..1" -- "1..*" Species : MayHave
+Subfamily "1..1" -- "0..*" Tribe : MayHave
+ResearchInstitution "1..1" o-- "2..*" Collection : MayHave
+Ministry "1..1" o-- "2..*" ResearchInstitution : Coordinates
+GeographicalSpace "1..1" -- "1..1" SpatialLocation : IsClassifiedBy
+@enduml

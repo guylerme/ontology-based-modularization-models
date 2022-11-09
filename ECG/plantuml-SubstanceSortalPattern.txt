@@ -1,0 +1,49 @@
+@startuml
+'19 occurrencies
+'19 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class SAElectricalImpulse <<Kind>>
+class BloodInLeftVentricle <<Kind>>
+class LeftVentricle <<Kind>>
+class LeftAtrium <<Kind>>
+class BloodInLeftAtrium <<Kind>>
+class BloodInRightVentricle <<Kind>>
+class Peripherals <<Kind>>
+class Lungs <<Kind>>
+class HeartCells <<Collective>>
+class HisPurkinjeElectricalImpulse <<Kind>>
+class BloodInPeripherals <<Kind>>
+class HumanBody <<Kind>>
+class RightAtrium <<Kind>>
+class BloodInRightAtrium <<Kind>>
+class AVElectricalImpulse <<Kind>>
+class Heart <<Kind>>
+class BloodInHumanBody <<Kind>>
+class BloodInLungs <<Kind>>
+class RightVentricle <<Kind>>
+HisPurkinjeElectricalImpulse "1..1" o-- "1..1" AVElectricalImpulse : 
+BloodInHumanBody "1..1" *-- "0..1" BloodInRightVentricle : 
+BloodInHumanBody "1..1" *-- "0..1" BloodInLeftVentricle : 
+BloodInHumanBody "1..1" *-- "0..1" BloodInLeftAtrium : 
+BloodInHumanBody "1..1" *-- "0..1" BloodInPeripherals : 
+BloodInHumanBody "1..1" *-- "0..1" BloodInLungs : 
+BloodInHumanBody "1..1" *-- "0..1" BloodInRightAtrium : 
+BloodInLungs "1..1" -- "1..1" BloodInLeftAtrium : isMovedTo
+BloodInPeripherals "1..1" -- "1..1" BloodInRightAtrium : isMovedTo
+Heart "1..1" *-- "1..1" LeftVentricle : 
+Heart "1..1" *-- "1..1" RightVentricle : 
+Heart "1..1" *-- "1..1" LeftAtrium : 
+Heart "1..1" *-- "1..1" RightAtrium : 
+Heart "1..1" o-- "1..1" HeartCells : 
+HumanBody "1..1" o-- "1..1" Heart : 
+HisPurkinjeElectricalImpulse "1..1" o-- "1..1" SAElectricalImpulse : 
+HumanBody "1..1" o-- "1..1" Lungs : 
+HumanBody "1..1" *-- "1..1" Peripherals : 
+@enduml

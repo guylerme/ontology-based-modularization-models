@@ -1,0 +1,73 @@
+@startuml
+'10 occurrencies
+'28 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class LungsBloodStoring <<Relator>>
+class BloodInLungs <<Kind>>
+class LungsAsABloodContainer <<Role>>
+class RAContraction <<Relator>>
+class RightAtriumAsAPump <<Role>>
+class SAElectricalImpulse <<Kind>>
+class LAContraction <<Relator>>
+class LeftAtriumAsAPump <<Role>>
+class RABloodStoring <<Relator>>
+class RightAtriumAsABloodContainer <<Role>>
+class BloodInRightAtrium <<Kind>>
+class LABloodStoring <<Relator>>
+class LeftAtriumAsABloodContainer <<Role>>
+class BloodInLeftAtrium <<Kind>>
+class PeripheralsBloodStoring <<Relator>>
+class PeripheralsAsABloodContainer <<Role>>
+class BloodInPeripherals <<Kind>>
+class LVContraction <<Relator>>
+class LeftVentricleAsAPump <<Role>>
+class PurkinjeElectricalImpulse <<Phase>>
+class LVBloodStoring <<Relator>>
+class BloodInLeftVentricle <<Kind>>
+class LeftVentricleAsABloodContainer <<Role>>
+class RVContraction <<Relator>>
+class RightVentricleAsAPump <<Role>>
+class RVBloodStoring <<Relator>>
+class RightVentricleAsABloodContainer <<Role>>
+class BloodInRightVentricle <<Kind>>
+BloodInLeftAtrium "1..1" -- "1..1" LeftVentricleAsABloodContainer : isMovedTo
+LABloodStoring "1..1" -- "1..1" BloodInLeftAtrium : 
+BloodInLungs "1..1" -- "1..1" BloodInLeftAtrium : isMovedTo
+BloodInLeftVentricle "1..1" -- "1..1" PeripheralsAsABloodContainer : isMovedTo
+LVBloodStoring "1..1" -- "1..1" BloodInLeftVentricle : 
+LungsBloodStoring "1..1" -- "1..1" BloodInLungs : 
+BloodInPeripherals "1..1" -- "1..1" BloodInRightAtrium : isMovedTo
+PeripheralsBloodStoring "1..1" -- "1..1" BloodInPeripherals : 
+BloodInRightAtrium "1..1" -- "1..1" RightVentricleAsABloodContainer : isMovedTo
+RABloodStoring "1..1" -- "1..1" BloodInRightAtrium : 
+BloodInRightVentricle "1..1" -- "1..1" LungsAsABloodContainer : isMovedTo
+RVBloodStoring "1..1" -- "1..1" BloodInRightVentricle : 
+LABloodStoring "1..1" -- "1..1" LeftAtriumAsABloodContainer : 
+LAContraction "1..*" -- "1..1" LeftAtriumAsAPump : 
+LAContraction "1..1" -- "1..1" SAElectricalImpulse : 
+LVBloodStoring "1..1" -- "1..1" LeftVentricleAsABloodContainer : 
+LVContraction "1..1" -- "1..1" PurkinjeElectricalImpulse : 
+LVContraction "1..*" -- "1..1" LeftVentricleAsAPump : 
+LungsBloodStoring "1..1" -- "1..1" LungsAsABloodContainer : 
+PeripheralsBloodStoring "1..1" -- "1..1" PeripheralsAsABloodContainer : 
+RVContraction "1..1" -- "1..1" PurkinjeElectricalImpulse : 
+RABloodStoring "1..1" -- "1..1" RightAtriumAsABloodContainer : 
+RAContraction "1..1" -- "1..1" SAElectricalImpulse : 
+RAContraction "1..*" -- "1..1" RightAtriumAsAPump : 
+RVBloodStoring "1..1" -- "1..1" RightVentricleAsABloodContainer : 
+RVContraction "1..*" -- "1..1" RightVentricleAsAPump : 
+LeftAtriumAsABloodContainer "1..1" -- "1..1" BloodInLeftAtrium : storing
+LeftVentricleAsABloodContainer "1..1" -- "1..1" BloodInLeftVentricle : storing
+LungsAsABloodContainer "1..1" -- "1..1" BloodInLungs : storing
+PeripheralsAsABloodContainer "1..1" -- "1..1" BloodInPeripherals : storing
+RightAtriumAsABloodContainer "1..1" -- "1..1" BloodInRightAtrium : storing
+RightVentricleAsABloodContainer "1..1" -- "1..1" BloodInRightVentricle : storing
+@enduml

@@ -1,0 +1,153 @@
+@startuml
+'60 occurrencies
+'65 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Mode>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Appointment <<Mode>>
+Commitment <|-- Appointment
+class Intention <<Mode>>
+Commitment <|-- Intention
+Mental_Moment <|-- Intention
+class Agent <<Category>>
+class Closed_Commitment <<Mode>>
+class Social_Commitment <<Mode>>
+Social_Moment <|-- Social_Commitment
+Commitment <|-- Social_Commitment
+class Complex_OE_Activity <<Mode>>
+OE_Activity <|-- Complex_OE_Activity
+Complex_Commitment <|-- Complex_OE_Activity
+class Hazard <<Mode>>
+class Social_Moment <<Mode>>
+Intentional_Moment <|-- Social_Moment
+QuaIndividual <|-- Social_Moment
+class Agent_in_Social_Relation <<RoleMixin>>
+Agent <|-- Agent_in_Social_Relation
+class OE_Process <<Mode>>
+ <|-- OE_Process
+class Main_Organization <<Class>>
+class Atomic_Commitment <<Mode>>
+Commitment <|-- Atomic_Commitment
+class Closed_Commitment <<Mode>>
+class Desire <<Mode>>
+Mental_Moment <|-- Desire
+class Protected_Environment <<Mode>>
+class Commitment <<Mode>>
+class Intentional_Moment <<Mode>>
+class General_OE_Process <<Mode>>
+OE_Process <|-- General_OE_Process
+class Intention_(Internal_Commitment) <<Mode>>
+class OE_Activity <<Mode>>
+ <|-- OE_Activity
+ <|-- OE_Activity
+class  <<Mode>>
+Commitment <|-- 
+class Mitigation_activity <<Mode>>
+OE_Activity <|-- Mitigation_activity
+class General_OE_Process <<Mode>>
+class Preventive_activity <<Mode>>
+OE_Activity <|-- Preventive_activity
+class Civil_Defense_Organization_Intention <<Mode>>
+ <|-- Civil_Defense_Organization_Intention
+class Civil_Defense_Organization <<Kind>>
+class Atomic_OE_Activity <<Mode>>
+Atomic_Commitment <|-- Atomic_OE_Activity
+OE_Activity <|-- Atomic_OE_Activity
+class Atomic_OE_Activity <<Mode>>
+Atomic_Commitment <|-- Atomic_OE_Activity
+OE_Activity <|-- Atomic_OE_Activity
+class Atomic_OE_Activity <<Mode>>
+OE_Activity <|-- Atomic_OE_Activity
+Atomic_Commitment <|-- Atomic_OE_Activity
+class OE_Activity <<Mode>>
+ <|-- OE_Activity
+ <|-- OE_Activity
+class Individual_Vulnerability <<Mode>>
+class Open_Commitment <<Mode>>
+Commitment <|-- Open_Commitment
+class OE_Process <<Mode>>
+ <|-- OE_Process
+class  <<Mode>>
+Commitment <|-- 
+Mental_Moment <|-- 
+class Complex_OE_Activity <<Mode>>
+OE_Activity <|-- Complex_OE_Activity
+Complex_Commitment <|-- Complex_OE_Activity
+class Organization_Holder_Intention <<Mode>>
+ <|-- Organization_Holder_Intention
+class Organization_Holder <<Role>>
+class Atomic_OE_Activity <<Mode>>
+Atomic_Commitment <|-- Atomic_OE_Activity
+class Claim <<Mode>>
+Social_Moment <|-- Claim
+class General_OE_Process <<Mode>>
+OE_Process <|-- General_OE_Process
+class OE_Activity <<Mode>>
+ <|-- OE_Activity
+ <|-- OE_Activity
+class Transfer_activity <<Mode>>
+OE_Activity <|-- Transfer_activity
+class Belief <<Mode>>
+Mental_Moment <|-- Belief
+class OE_Process <<Mode>>
+ <|-- OE_Process
+class Proteger <<Mode>>
+class UFO_C::Open_Commitment <<Mode>>
+class Complex_OE_Activity <<Mode>>
+Complex_Commitment <|-- Complex_OE_Activity
+class Complex_Commitment <<Mode>>
+Commitment <|-- Complex_Commitment
+class Atomic_Commitment <<Mode>>
+class Specific_OE_Process <<Mode>>
+OE_Process <|-- Specific_OE_Process
+class Specific_OE_Process <<Mode>>
+OE_Process <|-- Specific_OE_Process
+class Complex_OE_Activity <<Mode>>
+OE_Activity <|-- Complex_OE_Activity
+Complex_Commitment <|-- Complex_OE_Activity
+class Atomic_Commitment <<Mode>>
+class Complex_Commitment <<Mode>>
+class Protect_Intention <<Mode>>
+Intention <|-- Protect_Intention
+ <|-- Protect_Intention
+UFO_C::Open_Commitment <|-- Protect_Intention
+class Specific_OE_Process <<Mode>>
+OE_Process <|-- Specific_OE_Process
+class Commitment <<Mode>>
+class QuaIndividual <<Mode>>
+class General_OE_Process <<Mode>>
+OE_Process <|-- General_OE_Process
+class Mental_Moment <<Mode>>
+Intentional_Moment <|-- Mental_Moment
+class Commitment <<Mode>>
+class Closed_Commitment <<Mode>>
+class Complex_Commitment <<Mode>>
+class Intention_(Internal_Commitment) <<Mode>>
+class Specific_OE_Process <<Mode>>
+ "1..*" -- "1..1" Agent : 
+Intention "1..*" -- "1..1" Agent : 
+Intentional_Moment "1..*" -- "1..1" Agent : 
+Social_Moment "1..*" -- "1..1" Agent_in_Social_Relation : 
+Complex_Commitment "0..*" -- "2..*" Commitment : 
+Complex_OE_Activity "0..*" -- "2..*" OE_Activity : 
+General_OE_Process "1..1" -- "2..*" Specific_OE_Process : 
+General_OE_Process "1..1" -- "2..*" Specific_OE_Process : subprocesses
+Specific_OE_Process "1..1" -- "2..*" OE_Activity : 
+OE_Process "1..*" -- "1..1" Main_Organization : defined_for
+Complex_OE_Activity "0..*" -- "2..*" OE_Activity : 
+Complex_OE_Activity "0..*" -- "2..*" OE_Activity : 
+General_OE_Process "1..1" -- "2..*" Specific_OE_Process : subprocesses
+General_OE_Process "1..1" -- "2..*" Specific_OE_Process : 
+Specific_OE_Process "1..1" -- "2..*" OE_Activity : 
+Specific_OE_Process "1..1" -- "2..*" OE_Activity : 
+OE_Process "1..*" -- "1..1" Main_Organization : defined_for
+OE_Process "1..*" -- "1..1" Main_Organization : defined_for
+Civil_Defense_Organization_Intention "1..1" -- "1..1" Civil_Defense_Organization : 
+Organization_Holder_Intention "1..1" -- "1..1" Organization_Holder : 
+@enduml

@@ -1,0 +1,257 @@
+@startuml
+'64 occurrencies
+'98 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Normatized_Social_Object <<Mixin>>
+Social_Object <|-- Normatized_Social_Object
+class Participant <<RoleMixin>>
+Substance <|-- Participant
+class Performer <<RoleMixin>>
+Participant <|-- Performer
+Agent <|-- Performer
+class Resource <<RoleMixin>>
+Participant <|-- Resource
+Object <|-- Resource
+class Organization <<Category>>
+Social_Entity <|-- Organization
+Social_Agent <|-- Organization
+class Formal_Organization <<Kind>>
+Organization <|-- Formal_Organization
+class Organizational_Unit <<Kind>>
+Organization <|-- Organizational_Unit
+class Organizational_Owner <<Role>>
+Organization <|-- Organizational_Owner
+class Controlled_Resource <<RoleMixin>>
+Resource <|-- Controlled_Resource
+class Moment_Individual <<Category>>
+Endurant <|-- Moment_Individual
+class Relator_Individual <<Category>>
+Moment_Individual <|-- Relator_Individual
+class Intrinsic_Moment_Individual <<Category>>
+Moment_Individual <|-- Intrinsic_Moment_Individual
+class Owned_Resource <<RoleMixin>>
+Resource <|-- Owned_Resource
+class Public_Formal_Requester <<RoleMixin>>
+class Collegiate_Body_Requester <<Role>>
+Public_Formal_Requester <|-- Collegiate_Body_Requester
+class Public_Organization_Requester <<Role>>
+Public_Formal_Requester <|-- Public_Organization_Requester
+class Quantity_Part <<Mixin>>
+Part <|-- Quantity_Part
+class Functional_Part <<Mixin>>
+Part <|-- Functional_Part
+class Agent_in_Social_Relation <<RoleMixin>>
+Agent <|-- Agent_in_Social_Relation
+class Social_Agent_in_Agreement <<RoleMixin>>
+Social_Agent <|-- Social_Agent_in_Agreement
+Agent_in_Social_Relation <|-- Social_Agent_in_Agreement
+class Physical_Agent_in_Social_Relation <<RoleMixin>>
+Agent_in_Social_Relation <|-- Physical_Agent_in_Social_Relation
+Physical_Agent <|-- Physical_Agent_in_Social_Relation
+class Member <<Mixin>>
+Part <|-- Member
+class Physical_Object <<Category>>
+Object <|-- Physical_Object
+class Physical_Business_Object <<Role>>
+Business_Object <|-- Physical_Business_Object
+Physical_Object <|-- Physical_Business_Object
+class Social_Object <<Category>>
+Object <|-- Social_Object
+class Normative_Description <<Category>>
+Social_Object <|-- Normative_Description
+class Collective_Whole <<Mixin>>
+Whole_(Complex_Individual) <|-- Collective_Whole
+class Internal_Collaborator <<RoleMixin>>
+class Social_Agent_Internal_Collaborator <<Role>>
+Organizational_Unit <|-- Social_Agent_Internal_Collaborator
+Internal_Collaborator <|-- Social_Agent_Internal_Collaborator
+class Physical_Agent_Internal_Collaborator <<Role>>
+Internal_Collaborator <|-- Physical_Agent_Internal_Collaborator
+class Quantity_Individual <<Category>>
+Substance <|-- Quantity_Individual
+class Delegator <<RoleMixin>>
+Physical_Agent_in_Social_Relation <|-- Delegator
+class Delegatee <<RoleMixin>>
+Physical_Agent_in_Social_Relation <|-- Delegatee
+class Permission_Holder <<RoleMixin>>
+Group_Member <|-- Permission_Holder
+class Structural_Unit_Member_Responsibility_Delegatee <<Role>>
+Structural_Unit_Member <|-- Structural_Unit_Member_Responsibility_Delegatee
+Delegatee <|-- Structural_Unit_Member_Responsibility_Delegatee
+class Structural_Unit_Member_Authority_Delegatee <<Role>>
+Structural_Unit_Member <|-- Structural_Unit_Member_Authority_Delegatee
+Delegatee <|-- Structural_Unit_Member_Authority_Delegatee
+class Internal_Regiment <<Kind>>
+Normative_Description <|-- Internal_Regiment
+class Plan_Description <<Category>>
+Normative_Description <|-- Plan_Description
+class Law <<Kind>>
+Normative_Description <|-- Law
+class Substance <<Category>>
+Endurant <|-- Substance
+class Object <<Category>>
+Substance <|-- Object
+class Collective_Individual <<Category>>
+Whole_(Complex_Individual) <|-- Collective_Individual
+Substance <|-- Collective_Individual
+class Apt <<Phase>>
+Substance <|-- Apt
+class Agent <<Category>>
+Substance <|-- Agent
+class Functional_Complex_Individual <<Category>>
+Substance <|-- Functional_Complex_Individual
+class Inapt <<Phase>>
+Substance <|-- Inapt
+class System_Object <<Category>>
+Object <|-- System_Object
+class System_Business_Object <<Role>>
+System_Object <|-- System_Business_Object
+Business_Object <|-- System_Business_Object
+class Quality_Individual <<Category>>
+Intrinsic_Moment_Individual <|-- Quality_Individual
+class PartOfCollective <<Mixin>>
+Part <|-- PartOfCollective
+class Collective_Social_Agent <<Category>>
+Social_Agent <|-- Collective_Social_Agent
+Collective_Individual <|-- Collective_Social_Agent
+class Society <<Category>>
+Collective_Social_Agent <|-- Society
+class External_Collaborator <<RoleMixin>>
+class Physical_Agent_External_Collaborator <<Role>>
+External_Collaborator <|-- Physical_Agent_External_Collaborator
+Natural_Person <|-- Physical_Agent_External_Collaborator
+class Social_Agent_External_Collaborator <<Role>>
+External_Collaborator <|-- Social_Agent_External_Collaborator
+Formal_Organization <|-- Social_Agent_External_Collaborator
+class Individual_Social_Agent <<Category>>
+Functional_Complex_Individual <|-- Individual_Social_Agent
+Social_Agent <|-- Individual_Social_Agent
+Atomic_Individual <|-- Individual_Social_Agent
+class Formal_Society <<Category>>
+Society <|-- Formal_Society
+class Social_Agent <<Category>>
+Nominator <|-- Social_Agent
+Agent <|-- Social_Agent
+Elector <|-- Social_Agent
+class Endurant <<Category>>
+Individual <|-- Endurant
+class Situation_Individual <<Class>>
+Endurant <|-- Situation_Individual
+class Member_of_Collective_Social_Agent <<RoleMixin>>
+Agent <|-- Member_of_Collective_Social_Agent
+Part <|-- Member_of_Collective_Social_Agent
+class Recognizer <<RoleMixin>>
+Agent <|-- Recognizer
+class Physical_Agent <<Category>>
+Agent <|-- Physical_Agent
+class Qua_Individual <<Category>>
+Intrinsic_Moment_Individual <|-- Qua_Individual
+class Mode_Individual <<Category>>
+Intrinsic_Moment_Individual <|-- Mode_Individual
+class Disposition <<Class>>
+Intrinsic_Moment_Individual <|-- Disposition
+class Part <<Mixin>>
+Individual <|-- Part
+class SubCollection <<Mixin>>
+Part <|-- SubCollection
+class Part_of_Event <<Class>>
+Event_Individual <|-- Part_of_Event
+Part <|-- Part_of_Event
+class SubQuantity <<Mixin>>
+Part <|-- SubQuantity
+class Commitment_Part <<Mixin>>
+Part <|-- Commitment_Part
+class Natural_Person <<Kind>>
+Physical_Agent <|-- Natural_Person
+class Whole_(Complex_Individual) <<Mixin>>
+Individual <|-- Whole_(Complex_Individual)
+class Quantity_Whole <<Mixin>>
+Whole_(Complex_Individual) <|-- Quantity_Whole
+class Complex_Commitment <<Mode>>
+Whole_(Complex_Individual) <|-- Complex_Commitment
+class Complex_Event <<Class>>
+Whole_(Complex_Individual) <|-- Complex_Event
+Event_Individual <|-- Complex_Event
+class Functional_Complex_Whole <<Mixin>>
+Whole_(Complex_Individual) <|-- Functional_Complex_Whole
+class Permission_Provider <<RoleMixin>>
+Group_Member <|-- Permission_Provider
+class Structural_Unit_Member_Responsibility_Delegator <<Role>>
+Structural_Unit_Member <|-- Structural_Unit_Member_Responsibility_Delegator
+Delegator <|-- Structural_Unit_Member_Responsibility_Delegator
+class Structural_Unit_Member_Authority_Delegator <<Role>>
+Structural_Unit_Member <|-- Structural_Unit_Member_Authority_Delegator
+Delegator <|-- Structural_Unit_Member_Authority_Delegator
+class Elector <<Mixin>>
+class Individual_Elector <<Role>>
+Natural_Person <|-- Individual_Elector
+Elector <|-- Individual_Elector
+class National_Society <<Kind>>
+Formal_Society <|-- National_Society
+class Atomic_Individual <<Mixin>>
+Individual <|-- Atomic_Individual
+class Atomic_Event <<Class>>
+Atomic_Individual <|-- Atomic_Event
+Event_Individual <|-- Atomic_Event
+class Atomic_Commitment <<Mode>>
+Atomic_Individual <|-- Atomic_Commitment
+class Individual <<Category>>
+class Commitment_Part <<Mixin>>
+Individual <|-- Commitment_Part
+class Event_Individual <<Class>>
+Individual <|-- Event_Individual
+class Nominator <<Mixin>>
+class Individual_Nominator <<Role>>
+Natural_Person <|-- Individual_Nominator
+Nominator <|-- Individual_Nominator
+class Internal_Relation_Individual <<Category>>
+class Social_Entity <<Mixin>>
+class Organizational_Member <<Role>>
+Natural_Person <|-- Organizational_Member
+Social_Entity <|-- Organizational_Member
+class Group_Member <<RoleMixin>>
+class Structural_Unit_Member <<Role>>
+Group_Member <|-- Structural_Unit_Member
+class Missionary_Unit_Member <<Role>>
+Structural_Unit_Member <|-- Missionary_Unit_Member
+Group_Member <|-- Missionary_Unit_Member
+class Business_Object <<RoleMixin>>
+Formal_Organization "1..1" -- "1..*" Internal_Regiment : defines
+Law "1..*" -- "1..*" Formal_Organization : recognized_by
+National_Society "1..1" o-- "1..1" Formal_Organization : 
+Law "1..*" -- "0..*" Formal_Organization : formalizes
+Formal_Society "0..*" -- "1..*" Society : recognized_by
+Internal_Regiment "1..*" -- "1..*" Organizational_Unit : recognized_by
+Law "1..*" -- "1..*" Natural_Person : recognized_by
+Law "1..*" -- "1..*" Natural_Person : formalizes
+National_Society "1..*" -- "0..*" Law : defines
+National_Society "1..1" o-- "1..1" Natural_Person : 
+Organization "1..1" -- "0..*" Normative_Description : defines
+Social_Entity "1..*" -- "1..*" Normative_Description : recognizes
+Normative_Description "0..1" -- "0..*" Social_Entity : defines
+Endurant "1..*" -- "1..*" Situation_Individual : present_in
+Apt "1..1" -- "1..*" Disposition : 
+Disposition "1..1" -- "0..*" Atomic_Event : manifested_by
+Complex_Event "1..*" -- "2..*" Part_of_Event : 
+Situation_Individual "0..*" -- "0..*" Disposition : activates
+Event_Individual "0..*" -- "1..1" Situation_Individual : brings_about
+Event_Individual "0..*" -- "1..1" Situation_Individual : enables
+Agent "0..*" -- "0..*" Event_Individual : perceives
+Collective_Social_Agent "1..*" o-- "2..*" Member_of_Collective_Social_Agent : 
+Complex_Commitment "1..*" -- "2..*" Commitment_Part : 
+Normative_Description "1..1" -- "0..*" Normatized_Social_Object : defines
+Delegator "1..*" -- "1..*" Delegatee : delegates_to
+Recognizer "1..*" -- "1..*" Normative_Description : 
+Collective_Whole "1..*" o-- "2..*" Member : 
+Collective_Whole "1..*" o-- "0..*" SubCollection : 
+Functional_Complex_Whole "1..*" o-- "2..*" Functional_Part : 
+Whole_(Complex_Individual) "1..*" -- "1..*" Part : 
+Quantity_Whole "1..*" o-- "2..*" Quantity_Part : 
+@enduml

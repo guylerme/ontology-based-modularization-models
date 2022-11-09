@@ -1,0 +1,209 @@
+@startuml
+'61 occurrencies
+'74 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class CP <<Relator>>
+Reference_Point <|-- CP
+class Source_xCP <<Relator>>
+class Uni_Path_LC <<Relator>>
+Unidirectional_LC <|-- Uni_Path_LC
+class Sink_xCP <<Relator>>
+class AF_CP_2 <<Relator>>
+Sink_xCP <|-- AF_CP_2
+class Bidirectional_NC <<Relator>>
+Subnetwork_Connection <|-- Bidirectional_NC
+class Unidirectional_AF_SNC <<Relator>>
+Unidirectional_SNC <|-- Unidirectional_AF_SNC
+class PM-PM_NC <<Relator>>
+Unidirectional_PM_NC <|-- PM-PM_NC
+class Sink_PM_TCP <<Relator>>
+Sink_TCP <|-- Sink_PM_TCP
+class Bidirectional_CP <<Relator>>
+CP <|-- Bidirectional_CP
+class Bidirectional_LC <<Relator>>
+Link_Connection <|-- Bidirectional_LC
+class AF_CP <<Relator>>
+Source_xCP <|-- AF_CP
+Unidirectional_CP <|-- AF_CP
+class Connected_Sink_AF_Output <<Role>>
+class Connected_Source_AF_Input <<Role>>
+class Unidirectional_LC <<Relator>>
+Link_Connection <|-- Unidirectional_LC
+class Bidirectional_AF_CP <<Relator>>
+Bidirectional_CP <|-- Bidirectional_AF_CP
+class Essential_Unidirectional_LC <<Relator>>
+Unidirectional_LC <|-- Essential_Unidirectional_LC
+class Source_PM_NC <<Relator>>
+Unidirectional_PM_NC <|-- Source_PM_NC
+class Source_PM_TCP <<Relator>>
+Source_TCP <|-- Source_PM_TCP
+class Unidirectional_Sink_SNC <<Relator>>
+Unidirectional_SNC <|-- Unidirectional_Sink_SNC
+class Sink_PM-AF_CP <<Relator>>
+PM_CP <|-- Sink_PM-AF_CP
+Sink_xCP <|-- Sink_PM-AF_CP
+class Sink_Path_TCP <<Relator>>
+Sink_xCP <|-- Sink_Path_TCP
+Sink_TCP <|-- Sink_Path_TCP
+class Unidirectional_Path_NC <<Relator>>
+Unidirectional_NC <|-- Unidirectional_Path_NC
+class Source_PM-AF_CP <<Relator>>
+PM_CP <|-- Source_PM-AF_CP
+Source_xCP <|-- Source_PM-AF_CP
+class Subnetwork_Connection <<Relator>>
+Connection <|-- Subnetwork_Connection
+Hop_Connection <|-- Subnetwork_Connection
+class Bidirectional_AP <<Relator>>
+AP <|-- Bidirectional_AP
+class Bidirectional_NC <<Relator>>
+Network_Connection <|-- Bidirectional_NC
+class Bidirectional_Path_TCP <<Relator>>
+Bidirectional_TCP <|-- Bidirectional_Path_TCP
+class Source_MC-AF_CP <<Relator>>
+class PM-SoAF_Connected_PM_Output <<Role>>
+class PM_connected_Source_AF_Input <<Role>>
+class Unidirectional_Trail <<Relator>>
+Trail <|-- Unidirectional_Trail
+class Link_Connection <<Relator>>
+Connection <|-- Link_Connection
+Hop_Connection <|-- Link_Connection
+class TCP <<Relator>>
+Reference_Point <|-- TCP
+class Network_Connection <<Relator>>
+Connection <|-- Network_Connection
+class Sink_AP <<Relator>>
+AP <|-- Sink_AP
+class Trail <<Relator>>
+Transport_Entity <|-- Trail
+class Unidirectional_Source_SNC <<Relator>>
+Unidirectional_SNC <|-- Unidirectional_Source_SNC
+class Source_AF-PM_CP <<Relator>>
+class Unidirectional_End_NC <<Relator>>
+Unidirectional_NC <|-- Unidirectional_End_NC
+class PM_CP <<Relator>>
+Unidirectional_CP <|-- PM_CP
+class Unidirectional_NC <<Relator>>
+Network_Connection <|-- Unidirectional_NC
+class Sink_TCP <<Relator>>
+TCP <|-- Sink_TCP
+class Bidirectional_TCP <<Relator>>
+TCP <|-- Bidirectional_TCP
+class Sink_PM-AF_CP_2 <<Relator>>
+class Reference_Point <<Relator>>
+class Bidirectional_End_TCP <<Relator>>
+Bidirectional_TCP <|-- Bidirectional_End_TCP
+class Bidirectional_PM_TCP <<Relator>>
+Bidirectional_TCP <|-- Bidirectional_PM_TCP
+class AP <<Relator>>
+class Sink_End_TCP <<Relator>>
+Sink_TCP <|-- Sink_End_TCP
+class Uni_End_LC <<Relator>>
+Unidirectional_LC <|-- Uni_End_LC
+class Unidirectional_SNC <<Relator>>
+Subnetwork_Connection <|-- Unidirectional_SNC
+class Connection <<Relator>>
+Transport_Entity <|-- Connection
+class Source_AP <<Relator>>
+AP <|-- Source_AP
+class Connected_Source_AF_Output <<Role>>
+class Connected_Source_TTF_Input <<Role>>
+class Transport_Entity <<Relator>>
+class Source_TCP <<Relator>>
+TCP <|-- Source_TCP
+class Sink_MC-AF_CP <<Relator>>
+class PM-SkAF_Connected_PM_Input <<Role>>
+class PM_connected_Sink_AF_Output <<Role>>
+class Unidirectional_PM_NC <<Relator>>
+Unidirectional_NC <|-- Unidirectional_PM_NC
+class Bidirectional_PM_CP <<Relator>>
+Bidirectional_CP <|-- Bidirectional_PM_CP
+class Bidirectional_Trail <<Relator>>
+Trail <|-- Bidirectional_Trail
+class Unidirectional_CP <<Relator>>
+CP <|-- Unidirectional_CP
+class Source_Path_TCP <<Relator>>
+Source_xCP <|-- Source_Path_TCP
+Source_TCP <|-- Source_Path_TCP
+class Source_Path_TTF_Output <<Role>>
+class Sink_PM_NC <<Relator>>
+Unidirectional_PM_NC <|-- Sink_PM_NC
+class Source_End_TCP <<Relator>>
+Source_TCP <|-- Source_End_TCP
+class Source_End_TTF_Output <<Role>>
+class Connected_Physical_Link_Input <<Role>>
+class Hop_Connection <<Relator>>
+class TTF_Connected_PM_Input <<Role>>
+class Source_PM_TTF_Output <<Role>>
+Bidirectional_AF_CP "0..1" o-- "2..2" AF_CP : A_BidirectionalAFCP_AFCP
+Bidirectional_AP "0..1" o-- "1..1" Source_AP : A_BidirectionalAP_SourceAP
+Bidirectional_AP "0..1" o-- "1..1" Sink_AP : A_BidirectionalAP_SinkAP
+Bidirectional_End_TCP "0..1" o-- "1..1" Sink_End_TCP : A_BidirectionalEndTCP_SinkEndTCP
+Bidirectional_End_TCP "0..1" o-- "1..1" Source_End_TCP : A_BidirectionalEndTCP_SourceEndTCP
+Bidirectional_LC "0..1" o-- "2..2" Unidirectional_LC : A_BidirectionalLC_UnidirectionalLC
+Bidirectional_NC "0..1" o-- "2..2" Unidirectional_NC : A_BidirectionalNC_UnidirectionalNC
+Bidirectional_NC "0..1" o-- "2..2" Unidirectional_SNC : A_BidirectionalNC_UnidirectionalSNC
+Bidirectional_PM_CP "0..1" o-- "2..2" PM_CP : A_BidirectionalPMCP_PMCP
+Bidirectional_PM_TCP "0..1" o-- "1..1" Sink_PM_TCP : A_BidirectionalPMTCP_SinkPMTCP
+Bidirectional_PM_TCP "0..1" o-- "1..1" Source_PM_TCP : A_BidirectionalPMTCP_SourcePMTCP
+Bidirectional_Path_TCP "0..1" o-- "1..1" Source_Path_TCP : A_BidirectionalPathTCP_SourcePathTCP
+Bidirectional_Path_TCP "0..1" o-- "1..1" Sink_Path_TCP : A_BidirectionalPathTCP_SinkPathTCP
+AF_CP "1..1" -- "1..1" Connected_Sink_AF_Output : A_AFCP_ConnectedSinkAFOutput
+Source_AP "1..1" -- "1..1" Connected_Source_AF_Output : A_SourceAP_ConnectedSourceAFOutput
+Source_AP "1..1" -- "1..1" Connected_Source_TTF_Input : A_SourceAP_ConnectedSourceTTFInput
+Sink_MC-AF_CP "1..1" -- "1..1" PM_connected_Sink_AF_Output : A_SinkMC-AFCP_PMconnectedSinkAFOutput
+Source_MC-AF_CP "1..1" -- "1..1" PM_connected_Source_AF_Input : A_SourceMC-AFCP_PMconnectedSourceAFInput
+Sink_MC-AF_CP "1..1" -- "1..1" PM-SkAF_Connected_PM_Input : A_SinkMC-AFCP_PM-SkAFConnectedPMInput
+Source_MC-AF_CP "1..1" -- "1..1" PM-SoAF_Connected_PM_Output : A_SourceMC-AFCP_PM-SoAFConnectedPMOutput
+Sink_AP "1..1" -- "1..1" Unidirectional_Trail : A_SinkAP_UnidirectionalTrail
+Source_AP "1..1" -- "1..1" Sink_AP : /source-sink_Trail_connection
+Sink_PM-AF_CP_2 "1..1" -- "1..1" Source_PM-AF_CP : /AF_SNC_conneection
+Sink_PM-AF_CP_2 "1..1" -- "1..1" Unidirectional_AF_SNC : A_SinkPM-AFCP2_UnidirectionalAFSNC
+Source_AP "1..1" -- "1..1" Unidirectional_Trail : A_SourceAP_UnidirectionalTrail
+Source_Path_TCP "1..1" -- "1..1" Unidirectional_Path_NC : A_SourcePathTCP_UnidirectionalPathNC
+Sink_Path_TCP "1..1" -- "1..1" Unidirectional_Path_NC : A_SinkPathTCP_UnidirectionalPathNC
+AF_CP "1..1" -- "1..1" Connected_Source_AF_Input : A_AFCP_ConnectedSourceAFInput
+Bidirectional_Trail "0..1" o-- "2..2" Unidirectional_Trail : A_BidirectionalTrail_UnidirectionalTrail
+Source_End_TCP "1..1" -- "1..1" Connected_Physical_Link_Input : A_SourceEndTCP_ConnectedPhysicalLinkInput
+Source_Path_TCP "1..1" -- "1..1" Connected_Source_AF_Input : A_SourcePathTCP_ConnectedSourceAFInput
+Hop_Connection "1..*" -- "0..*" Unidirectional_NC : /supports
+Unidirectional_Trail "1..*" -- "0..*" Hop_Connection : /supports
+PM-PM_NC "1..1" -- "1..1" Sink_PM_TCP : A_PM-PMNC_SinkPMTCP
+Source_PM_TCP "1..1" -- "1..1" PM-PM_NC : A_SourcePMTCP_PM-PMNC
+Sink_End_TCP "1..1" -- "1..1" Unidirectional_End_NC : A_SinkEndTCP_UnidirectionalEndNC
+Sink_End_TCP "1..1" -- "1..1" Uni_End_LC : A_SinkEndTCP_UniEndLC
+Source_End_TCP "1..1" -- "1..1" Sink_End_TCP : /source-sink_End_NC_connection
+Sink_PM_NC "1..1" -- "1..1" Source_Path_TCP : A_SinkPMNC_SourcePathTCP
+Sink_PM_NC "1..1" -- "1..1" Sink_PM_TCP : A_SinkPMNC_SinkPMTCP
+Unidirectional_NC "1..*" -- "0..1" Unidirectional_Trail : A_UnidirectionalNC_UnidirectionalTrail
+Sink_PM_TCP "1..1" -- "1..1" Unidirectional_Sink_SNC : A_SinkPMTCP_UnidirectionalSinkSNC
+Sink_PM_TCP "1..1" -- "1..1" Sink_PM-AF_CP : /sink_SNC_connection
+Sink_PM_TCP "1..1" -- "1..1" Source_Path_TCP : /sink_PM_NC_connection
+Source_PM_TCP "1..1" -- "1..1" Sink_PM_TCP : /PM-PM_NC_connection
+Unidirectional_Sink_SNC "1..1" -- "1..1" Sink_PM-AF_CP : A_UnidirectionalSinkSNC_SinkPM-AFCP
+Sink_Path_TCP "1..1" -- "1..1" Source_PM_NC : A_SinkPathTCP_SourcePMNC
+Source_Path_TCP "1..1" -- "1..1" Sink_Path_TCP : /source-sink_Path_NC_connection
+Source_PM_TCP "1..1" -- "1..1" Sink_Path_TCP : /source_PM_NC_connection
+Sink_xCP "1..1" -- "1..1" Uni_Path_LC : A_SinkxCP_UniPathLC
+Source_xCP "1..1" -- "1..1" Sink_xCP : /source-sink_Path_LC_connection
+Unidirectional_Source_SNC "1..1" -- "1..1" Source_AF-PM_CP : A_UnidirectionalSourceSNC_SourceAF-PMCP
+Source_PM_TCP "1..1" -- "1..1" Source_AF-PM_CP : /source_SNC_connection
+Source_End_TCP "1..1" -- "1..1" Unidirectional_End_NC : A_SourceEndTCP_UnidirectionalEndNC
+Source_End_TCP "1..1" -- "1..1" Uni_End_LC : A_SourceEndTCP_UniEndLC
+Source_End_TCP "1..1" -- "1..1" Source_End_TTF_Output : A_SourceEndTCP_SourceEndTTFOutput
+Source_PM_NC "1..1" -- "1..1" Source_PM_TCP : A_SourcePMNC_SourcePMTCP
+Source_PM_TCP "1..1" -- "1..1" TTF_Connected_PM_Input : A_SourcePMTCP_TTFConnectedPMInput
+Source_PM_TCP "1..1" -- "1..1" Unidirectional_Source_SNC : A_SourcePMTCP_UnidirectionalSourceSNC
+Source_PM_TCP "1..1" -- "1..1" Source_PM_TTF_Output : A_SourcePMTCP_SourcePMTTFOutput
+Source_PM-AF_CP "1..1" -- "1..1" Unidirectional_AF_SNC : A_SourcePM-AFCP_UnidirectionalAFSNC
+Source_Path_TCP "1..1" -- "1..1" Source_Path_TTF_Output : A_SourcePathTCP_SourcePathTTFOutput
+Source_xCP "1..1" -- "1..1" Uni_Path_LC : A_SourcexCP_UniPathLC
+Uni_End_LC "1..1" -- "1..1" Unidirectional_End_NC : A_UniEndLC_UnidirectionalEndNC
+@enduml

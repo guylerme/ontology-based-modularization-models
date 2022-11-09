@@ -1,0 +1,76 @@
+@startuml
+'17 occurrencies
+'33 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Primary_Business_Activity <<Relator>>
+Business_Activitiy <|-- Primary_Business_Activity
+class Businessman <<Role>>
+class Allocation <<Relator>>
+class Public_Emergency_Human_Resource <<Role>>
+class Civil_Defense_Organization <<Kind>>
+class Relator_Individual <<Relator>>
+class Risk <<Relator>>
+class Agreement <<Relator>>
+class Protector <<RoleMixin>>
+Agent_in_Social_Relation <|-- Protector
+class Under_Protection_Component <<RoleMixin>>
+class Evacuation_at_Installation <<Relator>>
+class Evacuation_Closed_Area <<Category>>
+Evacuation_Local <|-- Evacuation_Closed_Area
+class Installation <<Kind>>
+class Evacuation <<Relator>>
+class Evacuation_Local <<RoleMixin>>
+class Recognition <<Relator>>
+class Normative_Description <<Category>>
+class Social_Role_Recognition <<Relator>>
+Recognition <|-- Social_Role_Recognition
+class Social_Role <<Class>>
+class Identified_Risk <<Relator>>
+Risk <|-- Identified_Risk
+class Deployment <<Relator>>
+class OE_Process_Definition_Document <<Kind>>
+class OE_Process_Definition_Document <<Class>>
+class Social_Relator <<Relator>>
+Relator_Individual <|-- Social_Relator
+class Agent_in_Social_Relation <<RoleMixin>>
+class EP_Delegatum <<Relator>>
+class Possesion <<Relator>>
+class Owner <<RoleMixin>>
+class Secondary_Business_Activity <<Relator>>
+Business_Activitiy <|-- Secondary_Business_Activity
+class Business_Activitiy <<Relator>>
+class Internal_Allocation <<Relator>>
+class Organization_Holder <<Role>>
+class Business_Human_Resource <<Role>>
+Social_Relator "1..1" -- "2..*" Agent_in_Social_Relation : 
+Normative_Description "0..1" -- "1..1" Social_Role : creates
+Recognition "1..*" -- "1..1" Normative_Description : 
+Social_Role_Recognition "0..1" -- "1..1" Social_Role : 
+Deployment "1..1" -- "1..*" OE_Process_Definition_Document : 
+Deployment "1..1" -- "1..*" OE_Process_Definition_Document : 
+Business_Activitiy "1..*" -- "1..*" Installation : 
+Business_Activitiy "1..*" -- "1..1" Businessman : 
+Primary_Business_Activity "1..1" -- "1..1" Businessman : 
+Secondary_Business_Activity "0..*" -- "1..1" Businessman : 
+Deployment "1..1" -- "1..*" Installation : 
+Evacuation "1..*" -- "1..1" Evacuation_Local : 
+Evacuation "1..*" -- "1..1" Installation : 
+Evacuation_at_Installation "1..1" -- "1..1" Evacuation_Closed_Area : 
+Evacuation_at_Installation "1..1" -- "1..1" Installation : 
+Possesion "1..*" -- "1..1" Owner : 
+Allocation "1..*" -- "1..1" Civil_Defense_Organization : 
+Possesion "1..1" -- "1..*" Installation : 
+Internal_Allocation "1..*" -- "1..1" Organization_Holder : 
+Allocation "1..*" -- "1..1" Public_Emergency_Human_Resource : 
+Internal_Allocation "1..*" -- "1..1" Business_Human_Resource : 
+Agreement "1..*" -- "1..1" Protector : 
+Agreement "1..*" -- "1..1" Under_Protection_Component : 
+@enduml

@@ -1,0 +1,53 @@
+@startuml
+'12 occurrencies
+'16 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Mode>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Subnetwork <<Mode>>
+class Compound_Link <<Mode>>
+Link <|-- Compound_Link
+class Serial_Compound_Link <<Mode>>
+Compound_Link <|-- Serial_Compound_Link
+class Paralel_Compound_Link <<Mode>>
+Compound_Link <|-- Paralel_Compound_Link
+class Access_Group <<Mode>>
+class Topological_Layer_Network <<Mode>>
+class Layer_Network <<Category>>
+class Partitionable_Subnetwork <<Mode>>
+Subnetwork <|-- Partitionable_Subnetwork
+class Compound_AG <<Mode>>
+Access_Group <|-- Compound_AG
+class Component_Link <<Mode>>
+Link <|-- Component_Link
+class Unidirectional_LC <<Relator>>
+class Single_AG <<Mode>>
+Access_Group <|-- Single_AG
+class TTF <<Category>>
+class Link <<Mode>>
+class Topological_Matrix <<Mode>>
+Subnetwork <|-- Topological_Matrix
+class Physical_Matrix <<Kind>>
+Topological_Layer_Network "1..1" o-- "2..*" Access_Group : A_TopologicalLayerNetwork_AccessGroup
+Component_Link "1..1" -- "1..1" Unidirectional_LC : LC_has_Topological_Counterpart
+Compound_AG "1..1" o-- "2..*" Single_AG : A_CompoundAG_SingleAG
+Compound_Link "1..1" o-- "2..*" Link : A_CompoundLink_Link
+Compound_Link "1..1" o-- "1..*" Subnetwork : A_CompoundLink_Subnetwork
+Layer_Network "1..1" o-- "0..*" Physical_Matrix : A_LayerNetwork_PhysicalMatrix
+Topological_Layer_Network "1..1" -- "1..1" Layer_Network : hasTopology
+Layer_Network "1..1" o-- "1..1" Unidirectional_LC : A_LayerNetwork_UnidirectionalLC
+Layer_Network "1..1" o-- "2..*" TTF : A_LayerNetwork_TTF
+Layer_Network "1..1" o-- "1..*" Unidirectional_LC : A_LayerNetwork_UnidirectionalLC
+Topological_Layer_Network "1..1" o-- "1..*" Link : A_TopologicalLayerNetwork_Link
+Partitionable_Subnetwork "1..1" o-- "2..*" Link : A_PartitionableSubnetwork_Link
+Partitionable_Subnetwork "1..1" o-- "1..1" Subnetwork : A_PartitionableSubnetwork_Subnetwork
+Single_AG "1..1" -- "1..1" TTF : TTF_has_Topological_Counterpart
+Topological_Matrix "1..1" -- "1..1" Physical_Matrix : SNChasTopologicalCounterpart
+Topological_Layer_Network "1..1" o-- "0..*" Subnetwork : A_TopologicalLayerNetwork_Subnetwork
+@enduml

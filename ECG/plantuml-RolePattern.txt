@@ -1,0 +1,56 @@
+@startuml
+'12 occurrencies
+'19 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class RightVentricleAsABloodContainer <<Role>>
+RightVentricle <|-- RightVentricleAsABloodContainer
+class RightVentricle <<Kind>>
+class RightAtriumAsABloodContainer <<Role>>
+RightAtrium <|-- RightAtriumAsABloodContainer
+class RightAtrium <<Kind>>
+class RightVentricleAsAPump <<Role>>
+RightVentricle <|-- RightVentricleAsAPump
+class HeartAsAPump <<Role>>
+Heart <|-- HeartAsAPump
+class Heart <<Kind>>
+class LungsAsABloodContainer <<Role>>
+Lungs <|-- LungsAsABloodContainer
+class Lungs <<Kind>>
+class LeftVentricleAsAPump <<Role>>
+LeftVentricle <|-- LeftVentricleAsAPump
+class LeftVentricle <<Kind>>
+class PeripheralsAsABloodContainer <<Role>>
+Peripherals <|-- PeripheralsAsABloodContainer
+class Peripherals <<Kind>>
+class LeftAtriumAsABloodContainer <<Role>>
+LeftAtrium <|-- LeftAtriumAsABloodContainer
+class LeftAtrium <<Kind>>
+class HeartAsABloodContainer <<Role>>
+Heart <|-- HeartAsABloodContainer
+class LeftVentricleAsABloodContainer <<Role>>
+LeftVentricle <|-- LeftVentricleAsABloodContainer
+class LeftAtriumAsAPump <<Role>>
+LeftAtrium <|-- LeftAtriumAsAPump
+class RightAtriumAsAPump <<Role>>
+RightAtrium <|-- RightAtriumAsAPump
+Heart "1..1" *-- "1..1" LeftVentricle : 
+Heart "1..1" *-- "1..1" RightVentricle : 
+Heart "1..1" *-- "1..1" LeftAtrium : 
+Heart "1..1" *-- "1..1" RightAtrium : 
+HeartAsABloodContainer "1..1" o-- "1..1" LeftVentricleAsABloodContainer : 
+HeartAsABloodContainer "1..1" o-- "1..1" RightAtriumAsABloodContainer : 
+HeartAsABloodContainer "1..1" o-- "1..1" LeftAtriumAsABloodContainer : 
+HeartAsABloodContainer "1..1" o-- "1..1" RightVentricleAsABloodContainer : 
+HeartAsAPump "1..1" o-- "0..1" RightAtriumAsAPump : 
+HeartAsAPump "1..1" o-- "1..1" LeftVentricleAsAPump : 
+HeartAsAPump "1..1" o-- "1..1" RightVentricleAsAPump : 
+HeartAsAPump "1..1" o-- "0..1" LeftAtriumAsAPump : 
+@enduml

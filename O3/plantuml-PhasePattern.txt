@@ -1,0 +1,22 @@
+@startuml
+'2 occurrencies
+'5 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Phase>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Inapt <<Phase>>
+Substance <|-- Inapt
+class Substance <<Category>>
+Endurant <|-- Substance
+class Endurant <<Category>>
+Individual <|-- Endurant
+class Individual <<Category>>
+class Apt <<Phase>>
+Substance <|-- Apt
+@enduml

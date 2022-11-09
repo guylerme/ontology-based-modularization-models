@@ -1,0 +1,11 @@
+Kind 7
+SubKind 33
+Role 48
+Phase 2
+Relator 28
+Category 27
+Collective 0
+Mixin 17
+Mode 19
+Quantity 0
+RoleMixin 19

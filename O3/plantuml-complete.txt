@@ -1,0 +1,943 @@
+@startuml
+class Integer <<PrimitiveType>>
+class Boolean <<PrimitiveType>>
+class String <<PrimitiveType>>
+class Unlimited_Natural <<PrimitiveType>>
+class Administrative_Assistant <<Role>>
+Formal_Organization_Member <|-- Administrative_Assistant
+class Analista_Ambiental <<Role>>
+class Analista_de_Desenvolvimento_Regional <<Role>>
+class Analista_de_Gestão_Corporativa <<Role>>
+class Analista_de_Pesquisa_Energética <<Role>>
+class Analista_de_Sistemas <<Role>>
+class Auditor <<Role>>
+Missionary_Unit_Member <|-- Auditor
+class Autarchy <<SubKind>>
+Non_Corporate_Public_Entity <|-- Autarchy
+class Business_Analyst <<Role>>
+Structural_Unit_Member <|-- Business_Analyst
+class Candidate <<Role>>
+Natural_Person <|-- Candidate
+class Collegiate_Body <<SubKind>>
+Simple_Standalone_Missionary_Organization <|-- Collegiate_Body
+Public_Organizational_Unit <|-- Collegiate_Body
+class Collegiate_Body_Requester <<Role>>
+Collegiate_Body <|-- Collegiate_Body_Requester
+Public_Formal_Requester <|-- Collegiate_Body_Requester
+class Effective_Public__Admission <<Relator>>
+Public_Admission <|-- Effective_Public__Admission
+Effective_Membership <|-- Effective_Public__Admission
+class Foundation <<SubKind>>
+Non_Corporate_Public_Entity <|-- Foundation
+class General_Regiment_Government_Employee <<Role>>
+Government_Employee <|-- General_Regiment_Government_Employee
+class Gerente_de_Escopo <<Role>>
+Missionary_Unit_Member <|-- Gerente_de_Escopo
+class Gerente_de_Projeto <<Role>>
+Missionary_Unit_Member <|-- Gerente_de_Projeto
+class Gerente_de_Riscos <<Role>>
+Missionary_Unit_Member <|-- Gerente_de_Riscos
+class Government_Agency <<SubKind>>
+Public_Organization <|-- Government_Agency
+class Government_Employee <<Role>>
+Formal_Organization_Member <|-- Government_Employee
+class Information_Technology_Analyst <<Role>>
+Formal_Organization_Member <|-- Information_Technology_Analyst
+class Institute <<SubKind>>
+Standalone_Missionary_Organization <|-- Institute
+class Mixed_Economy_Company <<SubKind>>
+State_Company <|-- Mixed_Economy_Company
+class Non_Corporate_Public_Entity <<SubKind>>
+Public_Entity <|-- Non_Corporate_Public_Entity
+class Organizing_Institution <<Role>>
+Institute <|-- Organizing_Institution
+class Project_Leader <<Role>>
+Missionary_Unit_Member <|-- Project_Leader
+class Public_Administrative_Unit <<SubKind>>
+Organizational_Unit <|-- Public_Administrative_Unit
+Public_Organizational_Unit <|-- Public_Administrative_Unit
+class Public_Admission <<Relator>>
+Admission <|-- Public_Admission
+class Public_Company <<SubKind>>
+State_Company <|-- Public_Company
+class Public_Entity <<SubKind>>
+Public_Organization <|-- Public_Entity
+class Public_Formal_Requester <<RoleMixin>>
+class Public_Organization <<Class>>
+Multi_Functional_Organization <|-- Public_Organization
+Public_Organizational_Unit <|-- Public_Organization
+class Public_Organization_Requester <<Role>>
+Public_Formal_Requester <|-- Public_Organization_Requester
+Public_Organization <|-- Public_Organization_Requester
+class Public_Organizational_Unit <<Class>>
+class Public_Tender <<Relator>>
+class Regional_Public_Organization <<SubKind>>
+Complex_Standalone_Functional_Organization <|-- Regional_Public_Organization
+class Relationship_Analyst <<Role>>
+Social_Agent_Internal_Collaborator <|-- Relationship_Analyst
+class State_Company <<SubKind>>
+Public_Entity <|-- State_Company
+class Statutory_Government_Employee <<Role>>
+Government_Employee <|-- Statutory_Government_Employee
+class Support_Analyst <<Role>>
+Social_Agent_Internal_Collaborator <|-- Support_Analyst
+class System_Analyst <<Role>>
+Structural_Unit_Member <|-- System_Analyst
+class participates_of <<Mediation>>
+class subordinated_to <<Formal>>
+class represented_by <<Material>>
+class formalizes <<Formal>>
+class subordinated_to <<Formal>>
+class bounded_to <<Material>>
+class formalizes <<Mediation>>
+class organized_by <<Mediation>>
+class subordinated_to <<Formal>>
+class  <<ComponentOf>>
+class order <<Mediation>>
+class  <<ComponentOf>>
+
+
+
+
+
+
+
+
+
+
+class Organizational_Ownership <<Relator>>
+class Admission <<Relator>>
+Organizational_Membership <|-- Admission
+Social_Relator <|-- Admission
+class Admission_Contract_by_Direct_Appointment <<Relator>>
+class Admission_Contract_by_Indirect_Appointment <<Relator>>
+class Admission_With_Term <<Relator>>
+Admission <|-- Admission_With_Term
+class Assignment <<Relator>>
+Organizational_Membership <|-- Assignment
+Social_Relator <|-- Assignment
+class Authority_Delegation <<Relator>>
+Social_Relator <|-- Authority_Delegation
+Delegatum <|-- Authority_Delegation
+class Board <<SubKind>>
+Line_Unit <|-- Board
+class Business_Collaboration <<Relator>>
+class Business_Object <<RoleMixin>>
+class Business_Role <<Class>>
+Business_Social_Role <|-- Business_Role
+class Business_Social_Role <<Class>>
+Social_Role <|-- Business_Social_Role
+class Cognitive_Skill <<Mode>>
+Skill <|-- Cognitive_Skill
+Belief <|-- Cognitive_Skill
+class Collaboration_Business_Role <<Class>>
+Business_Social_Role <|-- Collaboration_Business_Role
+class Commission <<SubKind>>
+Missionary_Organization <|-- Commission
+class Committee <<SubKind>>
+Missionary_Unit <|-- Committee
+class Complex_Standalone_Functional_Organization <<SubKind>>
+Standalone_Functional_Organization <|-- Complex_Standalone_Functional_Organization
+class Complex_Standalone_Missionary_Organization <<SubKind>>
+Standalone_Missionary_Organization <|-- Complex_Standalone_Missionary_Organization
+class Composed_Missionary_Organization <<SubKind>>
+Missionary_Organization <|-- Composed_Missionary_Organization
+class Composite_Line_Unit <<SubKind>>
+Line_Unit <|-- Composite_Line_Unit
+class Controlled_Resource <<RoleMixin>>
+Resource <|-- Controlled_Resource
+class Council <<SubKind>>
+Functional_Organization <|-- Council
+class Effective_Membership <<Relator>>
+Organizational_Membership <|-- Effective_Membership
+class Elector <<Mixin>>
+class Employee_Type <<Class>>
+Business_Social_Role <|-- Employee_Type
+class Employer <<Role>>
+Formal_Organization <|-- Employer
+class External_Collaboration_Business_Role <<Class>>
+Collaboration_Business_Role <|-- External_Collaboration_Business_Role
+class External_Collaborator <<RoleMixin>>
+class Formal_Organization <<Kind>>
+Organization <|-- Formal_Organization
+class Formal_Organization_Member <<Role>>
+Organizational_Member <|-- Formal_Organization_Member
+class Formal_Society <<Category>>
+Society <|-- Formal_Society
+class Functional_Commitment <<Mode>>
+Social_Commitment <|-- Functional_Commitment
+class Functional_Headquarters <<Role>>
+Standalone_Functional_Organization <|-- Functional_Headquarters
+class Functional_Organization <<SubKind>>
+Formal_Organization <|-- Functional_Organization
+class Functional_Responsibility <<Relator>>
+Delegatum <|-- Functional_Responsibility
+class Group_Member <<RoleMixin>>
+class Holding <<SubKind>>
+Functional_Organization <|-- Holding
+class Individual_Elector <<Role>>
+Natural_Person <|-- Individual_Elector
+Elector <|-- Individual_Elector
+class Individual_Nominator <<Role>>
+Natural_Person <|-- Individual_Nominator
+Nominator <|-- Individual_Nominator
+class Internal_Collaboration_Business_Role <<Class>>
+Collaboration_Business_Role <|-- Internal_Collaboration_Business_Role
+class Internal_Collaborator <<RoleMixin>>
+class Internal_Regiment <<Kind>>
+Normative_Description <|-- Internal_Regiment
+class Law <<Kind>>
+Normative_Description <|-- Law
+class Line_Unit <<SubKind>>
+Structural_Unit <|-- Line_Unit
+class Location <<Kind>>
+class Membership_With_Term <<Relator>>
+Organizational_Membership <|-- Membership_With_Term
+class Membership_by_Appointment <<Relator>>
+Organizational_Membership <|-- Membership_by_Appointment
+class Membership_by_Election <<Relator>>
+Organizational_Membership <|-- Membership_by_Election
+class Missionary_Allocation_Unit <<Role>>
+Missionary_Unit <|-- Missionary_Allocation_Unit
+class Missionary_Assignment <<Relator>>
+Assignment <|-- Missionary_Assignment
+class Missionary_Business_Role <<Class>>
+Business_Role <|-- Missionary_Business_Role
+class Missionary_Headquarters <<Role>>
+Standalone_Missionary_Organization <|-- Missionary_Headquarters
+class Missionary_Organization <<SubKind>>
+Formal_Organization <|-- Missionary_Organization
+class Missionary_Unit <<SubKind>>
+Organizational_Unit <|-- Missionary_Unit
+class Missionary_Unit_Head <<Role>>
+Missionary_Unit_Member <|-- Missionary_Unit_Head
+class Missionary_Unit_Member <<Role>>
+Structural_Unit_Member <|-- Missionary_Unit_Member
+Group_Member <|-- Missionary_Unit_Member
+class Multi_Functional_Organization <<SubKind>>
+Functional_Organization <|-- Multi_Functional_Organization
+class National_Society <<Kind>>
+Formal_Society <|-- National_Society
+class Natural_Person <<Kind>>
+Physical_Agent <|-- Natural_Person
+class Nominator <<Mixin>>
+class Organization <<Category>>
+Social_Entity <|-- Organization
+Social_Agent <|-- Organization
+class Organization_Head <<Role>>
+Formal_Organization_Member <|-- Organization_Head
+class Organizational_Member <<Role>>
+Natural_Person <|-- Organizational_Member
+Social_Entity <|-- Organizational_Member
+class Organizational_Membership <<Relator>>
+class Organizational_Owner <<Role>>
+Organization <|-- Organizational_Owner
+class Organizational_Unit <<Kind>>
+Organization <|-- Organizational_Unit
+class Owned_Resource <<RoleMixin>>
+Resource <|-- Owned_Resource
+class Permission <<Relator>>
+Social_Relator <|-- Permission
+class Permission_Holder <<RoleMixin>>
+Group_Member <|-- Permission_Holder
+class Permission_Provider <<RoleMixin>>
+Group_Member <|-- Permission_Provider
+class Physical_Agent_External_Collaborator <<Role>>
+External_Collaborator <|-- Physical_Agent_External_Collaborator
+Natural_Person <|-- Physical_Agent_External_Collaborator
+class Physical_Agent_Internal_Collaborator <<Role>>
+Formal_Organization_Member <|-- Physical_Agent_Internal_Collaborator
+Internal_Collaborator <|-- Physical_Agent_Internal_Collaborator
+class Physical_Business_Object <<Role>>
+Business_Object <|-- Physical_Business_Object
+Physical_Object <|-- Physical_Business_Object
+class Physical_Skill <<Mode>>
+Skill <|-- Physical_Skill
+class Recognition_Contract <<Relator>>
+Social_Relator <|-- Recognition_Contract
+class Recognition_Contract_Attachment <<Relator>>
+class Simple_Standalone_Functional_Organization <<SubKind>>
+Standalone_Functional_Organization <|-- Simple_Standalone_Functional_Organization
+class Simple_Standalone_Missionary_Organization <<SubKind>>
+Standalone_Missionary_Organization <|-- Simple_Standalone_Missionary_Organization
+class Skill <<Mode>>
+class Skill_Metric <<Mode>>
+class Social_Agent_External_Collaborator <<Role>>
+External_Collaborator <|-- Social_Agent_External_Collaborator
+Formal_Organization <|-- Social_Agent_External_Collaborator
+class Social_Agent_Internal_Collaborator <<Role>>
+Organizational_Unit <|-- Social_Agent_Internal_Collaborator
+Internal_Collaborator <|-- Social_Agent_Internal_Collaborator
+class Social_Entity <<Mixin>>
+class Societary_Participation <<Relator>>
+Social_Relator <|-- Societary_Participation
+class Society <<Category>>
+Collective_Social_Agent <|-- Society
+class Staff_Unit <<SubKind>>
+Structural_Unit <|-- Staff_Unit
+class Standalone_Functional_Organization <<SubKind>>
+Functional_Organization <|-- Standalone_Functional_Organization
+class Standalone_Missionary_Organization <<SubKind>>
+Missionary_Organization <|-- Standalone_Missionary_Organization
+class Structural_Allocation_Unit <<Role>>
+Structural_Unit <|-- Structural_Allocation_Unit
+class Structural_Assignment <<Relator>>
+Assignment <|-- Structural_Assignment
+class Structural_Business_Role <<Class>>
+Business_Role <|-- Structural_Business_Role
+class Structural_Unit <<SubKind>>
+Organizational_Unit <|-- Structural_Unit
+class Structural_Unit_Head <<Role>>
+Structural_Unit_Member <|-- Structural_Unit_Head
+class Structural_Unit_Member <<Role>>
+Formal_Organization_Member <|-- Structural_Unit_Member
+Group_Member <|-- Structural_Unit_Member
+class Structural_Unit_Member_Authority_Delegatee <<Role>>
+Structural_Unit_Member <|-- Structural_Unit_Member_Authority_Delegatee
+Delegatee <|-- Structural_Unit_Member_Authority_Delegatee
+class Structural_Unit_Member_Authority_Delegator <<Role>>
+Structural_Unit_Member <|-- Structural_Unit_Member_Authority_Delegator
+Delegator <|-- Structural_Unit_Member_Authority_Delegator
+class Structural_Unit_Member_Responsibility_Delegatee <<Role>>
+Structural_Unit_Member <|-- Structural_Unit_Member_Responsibility_Delegatee
+Delegatee <|-- Structural_Unit_Member_Responsibility_Delegatee
+class Structural_Unit_Member_Responsibility_Delegator <<Role>>
+Structural_Unit_Member <|-- Structural_Unit_Member_Responsibility_Delegator
+Delegator <|-- Structural_Unit_Member_Responsibility_Delegator
+class System_Business_Object <<Role>>
+System_Object <|-- System_Business_Object
+Business_Object <|-- System_Business_Object
+class System_Object <<Category>>
+Object <|-- System_Object
+class Working_Group <<SubKind>>
+Missionary_Unit <|-- Working_Group
+class over <<Mediation>>
+class has <<Mediation>>
+class formalizes <<Mediation>>
+class generates <<Mediation>>
+class refers_to <<Formal>>
+class approved_by <<Material>>
+class empowers <<Mediation>>
+class context <<Formal>>
+class performs <<Mediation>>
+class deliberates_to <<Formal>>
+class  <<Mediation>>
+class  <<Mediation>>
+class located_at <<Formal>>
+class inherent_to <<Formal>>
+class cover <<Formal>>
+class cover <<Formal>>
+class requires <<Formal>>
+class formalizes <<Formal>>
+class defines <<Formal>>
+class sub_committee_of <<Formal>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class over <<Mediation>>
+class deliberates_to <<Formal>>
+class participates <<Material>>
+class instance_of <<Formal>>
+class instance_of <<Formal>>
+class instance_of <<Formal>>
+class located_at <<Formal>>
+class defines <<Formal>>
+class head_of <<Formal>>
+class recognized_by <<Formal>>
+class  <<ComponentOf>>
+class formalizes <<Formal>>
+class work_at <<Formal>>
+class recognized_by <<Formal>>
+class  <<Association>>
+class head_of <<Formal>>
+class  <<ComponentOf>>
+class requires <<Formal>>
+class context <<Mediation>>
+class delegates <<Mediation>>
+class has <<Mediation>>
+class composes <<Mediation>>
+class instance_of <<Formal>>
+class instance_of <<Formal>>
+class recognized_by <<Formal>>
+class recognized_by <<Formal>>
+class formalizes <<Formal>>
+class defines <<Formal>>
+class manages <<Material>>
+class staff_of <<Material>>
+class realizes <<Material>>
+class assigns_to <<Mediation>>
+class assigns <<Mediation>>
+class is_superior_to <<Formal>>
+class instance_of <<Formal>>
+class is_superior_to <<Formal>>
+class head_of <<Formal>>
+class head_of <<Formal>>
+class  <<ComponentOf>>
+class has <<Characterization>>
+class defines <<Formal>>
+class membership_to <<Mediation>>
+class formalizes <<Mediation>>
+class has <<Mediation>>
+class grants <<Mediation>>
+class relates_to <<Mediation>>
+class attachment_of <<Formal>>
+class generates <<Mediation>>
+class formalizes <<Mediation>>
+class accepts <<Mediation>>
+class relates_to <<Mediation>>
+class generates <<Mediation>>
+class accepts <<Mediation>>
+class defines <<Mediation>>
+class mensured_by <<Formal>>
+class recognizes <<Formal>>
+class defines <<Formal>>
+class assigns_to <<Mediation>>
+class assigns <<Mediation>>
+class is_superior_to <<Formal>>
+class instance_of <<Formal>>
+class head_of <<Formal>>
+class has_candidate_substitute <<Formal>>
+class relates_with <<Formal>>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Anti_Rigid_Mixin <<Class>>
+Mixin <|-- Anti_Rigid_Mixin
+Anti_Rigid_Universal <|-- Anti_Rigid_Mixin
+class Anti_Rigid_Subkind <<Class>>
+Anti_Rigid_Universal <|-- Anti_Rigid_Subkind
+class Anti_Rigid_Universal <<Class>>
+Universal <|-- Anti_Rigid_Universal
+class Category_(Rigid_Mixin_or_SuperKind) <<Class>>
+Mixin <|-- Category_(Rigid_Mixin_or_SuperKind)
+Rigid_Universal <|-- Category_(Rigid_Mixin_or_SuperKind)
+class Characterization <<Class>>
+Internal_Relation <|-- Characterization
+class Collective <<Class>>
+Substance_Sortal_Universal <|-- Collective
+class Collective_Individual <<Category>>
+Whole_(Complex_Individual) <|-- Collective_Individual
+Substance <|-- Collective_Individual
+class Constitution <<Class>>
+PartOf_(Meronymic_Relation_Universal) <|-- Constitution
+Internal_Relation <|-- Constitution
+class Derivation <<Class>>
+Internal_Relation <|-- Derivation
+class Endurant <<Category>>
+Individual <|-- Endurant
+class Endurant_Universal <<Class>>
+Identity_Provider_Universal <|-- Endurant_Universal
+class Formal_(Domain_Formal_Relation)_(Comparative_Formal_Relation) <<Class>>
+Formal_Relation_Universal <|-- Formal_(Domain_Formal_Relation)_(Comparative_Formal_Relation)
+class Formal_Relation_Universal <<Class>>
+Relation_Universal <|-- Formal_Relation_Universal
+Identity_Provider_Universal <|-- Formal_Relation_Universal
+class Functional_Complex <<Class>>
+Substance_Sortal_Universal <|-- Functional_Complex
+class Functional_Complex_Individual <<Category>>
+Substance <|-- Functional_Complex_Individual
+class Identity_Provider_Universal <<Class>>
+Rigid_Universal <|-- Identity_Provider_Universal
+class Individual <<Category>>
+class Instantiation <<Class>>
+Internal_Relation <|-- Instantiation
+class Internal_Relation <<Class>>
+Formal_Relation_Universal <|-- Internal_Relation
+class Internal_Relation_Individual <<Category>>
+class Intrinsic_Moment <<Class>>
+Moment_Universal <|-- Intrinsic_Moment
+class Intrinsic_Moment_Individual <<Category>>
+Moment_Individual <|-- Intrinsic_Moment_Individual
+class Material <<Class>>
+Relation_Universal <|-- Material
+Identity_Provider_Universal <|-- Material
+class Mediation <<Class>>
+Internal_Relation <|-- Mediation
+class Mixin <<Class>>
+Universal <|-- Mixin
+class Mode <<Class>>
+Intrinsic_Moment <|-- Mode
+class Mode_Individual <<Category>>
+Intrinsic_Moment_Individual <|-- Mode_Individual
+class Moment_Individual <<Category>>
+Endurant <|-- Moment_Individual
+class Moment_Universal <<Class>>
+Endurant_Universal <|-- Moment_Universal
+class Phase <<Class>>
+Anti_Rigid_Subkind <|-- Phase
+class Phase_Mixin <<Class>>
+Anti_Rigid_Mixin <|-- Phase_Mixin
+class Qua_Individual <<Category>>
+Intrinsic_Moment_Individual <|-- Qua_Individual
+class Qua_type <<Class>>
+Intrinsic_Moment <|-- Qua_type
+class Quality <<Class>>
+Intrinsic_Moment <|-- Quality
+class Quality_Individual <<Category>>
+Intrinsic_Moment_Individual <|-- Quality_Individual
+class Quantity <<Class>>
+Substance_Sortal_Universal <|-- Quantity
+class Quantity_Individual <<Category>>
+Substance <|-- Quantity_Individual
+class Relation_Universal <<Class>>
+Universal <|-- Relation_Universal
+class Relator_(Relational_Moment) <<Class>>
+Moment_Universal <|-- Relator_(Relational_Moment)
+class Relator_Individual <<Category>>
+Moment_Individual <|-- Relator_Individual
+class Rigid_Universal <<Class>>
+Universal <|-- Rigid_Universal
+class Role <<Class>>
+Anti_Rigid_Subkind <|-- Role
+class Role_Mixin <<Class>>
+Anti_Rigid_Mixin <|-- Role_Mixin
+class Semi_Rigid_Mixin <<Class>>
+Mixin <|-- Semi_Rigid_Mixin
+Universal <|-- Semi_Rigid_Mixin
+class Subkind_(Rigid_Subkind) <<Class>>
+Rigid_Universal <|-- Subkind_(Rigid_Subkind)
+class Substance <<Category>>
+Endurant <|-- Substance
+class Substance_Sortal_Universal <<Class>>
+Endurant_Universal <|-- Substance_Sortal_Universal
+class Universal <<Class>>
+class present_in <<Formal>>
+class instance_of <<Formal>>
+class instance_of <<Formal>>
+class /Paricipation_Individual <<Class>>
+Event_Individual <|-- /Paricipation_Individual
+class Apt <<Phase>>
+Substance <|-- Apt
+class Atomic_Event <<Class>>
+Atomic_Individual <|-- Atomic_Event
+Event_Individual <|-- Atomic_Event
+class Complex_Event <<Class>>
+Whole_(Complex_Individual) <|-- Complex_Event
+Event_Individual <|-- Complex_Event
+class Disposition <<Class>>
+Intrinsic_Moment_Individual <|-- Disposition
+class Event <<Class>>
+Identity_Provider_Universal <|-- Event
+class Event_Individual <<Class>>
+Individual <|-- Event_Individual
+class Inapt <<Phase>>
+Substance <|-- Inapt
+class Part_of_Event <<Class>>
+Event_Individual <|-- Part_of_Event
+Part <|-- Part_of_Event
+class Participant <<RoleMixin>>
+Substance <|-- Participant
+class Participation <<Class>>
+Event <|-- Participation
+class Situation <<Class>>
+Endurant_Universal <|-- Situation
+class Situation_Individual <<Class>>
+Endurant <|-- Situation_Individual
+class participation_of <<Formal>>
+class instantiates <<Formal>>
+class  <<ComponentOf>>
+class  <<Characterization>>
+class manifested_by <<Formal>>
+class  <<Association>>
+class activates <<Formal>>
+class /directly_causes <<Formal>>
+class brings_about <<Formal>>
+class enables <<Formal>>
+class causes <<Formal>>
+class perceives <<Formal>>
+class satisfies <<Formal>>
+
+class Action <<Class>>
+Event_Individual <|-- Action
+class Agent <<Category>>
+Substance <|-- Agent
+class Agent_in_Social_Relation <<RoleMixin>>
+Agent <|-- Agent_in_Social_Relation
+class Appointment <<Mode>>
+Commitment <|-- Appointment
+class Appoitment_Goal <<Class>>
+Goal <|-- Appoitment_Goal
+class Atomic_Action <<Class>>
+Action <|-- Atomic_Action
+Atomic_Event <|-- Atomic_Action
+class Atomic_Commitment <<Mode>>
+Commitment <|-- Atomic_Commitment
+Atomic_Individual <|-- Atomic_Commitment
+class Atomic_Plan <<Class>>
+Plan_(Action_Universal) <|-- Atomic_Plan
+class Belief <<Mode>>
+Mental_Moment <|-- Belief
+class Change <<Class>>
+Resource_Participation <|-- Change
+class Claim <<Mode>>
+Social_Moment <|-- Claim
+class Closed_Commitment <<Mode>>
+Commitment <|-- Closed_Commitment
+class Collective_Social_Agent <<Category>>
+Social_Agent <|-- Collective_Social_Agent
+Collective_Individual <|-- Collective_Social_Agent
+class Commitment <<Class>>
+class Commitment_Part <<Mixin>>
+Individual <|-- Commitment_Part
+class Commitment_Part <<Mixin>>
+Commitment <|-- Commitment_Part
+Part <|-- Commitment_Part
+class Complex_Action <<Class>>
+Action <|-- Complex_Action
+Complex_Event <|-- Complex_Action
+class Complex_Commitment <<Mode>>
+Whole_(Complex_Individual) <|-- Complex_Commitment
+Commitment <|-- Complex_Commitment
+class Complex_Plan <<Class>>
+Plan_(Action_Universal) <|-- Complex_Plan
+class Contribution_(Performance) <<Class>>
+Action <|-- Contribution_(Performance)
+/Paricipation_Individual <|-- Contribution_(Performance)
+class Creation <<Class>>
+Resource_Participation <|-- Creation
+class Delegatee <<RoleMixin>>
+Physical_Agent_in_Social_Relation <|-- Delegatee
+class Delegator <<RoleMixin>>
+Physical_Agent_in_Social_Relation <|-- Delegator
+class Delegatum <<Relator>>
+Social_Relator <|-- Delegatum
+class Desire <<Mode>>
+Mental_Moment <|-- Desire
+class Goal <<Class>>
+Proposition_Individual <|-- Goal
+class Individual_Social_Agent <<Category>>
+Functional_Complex_Individual <|-- Individual_Social_Agent
+Social_Agent <|-- Individual_Social_Agent
+Atomic_Individual <|-- Individual_Social_Agent
+class Intention <<Mode>>
+Commitment <|-- Intention
+Mental_Moment <|-- Intention
+class Intentional_Moment <<Mode>>
+class Interaction <<Class>>
+Complex_Action <|-- Interaction
+class Member_of_Collective_Social_Agent <<RoleMixin>>
+Agent <|-- Member_of_Collective_Social_Agent
+Part <|-- Member_of_Collective_Social_Agent
+class Mental_Moment <<Mode>>
+Intentional_Moment <|-- Mental_Moment
+class Normative_Description <<Category>>
+Social_Object <|-- Normative_Description
+class Normative_Description_Universal <<Class>>
+class Normatized_Social_Object <<Mixin>>
+Social_Object <|-- Normatized_Social_Object
+class Object <<Category>>
+Substance <|-- Object
+class Open_Commitment <<Mode>>
+Commitment <|-- Open_Commitment
+class Performer <<RoleMixin>>
+Participant <|-- Performer
+Agent <|-- Performer
+class Physical_Agent <<Category>>
+Agent <|-- Physical_Agent
+class Physical_Agent_in_Social_Relation <<RoleMixin>>
+Agent_in_Social_Relation <|-- Physical_Agent_in_Social_Relation
+Physical_Agent <|-- Physical_Agent_in_Social_Relation
+class Physical_Object <<Category>>
+Object <|-- Physical_Object
+class Plan_(Action_Universal) <<Class>>
+Event <|-- Plan_(Action_Universal)
+class Plan_Description <<Category>>
+Normative_Description <|-- Plan_Description
+class Plan_Description_Universal <<Class>>
+Normative_Description_Universal <|-- Plan_Description_Universal
+class Proposition_Individual <<Class>>
+class QuaIndividual <<Mode>>
+class Recognition <<Relator>>
+class Recognizer <<RoleMixin>>
+Agent <|-- Recognizer
+class Relator_Individual <<Relator>>
+class Resource <<RoleMixin>>
+Participant <|-- Resource
+Object <|-- Resource
+class Resource_Participation <<Class>>
+/Paricipation_Individual <|-- Resource_Participation
+class Social_Agent <<Category>>
+Nominator <|-- Social_Agent
+Agent <|-- Social_Agent
+Elector <|-- Social_Agent
+class Social_Agent_in_Agreement <<RoleMixin>>
+Social_Agent <|-- Social_Agent_in_Agreement
+Agent_in_Social_Relation <|-- Social_Agent_in_Agreement
+class Social_Commitment <<Mode>>
+Commitment <|-- Social_Commitment
+Social_Moment <|-- Social_Commitment
+class Social_Moment <<Mode>>
+Intentional_Moment <|-- Social_Moment
+QuaIndividual <|-- Social_Moment
+class Social_Object <<Category>>
+Object <|-- Social_Object
+class Social_Relator <<Relator>>
+Relator_Individual <|-- Social_Relator
+class Social_Role <<Class>>
+class Social_Role_Recognition <<Relator>>
+Recognition <|-- Social_Role_Recognition
+class Speech_Act <<Class>>
+Atomic_Action <|-- Speech_Act
+class Termination <<Class>>
+Resource_Participation <|-- Termination
+class Usage <<Class>>
+Resource_Participation <|-- Usage
+class caused_by <<Formal>>
+class instantiates <<Formal>>
+class causes <<Formal>>
+class creates <<Formal>>
+class  <<Characterization>>
+class  <<Characterization>>
+class  <<Mediation>>
+class  <<Characterization>>
+class propositional_content_of <<Formal>>
+class instantiates <<Formal>>
+class  <<Association>>
+class based_on <<Formal>>
+class  <<MemberOf>>
+class propositional_content_of <<Formal>>
+class  <<Association>>
+class instantiates <<Formal>>
+class describes <<Formal>>
+class performance_of <<Formal>>
+class  <<ComponentOf>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Association>>
+class propositional_content_of <<Formal>>
+class defines <<Formal>>
+class instantiates <<Formal>>
+class defines <<Formal>>
+class defines <<Formal>>
+class recognizes <<Formal>>
+class  <<Mediation>>
+class instantiates <<Formal>>
+class  <<Association>>
+class  <<Material>>
+class participates_as_resource <<Formal>>
+class  <<Association>>
+class  <<Mediation>>
+class delegates_to <<Material>>
+class  <<Material>>
+
+
+
+
+
+
+
+
+
+
+
+
+class  <<Derivation>>
+class  <<Derivation>>
+class Atomic_Individual <<Mixin>>
+Individual <|-- Atomic_Individual
+class Collective_Whole <<Mixin>>
+Whole_(Complex_Individual) <|-- Collective_Whole
+class ComponentOf <<Class>>
+PartOf_(Meronymic_Relation_Universal) <|-- ComponentOf
+class Functional_Complex_Whole <<Mixin>>
+Whole_(Complex_Individual) <|-- Functional_Complex_Whole
+class Functional_Part <<Mixin>>
+Part <|-- Functional_Part
+class Member <<Mixin>>
+Part <|-- Member
+class MemberOf <<Class>>
+PartOfCollective <|-- MemberOf
+class Meriological_Sum <<Class>>
+PartOf_(Meronymic_Relation_Universal) <|-- Meriological_Sum
+class Part <<Mixin>>
+Individual <|-- Part
+class PartOf_(Meronymic_Relation_Universal) <<Class>>
+Relation_Universal <|-- PartOf_(Meronymic_Relation_Universal)
+class PartOfCollective <<Class>>
+PartOf_(Meronymic_Relation_Universal) <|-- PartOfCollective
+class PartOfCollective <<Mixin>>
+Part <|-- PartOfCollective
+class Quantity_Part <<Mixin>>
+Part <|-- Quantity_Part
+class Quantity_Whole <<Mixin>>
+Whole_(Complex_Individual) <|-- Quantity_Whole
+class SubCollection <<Mixin>>
+Part <|-- SubCollection
+class SubCollectionOf <<Class>>
+PartOfCollective <|-- SubCollectionOf
+class SubQuantity <<Mixin>>
+Part <|-- SubQuantity
+class SubQuantityOf <<Class>>
+Formal_Relation_Universal <|-- SubQuantityOf
+PartOf_(Meronymic_Relation_Universal) <|-- SubQuantityOf
+class Whole_(Complex_Individual) <<Mixin>>
+Individual <|-- Whole_(Complex_Individual)
+class  <<MemberOf>>
+class  <<SubCollectionOf>>
+class  <<ComponentOf>>
+class  <<Association>>
+class  <<SubQuantityOf>>
+Public_Tender "1..1" -- "1..*" Candidate : participates_of
+Collegiate_Body "0..*" -- "1..1" Government_Agency : subordinated_to
+Collegiate_Body "0..*" -- "1..*" Public_Organization : represented_by
+Effective_Public__Admission "1..1" -- "1..1" Public_Tender : formalizes
+Public_Entity "0..*" -- "1..1" Government_Agency : bounded_to
+Public_Admission "1..1" -- "1..1" Government_Employee : formalizes
+Public_Tender "1..*" -- "1..1" Organizing_Institution : organized_by
+Regional_Public_Organization "1..1" o-- "2..*" Public_Administrative_Unit : 
+Public_Tender "1..*" -- "1..1" Public_Formal_Requester : order
+Public_Organization "1..1" o-- "2..*" Regional_Public_Organization : 
+Organizational_Ownership "1..1" -- "1..1" Owned_Resource : over
+Organizational_Ownership "1..*" -- "1..*" Organizational_Owner : has
+Admission "1..1" -- "1..1" Formal_Organization_Member : formalizes
+Admission "0..*" -- "1..1" Employer : generates
+Assignment "0..*" -- "1..1" Admission : refers_to
+Admission_Contract_by_Indirect_Appointment "0..*" -- "1..*" Formal_Organization_Member : approved_by
+Authority_Delegation "1..*" -- "1..1" Structural_Unit_Member_Authority_Delegatee : empowers
+Authority_Delegation "0..1" -- "1..*" Functional_Responsibility : context
+Authority_Delegation "1..*" -- "1..1" Structural_Unit_Member_Authority_Delegator : performs
+Board "0..*" -- "1..*" Structural_Unit : deliberates_to
+Business_Collaboration "1..1" -- "1..*" Internal_Collaborator : 
+Business_Collaboration "1..1" -- "1..*" External_Collaborator : 
+Business_Object "0..*" -- "1..1" Location : located_at
+Business_Role "1..*" -- "1..*" Organizational_Unit : inherent_to
+Employee_Type "1..*" -- "1..*" Business_Role : cover
+Business_Social_Role "0..*" -- "0..*" Skill : requires
+Internal_Regiment "1..1" -- "1..*" Business_Social_Role : formalizes
+Formal_Organization "1..*" -- "1..*" Business_Social_Role : defines
+Complex_Standalone_Functional_Organization "0..1" o-- "2..*" Organizational_Unit : 
+Complex_Standalone_Missionary_Organization "0..1" o-- "2..*" Organizational_Unit : 
+Composed_Missionary_Organization "0..1" o-- "2..*" Missionary_Organization : 
+Composite_Line_Unit "0..1" o-- "2..*" Line_Unit : 
+Permission "0..*" -- "1..1" Controlled_Resource : over
+Council "0..*" -- "1..*" Formal_Organization : deliberates_to
+Elector "2..*" -- "0..*" Membership_by_Election : participates
+Formal_Organization_Member "0..*" -- "1..*" Employee_Type : instance_of
+Physical_Agent_External_Collaborator "0..*" -- "1..*" External_Collaboration_Business_Role : instance_of
+Social_Agent_External_Collaborator "0..*" -- "1..*" External_Collaboration_Business_Role : instance_of
+Formal_Organization "0..*" -- "1..1" Location : located_at
+Formal_Organization "1..1" -- "1..*" Internal_Regiment : defines
+Organization_Head "1..1" -- "1..*" Formal_Organization : head_of
+Law "1..*" -- "1..*" Formal_Organization : recognized_by
+National_Society "1..1" o-- "1..1" Formal_Organization : 
+Law "1..*" -- "0..*" Formal_Organization : formalizes
+Formal_Organization_Member "1..1" -- "1..1" Location : work_at
+Formal_Society "0..*" -- "1..*" Society : recognized_by
+Functional_Responsibility "0..1" -- "1..*" Functional_Commitment : 
+Functional_Headquarters "1..1" -- "1..1" Functional_Organization : head_of
+Multi_Functional_Organization "0..1" o-- "2..*" Functional_Organization : 
+Functional_Responsibility "0..*" -- "0..*" Skill : requires
+Functional_Responsibility "0..*" -- "1..1" Structural_Business_Role : context
+Functional_Responsibility "1..*" -- "1..1" Structural_Unit_Member_Responsibility_Delegator : delegates
+Functional_Responsibility "1..*" -- "1..*" Structural_Unit_Member_Responsibility_Delegatee : has
+Societary_Participation "1..1" -- "1..1" Holding : composes
+Social_Agent_Internal_Collaborator "0..*" -- "1..*" Internal_Collaboration_Business_Role : instance_of
+Physical_Agent_Internal_Collaborator "0..*" -- "1..*" Internal_Collaboration_Business_Role : instance_of
+Internal_Regiment "1..*" -- "1..*" Organizational_Unit : recognized_by
+Law "1..*" -- "1..*" Natural_Person : recognized_by
+Law "1..*" -- "1..*" Natural_Person : formalizes
+National_Society "1..*" -- "0..*" Law : defines
+Staff_Unit "0..*" -- "1..1" Line_Unit : staff_of
+Nominator "1..1" -- "1..*" Membership_by_Appointment : realizes
+Missionary_Assignment "1..*" -- "1..1" Missionary_Allocation_Unit : assigns_to
+Missionary_Assignment "1..*" -- "1..1" Missionary_Unit_Member : assigns
+Missionary_Unit_Member "0..*" -- "1..*" Missionary_Business_Role : instance_of
+Structural_Business_Role "1..1" -- "0..*" Missionary_Business_Role : is_superior_to
+Missionary_Headquarters "1..1" -- "1..1" Missionary_Organization : head_of
+Missionary_Unit_Head "1..1" -- "1..*" Missionary_Unit : head_of
+National_Society "1..1" o-- "1..1" Natural_Person : 
+Skill "0..*" -- "0..*" Natural_Person : has
+Organization "1..1" -- "0..*" Normative_Description : defines
+Organizational_Membership "0..*" -- "1..1" Organization : membership_to
+Organizational_Membership "1..*" -- "1..1" Organizational_Member : formalizes
+Permission "0..*" -- "1..1" Permission_Holder : has
+Permission "0..*" -- "1..1" Permission_Provider : grants
+Recognition_Contract "0..*" -- "1..*" Normative_Description : relates_to
+Recognition_Contract_Attachment "0..*" -- "1..1" Recognition_Contract : attachment_of
+Recognition_Contract "0..*" -- "1..*" Social_Entity : generates
+Recognition_Contract "0..*" -- "1..*" Normative_Description : formalizes
+Recognition_Contract "1..*" -- "1..*" Social_Entity : accepts
+Recognition_Contract_Attachment "0..*" -- "1..*" Normative_Description : relates_to
+Recognition_Contract_Attachment "0..*" -- "1..*" Social_Entity : generates
+Recognition_Contract_Attachment "0..*" -- "1..*" Social_Entity : accepts
+Recognition_Contract_Attachment "0..*" -- "1..*" Normative_Description : defines
+Skill "1..1" -- "1..1" Skill_Metric : mensured_by
+Social_Entity "1..*" -- "1..*" Normative_Description : recognizes
+Normative_Description "0..1" -- "0..*" Social_Entity : defines
+Structural_Assignment "1..*" -- "1..1" Structural_Allocation_Unit : assigns_to
+Structural_Assignment "1..*" -- "1..1" Structural_Unit_Member : assigns
+Structural_Unit_Member "0..*" -- "1..*" Structural_Business_Role : instance_of
+Structural_Unit_Head "1..1" -- "1..*" Structural_Unit : head_of
+Endurant "1..*" -- "1..*" Situation_Individual : present_in
+Individual "1..*" -- "1..1" Identity_Provider_Universal : instance_of
+Universal "1..*" -- "1..*" Individual : instance_of
+/Paricipation_Individual "1..*" -- "1..1" Participant : participation_of
+/Paricipation_Individual "1..*" -- "1..1" Participation : instantiates
+Complex_Action "1..1" o-- "1..1" /Paricipation_Individual : 
+Apt "1..1" -- "1..*" Disposition : 
+Disposition "1..1" -- "0..*" Atomic_Event : manifested_by
+Complex_Event "1..*" -- "2..*" Part_of_Event : 
+Situation_Individual "0..*" -- "0..*" Disposition : activates
+Event_Individual "0..*" -- "1..1" Situation_Individual : brings_about
+Event_Individual "0..*" -- "1..1" Situation_Individual : enables
+Agent "0..*" -- "0..*" Event_Individual : perceives
+Situation_Individual "1..*" -- "0..*" Goal : satisfies
+Action "0..*" -- "1..1" Intention : caused_by
+Action "0..*" -- "1..*" Plan_(Action_Universal) : instantiates
+Social_Commitment "0..*" -- "0..*" Action : causes
+Agent "1..*" -- "0..*" Action : creates
+Intentional_Moment "1..*" -- "1..1" Agent : 
+Intention "1..*" -- "1..1" Agent : 
+Social_Relator "1..1" -- "2..*" Agent_in_Social_Relation : 
+Social_Moment "1..*" -- "1..1" Agent_in_Social_Relation : 
+Appoitment_Goal "1..1" -- "1..*" Appointment : propositional_content_of
+Atomic_Action "0..*" -- "1..*" Atomic_Plan : instantiates
+Delegatum "0..1" -- "1..*" Claim : 
+Closed_Commitment "0..*" -- "1..1" Plan_(Action_Universal) : based_on
+Collective_Social_Agent "1..*" o-- "2..*" Member_of_Collective_Social_Agent : 
+Goal "1..1" -- "1..*" Commitment : propositional_content_of
+Complex_Commitment "1..*" -- "2..*" Commitment_Part : 
+Complex_Action "0..*" -- "1..*" Complex_Plan : instantiates
+Plan_Description "0..1" -- "1..*" Complex_Plan : describes
+Contribution_(Performance) "1..*" -- "1..1" Performer : performance_of
+Interaction "0..*" o-- "2..*" Contribution_(Performance) : 
+Delegatum "1..*" -- "1..1" Delegatee : 
+Delegatum "1..*" -- "1..1" Delegator : 
+Delegatum "0..1" -- "1..*" Social_Commitment : 
+Proposition_Individual "1..1" -- "0..*" Intentional_Moment : propositional_content_of
+Normative_Description "1..1" -- "0..*" Normatized_Social_Object : defines
+Normative_Description "0..*" -- "1..*" Normative_Description_Universal : instantiates
+Normative_Description "0..1" -- "0..*" Social_Role : defines
+Normative_Description "0..1" -- "0..*" Plan_(Action_Universal) : defines
+Social_Role "1..*" -- "1..*" Normative_Description : recognizes
+Recognition "1..*" -- "1..1" Normative_Description : 
+Plan_Description "0..*" -- "1..*" Plan_Description_Universal : instantiates
+Relator_Individual "1..1" -- "2..*" QuaIndividual : 
+Recognition "1..*" -- "1..1" Recognizer : 
+Resource_Participation "1..*" -- "1..1" Resource : participates_as_resource
+Social_Relator "1..1" -- "2..*" Social_Moment : 
+Social_Role_Recognition "0..1" -- "1..1" Social_Role : 
+Delegator "1..*" -- "1..*" Delegatee : delegates_to
+Recognizer "1..*" -- "1..*" Normative_Description : 
+Collective_Whole "1..*" o-- "2..*" Member : 
+Collective_Whole "1..*" o-- "0..*" SubCollection : 
+Functional_Complex_Whole "1..*" o-- "2..*" Functional_Part : 
+Whole_(Complex_Individual) "1..*" -- "1..*" Part : 
+Quantity_Whole "1..*" o-- "2..*" Quantity_Part : 
+@enduml

@@ -1,0 +1,22 @@
+@startuml
+'3 occurrencies
+'5 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<SubKind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Atomic_Installation <<SubKind>>
+Installation <|-- Atomic_Installation
+class Installation <<Kind>>
+class Evacuation_Open_Area <<SubKind>>
+Evacuation_Local <|-- Evacuation_Open_Area
+class Evacuation_Local <<RoleMixin>>
+class Complex_Installation <<SubKind>>
+Installation <|-- Complex_Installation
+Complex_Installation "0..1" o-- "2..*" Installation : 
+@enduml

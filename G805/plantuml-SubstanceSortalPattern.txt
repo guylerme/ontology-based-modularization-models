@@ -1,0 +1,42 @@
+@startuml
+'18 occurrencies
+'18 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Physical_Matrix <<Kind>>
+class PM_Input <<Kind>>
+class Source_TTF <<Kind>>
+class Sink_TTF <<Kind>>
+class Sink_AF_Output <<Kind>>
+class Physical_Link <<Kind>>
+class Source_TTF_Output <<Kind>>
+class Path_Layer_Network <<Kind>>
+class Source_TTF_Input <<Kind>>
+class Source_AF_Input <<Kind>>
+class PM_Output <<Kind>>
+class Source_AF <<Kind>>
+class Transmission_Media_Layer_Network <<Kind>>
+class Source_AF_Output <<Kind>>
+class Bidirectional_AF <<Kind>>
+class Physical_Link_Input <<Kind>>
+class Sink_AF <<Kind>>
+class Bidirectional_TTF <<Kind>>
+Physical_Matrix "1..1" o-- "1..*" PM_Output : A_PhysicalMatrix_PMOutput
+Sink_AF "1..1" o-- "1..*" Sink_AF_Output : A_SinkAF_SinkAFOutput
+Source_AF "1..1" o-- "1..*" Source_AF_Output : A_SourceAF_SourceAFOutput
+Source_TTF "1..1" o-- "1..1" Source_TTF_Input : A_SourceTTF_SourceTTFInput
+Bidirectional_AF "1..1" o-- "1..1" Sink_AF : A_BidirectionalAF_SinkAF
+Bidirectional_AF "1..1" o-- "1..1" Source_AF : A_BidirectionalAF_SourceAF
+Physical_Matrix "1..1" o-- "1..*" PM_Input : A_PhysicalMatrix_PMInput
+Sink_AF "1..1" -- "1..1" Source_AF : /sink-source_CP_connection
+Source_AF "1..1" o-- "1..*" Source_AF_Input : A_SourceAF_SourceAFInput
+Source_TTF "1..1" o-- "1..*" Source_TTF_Output : A_SourceTTF_SourceTTFOutput
+Physical_Link "1..1" o-- "1..1" Physical_Link_Input : A_PhysicalLink_PhysicalLinkInput
+Transmission_Media_Layer_Network "1..1" o-- "1..*" Physical_Link : A_TransmissionMediaLayerNetwork_PhysicalLink
+@enduml

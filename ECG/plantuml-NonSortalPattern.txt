@@ -1,0 +1,42 @@
+@startuml
+'2 occurrencies
+'10 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Chamber <<Category>>
+class LeftAtrium <<Kind>>
+Chamber <|-- LeftAtrium
+Muscle <|-- LeftAtrium
+class HumanBody <<Kind>>
+Chamber <|-- HumanBody
+class LeftVentricle <<Kind>>
+Chamber <|-- LeftVentricle
+Muscle <|-- LeftVentricle
+class Peripherals <<Kind>>
+Chamber <|-- Peripherals
+class Lungs <<Kind>>
+Chamber <|-- Lungs
+class RightAtrium <<Kind>>
+Chamber <|-- RightAtrium
+Muscle <|-- RightAtrium
+class RightVentricle <<Kind>>
+Chamber <|-- RightVentricle
+Muscle <|-- RightVentricle
+class Heart <<Kind>>
+Chamber <|-- Heart
+Muscle <|-- Heart
+class Muscle <<Category>>
+Heart "1..1" *-- "1..1" LeftVentricle : 
+Heart "1..1" *-- "1..1" RightVentricle : 
+Heart "1..1" *-- "1..1" LeftAtrium : 
+Heart "1..1" *-- "1..1" RightAtrium : 
+HumanBody "1..1" o-- "1..1" Heart : 
+HumanBody "1..1" o-- "1..1" Lungs : 
+HumanBody "1..1" *-- "1..1" Peripherals : 
+@enduml

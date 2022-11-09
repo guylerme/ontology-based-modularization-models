@@ -1,0 +1,160 @@
+@startuml
+'28 occurrencies
+'59 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Admission <<Relator>>
+Organizational_Membership <|-- Admission
+Social_Relator <|-- Admission
+class Employer <<Role>>
+class Formal_Organization_Member <<Role>>
+Organizational_Member <|-- Formal_Organization_Member
+class Membership_by_Election <<Relator>>
+Organizational_Membership <|-- Membership_by_Election
+class Membership_With_Term <<Relator>>
+Organizational_Membership <|-- Membership_With_Term
+class Organizational_Ownership <<Relator>>
+class Organizational_Owner <<Role>>
+Organization <|-- Organizational_Owner
+class Owned_Resource <<RoleMixin>>
+class Structural_Assignment <<Relator>>
+Assignment <|-- Structural_Assignment
+class Structural_Allocation_Unit <<Role>>
+class Structural_Unit_Member <<Role>>
+Formal_Organization_Member <|-- Structural_Unit_Member
+class Admission_With_Term <<Relator>>
+Admission <|-- Admission_With_Term
+class Societary_Participation <<Relator>>
+Social_Relator <|-- Societary_Participation
+class Holding <<SubKind>>
+class Recognition_Contract <<Relator>>
+Social_Relator <|-- Recognition_Contract
+class Normative_Description <<Category>>
+class Social_Entity <<Mixin>>
+class Recognition_Contract_Attachment <<Relator>>
+class Relator_Individual <<Relator>>
+class Admission_Contract_by_Direct_Appointment <<Relator>>
+class Assignment <<Relator>>
+Organizational_Membership <|-- Assignment
+Social_Relator <|-- Assignment
+class Business_Collaboration <<Relator>>
+class External_Collaborator <<RoleMixin>>
+class Internal_Collaborator <<RoleMixin>>
+class Organizational_Membership <<Relator>>
+class Organization <<Category>>
+Social_Entity <|-- Organization
+class Organizational_Member <<Role>>
+Social_Entity <|-- Organizational_Member
+class Public_Admission <<Relator>>
+Admission <|-- Public_Admission
+class Government_Employee <<Role>>
+Formal_Organization_Member <|-- Government_Employee
+class Admission_Contract_by_Indirect_Appointment <<Relator>>
+class Membership_by_Appointment <<Relator>>
+Organizational_Membership <|-- Membership_by_Appointment
+class Social_Role_Recognition <<Relator>>
+Recognition <|-- Social_Role_Recognition
+class Social_Role <<Class>>
+class Social_Relator <<Relator>>
+Relator_Individual <|-- Social_Relator
+class Agent_in_Social_Relation <<RoleMixin>>
+class Authority_Delegation <<Relator>>
+Social_Relator <|-- Authority_Delegation
+Delegatum <|-- Authority_Delegation
+class Structural_Unit_Member_Authority_Delegator <<Role>>
+Structural_Unit_Member <|-- Structural_Unit_Member_Authority_Delegator
+Delegator <|-- Structural_Unit_Member_Authority_Delegator
+class Structural_Unit_Member_Authority_Delegatee <<Role>>
+Structural_Unit_Member <|-- Structural_Unit_Member_Authority_Delegatee
+Delegatee <|-- Structural_Unit_Member_Authority_Delegatee
+class Permission <<Relator>>
+Social_Relator <|-- Permission
+class Permission_Provider <<RoleMixin>>
+class Controlled_Resource <<RoleMixin>>
+class Permission_Holder <<RoleMixin>>
+class Effective_Membership <<Relator>>
+Organizational_Membership <|-- Effective_Membership
+class Recognition <<Relator>>
+class Public_Tender <<Relator>>
+class Organizing_Institution <<Role>>
+class Public_Formal_Requester <<RoleMixin>>
+class Candidate <<Role>>
+class Missionary_Assignment <<Relator>>
+Assignment <|-- Missionary_Assignment
+class Missionary_Unit_Member <<Role>>
+Structural_Unit_Member <|-- Missionary_Unit_Member
+class Missionary_Allocation_Unit <<Role>>
+class Functional_Responsibility <<Relator>>
+Delegatum <|-- Functional_Responsibility
+class Structural_Unit_Member_Responsibility_Delegator <<Role>>
+Structural_Unit_Member <|-- Structural_Unit_Member_Responsibility_Delegator
+Delegator <|-- Structural_Unit_Member_Responsibility_Delegator
+class Structural_Unit_Member_Responsibility_Delegatee <<Role>>
+Structural_Unit_Member <|-- Structural_Unit_Member_Responsibility_Delegatee
+Delegatee <|-- Structural_Unit_Member_Responsibility_Delegatee
+class Structural_Business_Role <<Class>>
+class Delegatum <<Relator>>
+Social_Relator <|-- Delegatum
+class Delegatee <<RoleMixin>>
+class Delegator <<RoleMixin>>
+class Effective_Public__Admission <<Relator>>
+Public_Admission <|-- Effective_Public__Admission
+Effective_Membership <|-- Effective_Public__Admission
+Public_Tender "1..1" -- "1..*" Candidate : participates_of
+Effective_Public__Admission "1..1" -- "1..1" Public_Tender : formalizes
+Public_Admission "1..1" -- "1..1" Government_Employee : formalizes
+Public_Tender "1..*" -- "1..1" Organizing_Institution : organized_by
+Public_Tender "1..*" -- "1..1" Public_Formal_Requester : order
+Organizational_Ownership "1..1" -- "1..1" Owned_Resource : over
+Organizational_Ownership "1..*" -- "1..*" Organizational_Owner : has
+Admission "1..1" -- "1..1" Formal_Organization_Member : formalizes
+Admission "0..*" -- "1..1" Employer : generates
+Assignment "0..*" -- "1..1" Admission : refers_to
+Admission_Contract_by_Indirect_Appointment "0..*" -- "1..*" Formal_Organization_Member : approved_by
+Authority_Delegation "1..*" -- "1..1" Structural_Unit_Member_Authority_Delegatee : empowers
+Authority_Delegation "0..1" -- "1..*" Functional_Responsibility : context
+Authority_Delegation "1..*" -- "1..1" Structural_Unit_Member_Authority_Delegator : performs
+Business_Collaboration "1..1" -- "1..*" Internal_Collaborator : 
+Business_Collaboration "1..1" -- "1..*" External_Collaborator : 
+Permission "0..*" -- "1..1" Controlled_Resource : over
+Functional_Responsibility "0..*" -- "1..1" Structural_Business_Role : context
+Functional_Responsibility "1..*" -- "1..1" Structural_Unit_Member_Responsibility_Delegator : delegates
+Functional_Responsibility "1..*" -- "1..*" Structural_Unit_Member_Responsibility_Delegatee : has
+Societary_Participation "1..1" -- "1..1" Holding : composes
+Missionary_Assignment "1..*" -- "1..1" Missionary_Allocation_Unit : assigns_to
+Missionary_Assignment "1..*" -- "1..1" Missionary_Unit_Member : assigns
+Organization "1..1" -- "0..*" Normative_Description : defines
+Organizational_Membership "0..*" -- "1..1" Organization : membership_to
+Organizational_Membership "1..*" -- "1..1" Organizational_Member : formalizes
+Permission "0..*" -- "1..1" Permission_Holder : has
+Permission "0..*" -- "1..1" Permission_Provider : grants
+Recognition_Contract "0..*" -- "1..*" Normative_Description : relates_to
+Recognition_Contract_Attachment "0..*" -- "1..1" Recognition_Contract : attachment_of
+Recognition_Contract "0..*" -- "1..*" Social_Entity : generates
+Recognition_Contract "0..*" -- "1..*" Normative_Description : formalizes
+Recognition_Contract "1..*" -- "1..*" Social_Entity : accepts
+Recognition_Contract_Attachment "0..*" -- "1..*" Normative_Description : relates_to
+Recognition_Contract_Attachment "0..*" -- "1..*" Social_Entity : generates
+Recognition_Contract_Attachment "0..*" -- "1..*" Social_Entity : accepts
+Recognition_Contract_Attachment "0..*" -- "1..*" Normative_Description : defines
+Social_Entity "1..*" -- "1..*" Normative_Description : recognizes
+Normative_Description "0..1" -- "0..*" Social_Entity : defines
+Structural_Assignment "1..*" -- "1..1" Structural_Allocation_Unit : assigns_to
+Structural_Assignment "1..*" -- "1..1" Structural_Unit_Member : assigns
+Structural_Unit_Member "0..*" -- "1..*" Structural_Business_Role : instance_of
+Social_Relator "1..1" -- "2..*" Agent_in_Social_Relation : 
+Delegatum "1..*" -- "1..1" Delegatee : 
+Delegatum "1..*" -- "1..1" Delegator : 
+Normative_Description "0..1" -- "0..*" Social_Role : defines
+Social_Role "1..*" -- "1..*" Normative_Description : recognizes
+Recognition "1..*" -- "1..1" Normative_Description : 
+Social_Role_Recognition "0..1" -- "1..1" Social_Role : 
+Delegator "1..*" -- "1..*" Delegatee : delegates_to
+@enduml

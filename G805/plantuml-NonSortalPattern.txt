@@ -1,0 +1,73 @@
+@startuml
+'8 occurrencies
+'26 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class TTF <<Category>>
+TPF <|-- TTF
+class Sink_TTF <<Kind>>
+TTF <|-- Sink_TTF
+class Bidirectional_TTF <<Kind>>
+TTF <|-- Bidirectional_TTF
+class Source_TTF <<Kind>>
+TTF <|-- Source_TTF
+class Server_Layer_Network <<Category>>
+Layer_Network <|-- Server_Layer_Network
+class Server_Transmission_Layer <<SubKind>>
+Server_Layer_Network <|-- Server_Transmission_Layer
+Transmission_Media_Layer_Network <|-- Server_Transmission_Layer
+class Intermediate_Path_Layer <<SubKind>>
+Server_Layer_Network <|-- Intermediate_Path_Layer
+class Layer_Network <<Category>>
+Architectural_Component <|-- Layer_Network
+class Path_Layer_Network <<Kind>>
+Layer_Network <|-- Path_Layer_Network
+class Transmission_Media_Layer_Network <<Kind>>
+Layer_Network <|-- Transmission_Media_Layer_Network
+class Topological_Component <<Category>>
+Architectural_Component <|-- Topological_Component
+class Subnetwork <<Mode>>
+Topological_Component <|-- Subnetwork
+class Link <<Mode>>
+Topological_Component <|-- Link
+class Access_Group <<Mode>>
+Topological_Component <|-- Access_Group
+class Topological_Layer_Network <<Mode>>
+Topological_Component <|-- Topological_Layer_Network
+class TPF <<Category>>
+class AF <<Category>>
+TPF <|-- AF
+class Source_AF <<Kind>>
+AF <|-- Source_AF
+class Sink_AF <<Kind>>
+AF <|-- Sink_AF
+class Bidirectional_AF <<Kind>>
+AF <|-- Bidirectional_AF
+class Physical_Component <<Category>>
+Architectural_Component <|-- Physical_Component
+class Physical_Link <<Kind>>
+Physical_Component <|-- Physical_Link
+class Physical_Matrix <<Kind>>
+Physical_Component <|-- Physical_Matrix
+class Architectural_Component <<Category>>
+class Transport_Entity <<Relator>>
+Architectural_Component <|-- Transport_Entity
+class Reference_Point <<Relator>>
+Architectural_Component <|-- Reference_Point
+Topological_Layer_Network "1..1" o-- "2..*" Access_Group : A_TopologicalLayerNetwork_AccessGroup
+Bidirectional_AF "1..1" o-- "1..1" Sink_AF : A_BidirectionalAF_SinkAF
+Bidirectional_AF "1..1" o-- "1..1" Source_AF : A_BidirectionalAF_SourceAF
+Layer_Network "1..1" o-- "0..*" Physical_Matrix : A_LayerNetwork_PhysicalMatrix
+Topological_Layer_Network "1..1" -- "1..1" Layer_Network : hasTopology
+Layer_Network "1..1" o-- "2..*" TTF : A_LayerNetwork_TTF
+Topological_Layer_Network "1..1" o-- "1..*" Link : A_TopologicalLayerNetwork_Link
+Sink_AF "1..1" -- "1..1" Source_AF : /sink-source_CP_connection
+Transmission_Media_Layer_Network "1..1" o-- "1..*" Physical_Link : A_TransmissionMediaLayerNetwork_PhysicalLink
+Topological_Layer_Network "1..1" o-- "0..*" Subnetwork : A_TopologicalLayerNetwork_Subnetwork
+@enduml

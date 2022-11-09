@@ -1,0 +1,155 @@
+@startuml
+'70 occurrencies
+'72 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Mode>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Mediterranean <<Mode>>
+Climate <|-- Mediterranean
+class SouthernFields <<Mode>>
+Vegetation <|-- SouthernFields
+class Undetermined <<Mode>>
+Sex <|-- Undetermined
+class Omnivorous <<Mode>>
+EatingHabits <|-- Omnivorous
+class Marginal <<Mode>>
+Vegetation <|-- Marginal
+class WaningMoon <<Mode>>
+MoonPhase <|-- WaningMoon
+class Asexual <<Mode>>
+Sex <|-- Asexual
+class Immature <<Mode>>
+MaturityStage <|-- Immature
+class Semiarid <<Mode>>
+Climate <|-- Semiarid
+class Female <<Mode>>
+Sex <|-- Female
+class Pupa <<Mode>>
+LifeStage <|-- Pupa
+class Continental <<Mode>>
+Climate <|-- Continental
+class Young <<Mode>>
+LifeStage <|-- Young
+class Polar <<Mode>>
+Climate <|-- Polar
+class Equatorial <<Mode>>
+Climate <|-- Equatorial
+class Empty <<Mode>>
+MaturityStage <|-- Empty
+class Sex <<Mode>>
+class BioticEntity <<Kind>>
+class Flooded <<Mode>>
+Vegetation <|-- Flooded
+class Egg <<Mode>>
+LifeStage <|-- Egg
+class Mucivoros <<Mode>>
+Herbivorous <|-- Mucivoros
+class AraucariaForest <<Mode>>
+Vegetation <|-- AraucariaForest
+class Luminosity <<Mode>>
+class Environment <<SubKind>>
+class Adult <<Mode>>
+LifeStage <|-- Adult
+class AdvancedMaturation <<Mode>>
+MaturityStage <|-- AdvancedMaturation
+class NewMoon <<Mode>>
+MoonPhase <|-- NewMoon
+class Temperate <<Mode>>
+Climate <|-- Temperate
+class Folivoros <<Mode>>
+Herbivorous <|-- Folivoros
+class EatingHabits <<Mode>>
+class Polyphagous <<Mode>>
+Phytophagous <|-- Polyphagous
+class Detritivorous <<Mode>>
+EatingHabits <|-- Detritivorous
+class Monophagous <<Mode>>
+Phytophagous <|-- Monophagous
+class Oceanic <<Mode>>
+Climate <|-- Oceanic
+class Null <<Mode>>
+Luminosity <|-- Null
+class NotExamined <<Mode>>
+Sex <|-- NotExamined
+class Nectivorous <<Mode>>
+Herbivorous <|-- Nectivorous
+class MoonPhase <<Mode>>
+class Carnivorous <<Mode>>
+EatingHabits <|-- Carnivorous
+class Polymers <<Mode>>
+Herbivorous <|-- Polymers
+class Hematophagous <<Mode>>
+EatingHabits <|-- Hematophagous
+class Male <<Mode>>
+Sex <|-- Male
+class Arid <<Mode>>
+Climate <|-- Arid
+class Vegetation <<Mode>>
+class MaturityStage <<Mode>>
+class InitialMaturation <<Mode>>
+MaturityStage <|-- InitialMaturation
+class Larva <<Mode>>
+LifeStage <|-- Larva
+class Hermaphrodite <<Mode>>
+Sex <|-- Hermaphrodite
+class Desertic <<Mode>>
+Climate <|-- Desertic
+class Eclipse <<Mode>>
+MoonPhase <|-- Eclipse
+class High <<Mode>>
+Luminosity <|-- High
+class Bisexual <<Mode>>
+Sex <|-- Bisexual
+class LifeStage <<Mode>>
+class AtlanticForest <<Mode>>
+Vegetation <|-- AtlanticForest
+class Subtropical <<Mode>>
+Climate <|-- Subtropical
+class Alpine <<Mode>>
+Climate <|-- Alpine
+class AtRest <<Mode>>
+MaturityStage <|-- AtRest
+class Aquatic <<Mode>>
+Vegetation <|-- Aquatic
+class NotDetermined <<Mode>>
+LifeStage <|-- NotDetermined
+class Phytophagous <<Mode>>
+Herbivorous <|-- Phytophagous
+class FullMoon <<Mode>>
+MoonPhase <|-- FullMoon
+class Embryo <<Mode>>
+LifeStage <|-- Embryo
+class AmazonRainforest <<Mode>>
+Vegetation <|-- AmazonRainforest
+class Climate <<Mode>>
+class Granivorous <<Mode>>
+Herbivorous <|-- Granivorous
+class Frugivorous <<Mode>>
+Herbivorous <|-- Frugivorous
+class Herbivorous <<Mode>>
+EatingHabits <|-- Herbivorous
+class CrescentMoon <<Mode>>
+MoonPhase <|-- CrescentMoon
+class InProduction <<Mode>>
+MaturityStage <|-- InProduction
+class Low <<Mode>>
+Luminosity <|-- Low
+class Tropical <<Mode>>
+Climate <|-- Tropical
+class Medium <<Mode>>
+Luminosity <|-- Medium
+Climate "1..1" -- "1..1" Environment : IsAComponentOf
+Vegetation "1..1" -- "1..1" Environment : IsAComponentOf
+Luminosity "1..1" -- "1..1" Environment : IsAComponentOf
+MoonPhase "1..1" -- "1..1" Environment : IsAComponentOf
+MaturityStage "1..1" -- "1..1" BioticEntity : Composes
+LifeStage "1..1" -- "1..1" BioticEntity : Composes
+Sex "1..1" -- "1..1" BioticEntity : Composes
+EatingHabits "1..*" -- "1..1" BioticEntity : Composes
+@enduml

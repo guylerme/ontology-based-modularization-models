@@ -1,0 +1,526 @@
+@startuml
+class Integer <<PrimitiveType>>
+class Boolean <<PrimitiveType>>
+class String <<PrimitiveType>>
+class Unlimited_Natural <<PrimitiveType>>
+class AF-TTF_Connected_Source_AF <<Role>>
+Source_AF <|-- AF-TTF_Connected_Source_AF
+class AF-TTF_ConnectedSource_TTF <<Role>>
+Source_TTF <|-- AF-TTF_ConnectedSource_TTF
+class AP <<Relator>>
+class Bidirectional_AF_CP <<Relator>>
+Bidirectional_CP <|-- Bidirectional_AF_CP
+class Bidirectional_AP <<Relator>>
+AP <|-- Bidirectional_AP
+class Bidirectional_CP <<Relator>>
+CP <|-- Bidirectional_CP
+class Bidirectional_End_TCP <<Relator>>
+Bidirectional_TCP <|-- Bidirectional_End_TCP
+class Bidirectional_LC <<Relator>>
+Link_Connection <|-- Bidirectional_LC
+class Bidirectional_NC <<Relator>>
+Network_Connection <|-- Bidirectional_NC
+class Bidirectional_NC <<Relator>>
+Subnetwork_Connection <|-- Bidirectional_NC
+class Bidirectional_PM_CP <<Relator>>
+Bidirectional_CP <|-- Bidirectional_PM_CP
+class Bidirectional_PM_TCP <<Relator>>
+Bidirectional_TCP <|-- Bidirectional_PM_TCP
+class Bidirectional_Path_TCP <<Relator>>
+Bidirectional_TCP <|-- Bidirectional_Path_TCP
+class Bidirectional_TCP <<Relator>>
+TCP <|-- Bidirectional_TCP
+class CP <<Relator>>
+Reference_Point <|-- CP
+class Client_PathLayer_Network <<SubKind>>
+Path_Layer_Network <|-- Client_PathLayer_Network
+class Connected_Sink_AF_Output <<Role>>
+Sink_AF_Output <|-- Connected_Sink_AF_Output
+class Connected_Source_AF_Output <<Role>>
+Source_AF_Output <|-- Connected_Source_AF_Output
+class Connected_Source_TTF_Input <<Role>>
+Source_TTF_Input <|-- Connected_Source_TTF_Input
+class Essential_Sink_TTF <<SubKind>>
+Sink_TTF <|-- Essential_Sink_TTF
+class Essential_Source_TTF <<SubKind>>
+Source_TTF <|-- Essential_Source_TTF
+class Essential_Unidirectional_LC <<Relator>>
+Unidirectional_LC <|-- Essential_Unidirectional_LC
+class Intermediate_Path_Layer <<SubKind>>
+Server_Layer_Network <|-- Intermediate_Path_Layer
+Client_PathLayer_Network <|-- Intermediate_Path_Layer
+class Link_Connection <<Relator>>
+Connection <|-- Link_Connection
+Hop_Connection <|-- Link_Connection
+class MC-SkAF_Connected_Physical_Matrix <<Role>>
+Physical_Matrix <|-- MC-SkAF_Connected_Physical_Matrix
+class PM_CP <<Relator>>
+Unidirectional_CP <|-- PM_CP
+class PM_Output <<Kind>>
+PM-SoAF_Connected_PM_Output <|-- PM_Output
+class PM_connected_Sink_AF_Output <<Role>>
+Sink_AF_Output <|-- PM_connected_Sink_AF_Output
+class PM_connected_Source_AF_Input <<Role>>
+Source_AF_Input <|-- PM_connected_Source_AF_Input
+class PM-SkAF_Connected_PM_Input <<Role>>
+class PM-SoAF_Connected_PM_Output <<Role>>
+class PM-SoAF_Connected_Physical_Matrix <<Role>>
+Physical_Matrix <|-- PM-SoAF_Connected_Physical_Matrix
+class Server_Layer_Network <<Category>>
+Layer_Network <|-- Server_Layer_Network
+class Server_Transmission_Layer <<SubKind>>
+Server_Layer_Network <|-- Server_Transmission_Layer
+Transmission_Media_Layer_Network <|-- Server_Transmission_Layer
+class Single_PathLayer_Network <<SubKind>>
+Path_Layer_Network <|-- Single_PathLayer_Network
+class Single_Transmission_Layer <<SubKind>>
+Transmission_Media_Layer_Network <|-- Single_Transmission_Layer
+class Sink_AF_Bidirectional_Component <<Role>>
+Sink_AF <|-- Sink_AF_Bidirectional_Component
+class Sink_AF_Output <<Kind>>
+class Sink_AP <<Relator>>
+AP <|-- Sink_AP
+class Sink_MC-AF_CP <<Relator>>
+class Sink_PM-AF_CP_2 <<Relator>>
+class Sink_TCP <<Relator>>
+TCP <|-- Sink_TCP
+class Sink_TTF_Bidirectional_Component <<Role>>
+Sink_TTF <|-- Sink_TTF_Bidirectional_Component
+class Source_AF_Bidirectional_Component <<Role>>
+Source_AF <|-- Source_AF_Bidirectional_Component
+class Source_AF_Output <<Kind>>
+class Source_AP <<Relator>>
+AP <|-- Source_AP
+class Source_MC-AF_CP <<Relator>>
+class Source_TCP <<Relator>>
+TCP <|-- Source_TCP
+class Source_TTF_Bidirectional_Component <<Role>>
+Source_TTF <|-- Source_TTF_Bidirectional_Component
+class Source_TTF_Input <<Kind>>
+class Subnetwork_Connection <<Relator>>
+Connection <|-- Subnetwork_Connection
+Hop_Connection <|-- Subnetwork_Connection
+class TCP <<Relator>>
+Reference_Point <|-- TCP
+class TTF-AF_Connected_Source_AF <<Role>>
+Source_AF <|-- TTF-AF_Connected_Source_AF
+class Top_Path_Layer <<SubKind>>
+Client_PathLayer_Network <|-- Top_Path_Layer
+class Unidirectional_CP <<Relator>>
+CP <|-- Unidirectional_CP
+class Unidirectional_Path_NC <<Relator>>
+Unidirectional_NC <|-- Unidirectional_Path_NC
+class Access_Group <<Mode>>
+Topological_Component <|-- Access_Group
+class AF <<Category>>
+TPF <|-- AF
+class AF_CP <<Relator>>
+Source_xCP <|-- AF_CP
+Unidirectional_CP <|-- AF_CP
+class AF_CP_2 <<Relator>>
+Sink_xCP <|-- AF_CP_2
+class Architectural_Component <<Category>>
+class Bidirectional_AF <<Kind>>
+AF <|-- Bidirectional_AF
+class Bidirectional_Trail <<Relator>>
+Trail <|-- Bidirectional_Trail
+class Bidirectional_TTF <<Kind>>
+TTF <|-- Bidirectional_TTF
+class Component_Link <<Mode>>
+Link <|-- Component_Link
+class Compound_AG <<Mode>>
+Access_Group <|-- Compound_AG
+class Compound_Link <<Mode>>
+Link <|-- Compound_Link
+class Connected_Physical_Link_Input <<Role>>
+Physical_Link_Input <|-- Connected_Physical_Link_Input
+class Connected_Source_AF_Input <<Role>>
+Source_AF_Input <|-- Connected_Source_AF_Input
+class Connection <<Relator>>
+Transport_Entity <|-- Connection
+class Hop_Connection <<Relator>>
+class Layer_Network <<Category>>
+Architectural_Component <|-- Layer_Network
+class Network_Connection <<Relator>>
+Connection <|-- Network_Connection
+class Link <<Mode>>
+Topological_Component <|-- Link
+class Paralel_Compound_Link <<Mode>>
+Compound_Link <|-- Paralel_Compound_Link
+class Partitionable_Subnetwork <<Mode>>
+Subnetwork <|-- Partitionable_Subnetwork
+class Path_Layer_Network <<Kind>>
+Layer_Network <|-- Path_Layer_Network
+class PM_Input <<Kind>>
+PM-SkAF_Connected_PM_Input <|-- PM_Input
+class PM-PM_NC <<Relator>>
+Unidirectional_PM_NC <|-- PM-PM_NC
+class Sink_AF <<Kind>>
+AF <|-- Sink_AF
+class Sink_TTF <<Kind>>
+TTF <|-- Sink_TTF
+class Source_AF <<Kind>>
+AF <|-- Source_AF
+class Source_AF_Input <<Kind>>
+class Source_TTF <<Kind>>
+TTF <|-- Source_TTF
+class Source_TTF_Output <<Kind>>
+class Physical_Component <<Category>>
+Architectural_Component <|-- Physical_Component
+class Physical_Link <<Kind>>
+Physical_Component <|-- Physical_Link
+class TPF <<Category>>
+class Physical_Link_Input <<Kind>>
+class TTF <<Category>>
+TPF <|-- TTF
+class Physical_Matrix <<Kind>>
+Physical_Component <|-- Physical_Matrix
+class Transport_Entity <<Relator>>
+Architectural_Component <|-- Transport_Entity
+class Reference_Point <<Relator>>
+Architectural_Component <|-- Reference_Point
+class Serial_Compound_Link <<Mode>>
+Compound_Link <|-- Serial_Compound_Link
+class Trail <<Relator>>
+Transport_Entity <|-- Trail
+class Single_AG <<Mode>>
+Access_Group <|-- Single_AG
+class Sink_End_TCP <<Relator>>
+Sink_TCP <|-- Sink_End_TCP
+class Sink_PM_NC <<Relator>>
+Unidirectional_PM_NC <|-- Sink_PM_NC
+class Unidirectional_Trail <<Relator>>
+Trail <|-- Unidirectional_Trail
+class Sink_PM_TCP <<Relator>>
+Sink_TCP <|-- Sink_PM_TCP
+class Sink_PM-AF_CP <<Relator>>
+PM_CP <|-- Sink_PM-AF_CP
+Sink_xCP <|-- Sink_PM-AF_CP
+class Sink_Path_TCP <<Relator>>
+Sink_xCP <|-- Sink_Path_TCP
+Sink_TCP <|-- Sink_Path_TCP
+class Sink_xCP <<Relator>>
+class Source_AF-PM_CP <<Relator>>
+class Source_End_TCP <<Relator>>
+Source_TCP <|-- Source_End_TCP
+class Source_End_TTF_Output <<Role>>
+Source_TTF_Output <|-- Source_End_TTF_Output
+class Source_PM_NC <<Relator>>
+Unidirectional_PM_NC <|-- Source_PM_NC
+class Source_PM_TCP <<Relator>>
+Source_TCP <|-- Source_PM_TCP
+class Source_PM_TTF_Output <<Role>>
+Source_TTF_Output <|-- Source_PM_TTF_Output
+class Source_PM-AF_CP <<Relator>>
+PM_CP <|-- Source_PM-AF_CP
+Source_xCP <|-- Source_PM-AF_CP
+class Source_Path_TCP <<Relator>>
+Source_xCP <|-- Source_Path_TCP
+Source_TCP <|-- Source_Path_TCP
+class Source_Path_TTF_Output <<Role>>
+Source_TTF_Output <|-- Source_Path_TTF_Output
+class Source_xCP <<Relator>>
+class Subnetwork <<Mode>>
+Topological_Component <|-- Subnetwork
+class TTF_Connected_PM_Input <<Role>>
+PM_Input <|-- TTF_Connected_PM_Input
+class TTF_Source_Connected_Physical_Matrix <<Role>>
+Physical_Matrix <|-- TTF_Source_Connected_Physical_Matrix
+class TTF-AF_ConnectedSource_AF <<Role>>
+Source_TTF <|-- TTF-AF_ConnectedSource_AF
+Source_AF <|-- TTF-AF_ConnectedSource_AF
+class TTF-AF_ConnectedSource_TTF <<Role>>
+Source_TTF <|-- TTF-AF_ConnectedSource_TTF
+class TTF-End_ConnectedSource_TTF <<Role>>
+Source_TTF <|-- TTF-End_ConnectedSource_TTF
+class TTF-End_Source_Connected_Physical_Link <<Role>>
+Physical_Link <|-- TTF-End_Source_Connected_Physical_Link
+class TTF-PM_ConnectedSource_TTF <<Role>>
+Source_TTF <|-- TTF-PM_ConnectedSource_TTF
+class Topological_Component <<Category>>
+Architectural_Component <|-- Topological_Component
+class Topological_Layer_Network <<Mode>>
+Topological_Component <|-- Topological_Layer_Network
+class Topological_Matrix <<Mode>>
+Subnetwork <|-- Topological_Matrix
+class Transmission_Media_Layer_Network <<Kind>>
+Layer_Network <|-- Transmission_Media_Layer_Network
+class Uni_End_LC <<Relator>>
+Unidirectional_LC <|-- Uni_End_LC
+class Uni_Path_LC <<Relator>>
+Unidirectional_LC <|-- Uni_Path_LC
+class Unidirectional_AF_SNC <<Relator>>
+Unidirectional_SNC <|-- Unidirectional_AF_SNC
+class Unidirectional_End_NC <<Relator>>
+Unidirectional_NC <|-- Unidirectional_End_NC
+class Unidirectional_LC <<Relator>>
+Link_Connection <|-- Unidirectional_LC
+class Unidirectional_NC <<Relator>>
+Network_Connection <|-- Unidirectional_NC
+class Unidirectional_PM_NC <<Relator>>
+Unidirectional_NC <|-- Unidirectional_PM_NC
+class Unidirectional_SNC <<Relator>>
+Subnetwork_Connection <|-- Unidirectional_SNC
+class Unidirectional_Sink_SNC <<Relator>>
+Unidirectional_SNC <|-- Unidirectional_Sink_SNC
+class Unidirectional_Source_SNC <<Relator>>
+Unidirectional_SNC <|-- Unidirectional_Source_SNC
+class /AF-TTF_source_connection <<Material>>
+class A_BidirectionalAFCP_AFCP <<ComponentOf>>
+class A_BidirectionalAP_SourceAP <<ComponentOf>>
+class A_BidirectionalAP_SinkAP <<ComponentOf>>
+class A_BidirectionalEndTCP_SinkEndTCP <<ComponentOf>>
+class A_BidirectionalEndTCP_SourceEndTCP <<ComponentOf>>
+class A_BidirectionalLC_UnidirectionalLC <<ComponentOf>>
+class A_BidirectionalNC_UnidirectionalNC <<ComponentOf>>
+class A_BidirectionalNC_UnidirectionalSNC <<ComponentOf>>
+class A_BidirectionalPMCP_PMCP <<ComponentOf>>
+class A_BidirectionalPMTCP_SinkPMTCP <<ComponentOf>>
+class A_BidirectionalPMTCP_SourcePMTCP <<ComponentOf>>
+class A_BidirectionalPathTCP_SourcePathTCP <<ComponentOf>>
+class A_BidirectionalPathTCP_SinkPathTCP <<ComponentOf>>
+class /client-server_Layer_related <<Material>>
+class A_AFCP_ConnectedSinkAFOutput <<Mediation>>
+class A_SourceAP_ConnectedSourceAFOutput <<Mediation>>
+class A_SourceAP_ConnectedSourceTTFInput <<Mediation>>
+class A_LayerNetwork_EssentialSinkTTF <<ComponentOf>>
+class A_LayerNetwork_EssentialSourceTTF <<ComponentOf>>
+class A_LayerNetwork_EssentialUnidirectionalLC <<ComponentOf>>
+class /PM-AF_sink_connection <<Material>>
+class A_PhysicalMatrix_PMOutput <<ComponentOf>>
+class A_SinkMC-AFCP_PMconnectedSinkAFOutput <<Mediation>>
+class A_SourceMC-AFCP_PMconnectedSourceAFInput <<Mediation>>
+class A_SinkMC-AFCP_PM-SkAFConnectedPMInput <<Mediation>>
+class A_SourceMC-AFCP_PM-SoAFConnectedPMOutput <<Mediation>>
+class /PM-AF_source_connection <<Material>>
+class A_BidirectionalAF_SinkAFBidirectionalComponent <<ComponentOf>>
+class A_SinkAF_SinkAFOutput <<ComponentOf>>
+class A_SinkAP_UnidirectionalTrail <<Mediation>>
+class /source-sink_Trail_connection <<Material>>
+class /AF_SNC_conneection <<Material>>
+class A_SinkPM-AFCP2_UnidirectionalAFSNC <<Mediation>>
+class A_BidirectionalTTF_SinkTTFBidirectionalComponent <<ComponentOf>>
+class A_BidirectionalAF_SourceAFBidirectionalComponent <<ComponentOf>>
+class A_SourceAF_SourceAFOutput <<ComponentOf>>
+class A_SourceAP_UnidirectionalTrail <<Mediation>>
+class A_SourceTTFBidirectionalComponent_BidirectionalTTF <<ComponentOf>>
+class A_BidirectionalTTF_SourceTTFBidirectionalComponent <<ComponentOf>>
+class A_SourceTTF_SourceTTFInput <<ComponentOf>>
+class /TTF-AF_source_connection <<Material>>
+class A_SourcePathTCP_UnidirectionalPathNC <<Mediation>>
+class A_SinkPathTCP_UnidirectionalPathNC <<Mediation>>
+class A_TopologicalLayerNetwork_AccessGroup <<ComponentOf>>
+class A_AFCP_ConnectedSourceAFInput <<Mediation>>
+class A_BidirectionalAF_SinkAF <<ComponentOf>>
+class A_BidirectionalAF_SourceAF <<ComponentOf>>
+class A_BidirectionalTrail_UnidirectionalTrail <<ComponentOf>>
+class /client-servere_TTF_bidirectional_connection <<Material>>
+class LC_has_Topological_Counterpart <<Characterization>>
+class A_CompoundAG_SingleAG <<ComponentOf>>
+class A_CompoundLink_Link <<ComponentOf>>
+class A_CompoundLink_Subnetwork <<ComponentOf>>
+class A_SourceEndTCP_ConnectedPhysicalLinkInput <<Mediation>>
+class A_SourcePathTCP_ConnectedSourceAFInput <<Mediation>>
+class /supports <<Material>>
+class /supports <<Material>>
+class A_LayerNetwork_PhysicalMatrix <<ComponentOf>>
+class hasTopology <<Characterization>>
+class A_LayerNetwork_UnidirectionalLC <<ComponentOf>>
+class A_LayerNetwork_TTF <<ComponentOf>>
+class A_LayerNetwork_UnidirectionalLC <<ComponentOf>>
+class A_TopologicalLayerNetwork_Link <<ComponentOf>>
+class A_PartitionableSubnetwork_Link <<ComponentOf>>
+class A_PartitionableSubnetwork_Subnetwork <<ComponentOf>>
+class A_PhysicalMatrix_PMInput <<ComponentOf>>
+class A_PM-PMNC_SinkPMTCP <<Mediation>>
+class A_SourcePMTCP_PM-PMNC <<Mediation>>
+class /sink-source_CP_connection <<Material>>
+class /client-server_TTF_sink_connection <<Material>>
+class A_SourceAF_SourceAFInput <<ComponentOf>>
+class /client-server_TTF_source_connection <<Material>>
+class A_SourceTTF_SourceTTFOutput <<ComponentOf>>
+class A_PhysicalLink_PhysicalLinkInput <<ComponentOf>>
+class /supports <<Material>>
+class A_TransmissionMediaLayerNetwork_PhysicalLink <<ComponentOf>>
+class TTF_has_Topological_Counterpart <<Characterization>>
+class /client-server_TTF_Connectiom <<Material>>
+class SNChasTopologicalCounterpart <<Characterization>>
+class A_SinkEndTCP_UnidirectionalEndNC <<Mediation>>
+class A_SinkEndTCP_UniEndLC <<Mediation>>
+class /source-sink_End_NC_connection <<Material>>
+class A_SinkPMNC_SourcePathTCP <<Mediation>>
+class A_SinkPMNC_SinkPMTCP <<Mediation>>
+class A_UnidirectionalNC_UnidirectionalTrail <<Mediation>>
+class A_SinkPMTCP_UnidirectionalSinkSNC <<Mediation>>
+class /sink_SNC_connection <<Material>>
+class /sink_PM_NC_connection <<Material>>
+class /PM-PM_NC_connection <<Material>>
+class A_UnidirectionalSinkSNC_SinkPM-AFCP <<Mediation>>
+class A_SinkPathTCP_SourcePMNC <<Mediation>>
+class /source-sink_Path_NC_connection <<Material>>
+class /source_PM_NC_connection <<Material>>
+class A_SinkxCP_UniPathLC <<Mediation>>
+class /source-sink_Path_LC_connection <<Material>>
+class A_UnidirectionalSourceSNC_SourceAF-PMCP <<Mediation>>
+class /source_SNC_connection <<Material>>
+class A_SourceEndTCP_UnidirectionalEndNC <<Mediation>>
+class A_SourceEndTCP_UniEndLC <<Mediation>>
+class A_SourceEndTCP_SourceEndTTFOutput <<Mediation>>
+class A_SourcePMNC_SourcePMTCP <<Mediation>>
+class A_SourcePMTCP_TTFConnectedPMInput <<Mediation>>
+class A_SourcePMTCP_UnidirectionalSourceSNC <<Mediation>>
+class A_SourcePMTCP_SourcePMTTFOutput <<Mediation>>
+class A_SourcePM-AFCP_UnidirectionalAFSNC <<Mediation>>
+class A_SourcePathTCP_SourcePathTTFOutput <<Mediation>>
+class A_SourcexCP_UniPathLC <<Mediation>>
+class A_TopologicalLayerNetwork_Subnetwork <<ComponentOf>>
+class /TTF-PM_source_connection <<Material>>
+class /TTF-AF_source_connection <<Material>>
+class /TTF-End_source_connection <<Material>>
+class A_UniEndLC_UnidirectionalEndNC <<Mediation>>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AF-TTF_Connected_Source_AF "1..1" -- "1..*" AF-TTF_ConnectedSource_TTF : /AF-TTF_source_connection
+Bidirectional_AF_CP "0..1" o-- "2..2" AF_CP : A_BidirectionalAFCP_AFCP
+Bidirectional_AP "0..1" o-- "1..1" Source_AP : A_BidirectionalAP_SourceAP
+Bidirectional_AP "0..1" o-- "1..1" Sink_AP : A_BidirectionalAP_SinkAP
+Bidirectional_End_TCP "0..1" o-- "1..1" Sink_End_TCP : A_BidirectionalEndTCP_SinkEndTCP
+Bidirectional_End_TCP "0..1" o-- "1..1" Source_End_TCP : A_BidirectionalEndTCP_SourceEndTCP
+Bidirectional_LC "0..1" o-- "2..2" Unidirectional_LC : A_BidirectionalLC_UnidirectionalLC
+Bidirectional_NC "0..1" o-- "2..2" Unidirectional_NC : A_BidirectionalNC_UnidirectionalNC
+Bidirectional_NC "0..1" o-- "2..2" Unidirectional_SNC : A_BidirectionalNC_UnidirectionalSNC
+Bidirectional_PM_CP "0..1" o-- "2..2" PM_CP : A_BidirectionalPMCP_PMCP
+Bidirectional_PM_TCP "0..1" o-- "1..1" Sink_PM_TCP : A_BidirectionalPMTCP_SinkPMTCP
+Bidirectional_PM_TCP "0..1" o-- "1..1" Source_PM_TCP : A_BidirectionalPMTCP_SourcePMTCP
+Bidirectional_Path_TCP "0..1" o-- "1..1" Source_Path_TCP : A_BidirectionalPathTCP_SourcePathTCP
+Bidirectional_Path_TCP "0..1" o-- "1..1" Sink_Path_TCP : A_BidirectionalPathTCP_SinkPathTCP
+Client_PathLayer_Network "1..*" -- "1..*" Server_Layer_Network : /client-server_Layer_related
+AF_CP "1..1" -- "1..1" Connected_Sink_AF_Output : A_AFCP_ConnectedSinkAFOutput
+Source_AP "1..1" -- "1..1" Connected_Source_AF_Output : A_SourceAP_ConnectedSourceAFOutput
+Source_AP "1..1" -- "1..1" Connected_Source_TTF_Input : A_SourceAP_ConnectedSourceTTFInput
+Layer_Network "1..1" o-- "1..1" Essential_Sink_TTF : A_LayerNetwork_EssentialSinkTTF
+Layer_Network "1..1" o-- "1..1" Essential_Source_TTF : A_LayerNetwork_EssentialSourceTTF
+Layer_Network "1..1" o-- "1..1" Essential_Unidirectional_LC : A_LayerNetwork_EssentialUnidirectionalLC
+MC-SkAF_Connected_Physical_Matrix "1..*" -- "1..*" Sink_AF : /PM-AF_sink_connection
+Physical_Matrix "1..1" o-- "1..*" PM_Output : A_PhysicalMatrix_PMOutput
+Sink_MC-AF_CP "1..1" -- "1..1" PM_connected_Sink_AF_Output : A_SinkMC-AFCP_PMconnectedSinkAFOutput
+Source_MC-AF_CP "1..1" -- "1..1" PM_connected_Source_AF_Input : A_SourceMC-AFCP_PMconnectedSourceAFInput
+Sink_MC-AF_CP "1..1" -- "1..1" PM-SkAF_Connected_PM_Input : A_SinkMC-AFCP_PM-SkAFConnectedPMInput
+Source_MC-AF_CP "1..1" -- "1..1" PM-SoAF_Connected_PM_Output : A_SourceMC-AFCP_PM-SoAFConnectedPMOutput
+PM-SoAF_Connected_Physical_Matrix "1..*" -- "1..*" Source_AF : /PM-AF_source_connection
+Bidirectional_AF "1..1" o-- "1..1" Sink_AF_Bidirectional_Component : A_BidirectionalAF_SinkAFBidirectionalComponent
+Sink_AF "1..1" o-- "1..*" Sink_AF_Output : A_SinkAF_SinkAFOutput
+Sink_AP "1..1" -- "1..1" Unidirectional_Trail : A_SinkAP_UnidirectionalTrail
+Source_AP "1..1" -- "1..1" Sink_AP : /source-sink_Trail_connection
+Sink_PM-AF_CP_2 "1..1" -- "1..1" Source_PM-AF_CP : /AF_SNC_conneection
+Sink_PM-AF_CP_2 "1..1" -- "1..1" Unidirectional_AF_SNC : A_SinkPM-AFCP2_UnidirectionalAFSNC
+Bidirectional_TTF "1..1" o-- "1..1" Sink_TTF_Bidirectional_Component : A_BidirectionalTTF_SinkTTFBidirectionalComponent
+Bidirectional_AF "1..1" o-- "1..1" Source_AF_Bidirectional_Component : A_BidirectionalAF_SourceAFBidirectionalComponent
+Source_AF "1..1" o-- "1..*" Source_AF_Output : A_SourceAF_SourceAFOutput
+Source_AP "1..1" -- "1..1" Unidirectional_Trail : A_SourceAP_UnidirectionalTrail
+Source_TTF_Bidirectional_Component "1..1" o-- "1..1" Bidirectional_TTF : A_SourceTTFBidirectionalComponent_BidirectionalTTF
+Bidirectional_TTF "1..1" o-- "1..1" Source_TTF_Bidirectional_Component : A_BidirectionalTTF_SourceTTFBidirectionalComponent
+Source_TTF "1..1" o-- "1..1" Source_TTF_Input : A_SourceTTF_SourceTTFInput
+TTF-AF_ConnectedSource_AF "1..*" -- "1..*" TTF-AF_Connected_Source_AF : /TTF-AF_source_connection
+Source_Path_TCP "1..1" -- "1..1" Unidirectional_Path_NC : A_SourcePathTCP_UnidirectionalPathNC
+Sink_Path_TCP "1..1" -- "1..1" Unidirectional_Path_NC : A_SinkPathTCP_UnidirectionalPathNC
+Topological_Layer_Network "1..1" o-- "2..*" Access_Group : A_TopologicalLayerNetwork_AccessGroup
+AF_CP "1..1" -- "1..1" Connected_Source_AF_Input : A_AFCP_ConnectedSourceAFInput
+Bidirectional_AF "1..1" o-- "1..1" Sink_AF : A_BidirectionalAF_SinkAF
+Bidirectional_AF "1..1" o-- "1..1" Source_AF : A_BidirectionalAF_SourceAF
+Bidirectional_Trail "0..1" o-- "2..2" Unidirectional_Trail : A_BidirectionalTrail_UnidirectionalTrail
+Component_Link "1..1" -- "1..1" Unidirectional_LC : LC_has_Topological_Counterpart
+Compound_AG "1..1" o-- "2..*" Single_AG : A_CompoundAG_SingleAG
+Compound_Link "1..1" o-- "2..*" Link : A_CompoundLink_Link
+Compound_Link "1..1" o-- "1..*" Subnetwork : A_CompoundLink_Subnetwork
+Source_End_TCP "1..1" -- "1..1" Connected_Physical_Link_Input : A_SourceEndTCP_ConnectedPhysicalLinkInput
+Source_Path_TCP "1..1" -- "1..1" Connected_Source_AF_Input : A_SourcePathTCP_ConnectedSourceAFInput
+Hop_Connection "1..*" -- "0..*" Unidirectional_NC : /supports
+Unidirectional_Trail "1..*" -- "0..*" Hop_Connection : /supports
+Layer_Network "1..1" o-- "0..*" Physical_Matrix : A_LayerNetwork_PhysicalMatrix
+Topological_Layer_Network "1..1" -- "1..1" Layer_Network : hasTopology
+Layer_Network "1..1" o-- "1..1" Unidirectional_LC : A_LayerNetwork_UnidirectionalLC
+Layer_Network "1..1" o-- "2..*" TTF : A_LayerNetwork_TTF
+Layer_Network "1..1" o-- "1..*" Unidirectional_LC : A_LayerNetwork_UnidirectionalLC
+Topological_Layer_Network "1..1" o-- "1..*" Link : A_TopologicalLayerNetwork_Link
+Partitionable_Subnetwork "1..1" o-- "2..*" Link : A_PartitionableSubnetwork_Link
+Partitionable_Subnetwork "1..1" o-- "1..1" Subnetwork : A_PartitionableSubnetwork_Subnetwork
+Physical_Matrix "1..1" o-- "1..*" PM_Input : A_PhysicalMatrix_PMInput
+PM-PM_NC "1..1" -- "1..1" Sink_PM_TCP : A_PM-PMNC_SinkPMTCP
+Source_PM_TCP "1..1" -- "1..1" PM-PM_NC : A_SourcePMTCP_PM-PMNC
+Sink_AF "1..1" -- "1..1" Source_AF : /sink-source_CP_connection
+Source_AF "1..1" o-- "1..*" Source_AF_Input : A_SourceAF_SourceAFInput
+Source_TTF "1..1" o-- "1..*" Source_TTF_Output : A_SourceTTF_SourceTTFOutput
+Physical_Link "1..1" o-- "1..1" Physical_Link_Input : A_PhysicalLink_PhysicalLinkInput
+Physical_Link "1..1" -- "1..1" Uni_End_LC : /supports
+Transmission_Media_Layer_Network "1..1" o-- "1..*" Physical_Link : A_TransmissionMediaLayerNetwork_PhysicalLink
+Single_AG "1..1" -- "1..1" TTF : TTF_has_Topological_Counterpart
+Topological_Matrix "1..1" -- "1..1" Physical_Matrix : SNChasTopologicalCounterpart
+Sink_End_TCP "1..1" -- "1..1" Unidirectional_End_NC : A_SinkEndTCP_UnidirectionalEndNC
+Sink_End_TCP "1..1" -- "1..1" Uni_End_LC : A_SinkEndTCP_UniEndLC
+Source_End_TCP "1..1" -- "1..1" Sink_End_TCP : /source-sink_End_NC_connection
+Sink_PM_NC "1..1" -- "1..1" Source_Path_TCP : A_SinkPMNC_SourcePathTCP
+Sink_PM_NC "1..1" -- "1..1" Sink_PM_TCP : A_SinkPMNC_SinkPMTCP
+Unidirectional_NC "1..*" -- "0..1" Unidirectional_Trail : A_UnidirectionalNC_UnidirectionalTrail
+Sink_PM_TCP "1..1" -- "1..1" Unidirectional_Sink_SNC : A_SinkPMTCP_UnidirectionalSinkSNC
+Sink_PM_TCP "1..1" -- "1..1" Sink_PM-AF_CP : /sink_SNC_connection
+Sink_PM_TCP "1..1" -- "1..1" Source_Path_TCP : /sink_PM_NC_connection
+Source_PM_TCP "1..1" -- "1..1" Sink_PM_TCP : /PM-PM_NC_connection
+Unidirectional_Sink_SNC "1..1" -- "1..1" Sink_PM-AF_CP : A_UnidirectionalSinkSNC_SinkPM-AFCP
+Sink_Path_TCP "1..1" -- "1..1" Source_PM_NC : A_SinkPathTCP_SourcePMNC
+Source_Path_TCP "1..1" -- "1..1" Sink_Path_TCP : /source-sink_Path_NC_connection
+Source_PM_TCP "1..1" -- "1..1" Sink_Path_TCP : /source_PM_NC_connection
+Sink_xCP "1..1" -- "1..1" Uni_Path_LC : A_SinkxCP_UniPathLC
+Source_xCP "1..1" -- "1..1" Sink_xCP : /source-sink_Path_LC_connection
+Unidirectional_Source_SNC "1..1" -- "1..1" Source_AF-PM_CP : A_UnidirectionalSourceSNC_SourceAF-PMCP
+Source_PM_TCP "1..1" -- "1..1" Source_AF-PM_CP : /source_SNC_connection
+Source_End_TCP "1..1" -- "1..1" Unidirectional_End_NC : A_SourceEndTCP_UnidirectionalEndNC
+Source_End_TCP "1..1" -- "1..1" Uni_End_LC : A_SourceEndTCP_UniEndLC
+Source_End_TCP "1..1" -- "1..1" Source_End_TTF_Output : A_SourceEndTCP_SourceEndTTFOutput
+Source_PM_NC "1..1" -- "1..1" Source_PM_TCP : A_SourcePMNC_SourcePMTCP
+Source_PM_TCP "1..1" -- "1..1" TTF_Connected_PM_Input : A_SourcePMTCP_TTFConnectedPMInput
+Source_PM_TCP "1..1" -- "1..1" Unidirectional_Source_SNC : A_SourcePMTCP_UnidirectionalSourceSNC
+Source_PM_TCP "1..1" -- "1..1" Source_PM_TTF_Output : A_SourcePMTCP_SourcePMTTFOutput
+Source_PM-AF_CP "1..1" -- "1..1" Unidirectional_AF_SNC : A_SourcePM-AFCP_UnidirectionalAFSNC
+Source_Path_TCP "1..1" -- "1..1" Source_Path_TTF_Output : A_SourcePathTCP_SourcePathTTFOutput
+Source_xCP "1..1" -- "1..1" Uni_Path_LC : A_SourcexCP_UniPathLC
+Topological_Layer_Network "1..1" o-- "0..*" Subnetwork : A_TopologicalLayerNetwork_Subnetwork
+TTF-PM_ConnectedSource_TTF "1..*" -- "1..*" TTF_Source_Connected_Physical_Matrix : /TTF-PM_source_connection
+TTF-AF_ConnectedSource_TTF "1..*" -- "1..*" TTF-AF_ConnectedSource_AF : /TTF-AF_source_connection
+TTF-End_ConnectedSource_TTF "1..1" -- "1..*" TTF-End_Source_Connected_Physical_Link : /TTF-End_source_connection
+Uni_End_LC "1..1" -- "1..1" Unidirectional_End_NC : A_UniEndLC_UnidirectionalEndNC
+@enduml

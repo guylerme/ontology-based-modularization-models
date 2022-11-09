@@ -1,0 +1,27 @@
+@startuml
+'6 occurrencies
+'10 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Published_Object <<RoleMixin>>
+class Published_Call_for_Tender <<Role>>
+Published_Object <|-- Published_Call_for_Tender
+class Company_Participant_of_Public_Auction <<RoleMixin>>
+class Winner_of_Public_Auction <<RoleMixin>>
+Company_Participant_of_Public_Auction <|-- Winner_of_Public_Auction
+class Bidder_in_Auction <<Role>>
+Company_Participant_of_Public_Auction <|-- Bidder_in_Auction
+class Batch_in_Auction <<RoleMixin>>
+class Service_Batch_in_Auction <<Role>>
+Batch_in_Auction <|-- Service_Batch_in_Auction
+class Publicador <<RoleMixin>>
+class Publication_Context <<RoleMixin>>
+class Tender_in_Call_for_Tender <<Role>>
+Publication_Context <|-- Tender_in_Call_for_Tender
+@enduml

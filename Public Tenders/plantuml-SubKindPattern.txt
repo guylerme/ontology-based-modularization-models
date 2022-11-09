@@ -1,0 +1,33 @@
+@startuml
+'10 occurrencies
+'12 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<SubKind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Permission_Grant_Contract <<SubKind>>
+class Service_Tender <<SubKind>>
+Tender <|-- Service_Tender
+class Tender <<Kind>>
+class Disposal_Tender <<SubKind>>
+Tender <|-- Disposal_Tender
+class Concession_Tender <<SubKind>>
+Tender <|-- Concession_Tender
+class Construction_Tender <<SubKind>>
+Tender <|-- Construction_Tender
+class Lease_Tender <<SubKind>>
+Tender <|-- Lease_Tender
+class Permission_Tender <<SubKind>>
+Tender <|-- Permission_Tender
+class Purchase_Tender <<SubKind>>
+Tender <|-- Purchase_Tender
+class Company <<SubKind>>
+class Projeto_Básico_de_Concessão <<SubKind>>
+Projeto_Básico <|-- Projeto_Básico_de_Concessão
+class Projeto_Básico <<Kind>>
+@enduml

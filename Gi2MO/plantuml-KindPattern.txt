@@ -1,0 +1,17 @@
+@startuml
+'4 occurrencies
+'4 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Kind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class User <<Kind>>
+class Idea_Contest <<Kind>>
+class Online_Account <<Kind>>
+class Idea <<Kind>>
+@enduml

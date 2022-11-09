@@ -1,0 +1,193 @@
+@startuml
+class Active <<Role>>
+Online <|-- Active
+Site <|-- Active
+class Appliance <<Kind>>
+ReplicationTechnology <|-- Appliance
+class Application_based <<SubKind>>
+Data_Replication <|-- Application_based
+class Appropriate_Level_Of_Warranty <<Relator>>
+class Asynchronous <<SubKind>>
+Mirroring <|-- Asynchronous
+class Automatic_Switching <<Relator>>
+class Backup <<Role>>
+Offline <|-- Backup
+Site <|-- Backup
+class Bank_Of_Battery <<SubKind>>
+Power <|-- Bank_Of_Battery
+class Cluster <<Kind>>
+ReplicationTechnology <|-- Cluster
+class Computer_System <<Kind>>
+Plataform <|-- Computer_System
+class Contingency <<Role>>
+Offline <|-- Contingency
+Site <|-- Contingency
+class Cooling <<Kind>>
+Plataform <|-- Cooling
+class Cooling_Fan <<SubKind>>
+Computer_System <|-- Cooling_Fan
+class DBMS_based <<SubKind>>
+Data_Replication <|-- DBMS_based
+class Data_Replication <<Kind>>
+ITSC_Component <|-- Data_Replication
+class Data_Storage <<Kind>>
+IT_Component <|-- Data_Storage
+class Dual_Network_Device <<SubKind>>
+Computer_System <|-- Dual_Network_Device
+class Dual_Power_Inlet <<SubKind>>
+Computer_System <|-- Dual_Power_Inlet
+class Generator <<SubKind>>
+Power <|-- Generator
+class Host_based <<SubKind>>
+Data_Replication <|-- Host_based
+class IT_Architecture <<Category>>
+class IT_Component <<Category>>
+class ITSC_Component <<Category>>
+class Incident <<Relator>>
+class Installation <<Relator>>
+class Link <<SubKind>>
+Network_Component <|-- Link
+class Local <<SubKind>>
+Location <|-- Local
+class LocalReplication <<SubKind>>
+Data_Replication <|-- LocalReplication
+class Location <<Kind>>
+class Management_Suit <<SubKind>>
+Monitoring <|-- Management_Suit
+class Media_Backup/Restore <<SubKind>>
+Data_Replication <|-- Media_Backup/Restore
+class Mirroring <<Kind>>
+ReplicationTechnology <|-- Mirroring
+class Monitoring <<Kind>>
+Plataform <|-- Monitoring
+class Monitoring_Software <<SubKind>>
+Monitoring <|-- Monitoring_Software
+class Network_Component <<Kind>>
+Plataform <|-- Network_Component
+class Network_Provider <<SubKind>>
+Network_Component <|-- Network_Provider
+class Offline <<Role>>
+Site <|-- Offline
+class Online <<Role>>
+Site <|-- Online
+class Passive <<Role>>
+Offline <|-- Passive
+Site <|-- Passive
+class Peripheral <<SubKind>>
+Computer_System <|-- Peripheral
+class Physical_Media <<SubKind>>
+Network_Component <|-- Physical_Media
+class Plataform <<Category>>
+IT_Component <|-- Plataform
+class Power <<Kind>>
+Plataform <|-- Power
+class Power_Distributor <<SubKind>>
+Power <|-- Power_Distributor
+class RAID <<Kind>>
+ReplicationTechnology <|-- RAID
+class Redundant_Power_Supply <<SubKind>>
+Computer_System <|-- Redundant_Power_Supply
+class Remote <<SubKind>>
+Location <|-- Remote
+class RemoteReplication <<SubKind>>
+Data_Replication <|-- RemoteReplication
+class Replication <<Relator>>
+class ReplicationTechnology <<Category>>
+class Resilient_Network <<Category>>
+ITSC_Component <|-- Resilient_Network
+class Service_Continuity <<Kind>>
+class Site <<Kind>>
+IT_Component <|-- Site
+class Site_Model <<Kind>>
+ITSC_Component <|-- Site_Model
+class Snapshop <<Kind>>
+ReplicationTechnology <|-- Snapshop
+class Storage_based <<SubKind>>
+Data_Replication <|-- Storage_based
+class Synchronous <<SubKind>>
+Mirroring <|-- Synchronous
+class System <<Kind>>
+IT_Component <|-- System
+class Telecom_Asset <<SubKind>>
+Network_Component <|-- Telecom_Asset
+class UPS <<Kind>>
+class UPS_/_Battery_Switch <<Relator>>
+class UPS_Online <<SubKind>>
+UPS <|-- UPS_Online
+class UPS_StandBy <<SubKind>>
+UPS <|-- UPS_StandBy
+class UPS/_Generator_Switching <<Relator>>
+class Warning <<Relator>>
+class Warranty_And_Support <<Kind>>
+Plataform <|-- Warranty_And_Support
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Material>>
+class  <<Mediation>>
+class failure <<Material>>
+class  <<Mediation>>
+class  <<ComponentOf>>
+class  <<Material>>
+class  <<Mediation>>
+class  <<ComponentOf>>
+class  <<Mediation>>
+class  <<ComponentOf>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class maintenanceAndTroubleshooting <<Material>>
+class singlePointOfFailureRemoval <<Material>>
+class installedIn <<Material>>
+class suspensionOfOperation <<Material>>
+class  <<Material>>
+
+
+
+
+
+
+
+
+
+
+
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+Appropriate_Level_Of_Warranty "1..1" -- "1..*" Computer_System : 
+Appropriate_Level_Of_Warranty "1..1" -- "1..*" Warranty_And_Support : 
+Automatic_Switching "1..*" -- "1..*" Power_Distributor : 
+Automatic_Switching "1..*" -- "1..*" UPS : 
+UPS "1..1" -- "1..1" Bank_Of_Battery : 
+UPS_/_Battery_Switch "1..1" -- "1..*" Bank_Of_Battery : 
+Computer_System "1..*" -- "1..*" Monitoring : failure
+Warning "1..*" -- "1..*" Computer_System : 
+Data_Replication "1..1" *-- "1..*" ReplicationTechnology : 
+UPS "1..1" -- "1..1" Generator : 
+UPS/_Generator_Switching "1..1" -- "1..*" Generator : 
+IT_Architecture "1..1" o-- "1..*" IT_Component : 
+Replication "1..1" -- "1..1" IT_Component : 
+Service_Continuity "1..1" o-- "1..*" ITSC_Component : 
+Incident "1..1" -- "1..1" Offline : 
+Incident "1..1" -- "1..1" Online : 
+Installation "1..1" -- "1..1" Site : 
+Installation "1..1" -- "1..1" Location : 
+Warning "1..*" -- "1..1" Monitoring : 
+Replication "1..1" -- "1..1" Service_Continuity : 
+UPS/_Generator_Switching "1..1" -- "1..1" UPS : 
+UPS_/_Battery_Switch "1..1" -- "1..1" UPS : 
+Warranty_And_Support "1..1" -- "1..*" Computer_System : maintenanceAndTroubleshooting
+IT_Component "1..1" -- "1..1" Service_Continuity : singlePointOfFailureRemoval
+Location "1..1" -- "1..1" Site : installedIn
+Online "1..1" -- "1..1" Offline : suspensionOfOperation
+Power_Distributor "1..1" -- "1..1" UPS : 
+@enduml

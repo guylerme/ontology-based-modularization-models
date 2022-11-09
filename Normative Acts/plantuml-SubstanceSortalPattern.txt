@@ -1,0 +1,30 @@
+@startuml
+'15 occurrencies
+'15 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Article <<Kind>>
+class Item <<Kind>>
+class Epigraph <<Kind>>
+class Book <<Collective>>
+class Part <<Collective>>
+class Letter <<Kind>>
+class Brief <<Kind>>
+class Caput <<Kind>>
+class Section <<Collective>>
+class Letter_Discriminator <<Kind>>
+class Chapter <<Collective>>
+class Charter <<Collective>>
+class Preamble <<Kind>>
+class Normative_Act <<Kind>>
+class Paragraph <<Kind>>
+Normative_Act "1..1" *-- "1..1" Brief : Normative_Act_-_Brief
+Normative_Act "1..1" *-- "1..1" Epigraph : Normative_Act_-_Epigraph
+Normative_Act "1..1" *-- "1..1" Preamble : Normative_Act_-_Preamble
+@enduml

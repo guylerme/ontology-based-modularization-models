@@ -1,0 +1,75 @@
+@startuml
+'14 occurrencies
+'27 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class sectionResponsible <<Role>>
+military <|-- sectionResponsible
+class military <<Role>>
+individual <|-- military
+class individual <<SubKind>>
+Atomic <|-- individual
+class Atomic <<SubKind>>
+system <|-- Atomic
+class system <<Kind>>
+class secondary_premisse <<Role>>
+facto <|-- secondary_premisse
+class facto <<Kind>>
+class civilServiceUnit <<Role>>
+policeIAD <|-- civilServiceUnit
+class policeIAD <<SubKind>>
+internalAffairDepartment <|-- policeIAD
+class internalAffairDepartment <<SubKind>>
+organization <|-- internalAffairDepartment
+class organization <<SubKind>>
+Composed <|-- organization
+class Composed <<SubKind>>
+system <|-- Composed
+class serviceUnit <<Role>>
+policeIAD <|-- serviceUnit
+class viceInspector <<Role>>
+military <|-- viceInspector
+class civil <<Role>>
+individual <|-- civil
+class generalInspector <<Role>>
+military <|-- generalInspector
+class commandUnit <<Role>>
+policeIAD <|-- commandUnit
+class major_premisse <<Role>>
+norm <|-- major_premisse
+class norm <<Kind>>
+class designatedRegistry <<Role>>
+registry <|-- designatedRegistry
+class registry <<SubKind>>
+organizationalPart <|-- registry
+class organizationalPart <<SubKind>>
+Composed <|-- organizationalPart
+class conclusion <<Role>>
+sanction <|-- conclusion
+class sanction <<Kind>>
+class designatedSection <<Role>>
+section <|-- designatedSection
+class section <<SubKind>>
+organizationalPart <|-- section
+class registryResponsible <<Role>>
+military <|-- registryResponsible
+organization "1..1" o-- "2..*" individual : componentOfOrganization-Individual
+organization "1..1" -- "1..*" organizationalPart : arePartOf
+section "1..*" -- "1..1" policeIAD : arePartOfPoliceIAD
+registry "0..1" -- "1..1" section : isPartOf
+civil "1..*" -- "1..1" civilServiceUnit : materialCivilServiceUnit-Civil
+generalInspector "1..*" -- "1..*" commandUnit : materialCommandUnit-GeneralInspector
+registryResponsible "1..*" -- "1..*" designatedRegistry : materialDesignedRegistry-registryResponsible
+designatedSection "1..*" -- "1..1" sectionResponsible : materialDesignatedSection-SectionResponsible
+viceInspector "1..1" -- "1..1" generalInspector : canSubstitute
+military "1..*" -- "1..*" serviceUnit : materialServiceUnit-Military
+system "1..1" -- "1..1" norm : generates
+system "1..*" -- "1..*" norm : abides
+@enduml

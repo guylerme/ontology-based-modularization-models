@@ -1,0 +1,23 @@
+@startuml
+'3 occurrencies
+'6 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Data_Replication <<Kind>>
+ITSC_Component <|-- Data_Replication
+class ReplicationTechnology <<Category>>
+class IT_Architecture <<Category>>
+class IT_Component <<Category>>
+class Service_Continuity <<Kind>>
+class ITSC_Component <<Category>>
+Data_Replication "1..1" *-- "1..*" ReplicationTechnology : 
+IT_Architecture "1..1" o-- "1..*" IT_Component : 
+Service_Continuity "1..1" o-- "1..*" ITSC_Component : 
+IT_Component "1..1" -- "1..1" Service_Continuity : singlePointOfFailureRemoval
+@enduml

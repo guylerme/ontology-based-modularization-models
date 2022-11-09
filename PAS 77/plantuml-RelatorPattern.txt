@@ -1,0 +1,61 @@
+@startuml
+'8 occurrencies
+'21 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Installation <<Relator>>
+class Site <<Kind>>
+IT_Component <|-- Site
+class Location <<Kind>>
+class Incident <<Relator>>
+class Offline <<Role>>
+Site <|-- Offline
+class Online <<Role>>
+Site <|-- Online
+class Replication <<Relator>>
+class IT_Component <<Category>>
+class Service_Continuity <<Kind>>
+class Automatic_Switching <<Relator>>
+class UPS <<Kind>>
+class Power_Distributor <<SubKind>>
+class UPS_/_Battery_Switch <<Relator>>
+class Bank_Of_Battery <<SubKind>>
+class UPS/_Generator_Switching <<Relator>>
+class Generator <<SubKind>>
+class Appropriate_Level_Of_Warranty <<Relator>>
+class Computer_System <<Kind>>
+class Warranty_And_Support <<Kind>>
+class Warning <<Relator>>
+class Monitoring <<Kind>>
+Appropriate_Level_Of_Warranty "1..1" -- "1..*" Computer_System : 
+Appropriate_Level_Of_Warranty "1..1" -- "1..*" Warranty_And_Support : 
+Automatic_Switching "1..*" -- "1..*" Power_Distributor : 
+Automatic_Switching "1..*" -- "1..*" UPS : 
+UPS "1..1" -- "1..1" Bank_Of_Battery : 
+UPS_/_Battery_Switch "1..1" -- "1..*" Bank_Of_Battery : 
+Computer_System "1..*" -- "1..*" Monitoring : failure
+Warning "1..*" -- "1..*" Computer_System : 
+UPS "1..1" -- "1..1" Generator : 
+UPS/_Generator_Switching "1..1" -- "1..*" Generator : 
+Replication "1..1" -- "1..1" IT_Component : 
+Incident "1..1" -- "1..1" Offline : 
+Incident "1..1" -- "1..1" Online : 
+Installation "1..1" -- "1..1" Site : 
+Installation "1..1" -- "1..1" Location : 
+Warning "1..*" -- "1..1" Monitoring : 
+Replication "1..1" -- "1..1" Service_Continuity : 
+UPS/_Generator_Switching "1..1" -- "1..1" UPS : 
+UPS_/_Battery_Switch "1..1" -- "1..1" UPS : 
+Warranty_And_Support "1..1" -- "1..*" Computer_System : maintenanceAndTroubleshooting
+IT_Component "1..1" -- "1..1" Service_Continuity : singlePointOfFailureRemoval
+Location "1..1" -- "1..1" Site : installedIn
+Online "1..1" -- "1..1" Offline : suspensionOfOperation
+Power_Distributor "1..1" -- "1..1" UPS : 
+@enduml

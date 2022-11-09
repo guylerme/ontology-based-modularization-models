@@ -1,0 +1,55 @@
+@startuml
+'17 occurrencies
+'21 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<SubKind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class organizationalPart <<SubKind>>
+Composed <|-- organizationalPart
+class Composed <<SubKind>>
+system <|-- Composed
+class system <<Kind>>
+class message <<SubKind>>
+document <|-- message
+class document <<Kind>>
+class organization <<SubKind>>
+Composed <|-- organization
+class section <<SubKind>>
+organizationalPart <|-- section
+class registry <<SubKind>>
+organizationalPart <|-- registry
+class policeIAD <<SubKind>>
+internalAffairDepartment <|-- policeIAD
+class internalAffairDepartment <<SubKind>>
+organization <|-- internalAffairDepartment
+class create <<SubKind>>
+activity <|-- create
+class activity <<Kind>>
+class individual <<SubKind>>
+Atomic <|-- individual
+class Atomic <<SubKind>>
+system <|-- Atomic
+class update <<SubKind>>
+activity <|-- update
+class experience <<SubKind>>
+document <|-- experience
+class search <<SubKind>>
+activity <|-- search
+class reward <<SubKind>>
+sanction <|-- reward
+class sanction <<Kind>>
+class penalty <<SubKind>>
+sanction <|-- penalty
+class delete <<SubKind>>
+activity <|-- delete
+organization "1..1" o-- "2..*" individual : componentOfOrganization-Individual
+organization "1..1" -- "1..*" organizationalPart : arePartOf
+section "1..*" -- "1..1" policeIAD : arePartOfPoliceIAD
+registry "0..1" -- "1..1" section : isPartOf
+@enduml

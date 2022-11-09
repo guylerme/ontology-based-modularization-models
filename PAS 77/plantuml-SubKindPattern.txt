@@ -1,0 +1,79 @@
+@startuml
+'27 occurrencies
+'35 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<SubKind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Physical_Media <<SubKind>>
+Network_Component <|-- Physical_Media
+class Network_Component <<Kind>>
+class LocalReplication <<SubKind>>
+Data_Replication <|-- LocalReplication
+class Data_Replication <<Kind>>
+class Application_based <<SubKind>>
+Data_Replication <|-- Application_based
+class Power_Distributor <<SubKind>>
+Power <|-- Power_Distributor
+class Power <<Kind>>
+class Monitoring_Software <<SubKind>>
+Monitoring <|-- Monitoring_Software
+class Monitoring <<Kind>>
+class Asynchronous <<SubKind>>
+Mirroring <|-- Asynchronous
+class Mirroring <<Kind>>
+class Telecom_Asset <<SubKind>>
+Network_Component <|-- Telecom_Asset
+class Media_Backup/Restore <<SubKind>>
+Data_Replication <|-- Media_Backup/Restore
+class Bank_Of_Battery <<SubKind>>
+Power <|-- Bank_Of_Battery
+class RemoteReplication <<SubKind>>
+Data_Replication <|-- RemoteReplication
+class DBMS_based <<SubKind>>
+Data_Replication <|-- DBMS_based
+class Redundant_Power_Supply <<SubKind>>
+Computer_System <|-- Redundant_Power_Supply
+class Computer_System <<Kind>>
+class Synchronous <<SubKind>>
+Mirroring <|-- Synchronous
+class Cooling_Fan <<SubKind>>
+Computer_System <|-- Cooling_Fan
+class UPS_Online <<SubKind>>
+UPS <|-- UPS_Online
+class UPS <<Kind>>
+class Dual_Power_Inlet <<SubKind>>
+Computer_System <|-- Dual_Power_Inlet
+class Management_Suit <<SubKind>>
+Monitoring <|-- Management_Suit
+class Storage_based <<SubKind>>
+Data_Replication <|-- Storage_based
+class Peripheral <<SubKind>>
+Computer_System <|-- Peripheral
+class Generator <<SubKind>>
+Power <|-- Generator
+class Host_based <<SubKind>>
+Data_Replication <|-- Host_based
+class Dual_Network_Device <<SubKind>>
+Computer_System <|-- Dual_Network_Device
+class Local <<SubKind>>
+Location <|-- Local
+class Location <<Kind>>
+class Network_Provider <<SubKind>>
+Network_Component <|-- Network_Provider
+class Link <<SubKind>>
+Network_Component <|-- Link
+class Remote <<SubKind>>
+Location <|-- Remote
+class UPS_StandBy <<SubKind>>
+UPS <|-- UPS_StandBy
+UPS "1..1" -- "1..1" Bank_Of_Battery : 
+Computer_System "1..*" -- "1..*" Monitoring : failure
+UPS "1..1" -- "1..1" Generator : 
+Power_Distributor "1..1" -- "1..1" UPS : 
+@enduml

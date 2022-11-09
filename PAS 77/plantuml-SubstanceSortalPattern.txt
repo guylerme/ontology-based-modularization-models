@@ -1,0 +1,34 @@
+@startuml
+'19 occurrencies
+'19 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Location <<Kind>>
+class Snapshop <<Kind>>
+class Network_Component <<Kind>>
+class Warranty_And_Support <<Kind>>
+class Power <<Kind>>
+class Site_Model <<Kind>>
+class Data_Replication <<Kind>>
+class Data_Storage <<Kind>>
+class UPS <<Kind>>
+class Cooling <<Kind>>
+class System <<Kind>>
+class Computer_System <<Kind>>
+class Service_Continuity <<Kind>>
+class Mirroring <<Kind>>
+class RAID <<Kind>>
+class Appliance <<Kind>>
+class Monitoring <<Kind>>
+class Cluster <<Kind>>
+class Site <<Kind>>
+Computer_System "1..*" -- "1..*" Monitoring : failure
+Warranty_And_Support "1..1" -- "1..*" Computer_System : maintenanceAndTroubleshooting
+Location "1..1" -- "1..1" Site : installedIn
+@enduml

@@ -1,0 +1,31 @@
+@startuml
+'6 occurrencies
+'7 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Contingency <<Role>>
+Offline <|-- Contingency
+Site <|-- Contingency
+class Offline <<Role>>
+Site <|-- Offline
+class Site <<Kind>>
+class Active <<Role>>
+Online <|-- Active
+Site <|-- Active
+class Online <<Role>>
+Site <|-- Online
+class Passive <<Role>>
+Offline <|-- Passive
+Site <|-- Passive
+class Backup <<Role>>
+Offline <|-- Backup
+Site <|-- Backup
+Online "1..1" -- "1..1" Offline : suspensionOfOperation
+@enduml

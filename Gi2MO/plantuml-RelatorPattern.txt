@@ -1,0 +1,111 @@
+@startuml
+'17 occurrencies
+'44 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Submission <<Relator>>
+class Contest_with_Idea <<Role>>
+class Submitted_Idea <<Role>>
+Idea <|-- Submitted_Idea
+class Submitting_User <<Role>>
+class Similarity <<Relator>>
+class Similaree <<Role>>
+Idea <|-- Similaree
+class Similar_Idea <<Role>>
+Idea <|-- Similar_Idea
+class Write_Authorization <<Relator>>
+Authorization <|-- Write_Authorization
+class Idea_Comment <<Relator>>
+class User_with_Comment <<Role>>
+class Idea_with_a_Comment <<Role>>
+Idea <|-- Idea_with_a_Comment
+class Merging <<Relator>>
+class Merged_1 <<Role>>
+Idea <|-- Merged_1
+class Merged <<Role>>
+Idea <|-- Merged
+class Read_Authorization <<Relator>>
+Authorization <|-- Read_Authorization
+class Rating_Review <<Relator>>
+Review <|-- Rating_Review
+class Authorization <<Relator>>
+class Contest_with_Access_Authorization <<Role>>
+class Access_Authorized_Group <<Role>>
+class Edited <<Relator>>
+class Updated_Contest <<Role>>
+class User_Editor <<Role>>
+class Idea_Relationship <<Relator>>
+class Related_Idea <<Role>>
+Idea <|-- Related_Idea
+class Relatee <<Role>>
+Idea <|-- Relatee
+class Describes_Part <<Relator>>
+class Describee <<Role>>
+Idea <|-- Describee
+class Described <<Role>>
+Idea <|-- Described
+class Review <<Relator>>
+class Revised_Idea <<Role>>
+Idea <|-- Revised_Idea
+class Reviewer <<Role>>
+class Creation <<Relator>>
+class Idea <<Kind>>
+class User_with_Idea <<Role>>
+class Textual_Review <<Relator>>
+Review <|-- Textual_Review
+class Account_Ownership <<Relator>>
+class Online_Account <<Kind>>
+class User_with_Account <<Role>>
+class Update_Idea <<Relator>>
+class Updated_Idea <<Role>>
+Idea <|-- Updated_Idea
+class Idea_Updater_User <<Role>>
+class Idea_Contest_Comment <<Relator>>
+class Commented_Contest <<Role>>
+class User_with_Idea_Contest_Comment <<Role>>
+Authorization "1..*" -- "1..1" Access_Authorized_Group : 
+Account_Ownership "1..*" -- "1..1" Online_Account : 
+Account_Ownership "1..*" -- "1..1" User_with_Account : 
+Authorization "1..*" -- "1..1" Contest_with_Access_Authorization : 
+Idea_Contest_Comment "1..*" -- "1..1" Commented_Contest : 
+Submission "1..*" -- "1..1" Contest_with_Idea : 
+Creation "1..*" -- "1..1" Idea : 
+Creation "1..*" -- "1..*" User_with_Idea : 
+Describes_Part "1..*" -- "1..1" Described : 
+Describes_Part "1..*" -- "1..1" Describee : 
+Edited "1..*" -- "1..1" Updated_Contest : 
+Edited "1..*" -- "1..1" User_Editor : 
+Idea_Comment "1..*" -- "1..1" User_with_Comment : 
+Idea_Comment "1..*" -- "1..1" Idea_with_a_Comment : 
+Idea_Contest_Comment "1..*" -- "1..1" User_with_Idea_Contest_Comment : 
+Idea_Relationship "1..*" -- "1..*" Related_Idea : 
+Idea_Relationship "1..*" -- "1..*" Relatee : 
+Update_Idea "1..*" -- "1..1" Idea_Updater_User : 
+Merging "1..*" -- "1..*" Merged : 
+Merging "1..*" -- "1..*" Merged_1 : 
+Review "1..*" -- "1..1" Revised_Idea : 
+Review "1..*" -- "1..1" Reviewer : 
+Similarity "1..*" -- "1..*" Similar_Idea : 
+Similarity "1..*" -- "1..*" Similaree : 
+Submission "1..*" -- "1..1" Submitting_User : 
+Submission "1..*" -- "1..1" Submitted_Idea : 
+Update_Idea "1..*" -- "1..1" Updated_Idea : 
+Contest_with_Access_Authorization "1..*" -- "1..*" Access_Authorized_Group : 
+Commented_Contest "1..*" -- "1..*" User_with_Idea_Contest_Comment : 
+Describee "1..*" -- "1..*" Described : 
+Idea_Updater_User "1..*" -- "1..*" Updated_Idea : 
+User_with_Comment "1..*" -- "1..*" Idea_with_a_Comment : 
+Merged "1..*" -- "1..*" Merged_1 : 
+Online_Account "1..*" -- "1..*" User_with_Account : 
+Reviewer "1..*" -- "1..*" Revised_Idea : 
+Similaree "1..*" -- "1..*" Similar_Idea : 
+Submitting_User "1..*" -- "1..*" Submitted_Idea : 
+User_Editor "1..*" -- "1..*" Updated_Contest : 
+@enduml

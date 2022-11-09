@@ -1,0 +1,18 @@
+@startuml
+'2 occurrencies
+'3 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class User_Group <<Collective>>
+class User_in_a_Group <<Role>>
+class User_Group_in_a_Group <<Collective>>
+User_Group <|-- User_Group_in_a_Group
+User_Group "1..1" o-- "2..*" User_in_a_Group : 
+User_Group "1..1" o-- "0..*" User_Group_in_a_Group : 
+@enduml

@@ -1,0 +1,109 @@
+@startuml
+'19 occurrencies
+'46 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Specific_Proposal <<Relator>>
+class Bussiness_Plan_in_Specific_Proposal <<Role>>
+class Economic_Proposal_in_Specific_Proposal <<Role>>
+class Service_Batch_in_Auction <<Role>>
+Batch_in_Auction <|-- Service_Batch_in_Auction
+class Homologation_of_Public_Auction <<Relator>>
+class Winner_of_Public_Auction <<RoleMixin>>
+Company_Participant_of_Public_Auction <|-- Winner_of_Public_Auction
+class Public_Auction <<Relator>>
+Auction <|-- Public_Auction
+class Auction <<Relator>>
+class Batch_in_Auction <<RoleMixin>>
+class Permission_Grant <<Relator>>
+class Tended_With_Winner <<Role>>
+class Permissionária <<Role>>
+class Auction_for_Public_Tender <<Relator>>
+Public_Auction <|-- Auction_for_Public_Tender
+class Permission_Grant_Contract <<SubKind>>
+class Proposal <<Relator>>
+class General_Proposal <<Relator>>
+class Legal_Representative_in_Tender_Process <<Role>>
+Legal_Representative <|-- Legal_Representative_in_Tender_Process
+class Republication <<Relator>>
+Publication <|-- Republication
+class Published_Object <<RoleMixin>>
+class Descrição_de_Quota_de_Exploração <<Relator>>
+class Linha_de_Ônibus_em_Implantação <<Role>>
+class Nomination_of_Representative <<Relator>>
+class Power_of_Attorney <<Role>>
+class Company_Participant_of_Public_Auction <<RoleMixin>>
+class Legal_Representative <<Role>>
+class Grant_Committee_Nomination <<Relator>>
+class Grant_Committee <<Role>>
+class Permission_Tender_in_External_Phase <<Role>>
+class Grant_Committee_Nomination_Ordinance <<Role>>
+class Session_of_Public_Auction <<Relator>>
+class Call_for_Tender_Publication <<Relator>>
+Publication <|-- Call_for_Tender_Publication
+class Tender_in_Call_for_Tender <<Role>>
+Publication_Context <|-- Tender_in_Call_for_Tender
+class Published_Call_for_Tender <<Role>>
+Published_Object <|-- Published_Call_for_Tender
+class Call_for_Tender_Republication <<Relator>>
+Republication <|-- Call_for_Tender_Republication
+class Qualification_in_General_Proposal <<Role>>
+class Proof_of_Fleet_in_General_Proposal <<Role>>
+class Warranty_in_General_Proposal <<Role>>
+class Public_Hearing <<Relator>>
+class Tender_in_Internal_Phase <<Role>>
+class Reunião_Participativa <<Relator>>
+class Permission_Tender_in_Auction <<Role>>
+class Bidder_Registration <<Relator>>
+class Bidder <<Role>>
+class Publication <<Relator>>
+class Publicador <<RoleMixin>>
+class Publication_Context <<RoleMixin>>
+Auction "1..1" -- "1..1" Batch_in_Auction : auctions
+Auction_for_Public_Tender "1..1" -- "1..*" Service_Batch_in_Auction : auctions
+Auction_for_Public_Tender "1..1" -- "1..1" Grant_Committee : conducts
+Proposal "1..1" -- "1..1" Auction_for_Public_Tender : 
+Permission_Grant "1..1" -- "1..1" Auction_for_Public_Tender : 
+Auction_for_Public_Tender "1..1" -- "1..1" Permission_Tender_in_Auction : decides
+Bidder_Registration "1..*" -- "1..1" Bidder : 
+Bidder_Registration "1..*" -- "1..1" Tender_in_Call_for_Tender : 
+Specific_Proposal "1..1" -- "1..1" Bussiness_Plan_in_Specific_Proposal : 
+Call_for_Tender_Publication "1..*" -- "1..1" Tender_in_Call_for_Tender : 
+Call_for_Tender_Publication "1..1" -- "1..1" Published_Call_for_Tender : publishes
+Call_for_Tender_Republication "1..1" -- "1..1" Published_Call_for_Tender : modifies
+Nomination_of_Representative "1..1" -- "1..1" Company_Participant_of_Public_Auction : 
+Descrição_de_Quota_de_Exploração "1..1" -- "1..1" Linha_de_Ônibus_em_Implantação : 
+Specific_Proposal "1..1" -- "1..1" Economic_Proposal_in_Specific_Proposal : 
+General_Proposal "1..1" -- "1..*" Service_Batch_in_Auction : 
+General_Proposal "1..1" -- "1..1" Qualification_in_General_Proposal : 
+General_Proposal "1..1" -- "1..1" Proof_of_Fleet_in_General_Proposal : 
+Proposal "1..1" -- "1..1" General_Proposal : 
+General_Proposal "1..1" -- "1..1" Warranty_in_General_Proposal : 
+Grant_Committee_Nomination "1..1" -- "1..1" Grant_Committee : 
+Grant_Committee_Nomination "1..1" -- "1..1" Permission_Tender_in_External_Phase : 
+Grant_Committee_Nomination "1..1" -- "1..*" Grant_Committee_Nomination_Ordinance : formalized_by
+Homologation_of_Public_Auction "1..1" -- "1..*" Winner_of_Public_Auction : declares
+Homologation_of_Public_Auction "1..1" -- "1..1" Public_Auction : 
+Nomination_of_Representative "1..1" -- "1..1" Legal_Representative : 
+Session_of_Public_Auction "0..*" -- "1..*" Legal_Representative : participates_in
+Proposal "1..1" -- "1..1" Legal_Representative_in_Tender_Process : presents
+Nomination_of_Representative "1..1" -- "0..1" Power_of_Attorney : 
+Proposal "1..1" -- "1..*" Specific_Proposal : 
+Session_of_Public_Auction "1..1" -- "1..1" Public_Auction : 
+Public_Hearing "1..1" -- "1..1" Tender_in_Internal_Phase : requests
+Publication "1..*" -- "1..1" Publicador : 
+Publication "1..*" -- "1..1" Publication_Context : 
+Publication "1..1" -- "1..1" Published_Object : publishes
+Republication "1..1" -- "1..1" Published_Object : modifies
+Specific_Proposal "1..1" -- "1..1" Service_Batch_in_Auction : 
+Permission_Grant "1..1" -- "1..1" Tended_With_Winner : 
+Permission_Grant "1..1" -- "1..1" Permission_Grant_Contract : formaliza
+Permission_Grant "1..*" -- "1..1" Permissionária : participa_em
+@enduml

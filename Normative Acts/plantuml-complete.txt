@@ -1,0 +1,180 @@
+@startuml
+class Article <<Kind>>
+class Article_component_of_Chapter <<SubKind>>
+Article <|-- Article_component_of_Chapter
+class Article_component_of_Section <<SubKind>>
+Article <|-- Article_component_of_Section
+class Article_composed_of_Item <<SubKind>>
+Composed_Article <|-- Article_composed_of_Item
+class Article_composed_of_Paragraph <<SubKind>>
+Composed_Article <|-- Article_composed_of_Paragraph
+class Autonomous_Decree <<SubKind>>
+Decree <|-- Autonomous_Decree
+class Book <<Collective>>
+Grouping_Element <|-- Book
+class Brief <<Kind>>
+class Caput <<Kind>>
+class Chapter <<Collective>>
+Grouping_Element <|-- Chapter
+class Chapter_composed_by_Article <<SubKind>>
+Chapter <|-- Chapter_composed_by_Article
+class Chapter_composed_by_Section <<SubKind>>
+Chapter <|-- Chapter_composed_by_Section
+class Charter <<Collective>>
+Grouping_Element <|-- Charter
+class Complementary_Law <<SubKind>>
+Normative_Act <|-- Complementary_Law
+class Component_Book <<SubKind>>
+Book <|-- Component_Book
+class Component_Chapter <<SubKind>>
+Chapter <|-- Component_Chapter
+class Component_Charter <<SubKind>>
+Charter <|-- Component_Charter
+class Component_Section <<SubKind>>
+Section <|-- Component_Section
+class Composed_Article <<SubKind>>
+Article <|-- Composed_Article
+class Composed_Item <<SubKind>>
+Item <|-- Composed_Item
+class Composed_Letter <<SubKind>>
+Letter <|-- Composed_Letter
+class Composed_Paragraph <<SubKind>>
+Paragraph <|-- Composed_Paragraph
+class Composed_Section <<SubKind>>
+Section <|-- Composed_Section
+class Constitution <<SubKind>>
+Normative_Act <|-- Constitution
+class Constitution_Amendment <<SubKind>>
+Normative_Act <|-- Constitution_Amendment
+class Decree <<SubKind>>
+Normative_Act <|-- Decree
+class Delegated_Law <<SubKind>>
+Normative_Act <|-- Delegated_Law
+class Discrimination_Element <<Category>>
+class Double_Part <<SubKind>>
+Part <|-- Double_Part
+class Duration_Clause <<SubKind>>
+Article <|-- Duration_Clause
+class Epigraph <<Kind>>
+class General_Part <<SubKind>>
+Double_Part <|-- General_Part
+class Grouping_Element <<Category>>
+class Handout <<SubKind>>
+Normative_Act <|-- Handout
+class Item <<Kind>>
+Discrimination_Element <|-- Item
+class Item_component_of_Article <<SubKind>>
+Item <|-- Item_component_of_Article
+class Item_component_of_Paragraph <<SubKind>>
+Item <|-- Item_component_of_Paragraph
+class Legal_Article <<SubKind>>
+Article <|-- Legal_Article
+class Legislative_Decree <<SubKind>>
+Normative_Act <|-- Legislative_Decree
+class Letter <<Kind>>
+Discrimination_Element <|-- Letter
+class Letter_Discriminator <<Kind>>
+Discrimination_Element <|-- Letter_Discriminator
+class Multiple_Part <<SubKind>>
+Part <|-- Multiple_Part
+class Normative_Act <<Kind>>
+class Ordinance <<SubKind>>
+Normative_Act <|-- Ordinance
+class Ordinary_Article <<SubKind>>
+Article <|-- Ordinary_Article
+class Ordinary_Law <<SubKind>>
+Normative_Act <|-- Ordinary_Law
+class Paragraph <<Kind>>
+Discrimination_Element <|-- Paragraph
+class Part <<Collective>>
+Grouping_Element <|-- Part
+class Preamble <<Kind>>
+class Provisional_Measure <<SubKind>>
+Normative_Act <|-- Provisional_Measure
+class Regulatory_Article <<SubKind>>
+Article <|-- Regulatory_Article
+class Regulatory_Decree <<SubKind>>
+Decree <|-- Regulatory_Decree
+class Resolution <<SubKind>>
+Normative_Act <|-- Resolution
+class Revocation_Clause <<SubKind>>
+Article <|-- Revocation_Clause
+class Section <<Collective>>
+Grouping_Element <|-- Section
+class Simple_Article <<SubKind>>
+Article <|-- Simple_Article
+class Simple_Item <<SubKind>>
+Item <|-- Simple_Item
+class Simple_Letter <<SubKind>>
+Letter <|-- Simple_Letter
+class Simple_Paragraph <<SubKind>>
+Paragraph <|-- Simple_Paragraph
+class Simple_Section <<SubKind>>
+Section <|-- Simple_Section
+class Singular_Decree <<SubKind>>
+Decree <|-- Singular_Decree
+class Special_Part <<SubKind>>
+Double_Part <|-- Special_Part
+class Subsection <<SubKind>>
+Simple_Section <|-- Subsection
+class Date <<Datatype>>
+class Chapter_composed_by_Article_-_Article_component_of_Chapter <<MemberOf>>
+class Simple_Section_-_Article_component_of_Section <<MemberOf>>
+class Article_composed_of_Clause_-_Clause_component_of_Article <<ComponentOf>>
+class Article_composed_of_Paragraph_-_Paragraph <<ComponentOf>>
+class Book_-_Component_Charter <<SubCollectionOf>>
+class Normative_Act_-_Brief <<ComponentOf>>
+class Composed_Article_-_Caput <<ComponentOf>>
+class Chapter_composed_by_Section_-_Component_Section <<SubCollectionOf>>
+class Charter_-_Component_Chapter <<SubCollectionOf>>
+class Part_-_Component_Book <<SubCollectionOf>>
+class Composed_Item_-_Letter <<ComponentOf>>
+class Composed_Letter_-_Letter_Discriminator <<ComponentOf>>
+class Composed_Paragraph_-_Clause_component_of_Paragraph <<ComponentOf>>
+class Composed_Section_-_Subsection <<SubCollectionOf>>
+class Normative_Act_-_Discrimination_Element <<ComponentOf>>
+class Normative_Act_-_Duration_Clause <<ComponentOf>>
+class Normative_Act_-_Epigraph <<ComponentOf>>
+class Normative_Act_-_Grouping_Element <<ComponentOf>>
+class Normative_Act_-_Revocation_Clause <<ComponentOf>>
+class Normative_Act_-_Ordinary_Article <<ComponentOf>>
+class Normative_Act_-_Preamble <<ComponentOf>>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chapter_composed_by_Article "1..1" *-- "2..*" Article_component_of_Chapter : Chapter_composed_by_Article_-_Article_component_of_Chapter
+Simple_Section "1..1" *-- "2..*" Article_component_of_Section : Simple_Section_-_Article_component_of_Section
+Article_composed_of_Item "1..1" *-- "2..*" Item_component_of_Article : Article_composed_of_Clause_-_Clause_component_of_Article
+Article_composed_of_Paragraph "1..1" *-- "1..*" Paragraph : Article_composed_of_Paragraph_-_Paragraph
+Book "1..1" *-- "2..*" Component_Charter : Book_-_Component_Charter
+Normative_Act "1..1" *-- "1..1" Brief : Normative_Act_-_Brief
+Composed_Article "1..1" *-- "1..1" Caput : Composed_Article_-_Caput
+Chapter_composed_by_Section "1..1" *-- "1..1" Component_Section : Chapter_composed_by_Section_-_Component_Section
+Charter "1..1" *-- "2..*" Component_Chapter : Charter_-_Component_Chapter
+Part "1..1" *-- "2..*" Component_Book : Part_-_Component_Book
+Composed_Item "1..1" *-- "2..*" Letter : Composed_Item_-_Letter
+Composed_Letter "1..1" *-- "2..*" Letter_Discriminator : Composed_Letter_-_Letter_Discriminator
+Composed_Paragraph "1..1" *-- "2..*" Item_component_of_Paragraph : Composed_Paragraph_-_Clause_component_of_Paragraph
+Composed_Section "1..1" *-- "2..*" Subsection : Composed_Section_-_Subsection
+Normative_Act "1..1" *-- "0..*" Discrimination_Element : Normative_Act_-_Discrimination_Element
+Normative_Act "1..1" *-- "0..*" Duration_Clause : Normative_Act_-_Duration_Clause
+Normative_Act "1..1" *-- "1..1" Epigraph : Normative_Act_-_Epigraph
+Normative_Act "1..1" o-- "0..*" Grouping_Element : Normative_Act_-_Grouping_Element
+Normative_Act "1..1" *-- "0..*" Revocation_Clause : Normative_Act_-_Revocation_Clause
+Normative_Act "1..1" *-- "1..*" Ordinary_Article : Normative_Act_-_Ordinary_Article
+Normative_Act "1..1" *-- "1..1" Preamble : Normative_Act_-_Preamble
+@enduml

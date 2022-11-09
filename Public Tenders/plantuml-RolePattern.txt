@@ -1,0 +1,101 @@
+@startuml
+'34 occurrencies
+'52 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Linha_de_Ônibus_em_Implantação <<Role>>
+class Anulled_Tender <<Role>>
+Completed_Tender <|-- Anulled_Tender
+class Completed_Tender <<Role>>
+Tender <|-- Completed_Tender
+class Tender_in_Internal_Phase <<Role>>
+Tender <|-- Tender_in_Internal_Phase
+class Tender <<Kind>>
+class Plano_de_Outorga_com_Subsídio_de_Pesquisa_de_Ativos_e_Custos <<Role>>
+Plano_de_Outorga <|-- Plano_de_Outorga_com_Subsídio_de_Pesquisa_de_Ativos_e_Custos
+class Plano_de_Outorga <<Kind>>
+class Suspended_Tender <<Role>>
+Tender_in_External_Phase <|-- Suspended_Tender
+class Tender_in_External_Phase <<Role>>
+Tender <|-- Tender_in_External_Phase
+class Ligação_Efetivada <<Role>>
+Ligação <|-- Ligação_Efetivada
+class Ligação <<Collective>>
+class Plano_de_Outorga_com_Subsídio_de_Pesquisa_Operacional <<Role>>
+Plano_de_Outorga <|-- Plano_de_Outorga_com_Subsídio_de_Pesquisa_Operacional
+class Legal_Representative <<Role>>
+Person <|-- Legal_Representative
+class Person <<Kind>>
+class Legal_Representative_in_Tender_Process <<Role>>
+Legal_Representative <|-- Legal_Representative_in_Tender_Process
+class Tender_in_Proposal_Reviewing <<Role>>
+Tender_in_External_Phase <|-- Tender_in_Proposal_Reviewing
+class Grant_Committee <<Role>>
+Committee <|-- Grant_Committee
+class Committee <<Collective>>
+class Grant_Committee_Nomination_Ordinance <<Role>>
+class Empty_Tender <<Role>>
+Tender_Without_Winner <|-- Empty_Tender
+class Tender_Without_Winner <<Role>>
+Completed_Tender <|-- Tender_Without_Winner
+class Tended_With_Winner <<Role>>
+Completed_Tender <|-- Tended_With_Winner
+class Failed_Tender <<Role>>
+Tender_Without_Winner <|-- Failed_Tender
+class Permission_Tender_in_Auction <<Role>>
+Permission_Tender <|-- Permission_Tender_in_Auction
+class Permission_Tender <<SubKind>>
+Tender <|-- Permission_Tender
+class Warranty_in_General_Proposal <<Role>>
+Warranty <|-- Warranty_in_General_Proposal
+class Warranty <<Kind>>
+class Permission_Tender_in_External_Phase <<Role>>
+Tender_in_External_Phase <|-- Permission_Tender_in_External_Phase
+class Bidder_in_Auction <<Role>>
+Company_Participant_of_Public_Auction <|-- Bidder_in_Auction
+Bidder <|-- Bidder_in_Auction
+class Company_Participant_of_Public_Auction <<RoleMixin>>
+class Bidder <<Role>>
+Company <|-- Bidder
+class Qualification_in_General_Proposal <<Role>>
+Qualification <|-- Qualification_in_General_Proposal
+class Qualification <<Kind>>
+class Tender_in_Call_for_Tender <<Role>>
+Tender_in_External_Phase <|-- Tender_in_Call_for_Tender
+Publication_Context <|-- Tender_in_Call_for_Tender
+class Publication_Context <<RoleMixin>>
+class Bussiness_Plan_in_Specific_Proposal <<Role>>
+Bussiness_Plan <|-- Bussiness_Plan_in_Specific_Proposal
+class Bussiness_Plan <<Kind>>
+class Published_Call_for_Tender <<Role>>
+Published_Object <|-- Published_Call_for_Tender
+Call_for_Tender <|-- Published_Call_for_Tender
+class Published_Object <<RoleMixin>>
+class Call_for_Tender <<Kind>>
+class Permissionária <<Role>>
+class Power_of_Attorney <<Role>>
+class Proof_of_Fleet_in_General_Proposal <<Role>>
+Proof_of_Fleet <|-- Proof_of_Fleet_in_General_Proposal
+class Proof_of_Fleet <<Kind>>
+class Company <<SubKind>>
+class Economic_Proposal_in_Specific_Proposal <<Role>>
+Economic_Proposal <|-- Economic_Proposal_in_Specific_Proposal
+class Economic_Proposal <<Kind>>
+class Tender_in_Homologation_Process <<Role>>
+Tender_in_External_Phase <|-- Tender_in_Homologation_Process
+class Tender_in_Qualification <<Role>>
+Tender_in_External_Phase <|-- Tender_in_Qualification
+class Service_Batch_in_Auction <<Role>>
+Batch_in_Auction <|-- Service_Batch_in_Auction
+Service_Batch <|-- Service_Batch_in_Auction
+class Service_Batch <<Collective>>
+class Batch_in_Auction <<RoleMixin>>
+Permission_Tender "0..*" -- "1..1" Grant_Committee : coordinates
+@enduml

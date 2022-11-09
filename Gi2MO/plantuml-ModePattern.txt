@@ -1,0 +1,26 @@
+@startuml
+'5 occurrencies
+'9 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Mode>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Textual <<Mode>>
+class Submited_by_Method <<Mode>>
+class Submission <<Relator>>
+class Idea_Contest_Attachment <<Mode>>
+class Idea_Contest <<Kind>>
+class Review_Rating <<Mode>>
+class Rating_Review <<Relator>>
+class Idea_Attachment <<Mode>>
+class Idea <<Kind>>
+Idea_Attachment "0..*" -- "1..1" Idea : 
+Idea_Contest_Attachment "0..*" -- "1..1" Idea_Contest : 
+Review_Rating "0..1" -- "1..1" Rating_Review : 
+Submited_by_Method "1..1" -- "1..1" Submission : 
+@enduml

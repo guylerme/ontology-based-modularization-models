@@ -1,0 +1,235 @@
+@startuml
+class Accepted <<Phase>>
+Idea <|-- Accepted
+class Access_Authorized_Group <<Role>>
+User_Group <|-- Access_Authorized_Group
+class Account_Ownership <<Relator>>
+class Authorization <<Relator>>
+class Category <<Class>>
+class Commented_Contest <<Role>>
+Idea_Contest <|-- Commented_Contest
+class Contest_with_Access_Authorization <<Role>>
+Idea_Contest <|-- Contest_with_Access_Authorization
+class Contest_with_Idea <<Role>>
+Idea_Contest <|-- Contest_with_Idea
+class Creation <<Relator>>
+class Deployed <<Phase>>
+Idea <|-- Deployed
+class Described <<Role>>
+Idea <|-- Described
+class Describee <<Role>>
+Idea <|-- Describee
+class Describes_Part <<Relator>>
+class Draft <<Phase>>
+Idea <|-- Draft
+class Edited <<Relator>>
+class Idea <<Kind>>
+class Idea_Attachment <<Mode>>
+class Idea_Category <<Class>>
+Category <|-- Idea_Category
+class Idea_Comment <<Relator>>
+class Idea_Contest <<Kind>>
+class Idea_Contest_Attachment <<Mode>>
+class Idea_Contest_Comment <<Relator>>
+class Idea_Relationship <<Relator>>
+class Idea_Updater_User <<Role>>
+User <|-- Idea_Updater_User
+class Idea_with_a_Comment <<Role>>
+Idea <|-- Idea_with_a_Comment
+class Implemented <<Phase>>
+Idea <|-- Implemented
+class Merged <<Role>>
+Idea <|-- Merged
+class Merged_1 <<Role>>
+Idea <|-- Merged_1
+class Merging <<Relator>>
+class Online_Account <<Kind>>
+class Partially_Implemented <<Phase>>
+Idea <|-- Partially_Implemented
+class Rating_Review <<Relator>>
+Review <|-- Rating_Review
+class Read_Authorization <<Relator>>
+Authorization <|-- Read_Authorization
+class Rejected <<Phase>>
+Idea <|-- Rejected
+class Related_Idea <<Role>>
+Idea <|-- Related_Idea
+class Relatee <<Role>>
+Idea <|-- Relatee
+class Review <<Relator>>
+class Review_Category <<Class>>
+Category <|-- Review_Category
+class Review_Rating <<Mode>>
+class Reviewer <<Role>>
+User <|-- Reviewer
+class Revised_Idea <<Role>>
+Idea <|-- Revised_Idea
+class Role1 <<Role>>
+class Similar_Idea <<Role>>
+Idea <|-- Similar_Idea
+class Similaree <<Role>>
+Idea <|-- Similaree
+class Similarity <<Relator>>
+class SubCategory <<Class>>
+Category <|-- SubCategory
+class Submission <<Relator>>
+class Submited_by_Method <<Mode>>
+class Submitted_Idea <<Role>>
+Idea <|-- Submitted_Idea
+class Submitting_User <<Role>>
+User <|-- Submitting_User
+class Textual <<Mode>>
+class Textual_Review <<Relator>>
+Review <|-- Textual_Review
+class Update_Idea <<Relator>>
+class Updated_Contest <<Role>>
+Idea_Contest <|-- Updated_Contest
+class Updated_Idea <<Role>>
+Idea <|-- Updated_Idea
+class User <<Kind>>
+class User_Editor <<Role>>
+User <|-- User_Editor
+class User_Group <<Collective>>
+class User_Group_in_a_Group <<Collective>>
+User_Group <|-- User_Group_in_a_Group
+class User_in_a_Group <<Role>>
+User <|-- User_in_a_Group
+class User_with_Account <<Role>>
+User <|-- User_with_Account
+class User_with_Comment <<Role>>
+User <|-- User_with_Comment
+class User_with_Idea <<Role>>
+User <|-- User_with_Idea
+class User_with_Idea_Contest_Comment <<Role>>
+User <|-- User_with_Idea_Contest_Comment
+class Write_Authorization <<Relator>>
+Authorization <|-- Write_Authorization
+class Metric <<Datatype>>
+class MinMax_Rating_Range <<Datatype>>
+Rating_Range <|-- MinMax_Rating_Range
+class Rating_Range <<Datatype>>
+class Submission_Method <<Datatype>>
+class Up_Down_Rating_Range <<Datatype>>
+Rating_Range <|-- Up_Down_Rating_Range
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class subcategory_of <<Association>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Association>>
+class  <<Association>>
+class Has_equal_content <<Formal>>
+class  <<Characterization>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Association>>
+class  <<Characterization>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Characterization>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Association>>
+class  <<Association>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Characterization>>
+class  <<Association>>
+class  <<Mediation>>
+class  <<MemberOf>>
+class  <<SubCollectionOf>>
+class  <<Material>>
+class  <<Material>>
+class  <<Material>>
+class  <<Material>>
+class  <<Material>>
+class  <<Material>>
+class  <<Material>>
+class  <<Material>>
+class  <<Material>>
+class  <<Material>>
+class  <<Material>>
+
+
+
+
+
+
+
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+Authorization "1..*" -- "1..1" Access_Authorized_Group : 
+Account_Ownership "1..*" -- "1..1" Online_Account : 
+Account_Ownership "1..*" -- "1..1" User_with_Account : 
+Authorization "1..*" -- "1..1" Contest_with_Access_Authorization : 
+SubCategory "0..*" -- "1..*" Category : subcategory_of
+Idea_Contest_Comment "1..*" -- "1..1" Commented_Contest : 
+Submission "1..*" -- "1..1" Contest_with_Idea : 
+Creation "1..*" -- "1..1" Idea : 
+Creation "1..*" -- "1..*" User_with_Idea : 
+Describes_Part "1..*" -- "1..1" Described : 
+Describes_Part "1..*" -- "1..1" Describee : 
+Edited "1..*" -- "1..1" Updated_Contest : 
+Edited "1..*" -- "1..1" User_Editor : 
+Idea "0..*" -- "0..*" Metric : 
+Idea "0..*" -- "1..*" Idea_Category : 
+Idea_Attachment "0..*" -- "1..1" Idea : 
+Idea_Comment "1..*" -- "1..1" User_with_Comment : 
+Idea_Comment "1..*" -- "1..1" Idea_with_a_Comment : 
+Idea_Contest "0..*" -- "0..*" Metric : 
+Idea_Contest_Attachment "0..*" -- "1..1" Idea_Contest : 
+Idea_Contest_Comment "1..*" -- "1..1" User_with_Idea_Contest_Comment : 
+Idea_Relationship "1..*" -- "1..*" Related_Idea : 
+Idea_Relationship "1..*" -- "1..*" Relatee : 
+Update_Idea "1..*" -- "1..1" Idea_Updater_User : 
+Merging "1..*" -- "1..*" Merged : 
+Merging "1..*" -- "1..*" Merged_1 : 
+Review_Rating "0..1" -- "1..1" Rating_Review : 
+Review "1..*" -- "1..1" Revised_Idea : 
+Review "1..*" -- "1..1" Reviewer : 
+Review_Category "1..*" -- "0..*" Review : 
+Review_Rating "0..*" -- "1..1" Rating_Range : 
+Similarity "1..*" -- "1..*" Similar_Idea : 
+Similarity "1..*" -- "1..*" Similaree : 
+Submission "1..*" -- "1..1" Submitting_User : 
+Submission "1..*" -- "1..1" Submitted_Idea : 
+Submited_by_Method "1..1" -- "1..1" Submission : 
+Submited_by_Method "0..*" -- "1..1" Submission_Method : 
+Update_Idea "1..*" -- "1..1" Updated_Idea : 
+User_Group "1..1" o-- "2..*" User_in_a_Group : 
+User_Group "1..1" o-- "0..*" User_Group_in_a_Group : 
+Contest_with_Access_Authorization "1..*" -- "1..*" Access_Authorized_Group : 
+Commented_Contest "1..*" -- "1..*" User_with_Idea_Contest_Comment : 
+Describee "1..*" -- "1..*" Described : 
+Idea_Updater_User "1..*" -- "1..*" Updated_Idea : 
+User_with_Comment "1..*" -- "1..*" Idea_with_a_Comment : 
+Merged "1..*" -- "1..*" Merged_1 : 
+Online_Account "1..*" -- "1..*" User_with_Account : 
+Reviewer "1..*" -- "1..*" Revised_Idea : 
+Similaree "1..*" -- "1..*" Similar_Idea : 
+Submitting_User "1..*" -- "1..*" Submitted_Idea : 
+User_Editor "1..*" -- "1..*" Updated_Contest : 
+@enduml

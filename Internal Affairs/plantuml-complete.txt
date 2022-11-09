@@ -1,0 +1,208 @@
+@startuml
+class Atomic <<SubKind>>
+system <|-- Atomic
+class Composed <<SubKind>>
+system <|-- Composed
+class action <<Relator>>
+class activity <<Kind>>
+class applicationNorm <<Relator>>
+class attachment <<Kind>>
+class base <<Collective>>
+class civil <<Role>>
+individual <|-- civil
+class civilCommitment <<Relator>>
+class civilServiceUnit <<Role>>
+policeIAD <|-- civilServiceUnit
+class command <<Relator>>
+class commandUnit <<Role>>
+policeIAD <|-- commandUnit
+class commitment <<Relator>>
+class conclusion <<Role>>
+sanction <|-- conclusion
+class content <<Kind>>
+class create <<SubKind>>
+activity <|-- create
+class delete <<SubKind>>
+activity <|-- delete
+class designatedRegistry <<Role>>
+registry <|-- designatedRegistry
+class designatedSection <<Role>>
+section <|-- designatedSection
+class designationResponsabilityRegistry <<Relator>>
+class designationResponsabilitySection <<Relator>>
+class destiny <<Kind>>
+class document <<Kind>>
+class experience <<SubKind>>
+document <|-- experience
+class facto <<Kind>>
+class generalInspector <<Role>>
+military <|-- generalInspector
+class individual <<SubKind>>
+Atomic <|-- individual
+class individualBase <<Phase>>
+base <|-- individualBase
+class internalAffairDepartment <<SubKind>>
+organization <|-- internalAffairDepartment
+class keyword <<Kind>>
+class keywordSet <<Collective>>
+class major_premisse <<Role>>
+norm <|-- major_premisse
+class message <<SubKind>>
+document <|-- message
+class military <<Role>>
+individual <|-- military
+class militaryCommitment <<Relator>>
+class norm <<Kind>>
+class organization <<SubKind>>
+Composed <|-- organization
+class organizationalBase <<Phase>>
+base <|-- organizationalBase
+class organizationalPart <<SubKind>>
+Composed <|-- organizationalPart
+class penalty <<SubKind>>
+sanction <|-- penalty
+class personal <<Phase>>
+document <|-- personal
+class phenomenon <<Relator>>
+class policeIAD <<SubKind>>
+internalAffairDepartment <|-- policeIAD
+class public <<Phase>>
+document <|-- public
+class registry <<SubKind>>
+organizationalPart <|-- registry
+class registryResponsible <<Role>>
+military <|-- registryResponsible
+class reward <<SubKind>>
+sanction <|-- reward
+class sanction <<Kind>>
+class search <<SubKind>>
+activity <|-- search
+class secondary_premisse <<Role>>
+facto <|-- secondary_premisse
+class section <<SubKind>>
+organizationalPart <|-- section
+class sectionResponsible <<Role>>
+military <|-- sectionResponsible
+class serviceUnit <<Role>>
+policeIAD <|-- serviceUnit
+class source <<Kind>>
+class subject <<Kind>>
+class substitution <<Relator>>
+class system <<Kind>>
+class team <<Collective>>
+class title <<Kind>>
+class update <<SubKind>>
+activity <|-- update
+class viceInspector <<Role>>
+military <|-- viceInspector
+class x <<Relator>>
+action <|-- x
+class mediationAction-Activity <<Mediation>>
+class mediationIndividualCreation <<Mediation>>
+class mediationCreationDocument <<Mediation>>
+class mediationApplicationNorm-majorPremisse <<Mediation>>
+class mediationApplicationNorm-conclusion <<Mediation>>
+class mediationApplicationNorm-secondaryPremisse <<Mediation>>
+class componentOfMessage-Attachment <<ComponentOf>>
+class mediationCivilCommitment-Civil <<Mediation>>
+class mediationCivilServiceUnit-CivilCommitment <<Mediation>>
+class mediationCommandUnit-Command <<Mediation>>
+class mediationGeneralInspector-Command <<Mediation>>
+class mediationNormCommitment <<Mediation>>
+class mediationNormSystem <<Mediation>>
+class componentOfDocument-Content <<ComponentOf>>
+class mediationDesignedRegistry-RegistryResponsible <<Mediation>>
+class mediationDesignatedSection-DesignationResponsabilitySection <<Mediation>>
+class mediationRegistryResponsible-DesignationResponsabilityRegistry <<Mediation>>
+class mediationSectionResponsible-DesignationResponsabilitySection <<Mediation>>
+class componentOfMessage-Destiny <<ComponentOf>>
+class componentOfDocument-Subject <<ComponentOf>>
+class isRelated <<Formal>>
+class isPartOfDoc2 <<Formal>>
+class isPartOfDoc <<Formal>>
+class mediationSubstitution-generalInspector <<Mediation>>
+class componentOfOrganization-Individual <<ComponentOf>>
+class memberOfTeam <<MemberOf>>
+class memberOfPrivateBase-Private <<MemberOf>>
+class memberOfKeywordSet-Keyword <<MemberOf>>
+class componentOfMessage-Source <<ComponentOf>>
+class mediationMilitary-militaryCommitment <<Mediation>>
+class mediationServiceUnit-MilitaryCommitment <<Mediation>>
+class subsume <<Mediation>>
+class arePartOf <<Formal>>
+class memberOfOrgBase-Public <<MemberOf>>
+class mediationPhenomenonSystem <<Mediation>>
+class arePartOfPoliceIAD <<Formal>>
+class isPartOf <<Formal>>
+class mediationSubstitution-viceInspector <<Mediation>>
+class materialCivilServiceUnit-Civil <<Material>>
+class materialCommandUnit-GeneralInspector <<Material>>
+class materialDesignedRegistry-registryResponsible <<Material>>
+class materialDesignatedSection-SectionResponsible <<Material>>
+class canSubstitute <<Material>>
+class materialServiceUnit-Military <<Material>>
+class generates <<Material>>
+class abides <<Material>>
+
+
+
+
+
+
+
+
+
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+action "1..*" -- "1..1" activity : mediationAction-Activity
+action "1..*" -- "1..1" individual : mediationIndividualCreation
+action "1..1" -- "1..1" document : mediationCreationDocument
+applicationNorm "1..*" -- "1..1" major_premisse : mediationApplicationNorm-majorPremisse
+applicationNorm "1..*" -- "1..1" conclusion : mediationApplicationNorm-conclusion
+applicationNorm "1..*" -- "1..1" secondary_premisse : mediationApplicationNorm-secondaryPremisse
+message "1..1" o-- "0..*" attachment : componentOfMessage-Attachment
+civilCommitment "1..1" -- "1..1" civil : mediationCivilCommitment-Civil
+civilCommitment "1..*" -- "1..1" civilServiceUnit : mediationCivilServiceUnit-CivilCommitment
+command "1..*" -- "1..1" commandUnit : mediationCommandUnit-Command
+command "1..1" -- "1..1" generalInspector : mediationGeneralInspector-Command
+commitment "1..*" -- "1..1" norm : mediationNormCommitment
+commitment "1..*" -- "1..1" system : mediationNormSystem
+document "1..1" o-- "1..1" content : componentOfDocument-Content
+designationResponsabilityRegistry "1..*" -- "1..1" designatedRegistry : mediationDesignedRegistry-RegistryResponsible
+designationResponsabilitySection "1..*" -- "1..1" designatedSection : mediationDesignatedSection-DesignationResponsabilitySection
+designationResponsabilityRegistry "1..*" -- "1..1" registryResponsible : mediationRegistryResponsible-DesignationResponsabilityRegistry
+designationResponsabilitySection "1..*" -- "1..1" sectionResponsible : mediationSectionResponsible-DesignationResponsabilitySection
+message "1..1" o-- "1..*" destiny : componentOfMessage-Destiny
+document "1..1" o-- "1..1" subject : componentOfDocument-Subject
+keywordSet "1..1" -- "1..*" document : isPartOfDoc2
+title "0..1" -- "1..1" document : isPartOfDoc
+substitution "1..*" -- "1..1" generalInspector : mediationSubstitution-generalInspector
+organization "1..1" o-- "2..*" individual : componentOfOrganization-Individual
+team "1..1" o-- "2..*" individual : memberOfTeam
+individualBase "1..1" o-- "2..*" personal : memberOfPrivateBase-Private
+keywordSet "1..*" o-- "2..5" keyword : memberOfKeywordSet-Keyword
+message "1..1" o-- "1..1" source : componentOfMessage-Source
+militaryCommitment "1..1" -- "1..1" military : mediationMilitary-militaryCommitment
+militaryCommitment "1..*" -- "1..1" serviceUnit : mediationServiceUnit-MilitaryCommitment
+phenomenon "1..*" -- "1..1" norm : subsume
+organization "1..1" -- "1..*" organizationalPart : arePartOf
+organizationalBase "1..1" o-- "2..*" public : memberOfOrgBase-Public
+phenomenon "1..*" -- "1..1" system : mediationPhenomenonSystem
+section "1..*" -- "1..1" policeIAD : arePartOfPoliceIAD
+registry "0..1" -- "1..1" section : isPartOf
+substitution "1..*" -- "1..1" viceInspector : mediationSubstitution-viceInspector
+civil "1..*" -- "1..1" civilServiceUnit : materialCivilServiceUnit-Civil
+generalInspector "1..*" -- "1..*" commandUnit : materialCommandUnit-GeneralInspector
+registryResponsible "1..*" -- "1..*" designatedRegistry : materialDesignedRegistry-registryResponsible
+designatedSection "1..*" -- "1..1" sectionResponsible : materialDesignatedSection-SectionResponsible
+viceInspector "1..1" -- "1..1" generalInspector : canSubstitute
+military "1..*" -- "1..*" serviceUnit : materialServiceUnit-Military
+system "1..1" -- "1..1" norm : generates
+system "1..*" -- "1..*" norm : abides
+@enduml

@@ -1,0 +1,35 @@
+@startuml
+'16 occurrencies
+'16 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class keyword <<Kind>>
+class subject <<Kind>>
+class source <<Kind>>
+class keywordSet <<Collective>>
+class facto <<Kind>>
+class sanction <<Kind>>
+class document <<Kind>>
+class base <<Collective>>
+class team <<Collective>>
+class norm <<Kind>>
+class content <<Kind>>
+class destiny <<Kind>>
+class activity <<Kind>>
+class attachment <<Kind>>
+class title <<Kind>>
+class system <<Kind>>
+document "1..1" o-- "1..1" content : componentOfDocument-Content
+document "1..1" o-- "1..1" subject : componentOfDocument-Subject
+keywordSet "1..1" -- "1..*" document : isPartOfDoc2
+title "0..1" -- "1..1" document : isPartOfDoc
+keywordSet "1..*" o-- "2..5" keyword : memberOfKeywordSet-Keyword
+system "1..1" -- "1..1" norm : generates
+system "1..*" -- "1..*" norm : abides
+@enduml

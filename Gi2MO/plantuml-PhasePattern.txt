@@ -1,0 +1,26 @@
+@startuml
+'6 occurrencies
+'7 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Phase>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Deployed <<Phase>>
+Idea <|-- Deployed
+class Idea <<Kind>>
+class Implemented <<Phase>>
+Idea <|-- Implemented
+class Draft <<Phase>>
+Idea <|-- Draft
+class Accepted <<Phase>>
+Idea <|-- Accepted
+class Rejected <<Phase>>
+Idea <|-- Rejected
+class Partially_Implemented <<Phase>>
+Idea <|-- Partially_Implemented
+@enduml

@@ -1,0 +1,81 @@
+@startuml
+'27 occurrencies
+'31 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Updated_Idea <<Role>>
+Idea <|-- Updated_Idea
+class Idea <<Kind>>
+class User_with_Comment <<Role>>
+User <|-- User_with_Comment
+class User <<Kind>>
+class Reviewer <<Role>>
+User <|-- Reviewer
+class Similar_Idea <<Role>>
+Idea <|-- Similar_Idea
+class Submitted_Idea <<Role>>
+Idea <|-- Submitted_Idea
+class User_with_Idea <<Role>>
+User <|-- User_with_Idea
+class Commented_Contest <<Role>>
+Idea_Contest <|-- Commented_Contest
+class Idea_Contest <<Kind>>
+class Merged <<Role>>
+Idea <|-- Merged
+class User_Editor <<Role>>
+User <|-- User_Editor
+class Described <<Role>>
+Idea <|-- Described
+class User_with_Idea_Contest_Comment <<Role>>
+User <|-- User_with_Idea_Contest_Comment
+class Idea_with_a_Comment <<Role>>
+Idea <|-- Idea_with_a_Comment
+class Related_Idea <<Role>>
+Idea <|-- Related_Idea
+class Similaree <<Role>>
+Idea <|-- Similaree
+class User_in_a_Group <<Role>>
+User <|-- User_in_a_Group
+class Relatee <<Role>>
+Idea <|-- Relatee
+class Submitting_User <<Role>>
+User <|-- Submitting_User
+class Updated_Contest <<Role>>
+Idea_Contest <|-- Updated_Contest
+class Describee <<Role>>
+Idea <|-- Describee
+class Contest_with_Idea <<Role>>
+Idea_Contest <|-- Contest_with_Idea
+class Role1 <<Role>>
+class Merged_1 <<Role>>
+Idea <|-- Merged_1
+class Access_Authorized_Group <<Role>>
+User_Group <|-- Access_Authorized_Group
+class User_Group <<Collective>>
+class Idea_Updater_User <<Role>>
+User <|-- Idea_Updater_User
+class Revised_Idea <<Role>>
+Idea <|-- Revised_Idea
+class User_with_Account <<Role>>
+User <|-- User_with_Account
+class Contest_with_Access_Authorization <<Role>>
+Idea_Contest <|-- Contest_with_Access_Authorization
+User_Group "1..1" o-- "2..*" User_in_a_Group : 
+Contest_with_Access_Authorization "1..*" -- "1..*" Access_Authorized_Group : 
+Commented_Contest "1..*" -- "1..*" User_with_Idea_Contest_Comment : 
+Describee "1..*" -- "1..*" Described : 
+Idea_Updater_User "1..*" -- "1..*" Updated_Idea : 
+User_with_Comment "1..*" -- "1..*" Idea_with_a_Comment : 
+Merged "1..*" -- "1..*" Merged_1 : 
+Reviewer "1..*" -- "1..*" Revised_Idea : 
+Similaree "1..*" -- "1..*" Similar_Idea : 
+Submitting_User "1..*" -- "1..*" Submitted_Idea : 
+User_Editor "1..*" -- "1..*" Updated_Contest : 
+@enduml

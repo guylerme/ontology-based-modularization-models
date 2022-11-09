@@ -1,0 +1,56 @@
+@startuml
+'6 occurrencies
+'22 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Plataform <<Category>>
+IT_Component <|-- Plataform
+class Computer_System <<Kind>>
+Plataform <|-- Computer_System
+class Warranty_And_Support <<Kind>>
+Plataform <|-- Warranty_And_Support
+class Cooling <<Kind>>
+Plataform <|-- Cooling
+class Monitoring <<Kind>>
+Plataform <|-- Monitoring
+class Network_Component <<Kind>>
+Plataform <|-- Network_Component
+class Power <<Kind>>
+Plataform <|-- Power
+class ReplicationTechnology <<Category>>
+class Cluster <<Kind>>
+ReplicationTechnology <|-- Cluster
+class Snapshop <<Kind>>
+ReplicationTechnology <|-- Snapshop
+class Appliance <<Kind>>
+ReplicationTechnology <|-- Appliance
+class RAID <<Kind>>
+ReplicationTechnology <|-- RAID
+class Mirroring <<Kind>>
+ReplicationTechnology <|-- Mirroring
+class IT_Component <<Category>>
+class System <<Kind>>
+IT_Component <|-- System
+class Site <<Kind>>
+IT_Component <|-- Site
+class Data_Storage <<Kind>>
+IT_Component <|-- Data_Storage
+class IT_Architecture <<Category>>
+class ITSC_Component <<Category>>
+class Site_Model <<Kind>>
+ITSC_Component <|-- Site_Model
+class Data_Replication <<Kind>>
+ITSC_Component <|-- Data_Replication
+class Resilient_Network <<Category>>
+ITSC_Component <|-- Resilient_Network
+Computer_System "1..*" -- "1..*" Monitoring : failure
+Data_Replication "1..1" *-- "1..*" ReplicationTechnology : 
+IT_Architecture "1..1" o-- "1..*" IT_Component : 
+Warranty_And_Support "1..1" -- "1..*" Computer_System : maintenanceAndTroubleshooting
+@enduml

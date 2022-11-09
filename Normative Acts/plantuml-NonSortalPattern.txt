@@ -1,0 +1,32 @@
+@startuml
+'2 occurrencies
+'11 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Discrimination_Element <<Category>>
+class Letter <<Kind>>
+Discrimination_Element <|-- Letter
+class Item <<Kind>>
+Discrimination_Element <|-- Item
+class Paragraph <<Kind>>
+Discrimination_Element <|-- Paragraph
+class Letter_Discriminator <<Kind>>
+Discrimination_Element <|-- Letter_Discriminator
+class Grouping_Element <<Category>>
+class Book <<Collective>>
+Grouping_Element <|-- Book
+class Charter <<Collective>>
+Grouping_Element <|-- Charter
+class Part <<Collective>>
+Grouping_Element <|-- Part
+class Section <<Collective>>
+Grouping_Element <|-- Section
+class Chapter <<Collective>>
+Grouping_Element <|-- Chapter
+@enduml

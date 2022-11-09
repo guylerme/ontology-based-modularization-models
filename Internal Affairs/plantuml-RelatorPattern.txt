@@ -1,0 +1,81 @@
+@startuml
+'11 occurrencies
+'30 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class phenomenon <<Relator>>
+class system <<Kind>>
+class norm <<Kind>>
+class designationResponsabilityRegistry <<Relator>>
+class designatedRegistry <<Role>>
+class registryResponsible <<Role>>
+military <|-- registryResponsible
+class militaryCommitment <<Relator>>
+class serviceUnit <<Role>>
+class military <<Role>>
+individual <|-- military
+class commitment <<Relator>>
+class designationResponsabilitySection <<Relator>>
+class designatedSection <<Role>>
+class sectionResponsible <<Role>>
+military <|-- sectionResponsible
+class action <<Relator>>
+class activity <<Kind>>
+class document <<Kind>>
+class individual <<SubKind>>
+class applicationNorm <<Relator>>
+class secondary_premisse <<Role>>
+class conclusion <<Role>>
+class major_premisse <<Role>>
+norm <|-- major_premisse
+class command <<Relator>>
+class commandUnit <<Role>>
+class generalInspector <<Role>>
+military <|-- generalInspector
+class substitution <<Relator>>
+class viceInspector <<Role>>
+military <|-- viceInspector
+class x <<Relator>>
+action <|-- x
+class civilCommitment <<Relator>>
+class civil <<Role>>
+individual <|-- civil
+class civilServiceUnit <<Role>>
+action "1..*" -- "1..1" activity : mediationAction-Activity
+action "1..*" -- "1..1" individual : mediationIndividualCreation
+action "1..1" -- "1..1" document : mediationCreationDocument
+applicationNorm "1..*" -- "1..1" major_premisse : mediationApplicationNorm-majorPremisse
+applicationNorm "1..*" -- "1..1" conclusion : mediationApplicationNorm-conclusion
+applicationNorm "1..*" -- "1..1" secondary_premisse : mediationApplicationNorm-secondaryPremisse
+civilCommitment "1..1" -- "1..1" civil : mediationCivilCommitment-Civil
+civilCommitment "1..*" -- "1..1" civilServiceUnit : mediationCivilServiceUnit-CivilCommitment
+command "1..*" -- "1..1" commandUnit : mediationCommandUnit-Command
+command "1..1" -- "1..1" generalInspector : mediationGeneralInspector-Command
+commitment "1..*" -- "1..1" norm : mediationNormCommitment
+commitment "1..*" -- "1..1" system : mediationNormSystem
+designationResponsabilityRegistry "1..*" -- "1..1" designatedRegistry : mediationDesignedRegistry-RegistryResponsible
+designationResponsabilitySection "1..*" -- "1..1" designatedSection : mediationDesignatedSection-DesignationResponsabilitySection
+designationResponsabilityRegistry "1..*" -- "1..1" registryResponsible : mediationRegistryResponsible-DesignationResponsabilityRegistry
+designationResponsabilitySection "1..*" -- "1..1" sectionResponsible : mediationSectionResponsible-DesignationResponsabilitySection
+substitution "1..*" -- "1..1" generalInspector : mediationSubstitution-generalInspector
+militaryCommitment "1..1" -- "1..1" military : mediationMilitary-militaryCommitment
+militaryCommitment "1..*" -- "1..1" serviceUnit : mediationServiceUnit-MilitaryCommitment
+phenomenon "1..*" -- "1..1" norm : subsume
+phenomenon "1..*" -- "1..1" system : mediationPhenomenonSystem
+substitution "1..*" -- "1..1" viceInspector : mediationSubstitution-viceInspector
+civil "1..*" -- "1..1" civilServiceUnit : materialCivilServiceUnit-Civil
+generalInspector "1..*" -- "1..*" commandUnit : materialCommandUnit-GeneralInspector
+registryResponsible "1..*" -- "1..*" designatedRegistry : materialDesignedRegistry-registryResponsible
+designatedSection "1..*" -- "1..1" sectionResponsible : materialDesignatedSection-SectionResponsible
+viceInspector "1..1" -- "1..1" generalInspector : canSubstitute
+military "1..*" -- "1..*" serviceUnit : materialServiceUnit-Military
+system "1..1" -- "1..1" norm : generates
+system "1..*" -- "1..*" norm : abides
+@enduml

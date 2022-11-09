@@ -1,0 +1,25 @@
+@startuml
+'11 occurrencies
+'11 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Kind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Warranty <<Kind>>
+class Person <<Kind>>
+class Call_for_Tender <<Kind>>
+class Qualification <<Kind>>
+class Proof_of_Fleet <<Kind>>
+class Plano_de_Outorga <<Kind>>
+class Pessoa_Jurídica <<Kind>>
+class Projeto_Básico <<Kind>>
+class Tender <<Kind>>
+class Bussiness_Plan <<Kind>>
+class Economic_Proposal <<Kind>>
+Plano_de_Outorga "1..1" -- "1..1" Projeto_Básico : apresenta
+@enduml

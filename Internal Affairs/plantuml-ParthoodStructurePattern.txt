@@ -1,0 +1,42 @@
+@startuml
+'10 occurrencies
+'16 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class individualBase <<Phase>>
+class personal <<Phase>>
+document <|-- personal
+class message <<SubKind>>
+document <|-- message
+class destiny <<Kind>>
+class document <<Kind>>
+class subject <<Kind>>
+class organization <<SubKind>>
+class individual <<SubKind>>
+class keywordSet <<Collective>>
+class keyword <<Kind>>
+class source <<Kind>>
+class organizationalBase <<Phase>>
+class public <<Phase>>
+document <|-- public
+class attachment <<Kind>>
+class team <<Collective>>
+class content <<Kind>>
+message "1..1" o-- "0..*" attachment : componentOfMessage-Attachment
+document "1..1" o-- "1..1" content : componentOfDocument-Content
+message "1..1" o-- "1..*" destiny : componentOfMessage-Destiny
+document "1..1" o-- "1..1" subject : componentOfDocument-Subject
+keywordSet "1..1" -- "1..*" document : isPartOfDoc2
+organization "1..1" o-- "2..*" individual : componentOfOrganization-Individual
+team "1..1" o-- "2..*" individual : memberOfTeam
+individualBase "1..1" o-- "2..*" personal : memberOfPrivateBase-Private
+keywordSet "1..*" o-- "2..5" keyword : memberOfKeywordSet-Keyword
+message "1..1" o-- "1..1" source : componentOfMessage-Source
+organizationalBase "1..1" o-- "2..*" public : memberOfOrgBase-Public
+@enduml

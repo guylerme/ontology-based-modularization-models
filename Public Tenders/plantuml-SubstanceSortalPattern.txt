@@ -1,0 +1,29 @@
+@startuml
+'15 occurrencies
+'15 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Person <<Kind>>
+class Committee <<Collective>>
+class Call_for_Tender <<Kind>>
+class Qualification <<Kind>>
+class Service_Batch <<Collective>>
+class Ligação <<Collective>>
+class Batch_Group <<Collective>>
+class Pessoa_Jurídica <<Kind>>
+class Projeto_Básico <<Kind>>
+class Bussiness_Plan <<Kind>>
+class Warranty <<Kind>>
+class Proof_of_Fleet <<Kind>>
+class Plano_de_Outorga <<Kind>>
+class Tender <<Kind>>
+class Economic_Proposal <<Kind>>
+Batch_Group "1..1" o-- "1..*" Service_Batch : 
+Plano_de_Outorga "1..1" -- "1..1" Projeto_Básico : apresenta
+@enduml

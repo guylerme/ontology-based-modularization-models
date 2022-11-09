@@ -1,0 +1,81 @@
+@startuml
+'21 occurrencies
+'35 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Normative_Act <<Kind>>
+class Epigraph <<Kind>>
+class Composed_Paragraph <<SubKind>>
+Paragraph <|-- Composed_Paragraph
+class Item_component_of_Paragraph <<SubKind>>
+class Brief <<Kind>>
+class Preamble <<Kind>>
+class Charter <<Collective>>
+Grouping_Element <|-- Charter
+class Component_Chapter <<SubKind>>
+class Duration_Clause <<SubKind>>
+class Composed_Article <<SubKind>>
+class Caput <<Kind>>
+class Article_composed_of_Paragraph <<SubKind>>
+Composed_Article <|-- Article_composed_of_Paragraph
+class Paragraph <<Kind>>
+Discrimination_Element <|-- Paragraph
+class Book <<Collective>>
+Grouping_Element <|-- Book
+class Component_Charter <<SubKind>>
+Charter <|-- Component_Charter
+class Composed_Item <<SubKind>>
+class Letter <<Kind>>
+Discrimination_Element <|-- Letter
+class Revocation_Clause <<SubKind>>
+class Grouping_Element <<Category>>
+class Composed_Section <<SubKind>>
+class Subsection <<SubKind>>
+Simple_Section <|-- Subsection
+class Simple_Section <<SubKind>>
+class Article_component_of_Section <<SubKind>>
+class Ordinary_Article <<SubKind>>
+class Chapter_composed_by_Article <<SubKind>>
+class Article_component_of_Chapter <<SubKind>>
+class Part <<Collective>>
+Grouping_Element <|-- Part
+class Component_Book <<SubKind>>
+Book <|-- Component_Book
+class Chapter_composed_by_Section <<SubKind>>
+class Component_Section <<SubKind>>
+class Article_composed_of_Item <<SubKind>>
+Composed_Article <|-- Article_composed_of_Item
+class Item_component_of_Article <<SubKind>>
+class Discrimination_Element <<Category>>
+class Composed_Letter <<SubKind>>
+Letter <|-- Composed_Letter
+class Letter_Discriminator <<Kind>>
+Discrimination_Element <|-- Letter_Discriminator
+Chapter_composed_by_Article "1..1" *-- "2..*" Article_component_of_Chapter : Chapter_composed_by_Article_-_Article_component_of_Chapter
+Simple_Section "1..1" *-- "2..*" Article_component_of_Section : Simple_Section_-_Article_component_of_Section
+Article_composed_of_Item "1..1" *-- "2..*" Item_component_of_Article : Article_composed_of_Clause_-_Clause_component_of_Article
+Article_composed_of_Paragraph "1..1" *-- "1..*" Paragraph : Article_composed_of_Paragraph_-_Paragraph
+Book "1..1" *-- "2..*" Component_Charter : Book_-_Component_Charter
+Normative_Act "1..1" *-- "1..1" Brief : Normative_Act_-_Brief
+Composed_Article "1..1" *-- "1..1" Caput : Composed_Article_-_Caput
+Chapter_composed_by_Section "1..1" *-- "1..1" Component_Section : Chapter_composed_by_Section_-_Component_Section
+Charter "1..1" *-- "2..*" Component_Chapter : Charter_-_Component_Chapter
+Part "1..1" *-- "2..*" Component_Book : Part_-_Component_Book
+Composed_Item "1..1" *-- "2..*" Letter : Composed_Item_-_Letter
+Composed_Letter "1..1" *-- "2..*" Letter_Discriminator : Composed_Letter_-_Letter_Discriminator
+Composed_Paragraph "1..1" *-- "2..*" Item_component_of_Paragraph : Composed_Paragraph_-_Clause_component_of_Paragraph
+Composed_Section "1..1" *-- "2..*" Subsection : Composed_Section_-_Subsection
+Normative_Act "1..1" *-- "0..*" Discrimination_Element : Normative_Act_-_Discrimination_Element
+Normative_Act "1..1" *-- "0..*" Duration_Clause : Normative_Act_-_Duration_Clause
+Normative_Act "1..1" *-- "1..1" Epigraph : Normative_Act_-_Epigraph
+Normative_Act "1..1" o-- "0..*" Grouping_Element : Normative_Act_-_Grouping_Element
+Normative_Act "1..1" *-- "0..*" Revocation_Clause : Normative_Act_-_Revocation_Clause
+Normative_Act "1..1" *-- "1..*" Ordinary_Article : Normative_Act_-_Ordinary_Article
+Normative_Act "1..1" *-- "1..1" Preamble : Normative_Act_-_Preamble
+@enduml

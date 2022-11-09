@@ -1,0 +1,25 @@
+@startuml
+'4 occurrencies
+'6 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Phase>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class individualBase <<Phase>>
+base <|-- individualBase
+class base <<Collective>>
+class personal <<Phase>>
+document <|-- personal
+class document <<Kind>>
+class organizationalBase <<Phase>>
+base <|-- organizationalBase
+class public <<Phase>>
+document <|-- public
+individualBase "1..1" o-- "2..*" personal : memberOfPrivateBase-Private
+organizationalBase "1..1" o-- "2..*" public : memberOfOrgBase-Public
+@enduml

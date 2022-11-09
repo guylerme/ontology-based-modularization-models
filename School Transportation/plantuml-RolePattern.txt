@@ -1,0 +1,66 @@
+@startuml
+'18 occurrencies
+'25 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Driver <<Role>>
+Receiver <|-- Driver
+Person <|-- Driver
+class Receiver <<RoleMixin>>
+class Person <<Kind>>
+class Companion <<Role>>
+class Boarded_Student <<Role>>
+Student <|-- Boarded_Student
+class Student <<Role>>
+Payer <|-- Student
+Person <|-- Student
+class Arrival_Location <<Role>>
+Location <|-- Arrival_Location
+class Location <<Mixin>>
+class Capable_Driver <<Role>>
+Driver <|-- Capable_Driver
+Companion <|-- Capable_Driver
+class Boarding_EI <<Role>>
+Educational_Institution <|-- Boarding_EI
+class Educational_Institution <<Kind>>
+Location <|-- Educational_Institution
+class Student_in_Trip <<Role>>
+Boarded_Student <|-- Student_in_Trip
+class Payer <<RoleMixin>>
+class Liable_for_Student <<Role>>
+Payer <|-- Liable_for_Student
+Person <|-- Liable_for_Student
+class Capable_Supervisor <<Role>>
+Companion <|-- Capable_Supervisor
+Supervisor <|-- Capable_Supervisor
+class Supervisor <<Role>>
+Receiver <|-- Supervisor
+Person <|-- Supervisor
+class Incapable_Supervisor <<Role>>
+Supervisor <|-- Incapable_Supervisor
+class Boarding_Location <<Role>>
+Location <|-- Boarding_Location
+class Incapable_Driver <<Role>>
+Driver <|-- Incapable_Driver
+class Driver_in_Trip <<Role>>
+Capable_Driver <|-- Driver_in_Trip
+class Arrival_EI <<Role>>
+Educational_Institution <|-- Arrival_EI
+class School_Vehicle_in_Trip <<Role>>
+School_Vehicle_Able_for_Transportation <|-- School_Vehicle_in_Trip
+class School_Vehicle_Able_for_Transportation <<Phase>>
+School_Vehicle <|-- School_Vehicle_Able_for_Transportation
+class School_Vehicle <<Kind>>
+class School_Vehicle_in_Boarding <<Role>>
+School_Vehicle_in_Trip <|-- School_Vehicle_in_Boarding
+Arrival_EI "1..1" -- "1..1" Student_in_Trip : desembarca
+Driver_in_Trip "1..1" -- "1..1" School_Vehicle_in_Trip : drives
+Student "1..*" -- "1..*" Educational_Institution : studies_in
+@enduml

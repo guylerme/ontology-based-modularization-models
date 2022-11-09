@@ -1,0 +1,55 @@
+@startuml
+'17 occurrencies
+'22 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<SubKind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Orchestral_Work <<SubKind>>
+Music_Work <|-- Orchestral_Work
+class Music_Work <<SubKind>>
+Art_Work <|-- Music_Work
+class Art_Work <<Kind>>
+class Ballet <<SubKind>>
+Music_Work <|-- Ballet
+class Overture <<SubKind>>
+Orchestral_Work <|-- Overture
+class Symphony <<SubKind>>
+Orchestral_Work <|-- Symphony
+class Opera <<SubKind>>
+Music_Work <|-- Opera
+class Full_Score <<SubKind>>
+Written_Representation <|-- Full_Score
+class Written_Representation <<Kind>>
+class Sketch <<SubKind>>
+Written_Representation <|-- Sketch
+class Musical_Group <<SubKind>>
+Artistic_Group <|-- Musical_Group
+class Artistic_Group <<SubKind>>
+Group <|-- Artistic_Group
+Artist <|-- Artistic_Group
+class Artist <<Mixin>>
+class Group <<Collective>>
+class Orchestra <<SubKind>>
+Musical_Group <|-- Orchestra
+class Individual_Movement <<SubKind>>
+Movement <|-- Individual_Movement
+class Movement <<Kind>>
+class End_Movement <<SubKind>>
+class Suite <<SubKind>>
+Music_Work <|-- Suite
+class Part <<SubKind>>
+Written_Representation <|-- Part
+class Symphonic_Poem <<SubKind>>
+Orchestral_Work <|-- Symphonic_Poem
+class Composite_Movement <<SubKind>>
+Movement <|-- Composite_Movement
+Composite_Movement "1..1" o-- "2..*" Movement : 
+Music_Work "1..1" o-- "2..*" Movement : 
+Music_Work "1..1" -- "1..*" Written_Representation : source
+@enduml

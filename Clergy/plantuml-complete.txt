@@ -1,0 +1,108 @@
+@startuml
+class Baptism <<Relator>>
+class Bishop <<Role>>
+Secular_Clergy_Member <|-- Bishop
+class Bishop_Ordination <<Relator>>
+class Cardinal <<Role>>
+Secular_Clergy_Member <|-- Cardinal
+class Cardinal_Nominator <<Role>>
+Pope <|-- Cardinal_Nominator
+class Clergy <<Collective>>
+class Clergy_Member <<Role>>
+Person <|-- Clergy_Member
+class Clergyman <<Role>>
+Regular_Clergy_Member <|-- Clergyman
+class College_of_Cardinals <<Collective>>
+class Deacon <<Role>>
+Secular_Clergy_Member <|-- Deacon
+class Election <<Relator>>
+class Electorate_of_the_Cardinal_School <<Collective>>
+class Layman <<Role>>
+Regular_Clergy_Member <|-- Layman
+class Nomination <<Relator>>
+class Ordained_Bishop <<Role>>
+Bishop <|-- Ordained_Bishop
+class Ordination_of_Deacon <<Relator>>
+class Ordination_of_Priest <<Relator>>
+class Ordinator_of_Bishop <<Role>>
+Bishop <|-- Ordinator_of_Bishop
+class Ordinator_of_Deacon <<Role>>
+Bishop <|-- Ordinator_of_Deacon
+class Ordinator_of_Priest <<Role>>
+Bishop <|-- Ordinator_of_Priest
+class Person <<Kind>>
+class Pope <<Role>>
+Cardinal <|-- Pope
+class Priest <<Role>>
+Secular_Clergy_Member <|-- Priest
+class Regular_Clergy <<Collective>>
+class Regular_Clergy_Member <<Role>>
+Clergy_Member <|-- Regular_Clergy_Member
+class Religious_Profession <<Relator>>
+class Secular_Clergy <<Collective>>
+class Secular_Clergy_Member <<Role>>
+Clergy_Member <|-- Secular_Clergy_Member
+class Witness_of_Profession <<Role>>
+Clergyman <|-- Witness_of_Profession
+class receives <<Mediation>>
+class performed_by <<Mediation>>
+class performed_by <<Mediation>>
+class received_by <<Mediation>>
+class given_to <<Mediation>>
+class member_of <<MemberOf>>
+class perfomed_by <<Mediation>>
+class clergy_of <<SubCollectionOf>>
+class clergy_of <<SubCollectionOf>>
+class performs <<Mediation>>
+class part_of <<SubCollectionOf>>
+class received_by <<Mediation>>
+class nominates <<Mediation>>
+class voter_of <<Mediation>>
+class performed_by <<Mediation>>
+class performed_by <<Mediation>>
+class received_by <<Mediation>>
+class  <<MemberOf>>
+class wtinesess <<Mediation>>
+class  <<MemberOf>>
+class nominates <<Material>>
+class baptizes <<Material>>
+class makes_vows_with <<Material>>
+class ordinated_by <<Material>>
+class Grupo_Elege_Papa <<Material>>
+class ordinated_by <<Material>>
+class ordinated_by <<Material>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+Baptism "1..1" -- "1..1" Clergy_Member : receives
+Baptism "1..*" -- "1..1" Secular_Clergy_Member : performed_by
+Bishop_Ordination "1..*" -- "3..*" Ordinator_of_Bishop : performed_by
+Bishop_Ordination "1..1" -- "1..1" Ordained_Bishop : received_by
+Nomination "1..1" -- "1..1" Cardinal : given_to
+College_of_Cardinals "1..1" o-- "1..1" Cardinal : member_of
+Nomination "1..1" -- "1..1" Cardinal_Nominator : perfomed_by
+Clergy "1..1" o-- "1..1" Secular_Clergy : clergy_of
+Clergy "1..1" o-- "1..1" Regular_Clergy : clergy_of
+Religious_Profession "1..1" -- "1..1" Clergyman : performs
+College_of_Cardinals "1..1" o-- "1..1" Electorate_of_the_Cardinal_School : part_of
+Ordination_of_Deacon "1..1" -- "1..1" Deacon : received_by
+Election "1..1" -- "1..1" Pope : nominates
+Election "1..*" -- "1..1" Electorate_of_the_Cardinal_School : voter_of
+Ordination_of_Deacon "1..*" -- "1..1" Ordinator_of_Deacon : performed_by
+Ordination_of_Priest "1..*" -- "1..1" Ordinator_of_Priest : performed_by
+Ordination_of_Priest "1..1" -- "1..1" Priest : received_by
+Regular_Clergy "1..1" o-- "2..*" Regular_Clergy_Member : 
+Religious_Profession "1..*" -- "1..1" Witness_of_Profession : wtinesess
+Secular_Clergy "1..1" o-- "2..*" Secular_Clergy_Member : 
+Cardinal_Nominator "1..1" -- "1..1" Cardinal : nominates
+Secular_Clergy_Member "1..1" -- "1..*" Clergy_Member : baptizes
+Witness_of_Profession "1..1" -- "1..*" Clergyman : makes_vows_with
+Deacon "1..*" -- "1..1" Ordinator_of_Deacon : ordinated_by
+Pope "1..*" -- "1..1" Electorate_of_the_Cardinal_School : Grupo_Elege_Papa
+Ordained_Bishop "1..*" -- "3..*" Ordinator_of_Bishop : ordinated_by
+Ordinator_of_Priest "1..1" -- "1..*" Priest : ordinated_by
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+'1 occurrencies
+'5 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Artist <<Mixin>>
+class Composer <<Role>>
+Artist <|-- Composer
+class Software_Program <<Kind>>
+Artist <|-- Software_Program
+class Individual_Artist <<Role>>
+Artist <|-- Individual_Artist
+class Artistic_Group <<SubKind>>
+Artist <|-- Artistic_Group
+@enduml

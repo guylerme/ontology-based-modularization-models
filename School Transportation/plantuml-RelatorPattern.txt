@@ -1,0 +1,51 @@
+@startuml
+'5 occurrencies
+'17 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Route <<Relator>>
+class Arrival_Location <<Role>>
+class Boarding_Location <<Role>>
+class Payment <<Relator>>
+class Payer <<RoleMixin>>
+class Receiver <<RoleMixin>>
+class Boarding <<Relator>>
+class School_Vehicle_in_Boarding <<Role>>
+School_Vehicle_in_Trip <|-- School_Vehicle_in_Boarding
+class Boarded_Student <<Role>>
+Student <|-- Boarded_Student
+class Enrollment <<Relator>>
+class Student <<Role>>
+Payer <|-- Student
+class Educational_Institution <<Kind>>
+class Trip <<Relator>>
+class Student_in_Trip <<Role>>
+Boarded_Student <|-- Student_in_Trip
+class Driver_in_Trip <<Role>>
+class Companion <<Role>>
+class School_Vehicle_in_Trip <<Role>>
+Route "1..1" -- "1..*" Arrival_Location : connects
+Trip "1..1" -- "1..*" Arrival_Location : 
+Boarding "1..1" -- "1..*" Boarded_Student : boards
+Boarding "1..1" -- "1..1" School_Vehicle_in_Boarding : boardsIn
+Boarding "0..*" -- "1..1" Boarding_Location : occursIn
+Route "1..1" -- "1..*" Boarding_Location : connects
+Trip "1..1" -- "0..1" Companion : monitoredBy
+Driver_in_Trip "1..1" -- "1..1" School_Vehicle_in_Trip : drives
+Trip "1..1" -- "1..1" Driver_in_Trip : conductedBy
+Enrollment "1..*" -- "1..1" Educational_Institution : madeIn
+Enrollment "1..*" -- "1..1" Student : madeBy
+Payment "1..*" -- "1..1" Payer : performedBy
+Payment "1..*" -- "1..1" Receiver : receivedBy
+Trip "1..1" -- "1..1" Route : follows
+Trip "1..1" -- "1..1" School_Vehicle_in_Trip : involves
+Trip "1..1" -- "1..*" Student_in_Trip : transports
+Student "1..*" -- "1..*" Educational_Institution : studies_in
+@enduml

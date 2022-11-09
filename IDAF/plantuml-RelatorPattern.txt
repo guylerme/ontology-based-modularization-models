@@ -1,0 +1,30 @@
+@startuml
+'3 occurrencies
+'8 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Server_Allocation <<Relator>>
+class Allocation_Unit <<Role>>
+class Server <<Role>>
+class Department_Allocation <<Relator>>
+class Allocated_Department <<Role>>
+class Allocated_Office <<Role>>
+class Assignment <<Relator>>
+class Occupied_Position <<Role>>
+Department_Allocation "1..1" -- "1..1" Allocated_Department : MedDeptLot
+Department_Allocation "1..*" -- "1..1" Allocated_Office : MedEscrLot
+Server_Allocation "1..*" -- "1..1" Allocation_Unit : UnitParaLot
+Assignment "1..1" -- "1..1" Server : ServParaDesig
+Assignment "1..*" -- "1..1" Occupied_Position : CargoParaDesig
+Server_Allocation "1..1" -- "1..1" Server : ServParaLot
+Allocated_Department "1..*" -- "1..*" Allocated_Office : LotDeptoEscr
+Server "1..*" -- "1..1" Allocation_Unit : ehLotadoEm
+Server "1..*" -- "1..*" Occupied_Position : ehDesignadoEm
+@enduml

@@ -1,0 +1,122 @@
+@startuml
+class Art_Work <<Kind>>
+class Artist <<Mixin>>
+class Artistic_Composition <<Relator>>
+class Artistic_Group <<SubKind>>
+Group <|-- Artistic_Group
+Artist <|-- Artistic_Group
+class Artistic_Member <<Role>>
+Member <|-- Artistic_Member
+class Ballet <<SubKind>>
+Music_Work <|-- Ballet
+class Composer <<Role>>
+Artist <|-- Composer
+class Composite_Movement <<SubKind>>
+Movement <|-- Composite_Movement
+class Dance-like_Movement <<Phase>>
+Individual_Movement <|-- Dance-like_Movement
+class End_Movement <<SubKind>>
+class Fast_Movement <<Phase>>
+Individual_Movement <|-- Fast_Movement
+class Full_Score <<SubKind>>
+Written_Representation <|-- Full_Score
+class Group <<Collective>>
+class Individual_Artist <<Role>>
+Artistic_Member <|-- Individual_Artist
+Person <|-- Individual_Artist
+Artist <|-- Individual_Artist
+class Individual_Movement <<SubKind>>
+Movement <|-- Individual_Movement
+class Key <<Class>>
+class Long_Movement <<Phase>>
+Individual_Movement <|-- Long_Movement
+class Member <<Role>>
+Person <|-- Member
+class Movement <<Kind>>
+class Music_Work <<SubKind>>
+Art_Work <|-- Music_Work
+class Musical_Composer <<Role>>
+Composer <|-- Musical_Composer
+class Musical_Composition <<Relator>>
+Artistic_Composition <|-- Musical_Composition
+class Musical_Group <<SubKind>>
+Artistic_Group <|-- Musical_Group
+class Musical_Member <<Role>>
+Artistic_Member <|-- Musical_Member
+class Musician <<Role>>
+Individual_Artist <|-- Musician
+Musical_Member <|-- Musician
+class Oeuvre <<Kind>>
+class Opera <<SubKind>>
+Music_Work <|-- Opera
+class Orchestra <<SubKind>>
+Musical_Group <|-- Orchestra
+class Orchestral_Work <<SubKind>>
+Music_Work <|-- Orchestral_Work
+class Overture <<SubKind>>
+Orchestral_Work <|-- Overture
+class Part <<SubKind>>
+Written_Representation <|-- Part
+class Person <<Kind>>
+class Publisher <<Role>>
+Person <|-- Publisher
+class Publishment <<Relator>>
+class Short_Movement <<Phase>>
+Individual_Movement <|-- Short_Movement
+class Sketch <<SubKind>>
+Written_Representation <|-- Sketch
+class Slow_Movement <<Phase>>
+Individual_Movement <|-- Slow_Movement
+class Software_Program <<Kind>>
+Artist <|-- Software_Program
+class Suite <<SubKind>>
+Music_Work <|-- Suite
+class Suite_Short_Movement <<Role>>
+Short_Movement <|-- Suite_Short_Movement
+class Symphonic_Poem <<SubKind>>
+Orchestral_Work <|-- Symphonic_Poem
+class Symphony <<SubKind>>
+Orchestral_Work <|-- Symphony
+class Written_Representation <<Kind>>
+class  <<ComponentOf>>
+class  <<Mediation>>
+class body_of_work <<Formal>>
+class  <<Mediation>>
+class {IsImmutableWhole} <<MemberOf>>
+class  <<ComponentOf>>
+class  <<Mediation>>
+class {IsImmutableWhole} <<MemberOf>>
+class  <<Association>>
+class  <<ComponentOf>>
+class source <<Material>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class {IsImmutableWhole} <<MemberOf>>
+class  <<Mediation>>
+class {IsImmutableWhole} <<ComponentOf>>
+class  <<Association>>
+
+
+
+
+
+
+Oeuvre "1..1" o-- "2..*" Art_Work : 
+Artistic_Composition "1..1" -- "1..1" Art_Work : 
+Artist "1..1" -- "1..1" Oeuvre : body_of_work
+Artistic_Composition "1..*" -- "1..*" Composer : 
+Artistic_Group "1..1" o-- "2..*" Artistic_Member : {IsImmutableWhole}
+Composite_Movement "1..1" o-- "2..*" Movement : 
+Publishment "1..1" -- "1..1" Full_Score : 
+Group "1..1" *-- "2..*" Member : {IsImmutableWhole}
+Key "1..1" -- "0..*" Music_Work : 
+Music_Work "1..1" o-- "2..*" Movement : 
+Music_Work "1..1" -- "1..*" Written_Representation : source
+Publishment "1..1" -- "1..1" Music_Work : 
+Musical_Composition "1..1" -- "1..1" Music_Work : 
+Musical_Composition "1..*" -- "1..*" Musical_Composer : 
+Musical_Group "1..1" o-- "2..*" Musical_Member : {IsImmutableWhole}
+Publishment "1..*" -- "1..1" Publisher : 
+Suite "1..1" *-- "2..*" Suite_Short_Movement : {IsImmutableWhole}
+@enduml

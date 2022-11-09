@@ -1,0 +1,37 @@
+@startuml
+'12 occurrencies
+'12 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Kind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Land_Part <<Kind>>
+class Supremacy_of_Power <<Kind>>
+class Border_Part <<Kind>>
+class Individual <<Kind>>
+class Object_of_Contract <<Kind>>
+class Territorial_Waters_Part <<Kind>>
+class Aerial_Part <<Kind>>
+class Population <<Kind>>
+class Society <<Kind>>
+class Independent_Government <<Kind>>
+class Territory <<Kind>>
+class State <<Kind>>
+Territory "1..1" o-- "1..1" Aerial_Part : porçãoaerea_compoe_territorio
+Territory "1..*" o-- "1..*" Border_Part : fronteira_compor_territorio
+State "1..1" o-- "1..1" Independent_Government : independent_government_composes_state
+Society "0..*" o-- "2..2" Individual : component_of_sociedade
+Territory "1..1" o-- "1..1" Land_Part : porçãoterrestre_compoe_territorio
+Supremacy_of_Power "1..1" -- "1..1" Object_of_Contract : is_part_of
+State "1..1" o-- "1..1" Population : population_composes_state
+State "1..1" -- "1..1" Supremacy_of_Power : holds
+State "1..1" o-- "1..1" Territory : territorio_compõe_Estado
+Territory "1..1" o-- "1..1" Territorial_Waters_Part : aguasterritoriais_compoe_territorio
+State "1..1" -- "1..1" Society : obligated_to
+State "1..1" -- "1..1" Society : subjects
+@enduml

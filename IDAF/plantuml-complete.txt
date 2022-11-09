@@ -1,0 +1,145 @@
+@startuml
+class Administrative_Department <<SubKind>>
+Department <|-- Administrative_Department
+class Administrative_Organization <<SubKind>>
+Organization <|-- Administrative_Organization
+class Administrative_Structure <<Kind>>
+Organizational_Structure <|-- Administrative_Structure
+class Administrative_Support <<SubKind>>
+Position <|-- Administrative_Support
+class Advisory <<SubKind>>
+Administrative_Organization <|-- Advisory
+class Allocated_Department <<Role>>
+Department <|-- Allocated_Department
+class Allocated_Office <<Role>>
+Central_Office <|-- Allocated_Office
+class Allocation_Unit <<Role>>
+Organization <|-- Allocation_Unit
+class Ancillary_Server <<SubKind>>
+Position <|-- Ancillary_Server
+class Ancillary_Service <<Phase>>
+Occupational_Group <|-- Ancillary_Service
+class Animal_Health_Inspector <<SubKind>>
+Position <|-- Animal_Health_Inspector
+class Assignment <<Relator>>
+class Board <<SubKind>>
+Administrative_Organization <|-- Board
+class Border_Station <<Phase>>
+Station <|-- Border_Station
+class Cartography_Technician <<SubKind>>
+Position <|-- Cartography_Technician
+class Central_Office <<Phase>>
+Office <|-- Central_Office
+class Department <<SubKind>>
+Administrative_Organization <|-- Department
+class Department_Allocation <<Relator>>
+class Diagnostic_Laboratory <<SubKind>>
+Operational_Organization <|-- Diagnostic_Laboratory
+class Finalistico <<Phase>>
+Occupational_Group <|-- Finalistico
+class Laboratory_Technician <<SubKind>>
+Position <|-- Laboratory_Technician
+class Land_Development_Technician <<SubKind>>
+Position <|-- Land_Development_Technician
+class Local_Office <<Phase>>
+Office <|-- Local_Office
+class Mobile_Unit <<SubKind>>
+Operational_Organization <|-- Mobile_Unit
+class Natural_Resources_Technician <<SubKind>>
+Position <|-- Natural_Resources_Technician
+class Occupational_Group <<Collective>>
+class Occupational_Structure <<Category>>
+Structure <|-- Occupational_Structure
+class Occupied_Position <<Role>>
+Position <|-- Occupied_Position
+class Office <<SubKind>>
+Operational_Organization <|-- Office
+class Operational_Organization <<SubKind>>
+Organization <|-- Operational_Organization
+class Operational_Structure <<Kind>>
+Organizational_Structure <|-- Operational_Structure
+class Organization <<Kind>>
+class Organizational_Structure <<Category>>
+Structure <|-- Organizational_Structure
+class Person <<Kind>>
+class Plant_Health_Inspector <<SubKind>>
+Position <|-- Plant_Health_Inspector
+class Position <<Kind>>
+class Regional_Office <<Phase>>
+Office <|-- Regional_Office
+class Section <<SubKind>>
+Administrative_Organization <|-- Section
+class Server <<Role>>
+Person <|-- Server
+class Server_Allocation <<Relator>>
+class Service_Station <<Phase>>
+Station <|-- Service_Station
+class Station <<SubKind>>
+Operational_Organization <|-- Station
+class Structure <<Category>>
+class Technical_Admnistrative_Support <<Phase>>
+Occupational_Group <|-- Technical_Admnistrative_Support
+class Technical_Department <<SubKind>>
+Department <|-- Technical_Department
+class Technical_Support <<SubKind>>
+Position <|-- Technical_Support
+class PartAsses <<ComponentOf>>
+class PartDir <<ComponentOf>>
+class PartDepto <<ComponentOf>>
+class PartSupAdm <<MemberOf>>
+class MedDeptLot <<Mediation>>
+class MedEscrLot <<Mediation>>
+class UnitParaLot <<Mediation>>
+class PartAuxServ <<MemberOf>>
+class PartTecSanInspAni <<MemberOf>>
+class ServParaDesig <<Mediation>>
+class CargoParaDesig <<Mediation>>
+class PartTecCart <<MemberOf>>
+class PartSec <<ComponentOf>>
+class PartLabDiag <<ComponentOf>>
+class PartTecSanInspVeg <<MemberOf>>
+class PartTecLab <<MemberOf>>
+class PartTecRecNat <<MemberOf>>
+class PartTecDesFund <<MemberOf>>
+class PartPosto <<ComponentOf>>
+class PartLocal <<ComponentOf>>
+class PartUnitVol <<ComponentOf>>
+class PartGO <<MemberOf>>
+class PartEscrit <<ComponentOf>>
+class ServParaLot <<Mediation>>
+class PartSupTec <<MemberOf>>
+class LotDeptoEscr <<Material>>
+class ehLotadoEm <<Material>>
+class ehDesignadoEm <<Material>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+Administrative_Structure "1..1" o-- "1..*" Advisory : PartAsses
+Administrative_Structure "1..1" o-- "1..1" Board : PartDir
+Administrative_Structure "1..1" o-- "1..*" Department : PartDepto
+Technical_Admnistrative_Support "1..1" o-- "1..*" Administrative_Support : PartSupAdm
+Department_Allocation "1..1" -- "1..1" Allocated_Department : MedDeptLot
+Department_Allocation "1..*" -- "1..1" Allocated_Office : MedEscrLot
+Server_Allocation "1..*" -- "1..1" Allocation_Unit : UnitParaLot
+Ancillary_Service "1..1" o-- "2..*" Ancillary_Server : PartAuxServ
+Finalistico "1..1" o-- "1..*" Animal_Health_Inspector : PartTecSanInspAni
+Assignment "1..1" -- "1..1" Server : ServParaDesig
+Assignment "1..*" -- "1..1" Occupied_Position : CargoParaDesig
+Finalistico "1..1" o-- "1..*" Cartography_Technician : PartTecCart
+Department "1..1" o-- "2..*" Section : PartSec
+Operational_Structure "1..1" o-- "1..*" Diagnostic_Laboratory : PartLabDiag
+Finalistico "1..1" o-- "1..*" Plant_Health_Inspector : PartTecSanInspVeg
+Finalistico "1..1" o-- "1..*" Laboratory_Technician : PartTecLab
+Finalistico "1..1" o-- "1..*" Natural_Resources_Technician : PartTecRecNat
+Finalistico "1..1" o-- "1..*" Land_Development_Technician : PartTecDesFund
+Local_Office "1..1" o-- "2..*" Station : PartPosto
+Regional_Office "1..1" o-- "1..*" Local_Office : PartLocal
+Regional_Office "1..1" o-- "1..*" Mobile_Unit : PartUnitVol
+Occupational_Structure "1..1" o-- "2..*" Occupational_Group : PartGO
+Operational_Structure "1..1" o-- "1..*" Office : PartEscrit
+Server_Allocation "1..1" -- "1..1" Server : ServParaLot
+Technical_Admnistrative_Support "1..1" o-- "1..*" Technical_Support : PartSupTec
+Allocated_Department "1..*" -- "1..*" Allocated_Office : LotDeptoEscr
+Server "1..*" -- "1..1" Allocation_Unit : ehLotadoEm
+Server "1..*" -- "1..*" Occupied_Position : ehDesignadoEm
+@enduml

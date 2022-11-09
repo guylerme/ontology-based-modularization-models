@@ -1,0 +1,49 @@
+@startuml
+'21 occurrencies
+'21 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Principle <<Collective>>
+class Supremacy_of_Power <<Kind>>
+class Commitment <<Collective>>
+class Individual <<Kind>>
+class Territorial_Waters_Part <<Kind>>
+class Norm <<Collective>>
+class Society <<Kind>>
+class Independent_Government <<Kind>>
+class Land_Part <<Kind>>
+class State_Commitment <<Collective>>
+class Society_Commitment <<Collective>>
+class Border_Part <<Kind>>
+class Claim <<Collective>>
+class Rule <<Collective>>
+class Object_of_Contract <<Kind>>
+class Aerial_Part <<Kind>>
+class Population <<Kind>>
+class State_Claim <<Collective>>
+class Society_Claim <<Collective>>
+class Territory <<Kind>>
+class State <<Kind>>
+Territory "1..1" o-- "1..1" Aerial_Part : porçãoaerea_compoe_territorio
+Territory "1..*" o-- "1..*" Border_Part : fronteira_compor_territorio
+Claim "1..*" o-- "1..1" Society_Claim : subcolletionofDireitoSociedade
+Claim "1..*" o-- "1..1" State_Claim : subcolletionofDireitoEstado
+Commitment "1..*" o-- "1..1" State_Commitment : subcollectionofDeverEstad
+Commitment "1..*" o-- "1..1" Society_Commitment : subcollectionofDeverSociedade
+State "1..1" o-- "1..1" Independent_Government : independent_government_composes_state
+Society "0..*" o-- "2..2" Individual : component_of_sociedade
+Territory "1..1" o-- "1..1" Land_Part : porçãoterrestre_compoe_territorio
+Supremacy_of_Power "1..1" -- "1..1" Object_of_Contract : is_part_of
+State "1..1" o-- "1..1" Population : population_composes_state
+State "1..1" -- "1..1" Supremacy_of_Power : holds
+State "1..1" o-- "1..1" Territory : territorio_compõe_Estado
+Territory "1..1" o-- "1..1" Territorial_Waters_Part : aguasterritoriais_compoe_territorio
+State "1..1" -- "1..1" Society : obligated_to
+State "1..1" -- "1..1" Society : subjects
+@enduml

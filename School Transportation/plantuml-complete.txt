@@ -1,0 +1,119 @@
+@startuml
+class Arrival_EI <<Role>>
+Educational_Institution <|-- Arrival_EI
+class Arrival_Location <<Role>>
+Location <|-- Arrival_Location
+class Boarded_Student <<Role>>
+Student <|-- Boarded_Student
+class Boarding <<Relator>>
+class Boarding_EI <<Role>>
+Educational_Institution <|-- Boarding_EI
+class Boarding_Location <<Role>>
+Location <|-- Boarding_Location
+class Bus <<SubKind>>
+School_Vehicle <|-- Bus
+class Capable_Driver <<Role>>
+Driver <|-- Capable_Driver
+Companion <|-- Capable_Driver
+class Capable_Supervisor <<Role>>
+Companion <|-- Capable_Supervisor
+Supervisor <|-- Capable_Supervisor
+class Companion <<Role>>
+class Driver <<Role>>
+Receiver <|-- Driver
+Person <|-- Driver
+class Driver_in_Trip <<Role>>
+Capable_Driver <|-- Driver_in_Trip
+class Educational_Institution <<Kind>>
+Location <|-- Educational_Institution
+class Enrollment <<Relator>>
+class Incapable_Driver <<Role>>
+Driver <|-- Incapable_Driver
+class Incapable_Supervisor <<Role>>
+Supervisor <|-- Incapable_Supervisor
+class Liable_for_Student <<Role>>
+Payer <|-- Liable_for_Student
+Person <|-- Liable_for_Student
+class Location <<Mixin>>
+class Minibus <<SubKind>>
+School_Vehicle <|-- Minibus
+class Payer <<RoleMixin>>
+class Payment <<Relator>>
+class Person <<Kind>>
+class Pickup_Truck <<SubKind>>
+School_Vehicle <|-- Pickup_Truck
+class Receiver <<RoleMixin>>
+class Route <<Relator>>
+class School_Vehicle <<Kind>>
+class School_Vehicle_Able_for_Transportation <<Phase>>
+School_Vehicle <|-- School_Vehicle_Able_for_Transportation
+class School_Vehicle_in_Boarding <<Role>>
+School_Vehicle_in_Trip <|-- School_Vehicle_in_Boarding
+class School_Vehicle_in_Maintenance <<Phase>>
+School_Vehicle <|-- School_Vehicle_in_Maintenance
+class School_Vehicle_in_Trip <<Role>>
+School_Vehicle_Able_for_Transportation <|-- School_Vehicle_in_Trip
+class Student <<Role>>
+Payer <|-- Student
+Person <|-- Student
+class Student_in_Trip <<Role>>
+Boarded_Student <|-- Student_in_Trip
+class Supervisor <<Role>>
+Receiver <|-- Supervisor
+Person <|-- Supervisor
+class Trip <<Relator>>
+class Van <<SubKind>>
+School_Vehicle <|-- Van
+class Address <<Datatype>>
+class desembarca <<Association>>
+class destina_se+a <<Association>>
+class connects <<Mediation>>
+class  <<Mediation>>
+class boards <<Mediation>>
+class boardsIn <<Mediation>>
+class occursIn <<Mediation>>
+class connects <<Mediation>>
+class monitoredBy <<Mediation>>
+class drives <<Material>>
+class conductedBy <<Mediation>>
+class madeIn <<Mediation>>
+class madeBy <<Mediation>>
+class locatedIn <<Association>>
+class performedBy <<Mediation>>
+class receivedBy <<Mediation>>
+class follows <<Mediation>>
+class involves <<Mediation>>
+class transports <<Mediation>>
+class studies_in <<Material>>
+
+
+
+
+
+
+
+
+
+
+class  <<Derivation>>
+Arrival_EI "1..1" -- "1..1" Student_in_Trip : desembarca
+Arrival_EI "1..1" -- "1..1" Trip : destina_se+a
+Route "1..1" -- "1..*" Arrival_Location : connects
+Trip "1..1" -- "1..*" Arrival_Location : 
+Boarding "1..1" -- "1..*" Boarded_Student : boards
+Boarding "1..1" -- "1..1" School_Vehicle_in_Boarding : boardsIn
+Boarding "0..*" -- "1..1" Boarding_Location : occursIn
+Route "1..1" -- "1..*" Boarding_Location : connects
+Trip "1..1" -- "0..1" Companion : monitoredBy
+Driver_in_Trip "1..1" -- "1..1" School_Vehicle_in_Trip : drives
+Trip "1..1" -- "1..1" Driver_in_Trip : conductedBy
+Enrollment "1..*" -- "1..1" Educational_Institution : madeIn
+Enrollment "1..*" -- "1..1" Student : madeBy
+Location "0..*" -- "1..1" Address : locatedIn
+Payment "1..*" -- "1..1" Payer : performedBy
+Payment "1..*" -- "1..1" Receiver : receivedBy
+Trip "1..1" -- "1..1" Route : follows
+Trip "1..1" -- "1..1" School_Vehicle_in_Trip : involves
+Trip "1..1" -- "1..*" Student_in_Trip : transports
+Student "1..*" -- "1..*" Educational_Institution : studies_in
+@enduml

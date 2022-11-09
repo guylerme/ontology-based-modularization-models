@@ -1,0 +1,30 @@
+@startuml
+'3 occurrencies
+'10 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Location <<Mixin>>
+class Boarding_Location <<Role>>
+Location <|-- Boarding_Location
+class Arrival_Location <<Role>>
+Location <|-- Arrival_Location
+class Educational_Institution <<Kind>>
+Location <|-- Educational_Institution
+class Payer <<RoleMixin>>
+class Liable_for_Student <<Role>>
+Payer <|-- Liable_for_Student
+class Student <<Role>>
+Payer <|-- Student
+class Receiver <<RoleMixin>>
+class Driver <<Role>>
+Receiver <|-- Driver
+class Supervisor <<Role>>
+Receiver <|-- Supervisor
+Student "1..*" -- "1..*" Educational_Institution : studies_in
+@enduml

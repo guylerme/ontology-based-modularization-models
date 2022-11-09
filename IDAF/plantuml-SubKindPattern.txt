@@ -1,0 +1,58 @@
+@startuml
+'21 occurrencies
+'23 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<SubKind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Technical_Department <<SubKind>>
+Department <|-- Technical_Department
+class Department <<SubKind>>
+Administrative_Organization <|-- Department
+class Administrative_Organization <<SubKind>>
+Organization <|-- Administrative_Organization
+class Organization <<Kind>>
+class Land_Development_Technician <<SubKind>>
+Position <|-- Land_Development_Technician
+class Position <<Kind>>
+class Animal_Health_Inspector <<SubKind>>
+Position <|-- Animal_Health_Inspector
+class Station <<SubKind>>
+Operational_Organization <|-- Station
+class Operational_Organization <<SubKind>>
+Organization <|-- Operational_Organization
+class Office <<SubKind>>
+Operational_Organization <|-- Office
+class Laboratory_Technician <<SubKind>>
+Position <|-- Laboratory_Technician
+class Diagnostic_Laboratory <<SubKind>>
+Operational_Organization <|-- Diagnostic_Laboratory
+class Cartography_Technician <<SubKind>>
+Position <|-- Cartography_Technician
+class Board <<SubKind>>
+Administrative_Organization <|-- Board
+class Plant_Health_Inspector <<SubKind>>
+Position <|-- Plant_Health_Inspector
+class Administrative_Support <<SubKind>>
+Position <|-- Administrative_Support
+class Technical_Support <<SubKind>>
+Position <|-- Technical_Support
+class Natural_Resources_Technician <<SubKind>>
+Position <|-- Natural_Resources_Technician
+class Mobile_Unit <<SubKind>>
+Operational_Organization <|-- Mobile_Unit
+class Administrative_Department <<SubKind>>
+Department <|-- Administrative_Department
+class Ancillary_Server <<SubKind>>
+Position <|-- Ancillary_Server
+class Section <<SubKind>>
+Administrative_Organization <|-- Section
+class Advisory <<SubKind>>
+Administrative_Organization <|-- Advisory
+Department "1..1" o-- "2..*" Section : PartSec
+@enduml

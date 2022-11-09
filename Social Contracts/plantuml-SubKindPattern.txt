@@ -1,0 +1,33 @@
+@startuml
+'7 occurrencies
+'9 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<SubKind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Educational_Society <<SubKind>>
+Society <|-- Educational_Society
+class Society <<Kind>>
+class Familiar_Society <<SubKind>>
+Society <|-- Familiar_Society
+class Political_Society <<SubKind>>
+Society <|-- Political_Society
+class Religious_Society <<SubKind>>
+Society <|-- Religious_Society
+class Live_Border <<SubKind>>
+Border_Part <|-- Live_Border
+class Border_Part <<Kind>>
+class Dead_Border <<SubKind>>
+Border_Part <|-- Dead_Border
+class Sketched_Border <<SubKind>>
+Border_Part <|-- Sketched_Border
+Society "1..1" o-- "1..1" Educational_Society : componentofsociedade_educacional
+Society "1..1" o-- "1..1" Familiar_Society : componentofsociedade_familiar
+Society "1..1" o-- "1..1" Political_Society : componentofsociedadesociedade_politica
+Society "1..1" o-- "1..1" Religious_Society : componentofsociedade_religiosa
+@enduml

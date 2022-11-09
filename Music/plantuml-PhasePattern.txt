@@ -1,0 +1,26 @@
+@startuml
+'5 occurrencies
+'7 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Phase>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Long_Movement <<Phase>>
+Individual_Movement <|-- Long_Movement
+class Individual_Movement <<SubKind>>
+Movement <|-- Individual_Movement
+class Movement <<Kind>>
+class Fast_Movement <<Phase>>
+Individual_Movement <|-- Fast_Movement
+class Slow_Movement <<Phase>>
+Individual_Movement <|-- Slow_Movement
+class Dance-like_Movement <<Phase>>
+Individual_Movement <|-- Dance-like_Movement
+class Short_Movement <<Phase>>
+Individual_Movement <|-- Short_Movement
+@enduml

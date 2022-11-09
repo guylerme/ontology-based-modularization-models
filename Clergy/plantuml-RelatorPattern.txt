@@ -1,0 +1,62 @@
+@startuml
+'7 occurrencies
+'21 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Ordination_of_Deacon <<Relator>>
+class Deacon <<Role>>
+Secular_Clergy_Member <|-- Deacon
+class Ordinator_of_Deacon <<Role>>
+class Bishop_Ordination <<Relator>>
+class Ordinator_of_Bishop <<Role>>
+class Ordained_Bishop <<Role>>
+class Nomination <<Relator>>
+class Cardinal_Nominator <<Role>>
+Pope <|-- Cardinal_Nominator
+class Cardinal <<Role>>
+Secular_Clergy_Member <|-- Cardinal
+class Religious_Profession <<Relator>>
+class Clergyman <<Role>>
+class Witness_of_Profession <<Role>>
+Clergyman <|-- Witness_of_Profession
+class Ordination_of_Priest <<Relator>>
+class Priest <<Role>>
+Secular_Clergy_Member <|-- Priest
+class Ordinator_of_Priest <<Role>>
+class Election <<Relator>>
+class Electorate_of_the_Cardinal_School <<Collective>>
+class Pope <<Role>>
+Cardinal <|-- Pope
+class Baptism <<Relator>>
+class Secular_Clergy_Member <<Role>>
+Clergy_Member <|-- Secular_Clergy_Member
+class Clergy_Member <<Role>>
+Baptism "1..1" -- "1..1" Clergy_Member : receives
+Baptism "1..*" -- "1..1" Secular_Clergy_Member : performed_by
+Bishop_Ordination "1..*" -- "3..*" Ordinator_of_Bishop : performed_by
+Bishop_Ordination "1..1" -- "1..1" Ordained_Bishop : received_by
+Nomination "1..1" -- "1..1" Cardinal : given_to
+Nomination "1..1" -- "1..1" Cardinal_Nominator : perfomed_by
+Religious_Profession "1..1" -- "1..1" Clergyman : performs
+Ordination_of_Deacon "1..1" -- "1..1" Deacon : received_by
+Election "1..1" -- "1..1" Pope : nominates
+Election "1..*" -- "1..1" Electorate_of_the_Cardinal_School : voter_of
+Ordination_of_Deacon "1..*" -- "1..1" Ordinator_of_Deacon : performed_by
+Ordination_of_Priest "1..*" -- "1..1" Ordinator_of_Priest : performed_by
+Ordination_of_Priest "1..1" -- "1..1" Priest : received_by
+Religious_Profession "1..*" -- "1..1" Witness_of_Profession : wtinesess
+Cardinal_Nominator "1..1" -- "1..1" Cardinal : nominates
+Secular_Clergy_Member "1..1" -- "1..*" Clergy_Member : baptizes
+Witness_of_Profession "1..1" -- "1..*" Clergyman : makes_vows_with
+Deacon "1..*" -- "1..1" Ordinator_of_Deacon : ordinated_by
+Pope "1..*" -- "1..1" Electorate_of_the_Cardinal_School : Grupo_Elege_Papa
+Ordained_Bishop "1..*" -- "3..*" Ordinator_of_Bishop : ordinated_by
+Ordinator_of_Priest "1..1" -- "1..*" Priest : ordinated_by
+@enduml

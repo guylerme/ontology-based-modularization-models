@@ -1,0 +1,21 @@
+@startuml
+'3 occurrencies
+'5 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Occupational_Structure <<Category>>
+Structure <|-- Occupational_Structure
+class Structure <<Category>>
+class Organizational_Structure <<Category>>
+Structure <|-- Organizational_Structure
+class Administrative_Structure <<Kind>>
+Organizational_Structure <|-- Administrative_Structure
+class Operational_Structure <<Kind>>
+Organizational_Structure <|-- Operational_Structure
+@enduml

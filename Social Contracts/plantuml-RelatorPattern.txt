@@ -1,0 +1,29 @@
+@startuml
+'3 occurrencies
+'7 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Public_Asset <<Relator>>
+class Society <<Kind>>
+class State <<Kind>>
+class Legal_System <<Relator>>
+class Social_Contract <<Relator>>
+class Rulee <<Role>>
+class Ruler <<Role>>
+Legal_System "1..1" -- "1..1" Society : mediationojsociedade
+Legal_System "1..1" -- "1..1" State : mediationojestado
+Public_Asset "1..1" -- "1..1" Society : mediationsociedadebempublico
+Public_Asset "1..1" -- "1..1" State : mediationEstadobempublico
+Social_Contract "1..1" -- "1..*" Rulee : sign
+Social_Contract "1..1" -- "1..*" Ruler : sign
+Rulee "1..*" -- "1..*" Ruler : waives_the_right_of_private_revenge
+State "1..1" -- "1..1" Society : obligated_to
+State "1..1" -- "1..1" Society : subjects
+@enduml

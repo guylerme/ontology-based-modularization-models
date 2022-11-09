@@ -1,0 +1,54 @@
+@startuml
+'16 occurrencies
+'20 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class State <<Kind>>
+class Territory <<Kind>>
+class Population <<Kind>>
+class Commitment <<Collective>>
+class State_Commitment <<Collective>>
+class Society <<Kind>>
+class Educational_Society <<SubKind>>
+Society <|-- Educational_Society
+class Familiar_Society <<SubKind>>
+Society <|-- Familiar_Society
+class Claim <<Collective>>
+class State_Claim <<Collective>>
+class Independent_Government <<Kind>>
+class Society_Commitment <<Collective>>
+class Religious_Society <<SubKind>>
+Society <|-- Religious_Society
+class Political_Society <<SubKind>>
+Society <|-- Political_Society
+class Individual <<Kind>>
+class Land_Part <<Kind>>
+class Society_Claim <<Collective>>
+class Territorial_Waters_Part <<Kind>>
+class Aerial_Part <<Kind>>
+class Border_Part <<Kind>>
+Territory "1..1" o-- "1..1" Aerial_Part : porçãoaerea_compoe_territorio
+Territory "1..*" o-- "1..*" Border_Part : fronteira_compor_territorio
+Claim "1..*" o-- "1..1" Society_Claim : subcolletionofDireitoSociedade
+Claim "1..*" o-- "1..1" State_Claim : subcolletionofDireitoEstado
+Commitment "1..*" o-- "1..1" State_Commitment : subcollectionofDeverEstad
+Commitment "1..*" o-- "1..1" Society_Commitment : subcollectionofDeverSociedade
+Society "1..1" o-- "1..1" Educational_Society : componentofsociedade_educacional
+Society "1..1" o-- "1..1" Familiar_Society : componentofsociedade_familiar
+State "1..1" o-- "1..1" Independent_Government : independent_government_composes_state
+Society "0..*" o-- "2..2" Individual : component_of_sociedade
+Territory "1..1" o-- "1..1" Land_Part : porçãoterrestre_compoe_territorio
+Society "1..1" o-- "1..1" Political_Society : componentofsociedadesociedade_politica
+State "1..1" o-- "1..1" Population : population_composes_state
+Society "1..1" o-- "1..1" Religious_Society : componentofsociedade_religiosa
+State "1..1" o-- "1..1" Territory : territorio_compõe_Estado
+Territory "1..1" o-- "1..1" Territorial_Waters_Part : aguasterritoriais_compoe_territorio
+State "1..1" -- "1..1" Society : obligated_to
+State "1..1" -- "1..1" Society : subjects
+@enduml

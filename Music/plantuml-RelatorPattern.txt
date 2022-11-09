@@ -1,0 +1,32 @@
+@startuml
+'3 occurrencies
+'9 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Musical_Composition <<Relator>>
+Artistic_Composition <|-- Musical_Composition
+class Musical_Composer <<Role>>
+Composer <|-- Musical_Composer
+class Music_Work <<SubKind>>
+Art_Work <|-- Music_Work
+class Artistic_Composition <<Relator>>
+class Composer <<Role>>
+class Art_Work <<Kind>>
+class Publishment <<Relator>>
+class Full_Score <<SubKind>>
+class Publisher <<Role>>
+Artistic_Composition "1..1" -- "1..1" Art_Work : 
+Artistic_Composition "1..*" -- "1..*" Composer : 
+Publishment "1..1" -- "1..1" Full_Score : 
+Publishment "1..1" -- "1..1" Music_Work : 
+Musical_Composition "1..1" -- "1..1" Music_Work : 
+Musical_Composition "1..*" -- "1..*" Musical_Composer : 
+Publishment "1..*" -- "1..1" Publisher : 
+@enduml

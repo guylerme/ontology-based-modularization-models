@@ -1,0 +1,22 @@
+@startuml
+'4 occurrencies
+'5 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<SubKind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Van <<SubKind>>
+School_Vehicle <|-- Van
+class School_Vehicle <<Kind>>
+class Pickup_Truck <<SubKind>>
+School_Vehicle <|-- Pickup_Truck
+class Minibus <<SubKind>>
+School_Vehicle <|-- Minibus
+class Bus <<SubKind>>
+School_Vehicle <|-- Bus
+@enduml

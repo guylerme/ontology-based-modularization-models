@@ -1,0 +1,39 @@
+@startuml
+'8 occurrencies
+'13 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Phase>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Ancillary_Service <<Phase>>
+Occupational_Group <|-- Ancillary_Service
+class Occupational_Group <<Collective>>
+class Service_Station <<Phase>>
+Station <|-- Service_Station
+class Station <<SubKind>>
+Operational_Organization <|-- Station
+class Operational_Organization <<SubKind>>
+Organization <|-- Operational_Organization
+class Organization <<Kind>>
+class Technical_Admnistrative_Support <<Phase>>
+Occupational_Group <|-- Technical_Admnistrative_Support
+class Finalistico <<Phase>>
+Occupational_Group <|-- Finalistico
+class Central_Office <<Phase>>
+Office <|-- Central_Office
+class Office <<SubKind>>
+Operational_Organization <|-- Office
+class Regional_Office <<Phase>>
+Office <|-- Regional_Office
+class Border_Station <<Phase>>
+Station <|-- Border_Station
+class Local_Office <<Phase>>
+Office <|-- Local_Office
+Local_Office "1..1" o-- "2..*" Station : PartPosto
+Regional_Office "1..1" o-- "1..*" Local_Office : PartLocal
+@enduml

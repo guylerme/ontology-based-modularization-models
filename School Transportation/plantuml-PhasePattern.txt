@@ -1,0 +1,18 @@
+@startuml
+'2 occurrencies
+'3 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Phase>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class School_Vehicle_in_Maintenance <<Phase>>
+School_Vehicle <|-- School_Vehicle_in_Maintenance
+class School_Vehicle <<Kind>>
+class School_Vehicle_Able_for_Transportation <<Phase>>
+School_Vehicle <|-- School_Vehicle_Able_for_Transportation
+@enduml

@@ -1,0 +1,39 @@
+@startuml
+'7 occurrencies
+'13 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Group <<Collective>>
+class Member <<Role>>
+class Suite <<SubKind>>
+Music_Work <|-- Suite
+class Suite_Short_Movement <<Role>>
+class Music_Work <<SubKind>>
+Art_Work <|-- Music_Work
+class Movement <<Kind>>
+class Artistic_Group <<SubKind>>
+Group <|-- Artistic_Group
+class Artistic_Member <<Role>>
+Member <|-- Artistic_Member
+class Oeuvre <<Kind>>
+class Art_Work <<Kind>>
+class Musical_Group <<SubKind>>
+Artistic_Group <|-- Musical_Group
+class Musical_Member <<Role>>
+Artistic_Member <|-- Musical_Member
+class Composite_Movement <<SubKind>>
+Movement <|-- Composite_Movement
+Oeuvre "1..1" o-- "2..*" Art_Work : 
+Artistic_Group "1..1" o-- "2..*" Artistic_Member : {IsImmutableWhole}
+Composite_Movement "1..1" o-- "2..*" Movement : 
+Group "1..1" *-- "2..*" Member : {IsImmutableWhole}
+Music_Work "1..1" o-- "2..*" Movement : 
+Musical_Group "1..1" o-- "2..*" Musical_Member : {IsImmutableWhole}
+Suite "1..1" *-- "2..*" Suite_Short_Movement : {IsImmutableWhole}
+@enduml

@@ -1,0 +1,39 @@
+@startuml
+'5 occurrencies
+'13 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Allocated_Department <<Role>>
+Department <|-- Allocated_Department
+class Department <<SubKind>>
+Administrative_Organization <|-- Department
+class Administrative_Organization <<SubKind>>
+Organization <|-- Administrative_Organization
+class Organization <<Kind>>
+class Server <<Role>>
+Person <|-- Server
+class Person <<Kind>>
+class Allocation_Unit <<Role>>
+Organization <|-- Allocation_Unit
+class Occupied_Position <<Role>>
+Position <|-- Occupied_Position
+class Position <<Kind>>
+class Allocated_Office <<Role>>
+Central_Office <|-- Allocated_Office
+class Central_Office <<Phase>>
+Office <|-- Central_Office
+class Office <<SubKind>>
+Operational_Organization <|-- Office
+class Operational_Organization <<SubKind>>
+Organization <|-- Operational_Organization
+Allocated_Department "1..*" -- "1..*" Allocated_Office : LotDeptoEscr
+Server "1..*" -- "1..1" Allocation_Unit : ehLotadoEm
+Server "1..*" -- "1..*" Occupied_Position : ehDesignadoEm
+@enduml

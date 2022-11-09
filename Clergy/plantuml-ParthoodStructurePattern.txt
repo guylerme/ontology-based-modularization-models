@@ -1,0 +1,27 @@
+@startuml
+'6 occurrencies
+'8 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Clergy <<Collective>>
+class Regular_Clergy <<Collective>>
+class Secular_Clergy <<Collective>>
+class Secular_Clergy_Member <<Role>>
+class College_of_Cardinals <<Collective>>
+class Electorate_of_the_Cardinal_School <<Collective>>
+class Cardinal <<Role>>
+Secular_Clergy_Member <|-- Cardinal
+class Regular_Clergy_Member <<Role>>
+College_of_Cardinals "1..1" o-- "1..1" Cardinal : member_of
+Clergy "1..1" o-- "1..1" Secular_Clergy : clergy_of
+Clergy "1..1" o-- "1..1" Regular_Clergy : clergy_of
+College_of_Cardinals "1..1" o-- "1..1" Electorate_of_the_Cardinal_School : part_of
+Regular_Clergy "1..1" o-- "2..*" Regular_Clergy_Member : 
+Secular_Clergy "1..1" o-- "2..*" Secular_Clergy_Member : 
+@enduml

@@ -1,0 +1,62 @@
+@startuml
+'19 occurrencies
+'26 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Technical_Admnistrative_Support <<Phase>>
+Occupational_Group <|-- Technical_Admnistrative_Support
+class Administrative_Support <<SubKind>>
+class Operational_Structure <<Kind>>
+class Office <<SubKind>>
+class Regional_Office <<Phase>>
+Office <|-- Regional_Office
+class Local_Office <<Phase>>
+Office <|-- Local_Office
+class Department <<SubKind>>
+class Section <<SubKind>>
+class Administrative_Structure <<Kind>>
+class Board <<SubKind>>
+class Finalistico <<Phase>>
+Occupational_Group <|-- Finalistico
+class Natural_Resources_Technician <<SubKind>>
+class Animal_Health_Inspector <<SubKind>>
+class Laboratory_Technician <<SubKind>>
+class Diagnostic_Laboratory <<SubKind>>
+class Advisory <<SubKind>>
+class Technical_Support <<SubKind>>
+class Plant_Health_Inspector <<SubKind>>
+class Land_Development_Technician <<SubKind>>
+class Cartography_Technician <<SubKind>>
+class Station <<SubKind>>
+class Ancillary_Service <<Phase>>
+Occupational_Group <|-- Ancillary_Service
+class Ancillary_Server <<SubKind>>
+class Occupational_Structure <<Category>>
+class Occupational_Group <<Collective>>
+class Mobile_Unit <<SubKind>>
+Administrative_Structure "1..1" o-- "1..*" Advisory : PartAsses
+Administrative_Structure "1..1" o-- "1..1" Board : PartDir
+Administrative_Structure "1..1" o-- "1..*" Department : PartDepto
+Technical_Admnistrative_Support "1..1" o-- "1..*" Administrative_Support : PartSupAdm
+Ancillary_Service "1..1" o-- "2..*" Ancillary_Server : PartAuxServ
+Finalistico "1..1" o-- "1..*" Animal_Health_Inspector : PartTecSanInspAni
+Finalistico "1..1" o-- "1..*" Cartography_Technician : PartTecCart
+Department "1..1" o-- "2..*" Section : PartSec
+Operational_Structure "1..1" o-- "1..*" Diagnostic_Laboratory : PartLabDiag
+Finalistico "1..1" o-- "1..*" Plant_Health_Inspector : PartTecSanInspVeg
+Finalistico "1..1" o-- "1..*" Laboratory_Technician : PartTecLab
+Finalistico "1..1" o-- "1..*" Natural_Resources_Technician : PartTecRecNat
+Finalistico "1..1" o-- "1..*" Land_Development_Technician : PartTecDesFund
+Local_Office "1..1" o-- "2..*" Station : PartPosto
+Regional_Office "1..1" o-- "1..*" Local_Office : PartLocal
+Regional_Office "1..1" o-- "1..*" Mobile_Unit : PartUnitVol
+Occupational_Structure "1..1" o-- "2..*" Occupational_Group : PartGO
+Operational_Structure "1..1" o-- "1..*" Office : PartEscrit
+Technical_Admnistrative_Support "1..1" o-- "1..*" Technical_Support : PartSupTec
+@enduml

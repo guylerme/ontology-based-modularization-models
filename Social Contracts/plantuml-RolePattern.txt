@@ -1,0 +1,19 @@
+@startuml
+'2 occurrencies
+'3 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Ruler <<Role>>
+Individual <|-- Ruler
+class Individual <<Kind>>
+class Rulee <<Role>>
+Individual <|-- Rulee
+Rulee "1..*" -- "1..*" Ruler : waives_the_right_of_private_revenge
+@enduml

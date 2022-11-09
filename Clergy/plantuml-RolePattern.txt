@@ -1,0 +1,52 @@
+@startuml
+'16 occurrencies
+'17 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Regular_Clergy_Member <<Role>>
+Clergy_Member <|-- Regular_Clergy_Member
+class Clergy_Member <<Role>>
+Person <|-- Clergy_Member
+class Person <<Kind>>
+class Ordinator_of_Bishop <<Role>>
+Bishop <|-- Ordinator_of_Bishop
+class Bishop <<Role>>
+Secular_Clergy_Member <|-- Bishop
+class Secular_Clergy_Member <<Role>>
+Clergy_Member <|-- Secular_Clergy_Member
+class Priest <<Role>>
+Secular_Clergy_Member <|-- Priest
+class Ordained_Bishop <<Role>>
+Bishop <|-- Ordained_Bishop
+class Pope <<Role>>
+Cardinal <|-- Pope
+class Cardinal <<Role>>
+Secular_Clergy_Member <|-- Cardinal
+class Layman <<Role>>
+Regular_Clergy_Member <|-- Layman
+class Clergyman <<Role>>
+Regular_Clergy_Member <|-- Clergyman
+class Ordinator_of_Priest <<Role>>
+Bishop <|-- Ordinator_of_Priest
+class Ordinator_of_Deacon <<Role>>
+Bishop <|-- Ordinator_of_Deacon
+class Witness_of_Profession <<Role>>
+Clergyman <|-- Witness_of_Profession
+class Deacon <<Role>>
+Secular_Clergy_Member <|-- Deacon
+class Cardinal_Nominator <<Role>>
+Pope <|-- Cardinal_Nominator
+Cardinal_Nominator "1..1" -- "1..1" Cardinal : nominates
+Secular_Clergy_Member "1..1" -- "1..*" Clergy_Member : baptizes
+Witness_of_Profession "1..1" -- "1..*" Clergyman : makes_vows_with
+Deacon "1..*" -- "1..1" Ordinator_of_Deacon : ordinated_by
+Ordained_Bishop "1..*" -- "3..*" Ordinator_of_Bishop : ordinated_by
+Ordinator_of_Priest "1..1" -- "1..*" Priest : ordinated_by
+@enduml

@@ -1,0 +1,41 @@
+@startuml
+'9 occurrencies
+'14 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Artistic_Member <<Role>>
+Member <|-- Artistic_Member
+class Member <<Role>>
+Person <|-- Member
+class Person <<Kind>>
+class Musical_Composer <<Role>>
+Composer <|-- Musical_Composer
+class Composer <<Role>>
+Artist <|-- Composer
+class Artist <<Mixin>>
+class Publisher <<Role>>
+Person <|-- Publisher
+class Individual_Artist <<Role>>
+Artistic_Member <|-- Individual_Artist
+Person <|-- Individual_Artist
+Artist <|-- Individual_Artist
+class Musical_Member <<Role>>
+Artistic_Member <|-- Musical_Member
+class Suite_Short_Movement <<Role>>
+Short_Movement <|-- Suite_Short_Movement
+class Short_Movement <<Phase>>
+Individual_Movement <|-- Short_Movement
+class Individual_Movement <<SubKind>>
+Movement <|-- Individual_Movement
+class Movement <<Kind>>
+class Musician <<Role>>
+Individual_Artist <|-- Musician
+Musical_Member <|-- Musician
+@enduml

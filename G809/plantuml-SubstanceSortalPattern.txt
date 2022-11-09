@@ -1,0 +1,23 @@
+@startuml
+'11 occurrencies
+'11 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Adaptation_Source_Input <<Kind>>
+class Flow_Termination_Sink_Ouput <<Kind>>
+class Flow_Termination_Sink_Input <<Kind>>
+class AP <<Kind>>
+class Adaptation_Sink_Output <<Kind>>
+class Adaptation_Sink_Input <<Kind>>
+class Flow_Termination_Source_Input <<Kind>>
+class Adaptation_Source_Output <<Kind>>
+class Flow_Termination_Function <<Kind>>
+class Flow_Termination_Source_Output <<Kind>>
+class Adaptation_Function <<Kind>>
+@enduml

@@ -1,0 +1,48 @@
+@startuml
+'14 occurrencies
+'18 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Switch-core <<Kind>>
+class Communication_Module <<Kind>>
+class Storage <<Kind>>
+class Disk <<Kind>>
+class Data_Center <<Kind>>
+class Server <<Kind>>
+class Communication_Port <<Kind>>
+class DBMS <<SubKind>>
+IT_Service <|-- DBMS
+class Database <<Kind>>
+class IT_Service <<Kind>>
+class IT_Team <<Collective>>
+class Technician <<Role>>
+class Database_File <<Role>>
+File_in_Disk <|-- Database_File
+class Email <<SubKind>>
+IT_Service <|-- Email
+class Mailbox <<Kind>>
+class Channel <<Kind>>
+class Manager <<Role>>
+class File_in_Disk <<Kind>>
+Data_Center "1..*" o-- "1..*" Channel : 
+Communication_Module "1..1" o-- "1..*" Communication_Port : 
+Switch-core "1..1" o-- "1..*" Communication_Module : 
+DBMS "1..1" o-- "1..*" Database : 
+Data_Center "1..1" o-- "1..*" Storage : 
+Data_Center "1..1" o-- "1..*" Switch-core : 
+Data_Center "1..1" o-- "1..*" Server : 
+IT_Team "1..*" -- "1..*" Data_Center : 
+Database "1..1" o-- "1..*" Database_File : 
+Disk "0..*" o-- "0..*" File_in_Disk : 
+Storage "1..1" o-- "1..*" Disk : 
+Email "1..1" o-- "1..*" Mailbox : 
+Server "1..*" o-- "0..*" IT_Service : 
+IT_Team "1..1" o-- "1..*" Technician : 
+IT_Team "1..1" o-- "1..1" Manager : 
+@enduml

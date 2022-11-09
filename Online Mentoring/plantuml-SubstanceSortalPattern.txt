@@ -1,0 +1,24 @@
+@startuml
+'8 occurrencies
+'8 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Agent <<Kind>>
+class Discipline <<Kind>>
+class Ementa <<Collective>>
+class Question <<Kind>>
+class Curriculum <<Collective>>
+class Answer <<Kind>>
+class Course <<Kind>>
+class Topic <<Kind>>
+Course "1..1" -- "1..1" Curriculum : has
+Curriculum "1..*" o-- "1..*" Discipline : 
+Discipline "1..1" -- "1..1" Ementa : 
+Ementa "1..*" o-- "1..*" Topic : 
+@enduml

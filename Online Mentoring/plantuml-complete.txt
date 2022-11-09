@@ -1,0 +1,86 @@
+@startuml
+class ActiveStudent <<Role>>
+Student <|-- ActiveStudent
+class Agent <<Kind>>
+class Answer <<Kind>>
+class AnsweredQuestion <<Role>>
+Question <|-- AnsweredQuestion
+class CharacterizedQuestion <<Role>>
+Question <|-- CharacterizedQuestion
+class CharacterizingTopic <<Role>>
+Topic <|-- CharacterizingTopic
+class Course <<Kind>>
+class Curriculum <<Collective>>
+class Discipline <<Kind>>
+class EducationalInstitution <<SubKind>>
+Organization <|-- EducationalInstitution
+class Ementa <<Collective>>
+class Enrollment <<Relator>>
+class NonCharacterizedQuestion <<Role>>
+Question <|-- NonCharacterizedQuestion
+class NonCharacterizingTopic <<Role>>
+Topic <|-- NonCharacterizingTopic
+class NonTutoredDiscipline <<Role>>
+Discipline <|-- NonTutoredDiscipline
+class OpenQuestion <<Role>>
+Question <|-- OpenQuestion
+class Organization <<SubKind>>
+Agent <|-- Organization
+class Participant <<Role>>
+Person <|-- Participant
+class ParticipantWithAnswer <<Role>>
+Participant <|-- ParticipantWithAnswer
+class ParticipantWithQuestion <<Role>>
+Participant <|-- ParticipantWithQuestion
+class Person <<SubKind>>
+Agent <|-- Person
+class Professor <<Role>>
+Participant <|-- Professor
+class Question <<Kind>>
+class Student <<Role>>
+Participant <|-- Student
+class Topic <<Kind>>
+class Tutor <<Role>>
+ActiveStudent <|-- Tutor
+class TutoredDiscipline <<Role>>
+Discipline <|-- TutoredDiscipline
+class Tutoring <<Relator>>
+class WorkContract <<Relator>>
+class answers <<Material>>
+class provides <<Material>>
+class characterizes <<Material>>
+class has <<Material>>
+class  <<Mediation>>
+class  <<MemberOf>>
+class  <<Material>>
+class  <<Mediation>>
+class  <<MemberOf>>
+class  <<Mediation>>
+class asks <<Material>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class tutors <<Material>>
+
+
+
+
+
+
+class  <<Derivation>>
+Answer "1..1" -- "1..1" AnsweredQuestion : answers
+ParticipantWithAnswer "1..1" -- "1..*" Answer : provides
+CharacterizingTopic "1..*" -- "1..*" CharacterizedQuestion : characterizes
+Course "1..1" -- "1..1" Curriculum : has
+Enrollment "1..*" -- "1..1" Course : 
+Curriculum "1..*" o-- "1..*" Discipline : 
+Discipline "1..1" -- "1..1" Ementa : 
+WorkContract "1..*" -- "1..1" EducationalInstitution : 
+Ementa "1..*" o-- "1..*" Topic : 
+Enrollment "1..*" -- "1..1" Student : 
+ParticipantWithQuestion "1..1" -- "1..*" Question : asks
+WorkContract "1..*" -- "1..1" Professor : 
+Tutoring "1..*" -- "1..1" Tutor : 
+Tutoring "1..*" -- "1..1" TutoredDiscipline : 
+Tutor "1..*" -- "1..*" TutoredDiscipline : tutors
+@enduml

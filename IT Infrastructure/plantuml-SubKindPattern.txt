@@ -1,0 +1,32 @@
+@startuml
+'8 occurrencies
+'11 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<SubKind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Application_System <<SubKind>>
+IT_Service <|-- Application_System
+class IT_Service <<Kind>>
+class 1_Gbps_Port <<SubKind>>
+Communication_Port <|-- 1_Gbps_Port
+class Communication_Port <<Kind>>
+class MAN <<SubKind>>
+Channel <|-- MAN
+class Channel <<Kind>>
+class 10_Gbps_Port <<SubKind>>
+Communication_Port <|-- 10_Gbps_Port
+class DBMS <<SubKind>>
+IT_Service <|-- DBMS
+class WAN <<SubKind>>
+Channel <|-- WAN
+class Email <<SubKind>>
+IT_Service <|-- Email
+class LAN <<SubKind>>
+Channel <|-- LAN
+@enduml

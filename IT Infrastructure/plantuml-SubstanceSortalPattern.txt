@@ -1,0 +1,36 @@
+@startuml
+'14 occurrencies
+'14 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Communication_Port <<Kind>>
+class Mailbox <<Kind>>
+class Channel <<Kind>>
+class Person <<Kind>>
+class IT_Team <<Collective>>
+class Switch-core <<Kind>>
+class Communication_Module <<Kind>>
+class File_in_Disk <<Kind>>
+class Data_Center <<Kind>>
+class Disk <<Kind>>
+class Storage <<Kind>>
+class Server <<Kind>>
+class IT_Service <<Kind>>
+class Database <<Kind>>
+Data_Center "1..*" o-- "1..*" Channel : 
+Communication_Module "1..1" o-- "1..*" Communication_Port : 
+Switch-core "1..1" o-- "1..*" Communication_Module : 
+Data_Center "1..1" o-- "1..*" Storage : 
+Data_Center "1..1" o-- "1..*" Switch-core : 
+Data_Center "1..1" o-- "1..*" Server : 
+IT_Team "1..*" -- "1..*" Data_Center : 
+Disk "0..*" o-- "0..*" File_in_Disk : 
+Storage "1..1" o-- "1..*" Disk : 
+Server "1..*" o-- "0..*" IT_Service : 
+@enduml

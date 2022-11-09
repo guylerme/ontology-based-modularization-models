@@ -1,0 +1,32 @@
+@startuml
+'8 occurrencies
+'12 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Adaptation_Sink <<SubKind>>
+class Adaptation_Sink_Input <<Kind>>
+class Flow_Termination_Sink <<SubKind>>
+class Flow_Termination_Sink_Ouput <<Kind>>
+class Adaptation_Sink_Output <<Kind>>
+class Flow_Termination_Source <<SubKind>>
+class Flow_Termination_Source_Output <<Kind>>
+class Flow_Termination_Sink_Input <<Kind>>
+class Flow_Termination_Source_Input <<Kind>>
+class Adaptation_Source <<SubKind>>
+class Adaptation_Source_Output <<Kind>>
+class Adaptation_Source_Input <<Kind>>
+Adaptation_Sink "1..1" o-- "1..1" Adaptation_Sink_Input : 
+Adaptation_Sink "1..1" o-- "1..1" Adaptation_Sink_Output : 
+Adaptation_Source "1..1" o-- "1..1" Adaptation_Source_Output : 
+Adaptation_Source "1..1" o-- "1..1" Adaptation_Source_Input : 
+Flow_Termination_Sink "1..1" o-- "1..1" Flow_Termination_Sink_Ouput : 
+Flow_Termination_Sink "1..1" o-- "1..1" Flow_Termination_Sink_Input : 
+Flow_Termination_Source "1..1" o-- "1..1" Flow_Termination_Source_Output : 
+Flow_Termination_Source "1..1" o-- "1..1" Flow_Termination_Source_Input : 
+@enduml

@@ -1,0 +1,87 @@
+@startuml
+class College_Student <<Role>>
+Student <|-- College_Student
+class Educational_Institution <<Role>>
+Employer <|-- Educational_Institution
+class Educational_Supervisor <<Role>>
+Employee <|-- Educational_Supervisor
+class Employee <<Role>>
+Natural_Person <|-- Employee
+class Employer <<Role>>
+Juridical_Person <|-- Employer
+class Employment <<Relator>>
+class Enrollment <<Relator>>
+class Full_Time_Internship <<Relator>>
+Internship <|-- Full_Time_Internship
+class High_School_Student <<Role>>
+Student <|-- High_School_Student
+class Insurance_Carrier <<Role>>
+Juridical_Person <|-- Insurance_Carrier
+class Insurance_Policy <<Kind>>
+class Intern <<Role>>
+Student <|-- Intern
+class Internship <<Relator>>
+class Internship_Provider_Organization <<Role>>
+Employer <|-- Internship_Provider_Organization
+Organization_Insured <|-- Internship_Provider_Organization
+class Juridical_Person <<SubKind>>
+Legal_Person <|-- Juridical_Person
+class Legal_Person <<Kind>>
+class Natural_Person <<SubKind>>
+Legal_Person <|-- Natural_Person
+class Obligatory_Internship <<Relator>>
+Internship <|-- Obligatory_Internship
+class Organization_Insured <<Role>>
+class Part_Time_Internship <<Relator>>
+Internship <|-- Part_Time_Internship
+class Personal_Injury_Insurance <<Relator>>
+class Post_Graduate_Student <<Role>>
+Student <|-- Post_Graduate_Student
+class Student <<Role>>
+Natural_Person <|-- Student
+class Supervisor <<Role>>
+Employee <|-- Supervisor
+class Term_of_commitment <<Kind>>
+class Voluntary_Internship <<Relator>>
+Internship <|-- Voluntary_Internship
+class Currency <<Datatype>>
+class Time <<Datatype>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class provides_insurance_to <<Material>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class studies_at <<Material>>
+class works_at <<Material>>
+
+
+
+
+class  <<Derivation>>
+class  <<Derivation>>
+Enrollment "1..*" -- "1..1" Educational_Institution : 
+Internship "1..*" -- "1..1" Educational_Institution : 
+Internship "1..*" -- "1..1" Educational_Supervisor : 
+Employment "1..*" -- "1..1" Employee : 
+Employment "1..*" -- "1..1" Employer : 
+Enrollment "1..*" -- "1..1" Student : 
+Insurance_Carrier "1..*" -- "1..*" Organization_Insured : provides_insurance_to
+Personal_Injury_Insurance "1..*" -- "1..1" Insurance_Carrier : 
+Personal_Injury_Insurance "1..1" -- "1..1" Insurance_Policy : 
+Internship "1..1" -- "1..1" Intern : 
+Internship "1..*" -- "1..1" Internship_Provider_Organization : 
+Internship "1..*" -- "1..1" Supervisor : 
+Internship "1..1" -- "1..1" Term_of_commitment : 
+Personal_Injury_Insurance "1..*" -- "1..1" Organization_Insured : 
+Student "1..*" -- "1..*" Educational_Institution : studies_at
+Employee "1..*" -- "1..*" Employer : works_at
+@enduml

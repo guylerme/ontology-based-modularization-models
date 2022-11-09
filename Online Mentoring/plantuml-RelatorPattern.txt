@@ -1,0 +1,29 @@
+@startuml
+'3 occurrencies
+'9 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Enrollment <<Relator>>
+class Course <<Kind>>
+class Student <<Role>>
+class Tutoring <<Relator>>
+class Tutor <<Role>>
+class TutoredDiscipline <<Role>>
+class WorkContract <<Relator>>
+class Professor <<Role>>
+class EducationalInstitution <<SubKind>>
+Enrollment "1..*" -- "1..1" Course : 
+WorkContract "1..*" -- "1..1" EducationalInstitution : 
+Enrollment "1..*" -- "1..1" Student : 
+WorkContract "1..*" -- "1..1" Professor : 
+Tutoring "1..*" -- "1..1" Tutor : 
+Tutoring "1..*" -- "1..1" TutoredDiscipline : 
+Tutor "1..*" -- "1..*" TutoredDiscipline : tutors
+@enduml

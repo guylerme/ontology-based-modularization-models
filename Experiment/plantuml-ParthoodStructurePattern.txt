@@ -1,0 +1,37 @@
+@startuml
+'13 occurrencies
+'12 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Goal <<Kind>>
+class Hypothesis <<Kind>>
+class Experiment <<Kind>>
+class Problem <<Kind>>
+class Conclusion <<Kind>>
+class Outcome <<Kind>>
+class Result <<Kind>>
+class Location <<Kind>>
+class Context <<Kind>>
+class Measure <<Kind>>
+class Group <<Collective>>
+class Report <<Kind>>
+Conclusion "1..1" o-- "2..*" Problem : 
+Experiment "1..1" o-- "2..*" Conclusion : 
+Context "1..1" o-- "2..*" Experiment : 
+Location "1..1" o-- "2..*" Context : 
+Group "1..1" o-- "2..*" Context : 
+Experiment "1..1" o-- "2..*" Problem : 
+Goal "1..1" o-- "2..*" Experiment : 
+Result "1..1" o-- "2..*" Experiment : 
+Measure "1..1" o-- "2..*" Experiment : 
+Goal "1..1" o-- "2..*" Outcome : 
+Goal "1..1" o-- "1..*" Hypothesis : 
+Hypothesis "1..1" o-- "2..*" Problem : 
+Hypothesis "1..1" o-- "1..*" Report : 
+@enduml

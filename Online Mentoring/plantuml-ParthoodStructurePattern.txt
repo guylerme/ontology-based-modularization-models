@@ -1,0 +1,19 @@
+@startuml
+'2 occurrencies
+'4 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Ementa <<Collective>>
+class Topic <<Kind>>
+class Curriculum <<Collective>>
+class Discipline <<Kind>>
+Curriculum "1..*" o-- "1..*" Discipline : 
+Discipline "1..1" -- "1..1" Ementa : 
+Ementa "1..*" o-- "1..*" Topic : 
+@enduml

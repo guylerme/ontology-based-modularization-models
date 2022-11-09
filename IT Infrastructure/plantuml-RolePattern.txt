@@ -1,0 +1,25 @@
+@startuml
+'5 occurrencies
+'7 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Conventional_File <<Role>>
+File_in_Disk <|-- Conventional_File
+class File_in_Disk <<Kind>>
+class Technician <<Role>>
+Person <|-- Technician
+class Person <<Kind>>
+class Manager <<Role>>
+Person <|-- Manager
+class Executable_File <<Role>>
+File_in_Disk <|-- Executable_File
+class Database_File <<Role>>
+File_in_Disk <|-- Database_File
+@enduml

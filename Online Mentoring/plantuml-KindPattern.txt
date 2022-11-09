@@ -1,0 +1,19 @@
+@startuml
+'6 occurrencies
+'6 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Kind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Agent <<Kind>>
+class Discipline <<Kind>>
+class Question <<Kind>>
+class Answer <<Kind>>
+class Course <<Kind>>
+class Topic <<Kind>>
+@enduml

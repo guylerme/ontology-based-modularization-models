@@ -1,0 +1,29 @@
+@startuml
+'2 occurrencies
+'8 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Sink_AP_Binding <<Relator>>
+class Sink_AP <<Role>>
+class A_Sk_Input_-_Sk_AP_Binded <<Role>>
+class FT_Sk_Output_-_Sk_AP_Binded <<Role>>
+class Source_AP_Binding <<Relator>>
+class Source_AP <<Role>>
+class FT_So_Input_-_So_AP_Binded <<Role>>
+class A_So_Output_-_So_AP_Binded <<Role>>
+Sink_AP_Binding "1..1" -- "1..1" A_Sk_Input_-_Sk_AP_Binded : Sink_AP_Binding_A_SK
+Source_AP_Binding "1..1" -- "1..1" A_So_Output_-_So_AP_Binded : A_SO_SO_AP
+Sink_AP_Binding "1..1" -- "1..1" FT_Sk_Output_-_Sk_AP_Binded : Sink_AP_Binding_FT_SK
+Source_AP_Binding "1..1" -- "1..1" FT_So_Input_-_So_AP_Binded : SO_AP_Binding_FT_SO
+Sink_AP_Binding "1..1" -- "1..1" Sink_AP : SK_AP_Binding_SK_AP
+Source_AP_Binding "1..1" -- "1..1" Source_AP : 
+A_Sk_Input_-_Sk_AP_Binded "1..1" -- "1..1" FT_Sk_Output_-_Sk_AP_Binded : Sk_AP_binds
+A_So_Output_-_So_AP_Binded "1..1" -- "1..1" FT_So_Input_-_So_AP_Binded : So_AP_binds
+@enduml

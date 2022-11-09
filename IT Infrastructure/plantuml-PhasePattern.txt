@@ -1,0 +1,23 @@
+@startuml
+'4 occurrencies
+'6 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Phase>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Defective_Module <<Phase>>
+Communication_Module <|-- Defective_Module
+class Communication_Module <<Kind>>
+class Defective_Disk <<Phase>>
+Disk <|-- Defective_Disk
+class Disk <<Kind>>
+class Functional_Disk <<Phase>>
+Disk <|-- Functional_Disk
+class Functional_Module <<Phase>>
+Communication_Module <|-- Functional_Module
+@enduml

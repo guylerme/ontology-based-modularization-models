@@ -1,0 +1,17 @@
+@startuml
+'1 occurrencies
+'3 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Transport_Processing_Function <<Category>>
+class Adaptation_Function <<Kind>>
+Transport_Processing_Function <|-- Adaptation_Function
+class Flow_Termination_Function <<Kind>>
+Transport_Processing_Function <|-- Flow_Termination_Function
+@enduml

@@ -1,0 +1,52 @@
+@startuml
+'15 occurrencies
+'20 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class OpenQuestion <<Role>>
+Question <|-- OpenQuestion
+class Question <<Kind>>
+class Student <<Role>>
+Participant <|-- Student
+class Participant <<Role>>
+Person <|-- Participant
+class Tutor <<Role>>
+ActiveStudent <|-- Tutor
+class ActiveStudent <<Role>>
+Student <|-- ActiveStudent
+class TutoredDiscipline <<Role>>
+Discipline <|-- TutoredDiscipline
+class Discipline <<Kind>>
+class Person <<SubKind>>
+Agent <|-- Person
+class Agent <<Kind>>
+class CharacterizedQuestion <<Role>>
+Question <|-- CharacterizedQuestion
+class NonCharacterizedQuestion <<Role>>
+Question <|-- NonCharacterizedQuestion
+class NonTutoredDiscipline <<Role>>
+Discipline <|-- NonTutoredDiscipline
+class NonCharacterizingTopic <<Role>>
+Topic <|-- NonCharacterizingTopic
+class Topic <<Kind>>
+class Professor <<Role>>
+Participant <|-- Professor
+class AnsweredQuestion <<Role>>
+Question <|-- AnsweredQuestion
+class ParticipantWithQuestion <<Role>>
+Participant <|-- ParticipantWithQuestion
+class ParticipantWithAnswer <<Role>>
+Participant <|-- ParticipantWithAnswer
+class CharacterizingTopic <<Role>>
+Topic <|-- CharacterizingTopic
+CharacterizingTopic "1..*" -- "1..*" CharacterizedQuestion : characterizes
+ParticipantWithQuestion "1..1" -- "1..*" Question : asks
+Tutor "1..*" -- "1..*" TutoredDiscipline : tutors
+@enduml

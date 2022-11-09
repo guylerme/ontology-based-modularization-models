@@ -1,0 +1,76 @@
+@startuml
+class A_Sk_Input_-_Sk_AP_Binded <<Role>>
+Adaptation_Sink_Input <|-- A_Sk_Input_-_Sk_AP_Binded
+class A_So_Output_-_So_AP_Binded <<Role>>
+Adaptation_Source_Output <|-- A_So_Output_-_So_AP_Binded
+class AP <<Kind>>
+class Adaptation_Function <<Kind>>
+Transport_Processing_Function <|-- Adaptation_Function
+class Adaptation_Sink <<SubKind>>
+Adaptation_Function <|-- Adaptation_Sink
+class Adaptation_Sink_Input <<Kind>>
+class Adaptation_Sink_Output <<Kind>>
+class Adaptation_Source <<SubKind>>
+Adaptation_Function <|-- Adaptation_Source
+class Adaptation_Source_Input <<Kind>>
+class Adaptation_Source_Output <<Kind>>
+class FT_Sk_Output_-_Sk_AP_Binded <<Role>>
+Flow_Termination_Sink_Ouput <|-- FT_Sk_Output_-_Sk_AP_Binded
+class FT_So_Input_-_So_AP_Binded <<Role>>
+Flow_Termination_Source_Input <|-- FT_So_Input_-_So_AP_Binded
+class Flow_Termination_Function <<Kind>>
+Transport_Processing_Function <|-- Flow_Termination_Function
+class Flow_Termination_Sink <<SubKind>>
+Flow_Termination_Function <|-- Flow_Termination_Sink
+class Flow_Termination_Sink_Input <<Kind>>
+class Flow_Termination_Sink_Ouput <<Kind>>
+class Flow_Termination_Source <<SubKind>>
+Flow_Termination_Function <|-- Flow_Termination_Source
+class Flow_Termination_Source_Input <<Kind>>
+class Flow_Termination_Source_Output <<Kind>>
+class Sink_AP <<Role>>
+AP <|-- Sink_AP
+class Sink_AP_Binding <<Relator>>
+class Source_AP <<Role>>
+AP <|-- Source_AP
+class Source_AP_Binding <<Relator>>
+class Transport_Processing_Function <<Category>>
+class Sink_AP_Binding_A_SK <<Mediation>>
+class A_SO_SO_AP <<Mediation>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class Sink_AP_Binding_FT_SK <<Mediation>>
+class SO_AP_Binding_FT_SO <<Mediation>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class SK_AP_Binding_SK_AP <<Mediation>>
+class  <<Mediation>>
+class Sk_AP_binds <<Material>>
+class So_AP_binds <<Material>>
+
+
+
+
+class  <<Derivation>>
+class  <<Derivation>>
+Sink_AP_Binding "1..1" -- "1..1" A_Sk_Input_-_Sk_AP_Binded : Sink_AP_Binding_A_SK
+Source_AP_Binding "1..1" -- "1..1" A_So_Output_-_So_AP_Binded : A_SO_SO_AP
+Adaptation_Sink "1..1" o-- "1..1" Adaptation_Sink_Input : 
+Adaptation_Sink "1..1" o-- "1..1" Adaptation_Sink_Output : 
+Adaptation_Source "1..1" o-- "1..1" Adaptation_Source_Output : 
+Adaptation_Source "1..1" o-- "1..1" Adaptation_Source_Input : 
+Sink_AP_Binding "1..1" -- "1..1" FT_Sk_Output_-_Sk_AP_Binded : Sink_AP_Binding_FT_SK
+Source_AP_Binding "1..1" -- "1..1" FT_So_Input_-_So_AP_Binded : SO_AP_Binding_FT_SO
+Flow_Termination_Sink "1..1" o-- "1..1" Flow_Termination_Sink_Ouput : 
+Flow_Termination_Sink "1..1" o-- "1..1" Flow_Termination_Sink_Input : 
+Flow_Termination_Source "1..1" o-- "1..1" Flow_Termination_Source_Output : 
+Flow_Termination_Source "1..1" o-- "1..1" Flow_Termination_Source_Input : 
+Sink_AP_Binding "1..1" -- "1..1" Sink_AP : SK_AP_Binding_SK_AP
+Source_AP_Binding "1..1" -- "1..1" Source_AP : 
+A_Sk_Input_-_Sk_AP_Binded "1..1" -- "1..1" FT_Sk_Output_-_Sk_AP_Binded : Sk_AP_binds
+A_So_Output_-_So_AP_Binded "1..1" -- "1..1" FT_So_Input_-_So_AP_Binded : So_AP_binds
+@enduml

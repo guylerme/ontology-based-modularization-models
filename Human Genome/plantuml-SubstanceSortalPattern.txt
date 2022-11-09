@@ -1,0 +1,20 @@
+@startuml
+'5 occurrencies
+'5 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Chromosome <<Collective>>
+class Nucleotide <<Kind>>
+class Alelle <<Collective>>
+class RefSeq <<Collective>>
+class Gene <<Collective>>
+Alelle "1..1" o-- "2..*" Nucleotide : formed_by
+Gene "1..1" o-- "2..*" Alelle : 
+Chromosome "1..1" o-- "2..*" Gene : 
+@enduml

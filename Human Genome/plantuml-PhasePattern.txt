@@ -1,0 +1,26 @@
+@startuml
+'6 occurrencies
+'7 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Phase>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Reviewed <<Phase>>
+Record <|-- Reviewed
+class Record <<Relator>>
+class Model <<Phase>>
+Record <|-- Model
+class Predicted <<Phase>>
+Record <|-- Predicted
+class Validated <<Phase>>
+Record <|-- Validated
+class Provisional <<Phase>>
+Record <|-- Provisional
+class Inferred <<Phase>>
+Record <|-- Inferred
+@enduml

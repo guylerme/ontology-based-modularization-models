@@ -1,0 +1,30 @@
+@startuml
+'5 occurrencies
+'8 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Chromosome <<Collective>>
+class Gene <<Collective>>
+class Alelle <<Collective>>
+class Nucleotide <<Kind>>
+class AllelicVariant <<Role>>
+Alelle <|-- AllelicVariant
+class InsertedNucleotide <<Role>>
+Nucleotide <|-- InsertedNucleotide
+class AllelicReference <<Role>>
+Alelle <|-- AllelicReference
+class DeletedNucleotide <<Role>>
+Nucleotide <|-- DeletedNucleotide
+Alelle "1..1" o-- "2..*" Nucleotide : formed_by
+Gene "1..1" o-- "2..*" Alelle : 
+AllelicReference "1..1" o-- "0..*" DeletedNucleotide : 
+AllelicVariant "1..1" o-- "0..*" InsertedNucleotide : 
+Chromosome "1..1" o-- "2..*" Gene : 
+AllelicReference "1..1" -- "1..*" AllelicVariant : 
+@enduml

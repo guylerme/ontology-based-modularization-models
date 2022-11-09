@@ -1,0 +1,76 @@
+@startuml
+class Conclusion <<Kind>>
+class Context <<Kind>>
+class Deductive <<Kind>>
+class Experiment <<Kind>>
+class Experimental <<Mode>>
+class Goal <<Kind>>
+class Group <<Collective>>
+class Hypothesis <<Kind>>
+class Inductive <<Kind>>
+class Location <<Kind>>
+class Measure <<Kind>>
+class Outcome <<Kind>>
+class Person <<Mode>>
+class Precedent <<Kind>>
+class Problem <<Kind>>
+class Reasoning <<Mode>>
+class Reference <<Kind>>
+class Report <<Kind>>
+class Result <<Kind>>
+class Theorectical <<Mode>>
+class EndDate <<Datatype>>
+class InitialDate <<Datatype>>
+class  <<ComponentOf>>
+class  <<Formal>>
+class  <<ComponentOf>>
+class  <<Formal>>
+class  <<Formal>>
+class  <<Formal>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<MemberOf>>
+class  <<Formal>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<Formal>>
+class  <<Formal>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<Formal>>
+class  <<Formal>>
+class  <<Characterization>>
+class  <<Formal>>
+class  <<Formal>>
+class  <<Formal>>
+Conclusion "1..1" o-- "2..*" Problem : 
+Conclusion "1..1" -- "1..1" Deductive : 
+Experiment "1..1" o-- "2..*" Conclusion : 
+Inductive "1..1" -- "1..1" Conclusion : 
+Context "1..1" -- "1..1" InitialDate : 
+Context "1..1" -- "1..1" EndDate : 
+Context "1..1" o-- "2..*" Experiment : 
+Location "1..1" o-- "2..*" Context : 
+Group "1..1" o-- "2..*" Context : 
+Deductive "1..1" -- "1..1" Experimental : 
+Experiment "1..1" o-- "2..*" Problem : 
+Goal "1..1" o-- "2..*" Experiment : 
+Result "1..1" o-- "2..*" Experiment : 
+Measure "1..1" o-- "2..*" Experiment : 
+Experimental "1..1" -- "1..1" Reasoning : 
+Inductive "1..1" -- "1..1" Experimental : 
+Goal "1..1" o-- "2..*" Outcome : 
+Goal "1..1" o-- "1..*" Hypothesis : 
+Hypothesis "1..1" o-- "2..*" Problem : 
+Hypothesis "1..1" o-- "1..*" Report : 
+Problem "1..1" -- "1..1" Inductive : 
+Outcome "1..1" -- "1..1" Precedent : 
+Reasoning "1..1" -- "1..1" Person : 
+Precedent "1..1" -- "1..1" Reference : 
+Report "1..1" -- "1..1" Precedent : 
+Theorectical "1..1" -- "1..1" Reasoning : 
+@enduml

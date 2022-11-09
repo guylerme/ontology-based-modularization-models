@@ -1,0 +1,59 @@
+@startuml
+'8 occurrencies
+'20 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Internship <<Relator>>
+class Educational_Supervisor <<Role>>
+Employee <|-- Educational_Supervisor
+class Supervisor <<Role>>
+Employee <|-- Supervisor
+class Term_of_commitment <<Kind>>
+class Educational_Institution <<Role>>
+Employer <|-- Educational_Institution
+class Internship_Provider_Organization <<Role>>
+Employer <|-- Internship_Provider_Organization
+Organization_Insured <|-- Internship_Provider_Organization
+class Intern <<Role>>
+Student <|-- Intern
+class Employment <<Relator>>
+class Employer <<Role>>
+class Employee <<Role>>
+class Personal_Injury_Insurance <<Relator>>
+class Insurance_Policy <<Kind>>
+class Organization_Insured <<Role>>
+class Insurance_Carrier <<Role>>
+class Full_Time_Internship <<Relator>>
+Internship <|-- Full_Time_Internship
+class Part_Time_Internship <<Relator>>
+Internship <|-- Part_Time_Internship
+class Obligatory_Internship <<Relator>>
+Internship <|-- Obligatory_Internship
+class Enrollment <<Relator>>
+class Student <<Role>>
+class Voluntary_Internship <<Relator>>
+Internship <|-- Voluntary_Internship
+Enrollment "1..*" -- "1..1" Educational_Institution : 
+Internship "1..*" -- "1..1" Educational_Institution : 
+Internship "1..*" -- "1..1" Educational_Supervisor : 
+Employment "1..*" -- "1..1" Employee : 
+Employment "1..*" -- "1..1" Employer : 
+Enrollment "1..*" -- "1..1" Student : 
+Insurance_Carrier "1..*" -- "1..*" Organization_Insured : provides_insurance_to
+Personal_Injury_Insurance "1..*" -- "1..1" Insurance_Carrier : 
+Personal_Injury_Insurance "1..1" -- "1..1" Insurance_Policy : 
+Internship "1..1" -- "1..1" Intern : 
+Internship "1..*" -- "1..1" Internship_Provider_Organization : 
+Internship "1..*" -- "1..1" Supervisor : 
+Internship "1..1" -- "1..1" Term_of_commitment : 
+Personal_Injury_Insurance "1..*" -- "1..1" Organization_Insured : 
+Student "1..*" -- "1..*" Educational_Institution : studies_at
+Employee "1..*" -- "1..*" Employer : works_at
+@enduml

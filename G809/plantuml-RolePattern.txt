@@ -1,0 +1,32 @@
+@startuml
+'6 occurrencies
+'11 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class FT_Sk_Output_-_Sk_AP_Binded <<Role>>
+Flow_Termination_Sink_Ouput <|-- FT_Sk_Output_-_Sk_AP_Binded
+class Flow_Termination_Sink_Ouput <<Kind>>
+class Sink_AP <<Role>>
+AP <|-- Sink_AP
+class AP <<Kind>>
+class Source_AP <<Role>>
+AP <|-- Source_AP
+class A_So_Output_-_So_AP_Binded <<Role>>
+Adaptation_Source_Output <|-- A_So_Output_-_So_AP_Binded
+class Adaptation_Source_Output <<Kind>>
+class FT_So_Input_-_So_AP_Binded <<Role>>
+Flow_Termination_Source_Input <|-- FT_So_Input_-_So_AP_Binded
+class Flow_Termination_Source_Input <<Kind>>
+class A_Sk_Input_-_Sk_AP_Binded <<Role>>
+Adaptation_Sink_Input <|-- A_Sk_Input_-_Sk_AP_Binded
+class Adaptation_Sink_Input <<Kind>>
+A_Sk_Input_-_Sk_AP_Binded "1..1" -- "1..1" FT_Sk_Output_-_Sk_AP_Binded : Sk_AP_binds
+A_So_Output_-_So_AP_Binded "1..1" -- "1..1" FT_So_Input_-_So_AP_Binded : So_AP_binds
+@enduml

@@ -1,0 +1,47 @@
+@startuml
+'13 occurrencies
+'16 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Educational_Institution <<Role>>
+Employer <|-- Educational_Institution
+class Employer <<Role>>
+Juridical_Person <|-- Employer
+class Juridical_Person <<SubKind>>
+Legal_Person <|-- Juridical_Person
+class Legal_Person <<Kind>>
+class Employee <<Role>>
+Natural_Person <|-- Employee
+class Natural_Person <<SubKind>>
+Legal_Person <|-- Natural_Person
+class College_Student <<Role>>
+Student <|-- College_Student
+class Student <<Role>>
+Natural_Person <|-- Student
+class Educational_Supervisor <<Role>>
+Employee <|-- Educational_Supervisor
+class High_School_Student <<Role>>
+Student <|-- High_School_Student
+class Supervisor <<Role>>
+Employee <|-- Supervisor
+class Intern <<Role>>
+Student <|-- Intern
+class Internship_Provider_Organization <<Role>>
+Employer <|-- Internship_Provider_Organization
+Organization_Insured <|-- Internship_Provider_Organization
+class Organization_Insured <<Role>>
+class Post_Graduate_Student <<Role>>
+Student <|-- Post_Graduate_Student
+class Insurance_Carrier <<Role>>
+Juridical_Person <|-- Insurance_Carrier
+Insurance_Carrier "1..*" -- "1..*" Organization_Insured : provides_insurance_to
+Student "1..*" -- "1..*" Educational_Institution : studies_at
+Employee "1..*" -- "1..*" Employer : works_at
+@enduml

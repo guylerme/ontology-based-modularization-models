@@ -1,0 +1,47 @@
+@startuml
+'16 occurrencies
+'16 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Deductive <<Kind>>
+class Location <<Kind>>
+class Experiment <<Kind>>
+class Reference <<Kind>>
+class Goal <<Kind>>
+class Result <<Kind>>
+class Measure <<Kind>>
+class Report <<Kind>>
+class Conclusion <<Kind>>
+class Context <<Kind>>
+class Inductive <<Kind>>
+class Hypothesis <<Kind>>
+class Group <<Collective>>
+class Problem <<Kind>>
+class Outcome <<Kind>>
+class Precedent <<Kind>>
+Conclusion "1..1" o-- "2..*" Problem : 
+Conclusion "1..1" -- "1..1" Deductive : 
+Experiment "1..1" o-- "2..*" Conclusion : 
+Inductive "1..1" -- "1..1" Conclusion : 
+Context "1..1" o-- "2..*" Experiment : 
+Location "1..1" o-- "2..*" Context : 
+Group "1..1" o-- "2..*" Context : 
+Experiment "1..1" o-- "2..*" Problem : 
+Goal "1..1" o-- "2..*" Experiment : 
+Result "1..1" o-- "2..*" Experiment : 
+Measure "1..1" o-- "2..*" Experiment : 
+Goal "1..1" o-- "2..*" Outcome : 
+Goal "1..1" o-- "1..*" Hypothesis : 
+Hypothesis "1..1" o-- "2..*" Problem : 
+Hypothesis "1..1" o-- "1..*" Report : 
+Problem "1..1" -- "1..1" Inductive : 
+Outcome "1..1" -- "1..1" Precedent : 
+Precedent "1..1" -- "1..1" Reference : 
+Report "1..1" -- "1..1" Precedent : 
+@enduml

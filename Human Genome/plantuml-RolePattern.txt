@@ -1,0 +1,27 @@
+@startuml
+'4 occurrencies
+'6 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class AllelicReference <<Role>>
+Alelle <|-- AllelicReference
+class Alelle <<Collective>>
+class InsertedNucleotide <<Role>>
+Nucleotide <|-- InsertedNucleotide
+class Nucleotide <<Kind>>
+class DeletedNucleotide <<Role>>
+Nucleotide <|-- DeletedNucleotide
+class AllelicVariant <<Role>>
+Alelle <|-- AllelicVariant
+Alelle "1..1" o-- "2..*" Nucleotide : formed_by
+AllelicReference "1..1" o-- "0..*" DeletedNucleotide : 
+AllelicVariant "1..1" o-- "0..*" InsertedNucleotide : 
+AllelicReference "1..1" -- "1..*" AllelicVariant : 
+@enduml

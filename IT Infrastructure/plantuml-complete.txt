@@ -1,0 +1,86 @@
+@startuml
+class 1_Gbps_Port <<SubKind>>
+Communication_Port <|-- 1_Gbps_Port
+class 10_Gbps_Port <<SubKind>>
+Communication_Port <|-- 10_Gbps_Port
+class Application_System <<SubKind>>
+IT_Service <|-- Application_System
+class Channel <<Kind>>
+class Communication_Module <<Kind>>
+class Communication_Port <<Kind>>
+class Conventional_File <<Role>>
+File_in_Disk <|-- Conventional_File
+class DBMS <<SubKind>>
+IT_Service <|-- DBMS
+class Data_Center <<Kind>>
+class Database <<Kind>>
+class Database_File <<Role>>
+File_in_Disk <|-- Database_File
+class Defective_Disk <<Phase>>
+Disk <|-- Defective_Disk
+class Defective_Module <<Phase>>
+Communication_Module <|-- Defective_Module
+class Disk <<Kind>>
+class Email <<SubKind>>
+IT_Service <|-- Email
+class Executable_File <<Role>>
+File_in_Disk <|-- Executable_File
+class File_in_Disk <<Kind>>
+class Functional_Disk <<Phase>>
+Disk <|-- Functional_Disk
+class Functional_Module <<Phase>>
+Communication_Module <|-- Functional_Module
+class IT_Service <<Kind>>
+class IT_Team <<Collective>>
+class LAN <<SubKind>>
+Channel <|-- LAN
+class MAN <<SubKind>>
+Channel <|-- MAN
+class Mailbox <<Kind>>
+class Manager <<Role>>
+Person <|-- Manager
+class Person <<Kind>>
+class Server <<Kind>>
+class Storage <<Kind>>
+class Switch-core <<Kind>>
+class Technician <<Role>>
+Person <|-- Technician
+class WAN <<SubKind>>
+Channel <|-- WAN
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<Formal>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<MemberOf>>
+class  <<MemberOf>>
+
+
+
+
+
+
+Data_Center "1..*" o-- "1..*" Channel : 
+Communication_Module "1..1" o-- "1..*" Communication_Port : 
+Switch-core "1..1" o-- "1..*" Communication_Module : 
+DBMS "1..1" o-- "1..*" Database : 
+Data_Center "1..1" o-- "1..*" Storage : 
+Data_Center "1..1" o-- "1..*" Switch-core : 
+Data_Center "1..1" o-- "1..*" Server : 
+IT_Team "1..*" -- "1..*" Data_Center : 
+Database "1..1" o-- "1..*" Database_File : 
+Disk "0..*" o-- "0..*" File_in_Disk : 
+Storage "1..1" o-- "1..*" Disk : 
+Email "1..1" o-- "1..*" Mailbox : 
+Server "1..*" o-- "0..*" IT_Service : 
+IT_Team "1..1" o-- "1..*" Technician : 
+IT_Team "1..1" o-- "1..1" Manager : 
+@enduml

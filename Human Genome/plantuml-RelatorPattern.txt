@@ -1,0 +1,38 @@
+@startuml
+'4 occurrencies
+'9 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Indel <<Relator>>
+class AllelicVariant <<Role>>
+class AllelicReference <<Role>>
+class DeletedNucleotide <<Role>>
+class InsertedNucleotide <<Role>>
+class Deletion <<Relator>>
+class Insertion <<Relator>>
+class Record <<Relator>>
+class RefSeq <<Collective>>
+AllelicReference "1..1" o-- "0..*" DeletedNucleotide : 
+Insertion "0..*" -- "1..1" AllelicReference : 
+Deletion "0..*" -- "1..1" AllelicReference : 
+Indel "0..*" -- "1..1" AllelicReference : 
+Record "1..1" -- "1..1" AllelicReference : 
+AllelicVariant "1..1" o-- "0..*" InsertedNucleotide : 
+Insertion "0..*" -- "1..1" AllelicVariant : 
+Deletion "0..*" -- "1..1" AllelicVariant : 
+Indel "0..*" -- "1..1" AllelicVariant : 
+Indel "1..1" -- "1..*" DeletedNucleotide : 
+Deletion "1..1" -- "1..*" DeletedNucleotide : constituted_by
+Indel "1..1" -- "1..*" InsertedNucleotide : 
+Insertion "1..1" -- "1..*" InsertedNucleotide : constituted_by
+Record "2..*" -- "1..1" RefSeq : 
+AllelicReference "1..1" -- "1..*" AllelicVariant : 
+RefSeq "1..1" -- "2..*" AllelicReference : 
+@enduml

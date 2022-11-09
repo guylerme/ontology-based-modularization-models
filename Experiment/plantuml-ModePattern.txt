@@ -1,0 +1,20 @@
+@startuml
+'4 occurrencies
+'5 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Mode>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Experimental <<Mode>>
+class Reasoning <<Mode>>
+class Person <<Mode>>
+class Theorectical <<Mode>>
+Experimental "1..1" -- "1..1" Reasoning : 
+Reasoning "1..1" -- "1..1" Person : 
+Theorectical "1..1" -- "1..1" Reasoning : 
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+'3 occurrencies
+'4 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<SubKind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Organization <<SubKind>>
+Agent <|-- Organization
+class Agent <<Kind>>
+class EducationalInstitution <<SubKind>>
+Organization <|-- EducationalInstitution
+class Person <<SubKind>>
+Agent <|-- Person
+@enduml

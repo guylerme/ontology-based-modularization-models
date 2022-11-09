@@ -1,0 +1,73 @@
+@startuml
+class Alelle <<Collective>>
+class AllelicReference <<Role>>
+Alelle <|-- AllelicReference
+class AllelicVariant <<Role>>
+Alelle <|-- AllelicVariant
+class Chromosome <<Collective>>
+class DeletedNucleotide <<Role>>
+Nucleotide <|-- DeletedNucleotide
+class Deletion <<Relator>>
+class Gene <<Collective>>
+class Indel <<Relator>>
+class Inferred <<Phase>>
+Record <|-- Inferred
+class InsertedNucleotide <<Role>>
+Nucleotide <|-- InsertedNucleotide
+class Insertion <<Relator>>
+class Model <<Phase>>
+Record <|-- Model
+class Nucleotide <<Kind>>
+class Predicted <<Phase>>
+Record <|-- Predicted
+class Provisional <<Phase>>
+Record <|-- Provisional
+class Record <<Relator>>
+class RefSeq <<Collective>>
+class Reviewed <<Phase>>
+Record <|-- Reviewed
+class Validated <<Phase>>
+Record <|-- Validated
+class formed_by <<MemberOf>>
+class  <<SubCollectionOf>>
+class  <<MemberOf>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<MemberOf>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<SubCollectionOf>>
+class  <<Mediation>>
+class constituted_by <<Mediation>>
+class  <<Mediation>>
+class constituted_by <<Mediation>>
+class precedes <<Formal>>
+class  <<Mediation>>
+class  <<Material>>
+class  <<Material>>
+
+class  <<Derivation>>
+class  <<Derivation>>
+Alelle "1..1" o-- "2..*" Nucleotide : formed_by
+Gene "1..1" o-- "2..*" Alelle : 
+AllelicReference "1..1" o-- "0..*" DeletedNucleotide : 
+Insertion "0..*" -- "1..1" AllelicReference : 
+Deletion "0..*" -- "1..1" AllelicReference : 
+Indel "0..*" -- "1..1" AllelicReference : 
+Record "1..1" -- "1..1" AllelicReference : 
+AllelicVariant "1..1" o-- "0..*" InsertedNucleotide : 
+Insertion "0..*" -- "1..1" AllelicVariant : 
+Deletion "0..*" -- "1..1" AllelicVariant : 
+Indel "0..*" -- "1..1" AllelicVariant : 
+Chromosome "1..1" o-- "2..*" Gene : 
+Indel "1..1" -- "1..*" DeletedNucleotide : 
+Deletion "1..1" -- "1..*" DeletedNucleotide : constituted_by
+Indel "1..1" -- "1..*" InsertedNucleotide : 
+Insertion "1..1" -- "1..*" InsertedNucleotide : constituted_by
+Record "2..*" -- "1..1" RefSeq : 
+AllelicReference "1..1" -- "1..*" AllelicVariant : 
+RefSeq "1..1" -- "2..*" AllelicReference : 
+@enduml

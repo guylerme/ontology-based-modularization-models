@@ -1,0 +1,18 @@
+@startuml
+'6 occurrencies
+'6 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Crime <<Kind>>
+class Person <<Kind>>
+class News_Agency <<Kind>>
+class National_Region <<Kind>>
+class Activity <<Kind>>
+class Chart <<Kind>>
+@enduml

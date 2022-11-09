@@ -1,0 +1,47 @@
+@startuml
+class Activity <<Kind>>
+class Aggregated_Activity <<SubKind>>
+Activity <|-- Aggregated_Activity
+class Associated_Aggregated_Activity <<Relator>>
+class Associated_Illustrative_Activity <<Relator>>
+class Bar_Chart <<SubKind>>
+Chart <|-- Bar_Chart
+class Chart <<Kind>>
+class Contract <<Relator>>
+class Crime <<Kind>>
+class Illustrative_Activity <<SubKind>>
+Activity <|-- Illustrative_Activity
+class Incident <<Relator>>
+class Journalist <<Role>>
+Person <|-- Journalist
+class National_Region <<Kind>>
+class News_Agency <<Kind>>
+class Person <<Kind>>
+class Region_With_Registered_Crime <<SubKind>>
+National_Region <|-- Region_With_Registered_Crime
+class Uses <<Relator>>
+class  <<Formal>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+Illustrative_Activity "0..*" -- "1..1" Aggregated_Activity : 
+Associated_Aggregated_Activity "1..1" -- "1..*" Aggregated_Activity : 
+Associated_Aggregated_Activity "1..1" -- "1..*" Journalist : 
+Associated_Illustrative_Activity "1..1" -- "1..*" Illustrative_Activity : 
+Associated_Illustrative_Activity "1..1" -- "1..*" Journalist : 
+Uses "1..1" -- "1..*" Bar_Chart : 
+Contract "1..1" -- "1..*" Journalist : 
+Contract "1..1" -- "1..*" News_Agency : 
+Incident "1..1" -- "1..*" Crime : 
+Uses "1..1" -- "1..*" Illustrative_Activity : 
+Incident "1..*" -- "1..1" Region_With_Registered_Crime : 
+Uses "1..1" -- "1..*" Region_With_Registered_Crime : 
+@enduml

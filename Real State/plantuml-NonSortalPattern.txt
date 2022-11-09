@@ -1,0 +1,29 @@
+@startuml
+'3 occurrencies
+'9 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Tenant_(Lessee) <<RoleMixin>>
+class Company_as_Tenant <<Role>>
+Tenant_(Lessee) <|-- Company_as_Tenant
+class Person_as_Tenant <<Role>>
+Tenant_(Lessee) <|-- Person_as_Tenant
+class Land_Lord_(Lessor) <<RoleMixin>>
+class Company_as_Lessor <<Role>>
+Land_Lord_(Lessor) <|-- Company_as_Lessor
+Company_as_Owner <|-- Company_as_Lessor
+class Person_as_Lessor <<Role>>
+Land_Lord_(Lessor) <|-- Person_as_Lessor
+Person_as_Owner <|-- Person_as_Lessor
+class Owner <<RoleMixin>>
+class Person_as_Owner <<Role>>
+Owner <|-- Person_as_Owner
+class Company_as_Owner <<Role>>
+Owner <|-- Company_as_Owner
+@enduml

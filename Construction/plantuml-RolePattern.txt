@@ -1,0 +1,27 @@
+@startuml
+'3 occurrencies
+'7 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Personal_Customer <<Role>>
+Customer <|-- Personal_Customer
+Person <|-- Personal_Customer
+class Person <<SubKind>>
+Agent <|-- Person
+class Agent <<Kind>>
+class Customer <<RoleMixin>>
+class Employee <<Role>>
+Person <|-- Employee
+class Organizational_Customer <<Role>>
+Organization <|-- Organizational_Customer
+Customer <|-- Organizational_Customer
+class Organization <<SubKind>>
+Agent <|-- Organization
+@enduml

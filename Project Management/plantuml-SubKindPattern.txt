@@ -1,0 +1,19 @@
+@startuml
+'2 occurrencies
+'3 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<SubKind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Composed <<SubKind>>
+Activity <|-- Composed
+class Activity <<Kind>>
+class Atomic <<SubKind>>
+Activity <|-- Atomic
+Composed "1..1" o-- "2..*" Atomic : 
+@enduml

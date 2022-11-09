@@ -1,0 +1,26 @@
+@startuml
+'2 occurrencies
+'7 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Rental_Agreement_(Lease) <<Relator>>
+class Rented_Realty <<Role>>
+Realty <|-- Rented_Realty
+class Land_Lord_(Lessor) <<RoleMixin>>
+class Tenant_(Lessee) <<RoleMixin>>
+class Deed <<Relator>>
+class Owner <<RoleMixin>>
+class Realty <<Kind>>
+Deed "1..1" -- "1..1" Realty : 
+Deed "1..*" -- "1..1" Owner : 
+Rental_Agreement_(Lease) "1..*" -- "1..1" Land_Lord_(Lessor) : 
+Rental_Agreement_(Lease) "1..1" -- "1..1" Rented_Realty : 
+Rental_Agreement_(Lease) "1..*" -- "1..1" Tenant_(Lessee) : 
+@enduml

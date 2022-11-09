@@ -1,0 +1,25 @@
+@startuml
+'4 occurrencies
+'7 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<SubKind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Aggregated_Activity <<SubKind>>
+Activity <|-- Aggregated_Activity
+class Activity <<Kind>>
+class Bar_Chart <<SubKind>>
+Chart <|-- Bar_Chart
+class Chart <<Kind>>
+class Illustrative_Activity <<SubKind>>
+Activity <|-- Illustrative_Activity
+class Region_With_Registered_Crime <<SubKind>>
+National_Region <|-- Region_With_Registered_Crime
+class National_Region <<Kind>>
+Illustrative_Activity "0..*" -- "1..1" Aggregated_Activity : 
+@enduml

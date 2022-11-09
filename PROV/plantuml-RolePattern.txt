@@ -1,0 +1,16 @@
+@startuml
+'1 occurrencies
+'2 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Journalist <<Role>>
+Person <|-- Journalist
+class Person <<Kind>>
+@enduml

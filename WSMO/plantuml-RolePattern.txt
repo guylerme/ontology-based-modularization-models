@@ -1,0 +1,19 @@
+@startuml
+'2 occurrencies
+'4 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Role <<Role>>
+Government_Activity <|-- Role
+class Government_Activity <<Kind>>
+class Admin_Officer <<Role>>
+Administration <|-- Admin_Officer
+class Administration <<Kind>>
+@enduml

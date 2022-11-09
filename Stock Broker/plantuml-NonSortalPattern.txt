@@ -1,0 +1,17 @@
+@startuml
+'1 occurrencies
+'3 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Stockholder <<RoleMixin>>
+class Stockholder_Person <<Role>>
+Stockholder <|-- Stockholder_Person
+class Stockholder_Organization <<Role>>
+Stockholder <|-- Stockholder_Organization
+@enduml

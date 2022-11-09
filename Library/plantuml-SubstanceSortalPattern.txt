@@ -1,0 +1,22 @@
+@startuml
+'8 occurrencies
+'8 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Item <<Kind>>
+class Copy <<Kind>>
+class Collection <<Collective>>
+class Return_Deadline <<Kind>>
+class Fine <<Kind>>
+class Work <<Kind>>
+class UNISAM <<Kind>>
+class Person <<Kind>>
+Fine "1..1" -- "1..1" Return_Deadline : 
+Item "1..1" -- "1..1" Work : 
+@enduml

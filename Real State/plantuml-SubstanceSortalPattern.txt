@@ -1,0 +1,15 @@
+@startuml
+'3 occurrencies
+'3 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Realty <<Kind>>
+class Person <<Kind>>
+class Company <<Kind>>
+@enduml

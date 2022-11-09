@@ -1,0 +1,40 @@
+@startuml
+class Company <<Kind>>
+class Company_as_Lessor <<Role>>
+Land_Lord_(Lessor) <|-- Company_as_Lessor
+Company_as_Owner <|-- Company_as_Lessor
+class Company_as_Owner <<Role>>
+Company <|-- Company_as_Owner
+Owner <|-- Company_as_Owner
+class Company_as_Tenant <<Role>>
+Tenant_(Lessee) <|-- Company_as_Tenant
+Company <|-- Company_as_Tenant
+class Deed <<Relator>>
+class Land_Lord_(Lessor) <<RoleMixin>>
+class Owner <<RoleMixin>>
+class Person <<Kind>>
+class Person_as_Lessor <<Role>>
+Land_Lord_(Lessor) <|-- Person_as_Lessor
+Person_as_Owner <|-- Person_as_Lessor
+class Person_as_Owner <<Role>>
+Person <|-- Person_as_Owner
+Owner <|-- Person_as_Owner
+class Person_as_Tenant <<Role>>
+Tenant_(Lessee) <|-- Person_as_Tenant
+Person <|-- Person_as_Tenant
+class Realty <<Kind>>
+class Rental_Agreement_(Lease) <<Relator>>
+class Rented_Realty <<Role>>
+Realty <|-- Rented_Realty
+class Tenant_(Lessee) <<RoleMixin>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+Deed "1..1" -- "1..1" Realty : 
+Deed "1..*" -- "1..1" Owner : 
+Rental_Agreement_(Lease) "1..*" -- "1..1" Land_Lord_(Lessor) : 
+Rental_Agreement_(Lease) "1..1" -- "1..1" Rented_Realty : 
+Rental_Agreement_(Lease) "1..*" -- "1..1" Tenant_(Lessee) : 
+@enduml

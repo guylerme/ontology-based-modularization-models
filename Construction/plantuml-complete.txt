@@ -1,0 +1,36 @@
+@startuml
+class Agent <<Kind>>
+class Allocation <<Relator>>
+class Budget <<Collective>>
+class Construction_Work <<Kind>>
+class Customer <<RoleMixin>>
+class Employee <<Role>>
+Person <|-- Employee
+class Organization <<SubKind>>
+Agent <|-- Organization
+class Organizational_Customer <<Role>>
+Organization <|-- Organizational_Customer
+Customer <|-- Organizational_Customer
+class Person <<SubKind>>
+Agent <|-- Person
+class Personal_Customer <<Role>>
+Customer <|-- Personal_Customer
+Person <|-- Personal_Customer
+class Photo <<Kind>>
+class Stage <<Collective>>
+class Substage <<Collective>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<SubCollectionOf>>
+class has <<Material>>
+class depicts <<Material>>
+class requests <<Material>>
+class  <<SubCollectionOf>>
+Allocation "0..*" -- "1..1" Construction_Work : 
+Allocation "0..*" -- "1..1" Employee : 
+Budget "1..1" o-- "1..1" Stage : 
+Construction_Work "1..1" -- "1..1" Budget : has
+Photo "0..*" -- "1..1" Construction_Work : depicts
+Customer "1..1" -- "0..*" Construction_Work : requests
+Stage "1..1" o-- "1..1" Substage : 
+@enduml

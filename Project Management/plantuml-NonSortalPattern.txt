@@ -1,0 +1,17 @@
+@startuml
+'1 occurrencies
+'3 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Resource <<RoleMixin>>
+class Human_Resource <<Role>>
+Resource <|-- Human_Resource
+class Financial_Resource <<Role>>
+Resource <|-- Financial_Resource
+@enduml

@@ -1,0 +1,26 @@
+@startuml
+'6 occurrencies
+'6 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Kind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Government_Activity <<Kind>>
+class Place <<Kind>>
+class Admin_Topic <<Kind>>
+class Government_Service <<Kind>>
+class Administration <<Kind>>
+class Document <<Kind>>
+Admin_Topic "1..1" -- "1..1" Document : 
+Government_Service "1..1" -- "1..1" Admin_Topic : 
+Administration "1..1" -- "1..1" Place : 
+Government_Service "1..1" -- "1..1" Administration : 
+Document "1..1" -- "1..1" Government_Service : results_from
+Government_Service "1..1" -- "1..1" Document : requires
+Government_Activity "1..1" -- "1..1" Government_Service : 
+@enduml

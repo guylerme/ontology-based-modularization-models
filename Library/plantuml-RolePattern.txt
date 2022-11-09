@@ -1,0 +1,39 @@
+@startuml
+'15 occurrencies
+'16 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Professor <<Role>>
+Employee <|-- Professor
+class Employee <<Role>>
+Person <|-- Employee
+class Person <<Kind>>
+class Administrative <<Role>>
+Employee <|-- Administrative
+class Reserve_Copy_for_Employee <<Role>>
+class Regular <<Role>>
+Administrative <|-- Regular
+class Copy_Reservation <<Role>>
+class Student <<Role>>
+Person <|-- Student
+class Item's_Copy <<Role>>
+class Undergraduate_Student <<Role>>
+Student <|-- Undergraduate_Student
+class Renew_Copy <<Role>>
+class Delay <<Role>>
+class Employee_Loan <<Role>>
+class Renew_Copy_for_Employee <<Role>>
+class Intern <<Role>>
+Administrative <|-- Intern
+class Graduate_Student <<Role>>
+Student <|-- Graduate_Student
+Renew_Copy "1..1" -- "1..1" Student : 
+Regular "1..1" -- "1..1" Intern : 
+@enduml

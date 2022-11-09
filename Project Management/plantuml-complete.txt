@@ -1,0 +1,41 @@
+@startuml
+class Activity <<Kind>>
+class Atomic <<SubKind>>
+Activity <|-- Atomic
+class Composed <<SubKind>>
+Activity <|-- Composed
+class Financial_Resource <<Role>>
+Money <|-- Financial_Resource
+Resource <|-- Financial_Resource
+class Human_Resource <<Role>>
+Resource <|-- Human_Resource
+Person <|-- Human_Resource
+class Money <<Kind>>
+class Performed_Activity <<Phase>>
+Activity <|-- Performed_Activity
+class Performed_Schedule <<Mode>>
+class Person <<Kind>>
+class Planned_Activity <<Phase>>
+Activity <|-- Planned_Activity
+class Planned_Schedule <<Mode>>
+class Project <<Kind>>
+class Resource <<RoleMixin>>
+class Resource_Allocation <<Relator>>
+class  <<ComponentOf>>
+class  <<Mediation>>
+class  <<Formal>>
+class  <<Characterization>>
+class  <<Formal>>
+class  <<Characterization>>
+class  <<Mediation>>
+
+
+
+Composed "1..1" o-- "2..*" Atomic : 
+Resource_Allocation "1..*" -- "1..1" Performed_Activity : 
+Performed_Schedule "1..1" -- "1..*" Performed_Activity : 
+Performed_Schedule "1..1" -- "1..1" Project : 
+Planned_Schedule "1..1" -- "1..*" Planned_Activity : 
+Planned_Schedule "1..1" -- "1..1" Project : 
+Resource_Allocation "1..*" -- "1..1" Resource : 
+@enduml

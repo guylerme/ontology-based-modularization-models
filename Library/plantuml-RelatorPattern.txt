@@ -1,0 +1,83 @@
+@startuml
+'14 occurrencies
+'31 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Make_Reservation_for_Student <<Relator>>
+class Copy_Reservation <<Role>>
+class Student <<Role>>
+class Undergraduate_Contract <<Relator>>
+class Undergraduate_Student <<Role>>
+Student <|-- Undergraduate_Student
+class UNISAM <<Kind>>
+class Make_Reservation_for_Employee <<Relator>>
+class Reserve_Copy_for_Employee <<Role>>
+class Employee <<Role>>
+class Get_Copy <<Relator>>
+class Item's_Copy <<Role>>
+class Item <<Kind>>
+class Studen_Loan <<Relator>>
+class Copy <<Kind>>
+class Delay <<Role>>
+class Renew_Employee <<Relator>>
+class Renew_Copy_for_Employee <<Role>>
+class Employee_Contract <<Relator>>
+class Regular <<Role>>
+class Intern <<Role>>
+class Generate_Student_Delay <<Relator>>
+class Return_Deadline <<Kind>>
+class Employee_Loan <<Relator>>
+class Employee_Loan <<Role>>
+class Renew_Copy_for_Student <<Relator>>
+class Professor_Contract <<Relator>>
+class Professor <<Role>>
+Employee <|-- Professor
+class Reserved_Copy <<Relator>>
+class Graduate_Contract <<Relator>>
+class Graduate_Student <<Role>>
+Student <|-- Graduate_Student
+class Renewed_Copy <<Relator>>
+Reserved_Copy "1..1" -- "1..1" Copy : 
+Renewed_Copy "1..1" -- "1..1" Copy : 
+Item's_Copy "1..1" -- "1..1" Copy : 
+Copy "1..1" -- "1..1" Reserve_Copy_for_Employee : 
+Copy "1..1" -- "1..1" Employee_Loan : 
+Copy "1..1" -- "1..1" Renew_Copy_for_Employee : 
+Renew_Copy_for_Student "1..1" -- "1..1" Copy : 
+Studen_Loan "1..1" -- "1..1" Copy : 
+Copy "1..1" -- "1..1" Copy_Reservation : 
+Make_Reservation_for_Student "1..1" -- "1..1" Copy_Reservation : 
+Generate_Student_Delay "1..1" -- "1..1" Delay : 
+Studen_Loan "1..1" -- "1..1" Delay : 
+Employee_Loan "1..1" -- "1..1" Employee : 
+Renew_Employee "1..1" -- "1..1" Employee : 
+Make_Reservation_for_Employee "1..1" -- "1..1" Employee : 
+Employee_Contract "1..1" -- "1..1" Intern : 
+Employee_Contract "1..1" -- "1..1" Regular : 
+Employee_Loan "1..1" -- "1..1" Employee_Loan : 
+Generate_Student_Delay "1..1" -- "1..1" Return_Deadline : 
+Generate_Student_Delay "1..1" -- "1..1" Student : 
+Get_Copy "1..1" -- "1..1" Item : 
+Get_Copy "1..1" -- "1..1" Item's_Copy : 
+Graduate_Contract "1..1" -- "1..1" Graduate_Student : 
+Graduate_Contract "1..1" -- "1..1" UNISAM : 
+Renewed_Copy "1..1" -- "1..1" Item : 
+Reserved_Copy "1..1" -- "1..1" Item : 
+Make_Reservation_for_Employee "1..1" -- "1..1" Reserve_Copy_for_Employee : 
+Make_Reservation_for_Student "1..1" -- "1..1" Student : 
+Professor_Contract "1..1" -- "1..1" Professor : 
+Professor_Contract "1..1" -- "1..1" UNISAM : 
+Renew_Employee "1..1" -- "1..1" Renew_Copy_for_Employee : 
+Renew_Copy_for_Student "1..1" -- "1..1" Student : 
+Studen_Loan "1..1" -- "1..1" Student : 
+Undergraduate_Contract "1..1" -- "1..1" UNISAM : 
+Undergraduate_Contract "1..1" -- "1..1" Undergraduate_Student : 
+Regular "1..1" -- "1..1" Intern : 
+@enduml

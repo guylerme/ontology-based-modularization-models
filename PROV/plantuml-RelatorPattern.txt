@@ -1,0 +1,37 @@
+@startuml
+'5 occurrencies
+'12 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Contract <<Relator>>
+class Journalist <<Role>>
+class News_Agency <<Kind>>
+class Associated_Illustrative_Activity <<Relator>>
+class Illustrative_Activity <<SubKind>>
+class Incident <<Relator>>
+class Region_With_Registered_Crime <<SubKind>>
+class Crime <<Kind>>
+class Uses <<Relator>>
+class Bar_Chart <<SubKind>>
+class Associated_Aggregated_Activity <<Relator>>
+class Aggregated_Activity <<SubKind>>
+Illustrative_Activity "0..*" -- "1..1" Aggregated_Activity : 
+Associated_Aggregated_Activity "1..1" -- "1..*" Aggregated_Activity : 
+Associated_Aggregated_Activity "1..1" -- "1..*" Journalist : 
+Associated_Illustrative_Activity "1..1" -- "1..*" Illustrative_Activity : 
+Associated_Illustrative_Activity "1..1" -- "1..*" Journalist : 
+Uses "1..1" -- "1..*" Bar_Chart : 
+Contract "1..1" -- "1..*" Journalist : 
+Contract "1..1" -- "1..*" News_Agency : 
+Incident "1..1" -- "1..*" Crime : 
+Uses "1..1" -- "1..*" Illustrative_Activity : 
+Incident "1..*" -- "1..1" Region_With_Registered_Crime : 
+Uses "1..1" -- "1..*" Region_With_Registered_Crime : 
+@enduml

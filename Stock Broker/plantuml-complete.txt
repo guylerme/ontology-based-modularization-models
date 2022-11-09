@@ -1,0 +1,46 @@
+@startuml
+class Brokerage <<SubKind>>
+Organization <|-- Brokerage
+class Buyer <<Role>>
+Brokerage <|-- Buyer
+class Contract <<Relator>>
+class Hired_Brokerage <<Role>>
+Brokerage <|-- Hired_Brokerage
+class Organization <<Kind>>
+class Person <<Kind>>
+class Public_Traded_Company <<Role>>
+Organization <|-- Public_Traded_Company
+class Seller <<Role>>
+Brokerage <|-- Seller
+class Stock <<Relator>>
+class Stock_Exchange <<SubKind>>
+Organization <|-- Stock_Exchange
+class Stock_Keeper <<Role>>
+Stock_Exchange <|-- Stock_Keeper
+class Stockholder <<RoleMixin>>
+class Stockholder_Organization <<Role>>
+Stockholder <|-- Stockholder_Organization
+Organization <|-- Stockholder_Organization
+class Stockholder_Person <<Role>>
+Stockholder <|-- Stockholder_Person
+Person <|-- Stockholder_Person
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+
+
+
+
+
+
+
+Stock "1..1" -- "1..1" Buyer : 
+Contract "1..1" -- "1..1" Hired_Brokerage : 
+Contract "1..1" -- "1..1" Stockholder : 
+Stock "1..1" -- "1..1" Public_Traded_Company : 
+Stock "1..1" -- "1..1" Seller : 
+Stock "1..1" -- "1..1" Stock_Keeper : 
+@enduml

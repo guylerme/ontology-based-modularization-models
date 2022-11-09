@@ -1,0 +1,18 @@
+@startuml
+'2 occurrencies
+'3 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Phase>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Planned_Activity <<Phase>>
+Activity <|-- Planned_Activity
+class Activity <<Kind>>
+class Performed_Activity <<Phase>>
+Activity <|-- Performed_Activity
+@enduml

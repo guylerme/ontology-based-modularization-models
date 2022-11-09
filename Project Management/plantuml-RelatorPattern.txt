@@ -1,0 +1,18 @@
+@startuml
+'1 occurrencies
+'3 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Resource_Allocation <<Relator>>
+class Performed_Activity <<Phase>>
+class Resource <<RoleMixin>>
+Resource_Allocation "1..*" -- "1..1" Performed_Activity : 
+Resource_Allocation "1..*" -- "1..1" Resource : 
+@enduml

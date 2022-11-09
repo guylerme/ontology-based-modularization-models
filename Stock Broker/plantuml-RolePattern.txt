@@ -1,0 +1,36 @@
+@startuml
+'7 occurrencies
+'12 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Stockholder_Person <<Role>>
+Stockholder <|-- Stockholder_Person
+Person <|-- Stockholder_Person
+class Stockholder <<RoleMixin>>
+class Person <<Kind>>
+class Public_Traded_Company <<Role>>
+Organization <|-- Public_Traded_Company
+class Organization <<Kind>>
+class Stockholder_Organization <<Role>>
+Stockholder <|-- Stockholder_Organization
+Organization <|-- Stockholder_Organization
+class Buyer <<Role>>
+Brokerage <|-- Buyer
+class Brokerage <<SubKind>>
+Organization <|-- Brokerage
+class Seller <<Role>>
+Brokerage <|-- Seller
+class Stock_Keeper <<Role>>
+Stock_Exchange <|-- Stock_Keeper
+class Stock_Exchange <<SubKind>>
+Organization <|-- Stock_Exchange
+class Hired_Brokerage <<Role>>
+Brokerage <|-- Hired_Brokerage
+@enduml

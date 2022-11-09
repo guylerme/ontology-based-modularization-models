@@ -1,0 +1,148 @@
+@startuml
+class Administrative <<Role>>
+Employee <|-- Administrative
+class Book <<SubKind>>
+Work <|-- Book
+class Collection <<Collective>>
+class Copy <<Kind>>
+class Copy_Reservation <<Role>>
+class Daily <<Phase>>
+Fine <|-- Daily
+class Delay <<Role>>
+class Dvd <<SubKind>>
+Work <|-- Dvd
+class Employee <<Role>>
+Person <|-- Employee
+class Employee_Contract <<Relator>>
+class Employee_Loan <<Relator>>
+class Employee_Loan <<Role>>
+class Fine <<Kind>>
+class Generate_Student_Delay <<Relator>>
+class Get_Copy <<Relator>>
+class Graduate_Contract <<Relator>>
+class Graduate_Student <<Role>>
+Student <|-- Graduate_Student
+class Intern <<Role>>
+Administrative <|-- Intern
+class Item <<Kind>>
+class Item's_Copy <<Role>>
+class Make_Reservation_for_Employee <<Relator>>
+class Make_Reservation_for_Student <<Relator>>
+class Monthly <<Phase>>
+Fine <|-- Monthly
+class Periodical <<SubKind>>
+Work <|-- Periodical
+class Person <<Kind>>
+class Professor <<Role>>
+Employee <|-- Professor
+class Professor_Contract <<Relator>>
+class Regular <<Role>>
+Administrative <|-- Regular
+class Renew_Copy <<Role>>
+class Renew_Copy_for_Employee <<Role>>
+class Renew_Copy_for_Student <<Relator>>
+class Renew_Employee <<Relator>>
+class Renewed_Copy <<Relator>>
+class Reserve_Copy_for_Employee <<Role>>
+class Reserved_Copy <<Relator>>
+class Return_Deadline <<Kind>>
+class Studen_Loan <<Relator>>
+class Student <<Role>>
+Person <|-- Student
+class UNISAM <<Kind>>
+class Undergraduate_Contract <<Relator>>
+class Undergraduate_Student <<Role>>
+Student <|-- Undergraduate_Student
+class Videotape <<SubKind>>
+Work <|-- Videotape
+class Work <<Kind>>
+class  <<MemberOf>>
+class  <<MemberOf>>
+class  <<MemberOf>>
+class  <<MemberOf>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Association>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Formal>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Material>>
+class  <<Derivation>>
+Collection "1..1" o-- "1..1" Book : 
+Collection "1..1" o-- "1..1" Videotape : 
+Collection "1..1" o-- "1..1" Periodical : 
+Collection "1..1" o-- "1..1" Dvd : 
+Reserved_Copy "1..1" -- "1..1" Copy : 
+Renewed_Copy "1..1" -- "1..1" Copy : 
+Item's_Copy "1..1" -- "1..1" Copy : 
+Copy "1..1" -- "1..1" Reserve_Copy_for_Employee : 
+Copy "1..1" -- "1..1" Employee_Loan : 
+Copy "1..1" -- "1..1" Renew_Copy : 
+Copy "1..1" -- "1..1" Renew_Copy_for_Employee : 
+Renew_Copy_for_Student "1..1" -- "1..1" Copy : 
+Studen_Loan "1..1" -- "1..1" Copy : 
+Copy "1..1" -- "1..1" Copy_Reservation : 
+Make_Reservation_for_Student "1..1" -- "1..1" Copy_Reservation : 
+Generate_Student_Delay "1..1" -- "1..1" Delay : 
+Studen_Loan "1..1" -- "1..1" Delay : 
+Employee_Loan "1..1" -- "1..1" Employee : 
+Renew_Employee "1..1" -- "1..1" Employee : 
+Make_Reservation_for_Employee "1..1" -- "1..1" Employee : 
+Employee_Contract "1..1" -- "1..1" Intern : 
+Employee_Contract "1..1" -- "1..1" Regular : 
+Employee_Loan "1..1" -- "1..1" Employee_Loan : 
+Fine "1..1" -- "1..1" Return_Deadline : 
+Generate_Student_Delay "1..1" -- "1..1" Return_Deadline : 
+Generate_Student_Delay "1..1" -- "1..1" Student : 
+Get_Copy "1..1" -- "1..1" Item : 
+Get_Copy "1..1" -- "1..1" Item's_Copy : 
+Graduate_Contract "1..1" -- "1..1" Graduate_Student : 
+Graduate_Contract "1..1" -- "1..1" UNISAM : 
+Item "1..1" -- "1..1" Work : 
+Renewed_Copy "1..1" -- "1..1" Item : 
+Reserved_Copy "1..1" -- "1..1" Item : 
+Make_Reservation_for_Employee "1..1" -- "1..1" Reserve_Copy_for_Employee : 
+Make_Reservation_for_Student "1..1" -- "1..1" Student : 
+Professor_Contract "1..1" -- "1..1" Professor : 
+Professor_Contract "1..1" -- "1..1" UNISAM : 
+Renew_Copy "1..1" -- "1..1" Student : 
+Renew_Employee "1..1" -- "1..1" Renew_Copy_for_Employee : 
+Renew_Copy_for_Student "1..1" -- "1..1" Student : 
+Studen_Loan "1..1" -- "1..1" Student : 
+Undergraduate_Contract "1..1" -- "1..1" UNISAM : 
+Undergraduate_Contract "1..1" -- "1..1" Undergraduate_Student : 
+Regular "1..1" -- "1..1" Intern : 
+@enduml

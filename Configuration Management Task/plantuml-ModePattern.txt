@@ -1,0 +1,32 @@
+@startuml
+'5 occurrencies
+'8 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Mode>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class AtomicVersion <<Mode>>
+Version <|-- AtomicVersion
+class AtomicCI <<RoleMixin>>
+ConfigurationItem <|-- AtomicCI
+class Revision <<Mode>>
+Version <|-- Revision
+class Version <<Mode>>
+class ConfigurationItem <<RoleMixin>>
+class Configuration <<Mode>>
+Version <|-- Configuration
+class Composite_CI <<RoleMixin>>
+ConfigurationItem <|-- Composite_CI
+class Variant <<Mode>>
+Version <|-- Variant
+AtomicVersion "1..*" -- "1..1" AtomicCI : 
+Composite_CI "0..1" o-- "2..*" ConfigurationItem : 
+Configuration "1..*" -- "1..1" Composite_CI : 
+Configuration "0..1" o-- "2..*" Version : 
+Version "1..*" -- "1..1" ConfigurationItem : 
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+'2 occurrencies
+'3 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<SubKind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Valid_Penalty_Kick <<SubKind>>
+Penalty_Kick <|-- Valid_Penalty_Kick
+class Penalty_Kick <<Kind>>
+class Invalid_Penalty_Kick <<SubKind>>
+Penalty_Kick <|-- Invalid_Penalty_Kick
+@enduml

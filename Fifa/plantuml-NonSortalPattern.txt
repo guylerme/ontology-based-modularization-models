@@ -1,0 +1,42 @@
+@startuml
+'5 occurrencies
+'16 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Offender <<RoleMixin>>
+class Person_Offender <<RoleMixin>>
+Offender <|-- Person_Offender
+class Offender_Team <<Role>>
+Offender <|-- Offender_Team
+class Offended <<RoleMixin>>
+class Offeded_Player <<Role>>
+Player_in_Match <|-- Offeded_Player
+Offended <|-- Offeded_Player
+class Team_Official_Offended <<Role>>
+Offended <|-- Team_Official_Offended
+class External_Agent <<Role>>
+Person_Offender <|-- External_Agent
+class Player_Offender <<Role>>
+Player_in_Match <|-- Player_Offender
+Person_Offender <|-- Player_Offender
+class Jogador+de+Futebol <<Class>>
+Person_Offender <|-- Jogador+de+Futebol
+class Team_Official_Offender <<Role>>
+Person_Offender <|-- Team_Official_Offender
+class Player_With_Match <<RoleMixin>>
+class Expelled_Player <<Role>>
+Player_With_Match <|-- Expelled_Player
+class Player_in_Match <<Role>>
+Player_With_Match <|-- Player_in_Match
+class Substituted_Player <<RoleMixin>>
+class Substitute_Substituted <<Role>>
+Substituted_Player <|-- Substitute_Substituted
+class Starter_Player_Substituted <<Role>>
+Substituted_Player <|-- Starter_Player_Substituted
+@enduml

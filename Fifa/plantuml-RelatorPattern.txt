@@ -1,0 +1,121 @@
+@startuml
+'28 occurrencies
+'48 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Footbal_Match_With_Offense <<Relator>>
+Football_Match <|-- Footbal_Match_With_Offense
+class Mass_Confrontation <<Relator>>
+Stoppage_With_One_Team_Play_Restart <|-- Mass_Confrontation
+Stop_Play_Offense <|-- Mass_Confrontation
+class Stoppage_With_One_Team_Play_Restart <<Relator>>
+Stoppage <|-- Stoppage_With_One_Team_Play_Restart
+class Team_With_Ball_Possession_on_Stoppage <<Role>>
+Football_Team_in_Match <|-- Team_With_Ball_Possession_on_Stoppage
+class Football_Match <<Relator>>
+class Throw-in <<Relator>>
+Stoppage_With_One_Team_Play_Restart <|-- Throw-in
+class Foul <<Relator>>
+Offense_on_Opponent <|-- Foul
+Stoppage_With_One_Team_Play_Restart <|-- Foul
+class Offeded_Player <<Role>>
+Offended <|-- Offeded_Player
+class Refereeing <<Relator>>
+class Referee <<Role>>
+class Assistant_Referee <<Role>>
+class Stop_Play_Offense <<Relator>>
+Stoppage_With_One_Team_Play_Restart <|-- Stop_Play_Offense
+Offense <|-- Stop_Play_Offense
+class Substitution <<Relator>>
+class Participation_Followed_by_Substitution <<Relator>>
+Participation_in_the_Field <|-- Participation_Followed_by_Substitution
+class Substitute <<Role>>
+Player_With_Participation_in_the_Field <|-- Substitute
+class Substituted_Player <<RoleMixin>>
+class Free_Kick <<Relator>>
+Stoppage_With_One_Team_Play_Restart <|-- Free_Kick
+class Sanction <<Relator>>
+class Sanctioned_Member <<Role>>
+class Refereing_With_Sanction <<Relator>>
+Refereeing <|-- Refereing_With_Sanction
+class Goal_Kick <<Relator>>
+Stoppage_With_One_Team_Play_Restart <|-- Goal_Kick
+class Corner_Kick <<Relator>>
+Stoppage_With_One_Team_Play_Restart <|-- Corner_Kick
+class Team_Participation_in_Match <<Relator>>
+class Football_Team_in_Match <<Role>>
+class Player_With_Match <<RoleMixin>>
+class Team_Official <<Role>>
+class Free_Kick_on_Target <<Relator>>
+Free_Kick <|-- Free_Kick_on_Target
+class Goal <<Relator>>
+class Offense <<Relator>>
+class Offender <<RoleMixin>>
+class Participation_in_the_Field <<Relator>>
+Team_Participation_in_Match <|-- Participation_in_the_Field
+class Player_With_Participation_in_the_Field <<Role>>
+class Starter_Player <<Role>>
+Player_With_Participation_in_the_Field <|-- Starter_Player
+class Starter_Goalkeep <<Role>>
+Starter_Player <|-- Starter_Goalkeep
+class Stoppage <<Relator>>
+class Match_With_Stoppage <<Relator>>
+Football_Match <|-- Match_With_Stoppage
+class Sanction_of_Expulsion <<Relator>>
+Sanction <|-- Sanction_of_Expulsion
+class Expelled_Member <<Role>>
+Sanctioned_Member <|-- Expelled_Member
+class Offside <<Relator>>
+Stoppage_With_One_Team_Play_Restart <|-- Offside
+Stop_Play_Offense <|-- Offside
+class Foul_Inside_Penalty_Area <<Relator>>
+Foul <|-- Foul_Inside_Penalty_Area
+class Valid_Penalty_Kick <<SubKind>>
+Penalty_Kick <|-- Valid_Penalty_Kick
+class Penalty_Kick <<Kind>>
+class Scorer <<Role>>
+class Offense_on_Opponent <<Relator>>
+Stop_Play_Offense <|-- Offense_on_Opponent
+class Offended <<RoleMixin>>
+class Sanction_of_Yellow_Card <<Relator>>
+Sanction <|-- Sanction_of_Yellow_Card
+class Player_With_Yellow_Card <<Role>>
+Sanctioned_Member <|-- Player_With_Yellow_Card
+class Offense_Due_to_Equipment <<Relator>>
+Offense <|-- Offense_Due_to_Equipment
+Refereeing "1..*" -- "2..*" Assistant_Referee : 
+Sanction_of_Expulsion "1..1" -- "1..1" Expelled_Member : 
+Offense "1..*" -- "1..1" Footbal_Match_With_Offense : 
+Team_Participation_in_Match "2..2" -- "1..*" Football_Match : 
+Refereeing "1..1" -- "1..1" Football_Match : 
+Goal "1..*" -- "1..1" Football_Team_in_Match : 
+Team_Participation_in_Match "1..1" -- "1..1" Football_Team_in_Match : 
+Foul "1..1" -- "1..*" Offeded_Player : 
+Foul_Inside_Penalty_Area "1..1" -- "1..*" Penalty_Kick : 
+Foul_Inside_Penalty_Area "1..1" -- "1..1" Valid_Penalty_Kick : 
+Free_Kick_on_Target "1..1" -- "1..1" Goal : 
+Goal "1..*" -- "1..1" Scorer : 
+Stoppage "1..*" -- "1..1" Match_With_Stoppage : 
+Offense_on_Opponent "1..1" -- "1..*" Offended : 
+Offense "1..1" -- "1..*" Offender : 
+Substitution "1..3" -- "1..1" Participation_Followed_by_Substitution : 
+Participation_in_the_Field "1..1" -- "7..14" Player_With_Participation_in_the_Field : 
+Participation_in_the_Field "1..1" -- "7..11" Starter_Player : 
+Participation_in_the_Field "1..1" -- "1..1" Starter_Goalkeep : 
+Team_Participation_in_Match "1..1" -- "7..22" Player_With_Match : 
+Sanction_of_Yellow_Card "1..1" -- "1..1" Player_With_Yellow_Card : 
+Refereeing "1..*" -- "1..1" Referee : 
+Sanction "1..*" -- "1..1" Refereing_With_Sanction : 
+Sanction "1..2" -- "1..1" Sanctioned_Member : 
+Stoppage_With_One_Team_Play_Restart "1..*" -- "1..1" Team_With_Ball_Possession_on_Stoppage : 
+Substitution "1..1" -- "1..1" Substitute : 
+Substitution "1..1" -- "1..1" Substituted_Player : 
+Team_Participation_in_Match "1..1" -- "1..*" Team_Official : 
+@enduml

@@ -1,0 +1,127 @@
+@startuml
+class Artifact <<Category>>
+Item <|-- Artifact
+class AtomicCI <<RoleMixin>>
+ConfigurationItem <|-- AtomicCI
+class AtomicVersion <<Mode>>
+Version <|-- AtomicVersion
+class Baseline <<Role>>
+Configuration <|-- Baseline
+class Branch <<Collective>>
+class Change <<Kind>>
+class ChangeRequest <<Relator>>
+class Check-In <<Relator>>
+class Check-Out <<Relator>>
+class Checked-OutVersion <<Role>>
+Version <|-- Checked-OutVersion
+class Composite_CI <<RoleMixin>>
+ConfigurationItem <|-- Composite_CI
+class Configuration <<Mode>>
+Version <|-- Configuration
+class ConfigurationItem <<RoleMixin>>
+Item <|-- ConfigurationItem
+class ConfigurationManager <<Role>>
+Person <|-- ConfigurationManager
+class ConfigurationSelection <<Relator>>
+class Developer <<Role>>
+Person <|-- Developer
+class Diagram <<Kind>>
+Artifact <|-- Diagram
+class Document <<Kind>>
+Artifact <|-- Document
+class EvaluatedRequest <<Role>>
+ChangeRequest <|-- EvaluatedRequest
+class Evaluator <<Role>>
+Person <|-- Evaluator
+ConfigurationManager <|-- Evaluator
+class ImplementedChange <<Role>>
+Change <|-- ImplementedChange
+class Item <<Category>>
+class Markup <<Relator>>
+class Modification <<Relator>>
+class ModifiedVersion <<Role>>
+Version <|-- ModifiedVersion
+class OnGoingChange <<Role>>
+Change <|-- OnGoingChange
+class Person <<Kind>>
+class Project <<Kind>>
+class RegisteredModification <<Role>>
+Modification <|-- RegisteredModification
+class Repository <<Collective>>
+class RequestEvaluation <<Relator>>
+class Requester <<Role>>
+Person <|-- Requester
+class Revision <<Mode>>
+Version <|-- Revision
+class SoftwareTool <<Kind>>
+Item <|-- SoftwareTool
+class SourceCode <<Kind>>
+Artifact <|-- SourceCode
+class Variant <<Mode>>
+Version <|-- Variant
+class Verification <<Relator>>
+class VerifiedChange <<Role>>
+ImplementedChange <|-- VerifiedChange
+class Verifyer <<Role>>
+Person <|-- Verifyer
+ConfigurationManager <|-- Verifyer
+class Version <<Mode>>
+class VersionSubmittedForChange <<Role>>
+Version <|-- VersionSubmittedForChange
+class  <<Characterization>>
+class  <<Mediation>>
+class  <<MemberOf>>
+class  <<SubCollectionOf>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<ComponentOf>>
+class  <<Characterization>>
+class  <<ComponentOf>>
+class  <<Characterization>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Association>>
+class  <<Mediation>>
+class  <<Mediation>>
+AtomicVersion "1..*" -- "1..1" AtomicCI : 
+Markup "1..1" -- "1..1" Baseline : 
+Branch "1..1" o-- "1..*" Version : 
+Repository "1..1" o-- "1..*" Branch : 
+ChangeRequest "1..*" -- "1..*" Change : 
+ChangeRequest "1..*" -- "1..1" Requester : 
+ChangeRequest "1..*" -- "1..*" VersionSubmittedForChange : 
+Check-In "1..1" -- "1..*" RegisteredModification : 
+Check-In "1..1" -- "1..1" ImplementedChange : 
+Check-In "0..*" -- "1..1" Developer : 
+Check-In "1..1" -- "1..*" Version : 
+Check-Out "1..1" -- "1..1" OnGoingChange : 
+Check-Out "0..*" -- "1..1" Developer : 
+Check-Out "1..1" -- "1..*" Checked-OutVersion : 
+Composite_CI "0..1" o-- "2..*" ConfigurationItem : 
+Configuration "1..*" -- "1..1" Composite_CI : 
+Configuration "0..1" o-- "2..*" Version : 
+Version "1..*" -- "1..1" ConfigurationItem : 
+ConfigurationSelection "1..1" -- "1..*" ConfigurationItem : 
+Markup "1..*" -- "1..*" ConfigurationManager : 
+ConfigurationSelection "1..*" -- "1..1" ConfigurationManager : 
+Modification "0..*" -- "1..1" Developer : 
+RequestEvaluation "1..1" -- "1..1" EvaluatedRequest : 
+RequestEvaluation "1..*" -- "1..1" Evaluator : 
+Modification "1..1" -- "1..1" ModifiedVersion : 
+Project "1..1" -- "1..*" Repository : 
+Verification "1..1" -- "1..*" VerifiedChange : 
+Verification "1..*" -- "1..*" Verifyer : 
+@enduml

@@ -1,0 +1,30 @@
+@startuml
+'5 occurrencies
+'9 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Composite_CI <<RoleMixin>>
+ConfigurationItem <|-- Composite_CI
+class ConfigurationItem <<RoleMixin>>
+Item <|-- ConfigurationItem
+class AtomicCI <<RoleMixin>>
+ConfigurationItem <|-- AtomicCI
+class Artifact <<Category>>
+Item <|-- Artifact
+class Document <<Kind>>
+Artifact <|-- Document
+class Diagram <<Kind>>
+Artifact <|-- Diagram
+class SourceCode <<Kind>>
+Artifact <|-- SourceCode
+class Item <<Category>>
+class SoftwareTool <<Kind>>
+Item <|-- SoftwareTool
+Composite_CI "0..1" o-- "2..*" ConfigurationItem : 
+@enduml

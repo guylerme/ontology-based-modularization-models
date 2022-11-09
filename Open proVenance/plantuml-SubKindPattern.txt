@@ -1,0 +1,20 @@
+@startuml
+'3 occurrencies
+'4 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<SubKind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Output_Data <<SubKind>>
+Artifact <|-- Output_Data
+class Artifact <<Kind>>
+class Input_Data <<SubKind>>
+Artifact <|-- Input_Data
+class Parameter <<SubKind>>
+Input_Data <|-- Parameter
+@enduml

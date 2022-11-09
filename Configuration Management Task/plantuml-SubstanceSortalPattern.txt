@@ -1,0 +1,23 @@
+@startuml
+'9 occurrencies
+'9 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Person <<Kind>>
+class SourceCode <<Kind>>
+class Project <<Kind>>
+class Branch <<Collective>>
+class Change <<Kind>>
+class Diagram <<Kind>>
+class Repository <<Collective>>
+class SoftwareTool <<Kind>>
+class Document <<Kind>>
+Repository "1..1" o-- "1..*" Branch : 
+Project "1..1" -- "1..*" Repository : 
+@enduml

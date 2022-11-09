@@ -1,0 +1,25 @@
+@startuml
+'3 occurrencies
+'7 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class EquipmentHolder <<Mixin>>
+class Rack <<Kind>>
+EquipmentHolder <|-- Rack
+class Socket <<Mixin>>
+EquipmentHolder <|-- Socket
+class Shelf <<Kind>>
+EquipmentHolder <|-- Shelf
+class Socket_Composed_Of_Equipment <<RoleMixin>>
+Socket <|-- Socket_Composed_Of_Equipment
+class SubSlot <<Kind>>
+Socket <|-- SubSlot
+class Slot <<Kind>>
+Socket <|-- Slot
+@enduml

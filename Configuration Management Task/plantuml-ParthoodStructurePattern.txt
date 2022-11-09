@@ -1,0 +1,26 @@
+@startuml
+'4 occurrencies
+'6 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Composite_CI <<RoleMixin>>
+ConfigurationItem <|-- Composite_CI
+class ConfigurationItem <<RoleMixin>>
+class Branch <<Collective>>
+class Version <<Mode>>
+class Configuration <<Mode>>
+Version <|-- Configuration
+class Repository <<Collective>>
+Branch "1..1" o-- "1..*" Version : 
+Repository "1..1" o-- "1..*" Branch : 
+Composite_CI "0..1" o-- "2..*" ConfigurationItem : 
+Configuration "1..*" -- "1..1" Composite_CI : 
+Configuration "0..1" o-- "2..*" Version : 
+Version "1..*" -- "1..1" ConfigurationItem : 
+@enduml

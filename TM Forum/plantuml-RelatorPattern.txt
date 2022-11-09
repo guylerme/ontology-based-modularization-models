@@ -1,0 +1,71 @@
+@startuml
+'9 occurrencies
+'25 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Physical_Termination <<Relator>>
+class Physical_Termination_Point <<Role>>
+class Equipment <<Kind>>
+class Abstraction_Of_Co_Localization <<Relator>>
+class PTP_of_ME <<Role>>
+Physical_Termination_Point <|-- PTP_of_ME
+class ME_Composed_Of_PTP <<Role>>
+ManagedElement <|-- ME_Composed_Of_PTP
+class Fitting_SubSlot_Slot <<Relator>>
+class Slot_Composed_Of_SubSlot <<Role>>
+Slot <|-- Slot_Composed_Of_SubSlot
+class SubSlot <<Kind>>
+class SNC_Termination <<Relator>>
+class Connection_Termination_Point <<Role>>
+class Abstraction_Of_Co_Localization <<Relator>>
+class ME_Composed_Of_Rack <<Role>>
+ManagedElement <|-- ME_Composed_Of_Rack
+class Rack <<Kind>>
+class Fitting_Slot_Shelf <<Relator>>
+class Shelf_Composed_Of_Slot <<Role>>
+Shelf <|-- Shelf_Composed_Of_Slot
+class Slot <<Kind>>
+class Management <<Relator>>
+class EMS_Composed_Of_ME <<Role>>
+class ManagedElement <<Kind>>
+class Fitting_Shelf_Rack <<Relator>>
+class Rack_Composed_Of_Shelf <<Role>>
+Rack <|-- Rack_Composed_Of_Shelf
+class Shelf <<Kind>>
+class Fitting_Socket_Equipment <<Relator>>
+class Socket_Composed_Of_Equipment <<RoleMixin>>
+Abstraction_Of_Co_Localization "1..1" -- "1..*" Rack : is_in
+Abstraction_Of_Co_Localization "1..*" -- "1..1" ME_Composed_Of_Rack : groups
+Abstraction_Of_Co_Localization "1..1" -- "1..*" PTP_of_ME : PTPisCo_Located
+Abstraction_Of_Co_Localization "1..*" -- "1..1" ME_Composed_Of_PTP : MEComposedByCo_Localization
+SNC_Termination "1..1" -- "1..1" Connection_Termination_Point : CTPterminesSNC
+Management "1..*" -- "1..1" EMS_Composed_Of_ME : manager
+Physical_Termination "1..*" -- "1..1" Equipment : endsEquipment
+Fitting_Socket_Equipment "1..1" -- "1..1" Equipment : fit_in
+Fitting_Shelf_Rack "1..*" -- "1..1" Rack_Composed_Of_Shelf : suffers
+Fitting_Shelf_Rack "1..1" -- "1..1" Shelf : fit_in
+Fitting_Slot_Shelf "1..1" -- "1..1" Slot : fit_in
+Fitting_Slot_Shelf "1..*" -- "1..1" Shelf_Composed_Of_Slot : suffers
+Fitting_Socket_Equipment "1..1" -- "1..1" Socket_Composed_Of_Equipment : suffers
+Fitting_SubSlot_Slot "1..*" -- "1..1" Slot_Composed_Of_SubSlot : suffers
+Fitting_SubSlot_Slot "1..1" -- "1..1" SubSlot : fit_in
+Management "1..1" -- "1..1" ManagedElement : managed
+Physical_Termination "1..1" -- "1..1" Physical_Termination_Point : equipmentEndsAt
+SNC_Termination "1..*" -- "1..1" Physical_Termination_Point : PTPhasSNCtermination
+Physical_Termination_Point "1..1" -- "1..*" Connection_Termination_Point : CTPterminesSNCofPTP
+EMS_Composed_Of_ME "1..1" -- "1..*" ManagedElement : EMSmanagesME
+Equipment "1..1" -- "1..1" Socket_Composed_Of_Equipment : socketHoldsEquipment
+Physical_Termination_Point "1..*" -- "1..1" Equipment : equipmentTerminatedByPTP
+ME_Composed_Of_PTP "1..1" -- "1..*" PTP_of_ME : PTPisPhysicalResourceOf
+ME_Composed_Of_Rack "1..1" -- "1..*" Rack : rackIsPhysicalResourceOf
+Rack_Composed_Of_Shelf "1..1" -- "1..*" Shelf : rackHoldsShelf
+Shelf_Composed_Of_Slot "1..1" -- "1..*" Slot : shelfHoldsSlot
+Slot_Composed_Of_SubSlot "1..1" -- "1..*" SubSlot : slotHoldsSubSlot
+@enduml

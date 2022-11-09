@@ -1,0 +1,20 @@
+@startuml
+'7 occurrencies
+'7 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Kind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Person <<Kind>>
+class SourceCode <<Kind>>
+class Project <<Kind>>
+class Change <<Kind>>
+class Diagram <<Kind>>
+class SoftwareTool <<Kind>>
+class Document <<Kind>>
+@enduml

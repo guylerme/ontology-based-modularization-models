@@ -1,0 +1,133 @@
+@startuml
+class Abstraction_Of_Co_Localization <<Relator>>
+class Abstraction_Of_Co_Localization <<Relator>>
+class Connection_Termination_Point <<Role>>
+Termination_Point <|-- Connection_Termination_Point
+class EMS <<Kind>>
+class EMS_Composed_Of_ME <<Role>>
+EMS <|-- EMS_Composed_Of_ME
+class EMS_That_Manages_Equipment <<Role>>
+EMS_Composed_Of_ME <|-- EMS_That_Manages_Equipment
+class EMS_That_Manages_Rack <<Role>>
+EMS_Composed_Of_ME <|-- EMS_That_Manages_Rack
+class EMS_That_Manages_Shelf <<Role>>
+EMS_Composed_Of_ME <|-- EMS_That_Manages_Shelf
+class EMS_That_Manages_Slot <<Role>>
+EMS_Composed_Of_ME <|-- EMS_That_Manages_Slot
+class EMS_That_Manages_SubSlot <<Role>>
+EMS_Composed_Of_ME <|-- EMS_That_Manages_SubSlot
+class Equipment <<Kind>>
+class EquipmentHolder <<Mixin>>
+class Fitting_Shelf_Rack <<Relator>>
+class Fitting_Slot_Shelf <<Relator>>
+class Fitting_Socket_Equipment <<Relator>>
+class Fitting_SubSlot_Slot <<Relator>>
+class ME_Composed_Of_PTP <<Role>>
+ManagedElement <|-- ME_Composed_Of_PTP
+class ME_Composed_Of_Rack <<Role>>
+ManagedElement <|-- ME_Composed_Of_Rack
+class ManagedElement <<Kind>>
+class Management <<Relator>>
+class PTP_of_ME <<Role>>
+Physical_Termination_Point <|-- PTP_of_ME
+class Physical_Termination <<Relator>>
+class Physical_Termination_Point <<Role>>
+Termination_Point <|-- Physical_Termination_Point
+class Rack <<Kind>>
+EquipmentHolder <|-- Rack
+class Rack_Composed_Of_Shelf <<Role>>
+Rack <|-- Rack_Composed_Of_Shelf
+class SNC_Termination <<Relator>>
+class Shelf <<Kind>>
+EquipmentHolder <|-- Shelf
+class Shelf_Composed_Of_Slot <<Role>>
+Shelf <|-- Shelf_Composed_Of_Slot
+class Slot <<Kind>>
+Socket <|-- Slot
+class Slot_Composed_Of_SubSlot <<Role>>
+Slot <|-- Slot_Composed_Of_SubSlot
+class Socket <<Mixin>>
+EquipmentHolder <|-- Socket
+class Socket_Composed_Of_Equipment <<RoleMixin>>
+Socket <|-- Socket_Composed_Of_Equipment
+class SubSlot <<Kind>>
+Socket <|-- SubSlot
+class Termination_Point <<Kind>>
+class is_in <<Mediation>>
+class groups <<Mediation>>
+class PTPisCo_Located <<Mediation>>
+class MEComposedByCo_Localization <<Mediation>>
+class CTPterminesSNC <<Mediation>>
+class manager <<Mediation>>
+class /EMSmanagesEquipment <<Material>>
+class /EMSmanagesRack <<Material>>
+class /EMSmanagesShelf <<Material>>
+class /EMSmanagesSlot <<Material>>
+class /EMSmanagesSubSlot <<Material>>
+class endsEquipment <<Mediation>>
+class fit_in <<Mediation>>
+class suffers <<Mediation>>
+class fit_in <<Mediation>>
+class fit_in <<Mediation>>
+class suffers <<Mediation>>
+class suffers <<Mediation>>
+class suffers <<Mediation>>
+class fit_in <<Mediation>>
+class managed <<Mediation>>
+class equipmentEndsAt <<Mediation>>
+class PTPhasSNCtermination <<Mediation>>
+class CTPterminesSNCofPTP <<Material>>
+class EMSmanagesME <<Material>>
+class socketHoldsEquipment <<Material>>
+class equipmentTerminatedByPTP <<Material>>
+class PTPisPhysicalResourceOf <<Material>>
+class rackIsPhysicalResourceOf <<Material>>
+class rackHoldsShelf <<Material>>
+class shelfHoldsSlot <<Material>>
+class slotHoldsSubSlot <<Material>>
+
+
+
+
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+Abstraction_Of_Co_Localization "1..1" -- "1..*" Rack : is_in
+Abstraction_Of_Co_Localization "1..*" -- "1..1" ME_Composed_Of_Rack : groups
+Abstraction_Of_Co_Localization "1..1" -- "1..*" PTP_of_ME : PTPisCo_Located
+Abstraction_Of_Co_Localization "1..*" -- "1..1" ME_Composed_Of_PTP : MEComposedByCo_Localization
+SNC_Termination "1..1" -- "1..1" Connection_Termination_Point : CTPterminesSNC
+Management "1..*" -- "1..1" EMS_Composed_Of_ME : manager
+EMS_That_Manages_Equipment "1..1" -- "1..*" Equipment : /EMSmanagesEquipment
+EMS_That_Manages_Rack "1..1" -- "1..*" Rack : /EMSmanagesRack
+EMS_That_Manages_Shelf "1..1" -- "1..*" Shelf : /EMSmanagesShelf
+EMS_That_Manages_Slot "1..1" -- "1..*" Slot : /EMSmanagesSlot
+EMS_That_Manages_SubSlot "1..1" -- "1..*" SubSlot : /EMSmanagesSubSlot
+Physical_Termination "1..*" -- "1..1" Equipment : endsEquipment
+Fitting_Socket_Equipment "1..1" -- "1..1" Equipment : fit_in
+Fitting_Shelf_Rack "1..*" -- "1..1" Rack_Composed_Of_Shelf : suffers
+Fitting_Shelf_Rack "1..1" -- "1..1" Shelf : fit_in
+Fitting_Slot_Shelf "1..1" -- "1..1" Slot : fit_in
+Fitting_Slot_Shelf "1..*" -- "1..1" Shelf_Composed_Of_Slot : suffers
+Fitting_Socket_Equipment "1..1" -- "1..1" Socket_Composed_Of_Equipment : suffers
+Fitting_SubSlot_Slot "1..*" -- "1..1" Slot_Composed_Of_SubSlot : suffers
+Fitting_SubSlot_Slot "1..1" -- "1..1" SubSlot : fit_in
+Management "1..1" -- "1..1" ManagedElement : managed
+Physical_Termination "1..1" -- "1..1" Physical_Termination_Point : equipmentEndsAt
+SNC_Termination "1..*" -- "1..1" Physical_Termination_Point : PTPhasSNCtermination
+Physical_Termination_Point "1..1" -- "1..*" Connection_Termination_Point : CTPterminesSNCofPTP
+EMS_Composed_Of_ME "1..1" -- "1..*" ManagedElement : EMSmanagesME
+Equipment "1..1" -- "1..1" Socket_Composed_Of_Equipment : socketHoldsEquipment
+Physical_Termination_Point "1..*" -- "1..1" Equipment : equipmentTerminatedByPTP
+ME_Composed_Of_PTP "1..1" -- "1..*" PTP_of_ME : PTPisPhysicalResourceOf
+ME_Composed_Of_Rack "1..1" -- "1..*" Rack : rackIsPhysicalResourceOf
+Rack_Composed_Of_Shelf "1..1" -- "1..*" Shelf : rackHoldsShelf
+Shelf_Composed_Of_Slot "1..1" -- "1..*" Slot : shelfHoldsSlot
+Slot_Composed_Of_SubSlot "1..1" -- "1..*" SubSlot : slotHoldsSubSlot
+@enduml

@@ -1,0 +1,46 @@
+@startuml
+'9 occurrencies
+'16 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Researcher <<Role>>
+Resource <|-- Researcher
+Person <|-- Researcher
+class Person <<Kind>>
+class Resource <<RoleMixin>>
+class Coordinator <<Role>>
+Researcher <|-- Coordinator
+class Architect <<Role>>
+Researcher <|-- Architect
+class Data_Resource <<Role>>
+Resource <|-- Data_Resource
+Artifact <|-- Data_Resource
+class Artifact <<Kind>>
+class Executor <<Role>>
+Researcher <|-- Executor
+class Programmer <<Role>>
+Researcher <|-- Programmer
+class Software_Resource <<Role>>
+Resource <|-- Software_Resource
+SWfMS <|-- Software_Resource
+Program <|-- Software_Resource
+class Program <<Kind>>
+class SWfMS <<Kind>>
+class Virtual_Resource <<Role>>
+Resource <|-- Virtual_Resource
+Image <|-- Virtual_Resource
+class Image <<Kind>>
+class Hardware_Resource <<Role>>
+Resource <|-- Hardware_Resource
+Hardware <|-- Hardware_Resource
+class Hardware <<Kind>>
+Architect "0..*" -- "0..*" SWfMS : uses
+Programmer "0..*" -- "0..*" SWfMS : uses
+@enduml

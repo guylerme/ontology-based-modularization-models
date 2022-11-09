@@ -1,0 +1,92 @@
+@startuml
+'29 occurrencies
+'36 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Expelled_Player <<Role>>
+Expelled_Member <|-- Expelled_Player
+Football_Player <|-- Expelled_Player
+Player_With_Match <|-- Expelled_Player
+class Player_With_Match <<RoleMixin>>
+class Expelled_Member <<Role>>
+Sanctioned_Member <|-- Expelled_Member
+class Sanctioned_Member <<Role>>
+class Football_Player <<Role>>
+Person <|-- Football_Player
+class Person <<Kind>>
+class Stoppage_Taker <<Role>>
+Player_in_Match <|-- Stoppage_Taker
+class Player_in_Match <<Role>>
+Football_Player <|-- Player_in_Match
+Player_With_Match <|-- Player_in_Match
+class Offender_Team <<Role>>
+Offender <|-- Offender_Team
+Football_Team_in_Match <|-- Offender_Team
+class Football_Team_in_Match <<Role>>
+Football_Team <|-- Football_Team_in_Match
+class Football_Team <<Kind>>
+class Offender <<RoleMixin>>
+class Starter_Player_Substituted <<Role>>
+Starter_Player <|-- Starter_Player_Substituted
+Substituted_Player <|-- Starter_Player_Substituted
+class Substituted_Player <<RoleMixin>>
+class Starter_Player <<Role>>
+Player_With_Participation_in_the_Field <|-- Starter_Player
+class Player_With_Participation_in_the_Field <<Role>>
+Player_in_Match <|-- Player_With_Participation_in_the_Field
+class Player_in_Field <<Role>>
+Player_With_Participation_in_the_Field <|-- Player_in_Field
+class Team_With_Goal_Conceded <<Role>>
+Football_Team_in_Match <|-- Team_With_Goal_Conceded
+class Team_Official_Offended <<Role>>
+Team_Official <|-- Team_Official_Offended
+Offended <|-- Team_Official_Offended
+class Offended <<RoleMixin>>
+class Team_Official <<Role>>
+Person <|-- Team_Official
+class Expelled_Team_Official <<Role>>
+Expelled_Member <|-- Expelled_Team_Official
+Team_Official <|-- Expelled_Team_Official
+class Team_With_Ball_Possession_on_Stoppage <<Role>>
+Football_Team_in_Match <|-- Team_With_Ball_Possession_on_Stoppage
+class Referee <<Role>>
+Person <|-- Referee
+class /_Player_in_the_Field <<Role>>
+Player_With_Participation_in_the_Field <|-- /_Player_in_the_Field
+class Player_With_Yellow_Card <<Role>>
+Player_in_Match <|-- Player_With_Yellow_Card
+Sanctioned_Member <|-- Player_With_Yellow_Card
+class Substitute <<Role>>
+Player_With_Participation_in_the_Field <|-- Substitute
+class Team_Official_Offender <<Role>>
+Team_Official <|-- Team_Official_Offender
+Person_Offender <|-- Team_Official_Offender
+class Person_Offender <<RoleMixin>>
+Offender <|-- Person_Offender
+class Player_Offender <<Role>>
+Player_in_Match <|-- Player_Offender
+Person_Offender <|-- Player_Offender
+class External_Agent <<Role>>
+Person <|-- External_Agent
+Person_Offender <|-- External_Agent
+class Scorer <<Role>>
+Player_in_Field <|-- Scorer
+class Assistant_Referee <<Role>>
+Person <|-- Assistant_Referee
+class Offeded_Player <<Role>>
+Player_in_Match <|-- Offeded_Player
+Offended <|-- Offeded_Player
+class Substitute_Substituted <<Role>>
+Substitute <|-- Substitute_Substituted
+Substituted_Player <|-- Substitute_Substituted
+class Starter_Goalkeep <<Role>>
+Starter_Player <|-- Starter_Goalkeep
+Stoppage_Taker "1..1" -- "1..1" Team_With_Ball_Possession_on_Stoppage : 
+@enduml

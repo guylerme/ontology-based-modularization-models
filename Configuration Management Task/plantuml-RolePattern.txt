@@ -1,0 +1,33 @@
+@startuml
+'8 occurrencies
+'10 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Verifyer <<Role>>
+Person <|-- Verifyer
+ConfigurationManager <|-- Verifyer
+class ConfigurationManager <<Role>>
+Person <|-- ConfigurationManager
+class Person <<Kind>>
+class Requester <<Role>>
+Person <|-- Requester
+class Developer <<Role>>
+Person <|-- Developer
+class ImplementedChange <<Role>>
+Change <|-- ImplementedChange
+class Change <<Kind>>
+class OnGoingChange <<Role>>
+Change <|-- OnGoingChange
+class VerifiedChange <<Role>>
+ImplementedChange <|-- VerifiedChange
+class Evaluator <<Role>>
+Person <|-- Evaluator
+ConfigurationManager <|-- Evaluator
+@enduml

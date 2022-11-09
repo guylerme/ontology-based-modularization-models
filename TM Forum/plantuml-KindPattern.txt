@@ -1,0 +1,21 @@
+@startuml
+'8 occurrencies
+'8 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Kind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class EMS <<Kind>>
+class SubSlot <<Kind>>
+class Equipment <<Kind>>
+class Termination_Point <<Kind>>
+class ManagedElement <<Kind>>
+class Rack <<Kind>>
+class Shelf <<Kind>>
+class Slot <<Kind>>
+@enduml

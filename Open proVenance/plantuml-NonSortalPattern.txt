@@ -1,0 +1,23 @@
+@startuml
+'1 occurrencies
+'6 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Resource <<RoleMixin>>
+class Virtual_Resource <<Role>>
+Resource <|-- Virtual_Resource
+class Hardware_Resource <<Role>>
+Resource <|-- Hardware_Resource
+class Software_Resource <<Role>>
+Resource <|-- Software_Resource
+class Researcher <<Role>>
+Resource <|-- Researcher
+class Data_Resource <<Role>>
+Resource <|-- Data_Resource
+@enduml

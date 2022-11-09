@@ -1,0 +1,69 @@
+@startuml
+'8 occurrencies
+'25 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Verification <<Relator>>
+class Verifyer <<Role>>
+ConfigurationManager <|-- Verifyer
+class VerifiedChange <<Role>>
+ImplementedChange <|-- VerifiedChange
+class Markup <<Relator>>
+class ConfigurationManager <<Role>>
+class Baseline <<Role>>
+class Check-In <<Relator>>
+class Version <<Mode>>
+class ImplementedChange <<Role>>
+Change <|-- ImplementedChange
+class RegisteredModification <<Role>>
+Modification <|-- RegisteredModification
+class Developer <<Role>>
+class RequestEvaluation <<Relator>>
+class EvaluatedRequest <<Role>>
+ChangeRequest <|-- EvaluatedRequest
+class Evaluator <<Role>>
+ConfigurationManager <|-- Evaluator
+class Modification <<Relator>>
+class ModifiedVersion <<Role>>
+Version <|-- ModifiedVersion
+class Check-Out <<Relator>>
+class OnGoingChange <<Role>>
+Change <|-- OnGoingChange
+class Checked-OutVersion <<Role>>
+Version <|-- Checked-OutVersion
+class ConfigurationSelection <<Relator>>
+class ConfigurationItem <<RoleMixin>>
+class ChangeRequest <<Relator>>
+class Requester <<Role>>
+class Change <<Kind>>
+class VersionSubmittedForChange <<Role>>
+Version <|-- VersionSubmittedForChange
+Markup "1..1" -- "1..1" Baseline : 
+ChangeRequest "1..*" -- "1..*" Change : 
+ChangeRequest "1..*" -- "1..1" Requester : 
+ChangeRequest "1..*" -- "1..*" VersionSubmittedForChange : 
+Check-In "1..1" -- "1..*" RegisteredModification : 
+Check-In "1..1" -- "1..1" ImplementedChange : 
+Check-In "0..*" -- "1..1" Developer : 
+Check-In "1..1" -- "1..*" Version : 
+Check-Out "1..1" -- "1..1" OnGoingChange : 
+Check-Out "0..*" -- "1..1" Developer : 
+Check-Out "1..1" -- "1..*" Checked-OutVersion : 
+Version "1..*" -- "1..1" ConfigurationItem : 
+ConfigurationSelection "1..1" -- "1..*" ConfigurationItem : 
+Markup "1..*" -- "1..*" ConfigurationManager : 
+ConfigurationSelection "1..*" -- "1..1" ConfigurationManager : 
+Modification "0..*" -- "1..1" Developer : 
+RequestEvaluation "1..1" -- "1..1" EvaluatedRequest : 
+RequestEvaluation "1..*" -- "1..1" Evaluator : 
+Modification "1..1" -- "1..1" ModifiedVersion : 
+Verification "1..1" -- "1..*" VerifiedChange : 
+Verification "1..*" -- "1..*" Verifyer : 
+@enduml

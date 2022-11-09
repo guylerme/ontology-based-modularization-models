@@ -1,0 +1,40 @@
+@startuml
+'17 occurrencies
+'17 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Experiment <<Kind>>
+class Workflow_Code <<Kind>>
+class Artifact <<Kind>>
+class Workflow_Description <<Kind>>
+class Instance <<Kind>>
+class Hardware <<Kind>>
+class Project <<Kind>>
+class SWfMS <<Kind>>
+class Person <<Kind>>
+class Environment <<Kind>>
+class Model <<Kind>>
+class Organization <<Kind>>
+class Algorithm <<Kind>>
+class Image <<Kind>>
+class Laboratory <<Kind>>
+class Hypothesis <<Kind>>
+class Program <<Kind>>
+Algorithm "0..*" -- "0..*" Program : describes
+Environment "1..1" o-- "1..*" Program : 
+Environment "1..1" o-- "1..*" Image : 
+Environment "0..*" -- "0..*" SWfMS : 
+Environment "1..1" *-- "1..*" Hardware : 
+Project "1..1" *-- "1..*" Experiment : 
+Hypothesis "1..1" *-- "1..1" Experiment : 
+Model "1..1" *-- "1..1" Experiment : 
+Image "1..1" o-- "1..*" Instance : 
+Laboratory "1..1" o-- "1..1" Person : 
+Organization "1..1" o-- "1..1" Laboratory : 
+@enduml

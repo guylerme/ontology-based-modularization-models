@@ -1,0 +1,178 @@
+@startuml
+class A_Situation <<Class>>
+class Abstract_Activity <<Class>>
+class Abstract_Workflow <<Class>>
+Worflow <|-- Abstract_Workflow
+class Algorithm <<Kind>>
+class Architect <<Role>>
+Researcher <|-- Architect
+class Artifact <<Kind>>
+class Atomic_Abstract_Activity <<Class>>
+Abstract_Activity <|-- Atomic_Abstract_Activity
+class Atomic_Concrete_Activity <<Class>>
+Concrete_Activity <|-- Atomic_Concrete_Activity
+class C_Situation <<Class>>
+class Coding_Session <<Class>>
+class Complex_Abstract_Activity <<Class>>
+Abstract_Activity <|-- Complex_Abstract_Activity
+class Complex_Concrete_Activity <<Class>>
+Concrete_Activity <|-- Complex_Concrete_Activity
+class Composition_Phase <<Phase>>
+Experiment <|-- Composition_Phase
+class Concrete_Activity <<Class>>
+class Concrete_Activity <<Class>>
+class Concrete_Workflow <<Class>>
+Worflow <|-- Concrete_Workflow
+class Concrete_Workflow <<Class>>
+class Coordinator <<Role>>
+Researcher <|-- Coordinator
+class Data_Resource <<Role>>
+Resource <|-- Data_Resource
+Artifact <|-- Data_Resource
+class Design_Session <<Class>>
+class Environment <<Kind>>
+class Execution_Phase <<Phase>>
+Experiment <|-- Execution_Phase
+class Execution_Session <<Class>>
+class Executor <<Role>>
+Researcher <|-- Executor
+class Experiment <<Kind>>
+class Hardware <<Kind>>
+class Hardware_Resource <<Role>>
+Resource <|-- Hardware_Resource
+Hardware <|-- Hardware_Resource
+class Hypothesis <<Kind>>
+class Image <<Kind>>
+class Input_Data <<SubKind>>
+Artifact <|-- Input_Data
+class Instance <<Kind>>
+class Laboratory <<Kind>>
+class Model <<Kind>>
+class Organization <<Kind>>
+class Output_Data <<SubKind>>
+Artifact <|-- Output_Data
+class Parameter <<SubKind>>
+Input_Data <|-- Parameter
+class Person <<Kind>>
+class Program <<Kind>>
+class Programmer <<Role>>
+Researcher <|-- Programmer
+class Project <<Kind>>
+class Researcher <<Role>>
+Resource <|-- Researcher
+Person <|-- Researcher
+class Resource <<RoleMixin>>
+class SWfMS <<Kind>>
+class Software_Resource <<Role>>
+Resource <|-- Software_Resource
+SWfMS <|-- Software_Resource
+Program <|-- Software_Resource
+class Virtual_Resource <<Role>>
+Resource <|-- Virtual_Resource
+Image <|-- Virtual_Resource
+class Worflow <<Class>>
+class Workflow_Code <<Kind>>
+class Workflow_Description <<Kind>>
+class Workflow_Run <<Relator>>
+class pre_state <<Association>>
+class post_state <<Association>>
+class  <<ComponentOf>>
+class  <<Association>>
+class  <<Association>>
+class  <<Association>>
+class  <<Association>>
+class describes <<Formal>>
+class uses <<Formal>>
+class  <<Association>>
+class usedBy <<Association>>
+class derivedBy <<Formal>>
+class generatedBy <<Association>>
+class  <<Association>>
+class  <<Association>>
+class post_state <<Association>>
+class pre_state <<Association>>
+class  <<Association>>
+class  <<Association>>
+class  <<Association>>
+class  <<Association>>
+class  <<ComponentOf>>
+class triggeredBy <<Association>>
+class  <<Association>>
+class controlledBy <<Association>>
+class  <<Association>>
+class  <<Association>>
+class  <<Mediation>>
+class  <<Association>>
+class conceived_by <<Formal>>
+class controlled_by <<Formal>>
+class  <<Association>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<Formal>>
+class  <<ComponentOf>>
+class requires <<Association>>
+class  <<Association>>
+class  <<Mediation>>
+class executed_by <<Formal>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class  <<Association>>
+class uses <<Formal>>
+class  <<Material>>
+
+
+
+
+class  <<Derivation>>
+Abstract_Activity "0..*" -- "0..*" A_Situation : pre_state
+Abstract_Activity "0..*" -- "0..*" A_Situation : post_state
+Abstract_Workflow "1..1" o-- "1..*" Abstract_Activity : 
+Concrete_Activity "0..*" -- "0..*" Abstract_Activity : 
+Complex_Abstract_Activity "0..*" -- "2..*" Abstract_Activity : 
+Workflow_Description "0..*" -- "0..*" Abstract_Workflow : 
+Concrete_Workflow "0..*" -- "0..*" Abstract_Workflow : 
+Algorithm "0..*" -- "0..*" Program : describes
+Architect "0..*" -- "0..*" SWfMS : uses
+Design_Session "0..*" -- "0..*" Architect : 
+Artifact "0..*" -- "0..*" Concrete_Activity : usedBy
+Concrete_Activity "0..*" -- "0..*" Artifact : generatedBy
+Atomic_Abstract_Activity "0..*" -- "0..*" Complex_Abstract_Activity : 
+Atomic_Concrete_Activity "0..*" -- "0..*" Complex_Concrete_Activity : 
+Concrete_Activity "0..*" -- "0..*" C_Situation : post_state
+Concrete_Activity "0..*" -- "0..*" C_Situation : pre_state
+Coding_Session "1..1" -- "1..1" Workflow_Code : 
+Programmer "0..*" -- "0..*" Coding_Session : 
+Complex_Concrete_Activity "0..*" -- "2..*" Concrete_Activity : 
+Worflow "0..*" -- "0..*" Composition_Phase : 
+Concrete_Workflow "1..1" o-- "1..*" Concrete_Activity : 
+Concrete_Activity "1..1" -- "1..1" Environment : 
+Concrete_Activity "1..1" -- "1..1" Executor : controlledBy
+Concrete_Workflow "1..1" -- "1..*" Concrete_Activity : 
+Workflow_Code "0..*" -- "0..*" Concrete_Workflow : 
+Workflow_Run "1..1" -- "1..1" Concrete_Workflow : 
+Execution_Phase "1..1" -- "1..*" Concrete_Workflow : 
+Project "0..*" -- "1..1" Coordinator : conceived_by
+Experiment "0..*" -- "1..1" Coordinator : controlled_by
+Workflow_Description "1..1" -- "1..1" Design_Session : 
+Environment "1..1" o-- "1..*" Program : 
+Environment "1..1" o-- "1..*" Image : 
+Environment "0..*" -- "0..*" SWfMS : 
+Environment "1..1" *-- "1..*" Hardware : 
+Execution_Session "1..1" -- "1..1" SWfMS : requires
+Workflow_Run "1..1" -- "1..1" Execution_Session : 
+Workflow_Run "1..1" -- "1..1" Executor : 
+Experiment "0..*" -- "0..*" Researcher : executed_by
+Project "1..1" *-- "1..*" Experiment : 
+Hypothesis "1..1" *-- "1..1" Experiment : 
+Model "1..1" *-- "1..1" Experiment : 
+Image "1..1" o-- "1..*" Instance : 
+Laboratory "1..1" o-- "1..1" Person : 
+Organization "1..1" o-- "1..1" Laboratory : 
+Organization "0..*" -- "0..*" Worflow : 
+Programmer "0..*" -- "0..*" SWfMS : uses
+Executor "1..1" -- "1..*" Concrete_Workflow : 
+@enduml

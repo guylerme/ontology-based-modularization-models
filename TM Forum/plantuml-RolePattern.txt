@@ -1,0 +1,56 @@
+@startuml
+'14 occurrencies
+'20 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Slot_Composed_Of_SubSlot <<Role>>
+Slot <|-- Slot_Composed_Of_SubSlot
+class Slot <<Kind>>
+class EMS_That_Manages_Slot <<Role>>
+EMS_Composed_Of_ME <|-- EMS_That_Manages_Slot
+class EMS_Composed_Of_ME <<Role>>
+EMS <|-- EMS_Composed_Of_ME
+class Physical_Termination_Point <<Role>>
+Termination_Point <|-- Physical_Termination_Point
+class Termination_Point <<Kind>>
+class Shelf_Composed_Of_Slot <<Role>>
+Shelf <|-- Shelf_Composed_Of_Slot
+class Shelf <<Kind>>
+class EMS_That_Manages_Rack <<Role>>
+EMS_Composed_Of_ME <|-- EMS_That_Manages_Rack
+class EMS <<Kind>>
+class EMS_That_Manages_Equipment <<Role>>
+EMS_Composed_Of_ME <|-- EMS_That_Manages_Equipment
+class EMS_That_Manages_SubSlot <<Role>>
+EMS_Composed_Of_ME <|-- EMS_That_Manages_SubSlot
+class PTP_of_ME <<Role>>
+Physical_Termination_Point <|-- PTP_of_ME
+class ME_Composed_Of_Rack <<Role>>
+ManagedElement <|-- ME_Composed_Of_Rack
+class ManagedElement <<Kind>>
+class Connection_Termination_Point <<Role>>
+Termination_Point <|-- Connection_Termination_Point
+class EMS_That_Manages_Shelf <<Role>>
+EMS_Composed_Of_ME <|-- EMS_That_Manages_Shelf
+class ME_Composed_Of_PTP <<Role>>
+ManagedElement <|-- ME_Composed_Of_PTP
+class Rack_Composed_Of_Shelf <<Role>>
+Rack <|-- Rack_Composed_Of_Shelf
+class Rack <<Kind>>
+EMS_That_Manages_Rack "1..1" -- "1..*" Rack : /EMSmanagesRack
+EMS_That_Manages_Shelf "1..1" -- "1..*" Shelf : /EMSmanagesShelf
+EMS_That_Manages_Slot "1..1" -- "1..*" Slot : /EMSmanagesSlot
+Physical_Termination_Point "1..1" -- "1..*" Connection_Termination_Point : CTPterminesSNCofPTP
+EMS_Composed_Of_ME "1..1" -- "1..*" ManagedElement : EMSmanagesME
+ME_Composed_Of_PTP "1..1" -- "1..*" PTP_of_ME : PTPisPhysicalResourceOf
+ME_Composed_Of_Rack "1..1" -- "1..*" Rack : rackIsPhysicalResourceOf
+Rack_Composed_Of_Shelf "1..1" -- "1..*" Shelf : rackHoldsShelf
+Shelf_Composed_Of_Slot "1..1" -- "1..*" Slot : shelfHoldsSlot
+@enduml

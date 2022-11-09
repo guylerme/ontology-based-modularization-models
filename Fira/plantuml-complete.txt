@@ -1,0 +1,114 @@
+@startuml
+class Ball <<Kind>>
+class Ball_at_Play <<Role>>
+Ball <|-- Ball_at_Play
+class Center_Circle <<SubKind>>
+Zone <|-- Center_Circle
+class Centerline <<SubKind>>
+Zone <|-- Centerline
+class Defensive_Player <<Role>>
+Player <|-- Defensive_Player
+class Defensive_Strategy <<SubKind>>
+Strategy <|-- Defensive_Strategy
+class Exception_Time <<Category>>
+class Extra_Tme <<SubKind>>
+Exception_Time <|-- Extra_Tme
+Time_Period <|-- Extra_Tme
+class Far_Defender <<Role>>
+Defensive_Player <|-- Far_Defender
+class First_Half <<SubKind>>
+Time_Period <|-- First_Half
+class Free_Ball_Position <<SubKind>>
+Zone <|-- Free_Ball_Position
+class Free_Kick_Position <<SubKind>>
+Zone <|-- Free_Kick_Position
+class Goal_Area <<SubKind>>
+Zone <|-- Goal_Area
+class Goalkeeper <<Role>>
+Player <|-- Goalkeeper
+class Ground <<Kind>>
+class Ground_with_Zone <<Role>>
+Ground <|-- Ground_with_Zone
+class Half_Time <<SubKind>>
+Time_Period <|-- Half_Time
+class Left_Attacker <<Role>>
+Offensive_Player <|-- Left_Attacker
+class Local_Team <<Role>>
+Team_at_Play <|-- Local_Team
+class Match <<Relator>>
+class Midfielder <<Role>>
+Defensive_Player <|-- Midfielder
+Offensive_Player <|-- Midfielder
+class Near_Defender <<Role>>
+Defensive_Player <|-- Near_Defender
+class Offensive_Player <<Role>>
+Player <|-- Offensive_Player
+class Offensive_Strategy <<SubKind>>
+Strategy <|-- Offensive_Strategy
+class Penalty_Kick_Position <<SubKind>>
+Zone <|-- Penalty_Kick_Position
+class Penalty_Period <<SubKind>>
+Time_Period <|-- Penalty_Period
+Exception_Time <|-- Penalty_Period
+class Player <<Kind>>
+class Player_at_Play <<Role>>
+Player <|-- Player_at_Play
+class Pretime-game <<SubKind>>
+Exception_Time <|-- Pretime-game
+Time_Period <|-- Pretime-game
+class Right_Attacker <<Role>>
+Offensive_Player <|-- Right_Attacker
+class Second_Half <<SubKind>>
+Time_Period <|-- Second_Half
+class Shooter <<Role>>
+Offensive_Player <|-- Shooter
+class Strategy <<Kind>>
+class Team <<Kind>>
+class Team_Strategy <<Relator>>
+class Team_at_Play <<Role>>
+Team <|-- Team_at_Play
+class Time_Lost <<SubKind>>
+Exception_Time <|-- Time_Lost
+Time_Period <|-- Time_Lost
+class Time_Period <<Kind>>
+class Visitor_Team <<Role>>
+Team_at_Play <|-- Visitor_Team
+class Zone <<Kind>>
+class Zone_at_Ground <<Role>>
+Zone <|-- Zone_at_Ground
+class has <<Mediation>>
+class maybe_has <<Mediation>>
+class has <<Mediation>>
+class  <<ComponentOf>>
+class has <<Mediation>>
+class has <<Mediation>>
+class plays <<Mediation>>
+class plays <<Mediation>>
+class has <<Mediation>>
+class  <<ComponentOf>>
+class initial_position <<Mediation>>
+class  <<ComponentOf>>
+class follows <<Mediation>>
+class adopt <<Mediation>>
+
+
+
+
+
+
+
+Match "1..1" -- "1..1" Ball_at_Play : has
+Match "1..1" -- "0..*" Exception_Time : maybe_has
+Match "1..1" -- "1..1" First_Half : has
+Ground_with_Zone "1..1" o-- "2..*" Zone_at_Ground : 
+Match "1..1" -- "1..1" Ground_with_Zone : has
+Match "1..1" -- "1..1" Half_Time : has
+Match "1..1" -- "1..1" Local_Team : plays
+Match "1..1" -- "1..1" Visitor_Team : plays
+Match "1..1" -- "1..1" Second_Half : has
+Team "1..1" o-- "5..5" Player : 
+Team_Strategy "1..1" -- "5..5" Player_at_Play : initial_position
+Team_at_Play "1..1" o-- "5..5" Player_at_Play : 
+Team_Strategy "0..*" -- "1..1" Strategy : follows
+Team_Strategy "1..1" -- "1..1" Team_at_Play : adopt
+@enduml

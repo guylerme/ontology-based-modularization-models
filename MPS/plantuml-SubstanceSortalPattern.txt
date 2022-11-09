@@ -1,0 +1,16 @@
+@startuml
+'3 occurrencies
+'3 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Library_of_Reusable_Assets <<Collective>>
+class Project <<Kind>>
+class Human_Resource <<Kind>>
+Human_Resource "1..*" -- "1..*" Project : allocated_in
+@enduml

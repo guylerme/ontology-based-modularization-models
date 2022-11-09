@@ -1,0 +1,30 @@
+@startuml
+'7 occurrencies
+'10 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<SubKind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Credit_Card_Payment <<SubKind>>
+Payment <|-- Credit_Card_Payment
+class Payment <<Kind>>
+class Motorcycle <<SubKind>>
+Vehicle <|-- Motorcycle
+class Vehicle <<Kind>>
+class Cash_Payment <<SubKind>>
+Payment <|-- Cash_Payment
+class Parking_Company <<SubKind>>
+Company <|-- Parking_Company
+class Company <<Kind>>
+class Bus/Truck <<SubKind>>
+Vehicle <|-- Bus/Truck
+class Light/SUV <<SubKind>>
+Vehicle <|-- Light/SUV
+class Debit_Card_Payment <<SubKind>>
+Payment <|-- Debit_Card_Payment
+@enduml

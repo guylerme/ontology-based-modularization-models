@@ -1,0 +1,58 @@
+@startuml
+'7 occurrencies
+'16 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Allocation_Plan <<Relator>>
+class Human_Resource <<Kind>>
+class Project <<Kind>>
+class User_Evaluation <<Relator>>
+class Consumer_of_Reusabe_Asset <<Role>>
+Human_Resource <|-- Consumer_of_Reusabe_Asset
+class Reusable_Asset <<RoleMixin>>
+Asset <|-- Reusable_Asset
+class Request_for_Asset_Inclusion <<Relator>>
+class Asset <<Category>>
+class Manager_of_Reusable_Asset <<Role>>
+Human_Resource <|-- Manager_of_Reusable_Asset
+class Producer_of_Reusable_Asset <<Role>>
+Human_Resource <|-- Producer_of_Reusable_Asset
+class Aproving_Evaluation <<Relator>>
+Asset_Evaluation <|-- Aproving_Evaluation
+class Usage_Permission <<Relator>>
+class Library_of_Reusable_Assets <<Collective>>
+class Asset_Evaluation <<Relator>>
+class Rejecting_Evaluation <<Relator>>
+Asset_Evaluation <|-- Rejecting_Evaluation
+class Rejected_Asset <<RoleMixin>>
+Asset <|-- Rejected_Asset
+Allocation_Plan "1..1" -- "1..1" Project : allocates_in
+Allocation_Plan "1..*" -- "1..*" Human_Resource : selects
+Aproving_Evaluation "1..*" -- "1..1" Reusable_Asset : approves
+Aproving_Evaluation "1..*" -- "1..1" Manager_of_Reusable_Asset : performs_approval
+Request_for_Asset_Inclusion "1..*" -- "1..1" Asset : hasAsset
+Usage_Permission "1..1" -- "1..1" Consumer_of_Reusabe_Asset : solicita
+User_Evaluation "1..*" -- "1..1" Consumer_of_Reusabe_Asset : performs
+Library_of_Reusable_Assets "1..1" o-- "2..*" Reusable_Asset : éMembroDe
+Manager_of_Reusable_Asset "1..1" -- "1..1" Library_of_Reusable_Assets : responsible_for_keeping
+Usage_Permission "1..*" -- "1..1" Library_of_Reusable_Assets : allows_the_usage_of
+Rejecting_Evaluation "1..*" -- "1..1" Manager_of_Reusable_Asset : performs_rejection
+Request_for_Asset_Inclusion "1..*" -- "1..1" Manager_of_Reusable_Asset : forwards
+Usage_Permission "1..1" -- "1..1" Manager_of_Reusable_Asset : provided_by
+Request_for_Asset_Inclusion "1..*" -- "1..1" Producer_of_Reusable_Asset : creates_request
+Rejecting_Evaluation "1..*" -- "1..1" Rejected_Asset : rejects_asset
+User_Evaluation "1..*" -- "1..1" Reusable_Asset : evaluates
+Producer_of_Reusable_Asset "1..1" -- "1..*" Asset : requests_asset_inclusion
+Consumer_of_Reusabe_Asset "1..1" -- "1..*" Library_of_Reusable_Assets : uses
+Consumer_of_Reusabe_Asset "1..1" -- "1..*" Reusable_Asset : evaluates
+Human_Resource "1..*" -- "1..*" Project : allocated_in
+Manager_of_Reusable_Asset "1..1" -- "1..*" Rejected_Asset : evaluates
+Manager_of_Reusable_Asset "1..1" -- "1..*" Reusable_Asset : evaluates
+@enduml

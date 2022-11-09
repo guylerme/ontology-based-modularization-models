@@ -1,0 +1,48 @@
+@startuml
+'6 occurrencies
+'18 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Problem_Action_Item <<Relator>>
+class Problem <<Kind>>
+Evaluation_Find <|-- Problem
+class Problem_Issue <<Role>>
+class Cause_Identification <<Relator>>
+class Registered_NC <<Phase>>
+class NC_Cause <<Role>>
+class Employment <<Relator>>
+class Organization <<Kind>>
+class Human_Resource <<Role>>
+class NC_Action_Item <<Relator>>
+class NC_Issue <<Role>>
+class Objective_Evaluation <<Relator>>
+class Project <<Kind>>
+class Evaluation_Checklist <<Collective>>
+class Appraiser <<Role>>
+Human_Resource <|-- Appraiser
+class Item_Evaluation <<Relator>>
+class Evaluation_Find <<Category>>
+class Evaluation_Criteria <<Kind>>
+Objective_Evaluation "1..*" -- "1..1" Appraiser : allocates
+Cause_Identification "1..*" -- "1..1" NC_Cause : 
+Cause_Identification "1..*" -- "1..1" Registered_NC : 
+Employment "1..*" -- "1..1" Human_Resource : 
+Employment "1..*" -- "1..1" Organization : 
+Evaluation_Checklist "1..*" o-- "2..*" Evaluation_Criteria : 
+Objective_Evaluation "1..*" -- "1..*" Evaluation_Checklist : aplies
+Item_Evaluation "1..*" -- "1..1" Evaluation_Criteria : assesses
+Item_Evaluation "1..*" -- "1..*" Evaluation_Find : finds
+Item_Evaluation "0..*" -- "1..1" Objective_Evaluation : composes
+NC_Action_Item "1..*" -- "1..1" NC_Issue : 
+NC_Action_Item "1..*" -- "1..1" Registered_NC : 
+Objective_Evaluation "1..*" -- "1..1" Project : assesses
+Problem_Action_Item "1..*" -- "1..1" Problem : 
+Problem_Action_Item "1..*" -- "1..1" Problem_Issue : 
+@enduml

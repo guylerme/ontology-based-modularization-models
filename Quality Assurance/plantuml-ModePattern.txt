@@ -1,0 +1,16 @@
+@startuml
+'1 occurrencies
+'2 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Mode>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Process_Occurrence <<Mode>>
+class Project_Process <<Kind>>
+Process_Occurrence "1..1" -- "1..1" Project_Process : caused_by
+@enduml

@@ -1,0 +1,28 @@
+@startuml
+'11 occurrencies
+'11 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Kind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Issue <<Kind>>
+class Lesson_Learned <<Kind>>
+class Project <<Kind>>
+class Person <<Kind>>
+class Cause <<Kind>>
+class Standard_Process <<Kind>>
+class Problem <<Kind>>
+class Noncompliance <<Kind>>
+class Evaluation_Criteria <<Kind>>
+class Project_Process <<Kind>>
+class Organization <<Kind>>
+Evaluation_Criteria "0..*" -- "1..1" Project_Process : defined_for
+Standard_Process "1..*" -- "1..1" Organization : defined_for
+Project "1..1" -- "1..*" Project_Process : defined_for
+Project_Process "0..*" -- "0..1" Standard_Process : tailors
+@enduml

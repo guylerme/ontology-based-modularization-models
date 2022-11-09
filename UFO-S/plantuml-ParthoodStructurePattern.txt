@@ -1,0 +1,44 @@
+@startuml
+'10 occurrencies
+'14 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Service_Offering <<Relator>>
+class Service_Offering_Commitment <<Mode>>
+class Service_Offering_Claim <<Mode>>
+class Service_Agreement <<Relator>>
+class Service_Customer_Claim <<Mode>>
+class Service_Delivery <<Class>>
+class Hired_Provider_Customer_Interaction <<Class>>
+class Service_Customer_Commitment <<Mode>>
+class Hired_Provider_Claim <<Mode>>
+class Hired_Provider_Commitment <<Mode>>
+class Customer_Action <<Class>>
+class Hired_Provider_Action <<Class>>
+class Target_Customer_Community <<Collective>>
+class Target_Customer <<RoleMixin>>
+Customer_Action "0..*" -- "1..*" Service_Customer_Commitment : motivated_by
+Service_Delivery "1..1" o-- "0..*" Customer_Action : 
+Hired_Provider_Action "0..*" -- "1..*" Hired_Provider_Commitment : motivated_by
+Service_Delivery "1..1" o-- "0..*" Hired_Provider_Action : 
+Service_Agreement "1..1" o-- "0..*" Hired_Provider_Claim : 
+Hired_Provider_Customer_Interaction "0..*" -- "1..1" Hired_Provider_Commitment : motivated_by
+Service_Agreement "1..1" o-- "1..*" Hired_Provider_Commitment : 
+Hired_Provider_Customer_Interaction "0..*" -- "1..1" Service_Customer_Commitment : motivated_by
+Service_Delivery "1..1" o-- "0..*" Hired_Provider_Customer_Interaction : 
+Service_Agreement "0..*" -- "1..1" Service_Offering : conforms_to
+Service_Agreement "1..1" o-- "0..*" Service_Customer_Commitment : 
+Service_Agreement "1..1" o-- "1..*" Service_Customer_Claim : 
+Service_Offering "1..1" o-- "1..1" Service_Offering_Commitment : 
+Service_Offering "1..1" o-- "1..1" Service_Offering_Claim : 
+Service_Offering "1..*" -- "1..1" Target_Customer_Community : offered_to
+Service_Offering_Claim "1..*" -- "1..1" Target_Customer_Community : inheres_in
+Service_Offering_Commitment "1..*" -- "1..1" Target_Customer_Community : externally_dependent_on
+Target_Customer_Community "1..*" o-- "1..*" Target_Customer : 
+@enduml

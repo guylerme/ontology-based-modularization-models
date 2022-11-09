@@ -1,0 +1,31 @@
+@startuml
+'8 occurrencies
+'10 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Phase>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Non_Effective_Issue <<Phase>>
+Finished_Issue <|-- Non_Effective_Issue
+class Finished_Issue <<Phase>>
+Issue <|-- Finished_Issue
+class Issue <<Kind>>
+class Registered_NC <<Phase>>
+Noncompliance <|-- Registered_NC
+class Noncompliance <<Kind>>
+class Implementing_Issue <<Phase>>
+Issue <|-- Implementing_Issue
+class Canceled_NC <<Phase>>
+Noncompliance <|-- Canceled_NC
+class Identified_NC <<Phase>>
+Noncompliance <|-- Identified_NC
+class Planned_Issue <<Phase>>
+Issue <|-- Planned_Issue
+class Effective_Issue <<Phase>>
+Finished_Issue <|-- Effective_Issue
+@enduml

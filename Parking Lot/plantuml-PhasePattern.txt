@@ -1,0 +1,29 @@
+@startuml
+'6 occurrencies
+'10 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Phase>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Expired_Price_Table <<Phase>>
+Price_Table <|-- Expired_Price_Table
+class Price_Table <<Kind>>
+class Used_Multiple_Parking_Reservation <<Phase>>
+Multiple_Parking_Reservation <|-- Used_Multiple_Parking_Reservation
+class Multiple_Parking_Reservation <<Relator>>
+class Active_Parking_Spot_Usage <<Phase>>
+Parking_Spot_Usage <|-- Active_Parking_Spot_Usage
+class Parking_Spot_Usage <<Relator>>
+class Used_Single_Parking_Reservation <<Phase>>
+Single_Parking_Reservation <|-- Used_Single_Parking_Reservation
+class Single_Parking_Reservation <<Relator>>
+class Valid_Price_Table <<Phase>>
+Price_Table <|-- Valid_Price_Table
+class Terminated_Parking_Spot_Usage <<Phase>>
+Parking_Spot_Usage <|-- Terminated_Parking_Spot_Usage
+@enduml

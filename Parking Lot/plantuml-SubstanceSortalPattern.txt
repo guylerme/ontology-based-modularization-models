@@ -1,0 +1,23 @@
+@startuml
+'8 occurrencies
+'8 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Price_Table <<Kind>>
+class Parking_Spot <<Kind>>
+class Parking_Lot <<Collective>>
+class Short_Period_Price <<Kind>>
+class Payment <<Kind>>
+class Vehicle <<Kind>>
+class Company <<Kind>>
+class Person <<Kind>>
+Parking_Lot "1..1" o-- "2..*" Parking_Spot : 
+Parking_Lot "1..1" -- "1..*" Price_Table : 
+Price_Table "1..1" -- "1..*" Short_Period_Price : 
+@enduml

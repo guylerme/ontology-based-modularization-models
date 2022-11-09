@@ -1,0 +1,65 @@
+@startuml
+'16 occurrencies
+'26 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Reservation_of_Spefic_Parking_Spot <<Relator>>
+Parking_Reservation <|-- Reservation_of_Spefic_Parking_Spot
+class Reserved_Parking_Spot <<Role>>
+class Daily_Reservation <<Relator>>
+Parking_Reservation <|-- Daily_Reservation
+class Fractioneted_Reservation <<Relator>>
+Parking_Reservation <|-- Fractioneted_Reservation
+class Monthly_Reservation <<Relator>>
+Parking_Reservation <|-- Monthly_Reservation
+class Reservation_of_Parking_Spot_Type <<Relator>>
+Parking_Reservation <|-- Reservation_of_Parking_Spot_Type
+class Reserved_Parking_Spot_Type <<Role>>
+class Usage_of_Single_Parking_Reservation <<Relator>>
+Usage_of_Reservation <|-- Usage_of_Single_Parking_Reservation
+class Used_Single_Parking_Reservation <<Phase>>
+Single_Parking_Reservation <|-- Used_Single_Parking_Reservation
+class Specific_Spot_Usage <<Relator>>
+Parking_Spot_Usage <|-- Specific_Spot_Usage
+class Used_Parking_Spot <<Role>>
+class Single_Parking_Reservation <<Relator>>
+Parking_Reservation <|-- Single_Parking_Reservation
+class Usage_Without_Reservation <<Relator>>
+Parking_Spot_Usage <|-- Usage_Without_Reservation
+class ReservaTipoVaga <<Relator>>
+class Income_Generator_Usage <<Relator>>
+Parking_Spot_Usage <|-- Income_Generator_Usage
+class Used_Price_Table <<Role>>
+class Usage_of_Multiple_Parking_Reservation <<Relator>>
+Usage_of_Reservation <|-- Usage_of_Multiple_Parking_Reservation
+class Used_Multiple_Parking_Reservation <<Phase>>
+Multiple_Parking_Reservation <|-- Used_Multiple_Parking_Reservation
+class Parking_Spot_Usage <<Relator>>
+class Parked_Vehicle <<Role>>
+class Parking_Spot_Provider <<Role>>
+class Usage_of_Reservation <<Relator>>
+Parking_Spot_Usage <|-- Usage_of_Reservation
+class Multiple_Parking_Reservation <<Relator>>
+Parking_Reservation <|-- Multiple_Parking_Reservation
+class Parking_Reservation <<Relator>>
+class Price_Table_Used_In_Reservation <<Role>>
+class Customer <<RoleMixin>>
+Parking_Reservation "1..*" -- "1..1" Customer : 
+Income_Generator_Usage "1..*" -- "1..1" Used_Price_Table : 
+Parking_Spot_Usage "1..*" -- "1..1" Parked_Vehicle : 
+Parking_Reservation "1..*" -- "1..1" Parking_Spot_Provider : 
+Parking_Reservation "1..*" -- "1..1" Price_Table_Used_In_Reservation : 
+Parking_Spot_Usage "1..*" -- "1..1" Parking_Spot_Provider : 
+Reservation_of_Parking_Spot_Type "1..*" -- "1..1" Reserved_Parking_Spot_Type : 
+Reservation_of_Spefic_Parking_Spot "1..*" -- "1..1" Reserved_Parking_Spot : 
+Specific_Spot_Usage "1..*" -- "1..1" Used_Parking_Spot : 
+Usage_of_Multiple_Parking_Reservation "1..*" -- "1..1" Used_Multiple_Parking_Reservation : 
+Usage_of_Single_Parking_Reservation "1..1" -- "1..1" Used_Single_Parking_Reservation : 
+@enduml

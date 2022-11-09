@@ -1,0 +1,15 @@
+@startuml
+'1 occurrencies
+'2 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Evaluation_Checklist <<Collective>>
+class Evaluation_Criteria <<Kind>>
+Evaluation_Checklist "1..*" o-- "2..*" Evaluation_Criteria : 
+@enduml

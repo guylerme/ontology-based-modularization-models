@@ -1,0 +1,96 @@
+@startuml
+class Allocation_Plan <<Relator>>
+class Aproving_Evaluation <<Relator>>
+Asset_Evaluation <|-- Aproving_Evaluation
+class Asset <<Category>>
+class Asset_Evaluation <<Relator>>
+class Consumer_of_Reusabe_Asset <<Role>>
+Human_Resource <|-- Consumer_of_Reusabe_Asset
+class Human_Resource <<Kind>>
+class Library_of_Reusable_Assets <<Collective>>
+class Manager_of_Reusable_Asset <<Role>>
+Human_Resource <|-- Manager_of_Reusable_Asset
+class Organizational_Asset <<Category>>
+Asset <|-- Organizational_Asset
+class Processual_Asset <<Category>>
+Asset <|-- Processual_Asset
+class Producer_of_Reusable_Asset <<Role>>
+Human_Resource <|-- Producer_of_Reusable_Asset
+class Project <<Kind>>
+class Rejected_Asset <<RoleMixin>>
+Asset <|-- Rejected_Asset
+class Rejecting_Evaluation <<Relator>>
+Asset_Evaluation <|-- Rejecting_Evaluation
+class Request_for_Asset_Inclusion <<Relator>>
+class Reusable_Asset <<RoleMixin>>
+Asset <|-- Reusable_Asset
+class Software_Asset <<Category>>
+Asset <|-- Software_Asset
+class Usage_Permission <<Relator>>
+class User_Evaluation <<Relator>>
+class Acceptance <<Datatype>>
+Criterion <|-- Acceptance
+class Certification <<Datatype>>
+Criterion <|-- Certification
+class Classification <<Datatype>>
+Criterion <|-- Classification
+class Criterion <<Datatype>>
+class Discontinuity <<Datatype>>
+Criterion <|-- Discontinuity
+class Evaluation <<Datatype>>
+Criterion <|-- Evaluation
+class Project_Information <<Datatype>>
+class allocates_in <<Mediation>>
+class selects <<Mediation>>
+class approves <<Mediation>>
+class performs_approval <<Mediation>>
+class hasAsset <<Mediation>>
+class solicita <<Mediation>>
+class performs <<Mediation>>
+class éMembroDe <<MemberOf>>
+class responsible_for_keeping <<Formal>>
+class allows_the_usage_of <<Mediation>>
+class performs_rejection <<Mediation>>
+class forwards <<Mediation>>
+class provided_by <<Mediation>>
+class creates_request <<Mediation>>
+class rejects_asset <<Mediation>>
+class evaluates <<Mediation>>
+class requests_asset_inclusion <<Material>>
+class uses <<Material>>
+class evaluates <<Material>>
+class allocated_in <<Material>>
+class evaluates <<Material>>
+class evaluates <<Material>>
+
+
+
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+Allocation_Plan "1..1" -- "1..1" Project : allocates_in
+Allocation_Plan "1..*" -- "1..*" Human_Resource : selects
+Aproving_Evaluation "1..*" -- "1..1" Reusable_Asset : approves
+Aproving_Evaluation "1..*" -- "1..1" Manager_of_Reusable_Asset : performs_approval
+Request_for_Asset_Inclusion "1..*" -- "1..1" Asset : hasAsset
+Usage_Permission "1..1" -- "1..1" Consumer_of_Reusabe_Asset : solicita
+User_Evaluation "1..*" -- "1..1" Consumer_of_Reusabe_Asset : performs
+Library_of_Reusable_Assets "1..1" o-- "2..*" Reusable_Asset : éMembroDe
+Manager_of_Reusable_Asset "1..1" -- "1..1" Library_of_Reusable_Assets : responsible_for_keeping
+Usage_Permission "1..*" -- "1..1" Library_of_Reusable_Assets : allows_the_usage_of
+Rejecting_Evaluation "1..*" -- "1..1" Manager_of_Reusable_Asset : performs_rejection
+Request_for_Asset_Inclusion "1..*" -- "1..1" Manager_of_Reusable_Asset : forwards
+Usage_Permission "1..1" -- "1..1" Manager_of_Reusable_Asset : provided_by
+Request_for_Asset_Inclusion "1..*" -- "1..1" Producer_of_Reusable_Asset : creates_request
+Rejecting_Evaluation "1..*" -- "1..1" Rejected_Asset : rejects_asset
+User_Evaluation "1..*" -- "1..1" Reusable_Asset : evaluates
+Producer_of_Reusable_Asset "1..1" -- "1..*" Asset : requests_asset_inclusion
+Consumer_of_Reusabe_Asset "1..1" -- "1..*" Library_of_Reusable_Assets : uses
+Consumer_of_Reusabe_Asset "1..1" -- "1..*" Reusable_Asset : evaluates
+Human_Resource "1..*" -- "1..*" Project : allocated_in
+Manager_of_Reusable_Asset "1..1" -- "1..*" Rejected_Asset : evaluates
+Manager_of_Reusable_Asset "1..1" -- "1..*" Reusable_Asset : evaluates
+@enduml

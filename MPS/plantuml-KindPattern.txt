@@ -1,0 +1,16 @@
+@startuml
+'2 occurrencies
+'2 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Kind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Project <<Kind>>
+class Human_Resource <<Kind>>
+Human_Resource "1..*" -- "1..*" Project : allocated_in
+@enduml

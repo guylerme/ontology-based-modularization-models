@@ -1,0 +1,40 @@
+@startuml
+'2 occurrencies
+'13 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Match <<Relator>>
+class Ball_at_Play <<Role>>
+class First_Half <<SubKind>>
+class Half_Time <<SubKind>>
+class Visitor_Team <<Role>>
+Team_at_Play <|-- Visitor_Team
+class Ground_with_Zone <<Role>>
+class Exception_Time <<Category>>
+class Second_Half <<SubKind>>
+class Local_Team <<Role>>
+Team_at_Play <|-- Local_Team
+class Team_Strategy <<Relator>>
+class Team_at_Play <<Role>>
+class Strategy <<Kind>>
+class Player_at_Play <<Role>>
+Match "1..1" -- "1..1" Ball_at_Play : has
+Match "1..1" -- "0..*" Exception_Time : maybe_has
+Match "1..1" -- "1..1" First_Half : has
+Match "1..1" -- "1..1" Ground_with_Zone : has
+Match "1..1" -- "1..1" Half_Time : has
+Match "1..1" -- "1..1" Local_Team : plays
+Match "1..1" -- "1..1" Visitor_Team : plays
+Match "1..1" -- "1..1" Second_Half : has
+Team_Strategy "1..1" -- "5..5" Player_at_Play : initial_position
+Team_at_Play "1..1" o-- "5..5" Player_at_Play : 
+Team_Strategy "0..*" -- "1..1" Strategy : follows
+Team_Strategy "1..1" -- "1..1" Team_at_Play : adopt
+@enduml

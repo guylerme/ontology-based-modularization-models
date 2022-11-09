@@ -1,0 +1,21 @@
+@startuml
+'1 occurrencies
+'5 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Exception_Time <<Category>>
+class Time_Lost <<SubKind>>
+Exception_Time <|-- Time_Lost
+class Extra_Tme <<SubKind>>
+Exception_Time <|-- Extra_Tme
+class Penalty_Period <<SubKind>>
+Exception_Time <|-- Penalty_Period
+class Pretime-game <<SubKind>>
+Exception_Time <|-- Pretime-game
+@enduml

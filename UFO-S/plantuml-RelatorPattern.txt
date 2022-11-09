@@ -1,0 +1,29 @@
+@startuml
+'2 occurrencies
+'8 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Service_Agreement <<Relator>>
+class Service_Customer <<RoleMixin>>
+class Service_Agreement_Description <<Category>>
+class Hired_Service_Provider <<RoleMixin>>
+Service_Provider <|-- Hired_Service_Provider
+class Service_Offering <<Relator>>
+class Service_Provider <<RoleMixin>>
+class Service_Offering_Description <<Category>>
+class Target_Customer_Community <<Collective>>
+Service_Agreement "1..*" -- "1..1" Hired_Service_Provider : achieves
+Service_Agreement "1..*" -- "0..*" Service_Agreement_Description : describes
+Service_Agreement "0..*" -- "1..1" Service_Offering : conforms_to
+Service_Agreement "1..*" -- "1..*" Service_Customer : achieves
+Service_Offering "1..*" -- "1..1" Service_Provider : provides
+Service_Offering "1..1" -- "0..*" Service_Offering_Description : describes
+Service_Offering "1..*" -- "1..1" Target_Customer_Community : offered_to
+@enduml

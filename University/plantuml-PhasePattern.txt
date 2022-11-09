@@ -1,0 +1,40 @@
+@startuml
+'9 occurrencies
+'14 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Phase>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class SuspendedStudent <<Phase>>
+Student <|-- SuspendedStudent
+class Student <<Role>>
+Person <|-- Student
+class Person <<Kind>>
+class ActiveProfessor <<Phase>>
+Professor <|-- ActiveProfessor
+class Professor <<Role>>
+Person <|-- Professor
+class RegularStudent <<Phase>>
+Student <|-- RegularStudent
+class InactiveClass <<Phase>>
+Class <|-- InactiveClass
+class Class <<Role>>
+class ActiveClass <<Phase>>
+Class <|-- ActiveClass
+class InactiveProfessor <<Phase>>
+Professor <|-- InactiveProfessor
+class EgressStudent <<Phase>>
+Student <|-- EgressStudent
+class InactiveCurriculum <<Phase>>
+Curriculum <|-- InactiveCurriculum
+class Curriculum <<Kind>>
+class ActiveCurriculum <<Phase>>
+Curriculum <|-- ActiveCurriculum
+Professor "1..*" -- "0..*" Class : teaches
+Curriculum "1..1" -- "0..*" Student : fullfiledBy
+@enduml

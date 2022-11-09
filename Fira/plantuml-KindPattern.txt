@@ -1,0 +1,21 @@
+@startuml
+'7 occurrencies
+'7 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Kind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Zone <<Kind>>
+class Ground <<Kind>>
+class Player <<Kind>>
+class Time_Period <<Kind>>
+class Strategy <<Kind>>
+class Team <<Kind>>
+class Ball <<Kind>>
+Team "1..1" o-- "5..5" Player : 
+@enduml

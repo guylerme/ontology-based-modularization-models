@@ -1,0 +1,19 @@
+@startuml
+'5 occurrencies
+'5 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Course <<Kind>>
+class Person <<Kind>>
+class Organization <<Kind>>
+class Discipline <<Kind>>
+class Curriculum <<Kind>>
+Curriculum "1..*" -- "1..1" Course : organizes
+Discipline "1..1" -- "1..1" Curriculum : 
+@enduml

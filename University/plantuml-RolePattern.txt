@@ -1,0 +1,28 @@
+@startuml
+'6 occurrencies
+'7 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Class <<Role>>
+class DepartmentChief <<Role>>
+Professor <|-- DepartmentChief
+class Professor <<Role>>
+Person <|-- Professor
+class CourseCoordinator <<Role>>
+Professor <|-- CourseCoordinator
+class Person <<Kind>>
+class Colegiado <<Role>>
+class Student <<Role>>
+Person <|-- Student
+Professor "1..*" -- "0..*" Class : teaches
+Colegiado "1..1" -- "1..1" CourseCoordinator : coordinatedBy
+Colegiado "0..*" -- "1..*" Professor : composedBy
+Student "1..1" -- "1..1" Colegiado : 
+@enduml

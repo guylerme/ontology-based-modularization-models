@@ -1,0 +1,17 @@
+@startuml
+'2 occurrencies
+'3 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Higher_Education_Institution <<SubKind>>
+class Center <<SubKind>>
+class Department <<SubKind>>
+Center "1..1" o-- "1..1" Department : 
+Higher_Education_Institution "1..1" o-- "1..1" Center : 
+@enduml

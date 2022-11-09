@@ -1,0 +1,112 @@
+@startuml
+class Agent <<Category>>
+class Customer_Action <<Class>>
+class Hired_Provider_Action <<Class>>
+class Hired_Provider_Claim <<Mode>>
+class Hired_Provider_Commitment <<Mode>>
+class Hired_Provider_Customer_Interaction <<Class>>
+class Hired_Service_Provider <<RoleMixin>>
+Service_Provider <|-- Hired_Service_Provider
+class Service_Agreement <<Relator>>
+class Service_Agreement_Description <<Category>>
+class Service_Customer <<RoleMixin>>
+Target_Customer <|-- Service_Customer
+class Service_Customer_Claim <<Mode>>
+class Service_Customer_Commitment <<Mode>>
+class Service_Delivery <<Class>>
+class Service_Negotiation <<Class>>
+class Service_Offer <<Class>>
+class Service_Offering <<Relator>>
+class Service_Offering_Claim <<Mode>>
+class Service_Offering_Commitment <<Mode>>
+class Service_Offering_Description <<Category>>
+class Service_Provider <<RoleMixin>>
+Agent <|-- Service_Provider
+class Target_Customer <<RoleMixin>>
+Agent <|-- Target_Customer
+class Target_Customer_Community <<Collective>>
+class motivated_by <<Formal>>
+class  <<ComponentOf>>
+class participates_in <<Formal>>
+class motivated_by <<Formal>>
+class  <<ComponentOf>>
+class participates_in <<Formal>>
+class inheres_in <<Characterization>>
+class externally_dependent_on <<Formal>>
+class  <<ComponentOf>>
+class inheres_in <<Characterization>>
+class externally_dependent_on <<Formal>>
+class motivated_by <<Formal>>
+class  <<ComponentOf>>
+class motivated_by <<Formal>>
+class  <<ComponentOf>>
+class participates_in <<Formal>>
+class participates_in <<Formal>>
+class externally_dependent_on <<Formal>>
+class achieves <<Mediation>>
+class externally_dependent_on <<Formal>>
+class describes <<Mediation>>
+class conforms_to <<Formal>>
+class  <<ComponentOf>>
+class  <<ComponentOf>>
+class achieves <<Mediation>>
+class results_in <<Formal>>
+class inheres_in <<Characterization>>
+class inheres_in <<Characterization>>
+class participates_in <<Formal>>
+class participates_in <<Formal>>
+class regards_to <<Formal>>
+class creates <<Formal>>
+class  <<ComponentOf>>
+class provides <<Mediation>>
+class  <<ComponentOf>>
+class describes <<Mediation>>
+class offered_to <<Mediation>>
+class externally_dependent_on <<Formal>>
+class inheres_in <<Characterization>>
+class inheres_in <<Characterization>>
+class externally_dependent_on <<Formal>>
+class  <<MemberOf>>
+Customer_Action "0..*" -- "1..*" Service_Customer_Commitment : motivated_by
+Service_Delivery "1..1" o-- "0..*" Customer_Action : 
+Service_Customer "1..1" -- "0..*" Customer_Action : participates_in
+Hired_Provider_Action "0..*" -- "1..*" Hired_Provider_Commitment : motivated_by
+Service_Delivery "1..1" o-- "0..*" Hired_Provider_Action : 
+Hired_Service_Provider "1..1" -- "0..*" Hired_Provider_Action : participates_in
+Hired_Provider_Claim "0..*" -- "1..1" Hired_Service_Provider : inheres_in
+Hired_Provider_Claim "0..*" -- "1..*" Service_Customer : externally_dependent_on
+Service_Agreement "1..1" o-- "0..*" Hired_Provider_Claim : 
+Hired_Provider_Commitment "1..*" -- "1..1" Hired_Service_Provider : inheres_in
+Hired_Provider_Commitment "1..1" -- "1..1" Service_Customer : externally_dependent_on
+Hired_Provider_Customer_Interaction "0..*" -- "1..1" Hired_Provider_Commitment : motivated_by
+Service_Agreement "1..1" o-- "1..*" Hired_Provider_Commitment : 
+Hired_Provider_Customer_Interaction "0..*" -- "1..1" Service_Customer_Commitment : motivated_by
+Service_Delivery "1..1" o-- "0..*" Hired_Provider_Customer_Interaction : 
+Service_Customer "1..*" -- "0..*" Hired_Provider_Customer_Interaction : participates_in
+Hired_Service_Provider "1..1" -- "0..*" Hired_Provider_Customer_Interaction : participates_in
+Service_Customer_Claim "1..1" -- "1..1" Hired_Service_Provider : externally_dependent_on
+Service_Agreement "1..*" -- "1..1" Hired_Service_Provider : achieves
+Service_Customer_Commitment "0..*" -- "1..1" Hired_Service_Provider : externally_dependent_on
+Service_Agreement "1..*" -- "0..*" Service_Agreement_Description : describes
+Service_Agreement "0..*" -- "1..1" Service_Offering : conforms_to
+Service_Agreement "1..1" o-- "0..*" Service_Customer_Commitment : 
+Service_Agreement "1..1" o-- "1..*" Service_Customer_Claim : 
+Service_Agreement "1..*" -- "1..*" Service_Customer : achieves
+Service_Negotiation "1..1" -- "0..1" Service_Agreement : results_in
+Service_Customer_Commitment "0..*" -- "1..1" Service_Customer : inheres_in
+Service_Customer_Claim "1..*" -- "1..1" Service_Customer : inheres_in
+Service_Negotiation "0..*" -- "1..1" Service_Provider : participates_in
+Service_Negotiation "0..*" -- "1..*" Target_Customer : participates_in
+Service_Negotiation "1..1" -- "1..1" Service_Offering : regards_to
+Service_Offer "1..1" -- "1..1" Service_Offering : creates
+Service_Offering "1..1" o-- "1..1" Service_Offering_Commitment : 
+Service_Offering "1..*" -- "1..1" Service_Provider : provides
+Service_Offering "1..1" o-- "1..1" Service_Offering_Claim : 
+Service_Offering "1..1" -- "0..*" Service_Offering_Description : describes
+Service_Offering "1..*" -- "1..1" Target_Customer_Community : offered_to
+Service_Offering_Claim "1..*" -- "1..1" Service_Provider : externally_dependent_on
+Service_Offering_Claim "1..*" -- "1..1" Target_Customer_Community : inheres_in
+Service_Offering_Commitment "1..*" -- "1..1" Service_Provider : inheres_in
+Service_Offering_Commitment "1..*" -- "1..1" Target_Customer_Community : externally_dependent_on
+Target_Customer_Community "1..*" o-- "1..*" Target_Customer : 
+@enduml

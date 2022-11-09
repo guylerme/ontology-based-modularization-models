@@ -1,0 +1,23 @@
+@startuml
+'6 occurrencies
+'6 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Rejected_Asset <<RoleMixin>>
+Asset <|-- Rejected_Asset
+class Software_Asset <<Category>>
+Asset <|-- Software_Asset
+class Asset <<Category>>
+class Processual_Asset <<Category>>
+Asset <|-- Processual_Asset
+class Organizational_Asset <<Category>>
+Asset <|-- Organizational_Asset
+class Reusable_Asset <<RoleMixin>>
+Asset <|-- Reusable_Asset
+@enduml

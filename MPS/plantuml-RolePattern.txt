@@ -1,0 +1,20 @@
+@startuml
+'3 occurrencies
+'4 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Consumer_of_Reusabe_Asset <<Role>>
+Human_Resource <|-- Consumer_of_Reusabe_Asset
+class Human_Resource <<Kind>>
+class Manager_of_Reusable_Asset <<Role>>
+Human_Resource <|-- Manager_of_Reusable_Asset
+class Producer_of_Reusable_Asset <<Role>>
+Human_Resource <|-- Producer_of_Reusable_Asset
+@enduml

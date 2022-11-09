@@ -1,0 +1,51 @@
+@startuml
+'15 occurrencies
+'19 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<SubKind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Free_Ball_Position <<SubKind>>
+Zone <|-- Free_Ball_Position
+class Zone <<Kind>>
+class Free_Kick_Position <<SubKind>>
+Zone <|-- Free_Kick_Position
+class Offensive_Strategy <<SubKind>>
+Strategy <|-- Offensive_Strategy
+class Strategy <<Kind>>
+class Penalty_Kick_Position <<SubKind>>
+Zone <|-- Penalty_Kick_Position
+class Second_Half <<SubKind>>
+Time_Period <|-- Second_Half
+class Time_Period <<Kind>>
+class Pretime-game <<SubKind>>
+Exception_Time <|-- Pretime-game
+Time_Period <|-- Pretime-game
+class Exception_Time <<Category>>
+class First_Half <<SubKind>>
+Time_Period <|-- First_Half
+class Goal_Area <<SubKind>>
+Zone <|-- Goal_Area
+class Defensive_Strategy <<SubKind>>
+Strategy <|-- Defensive_Strategy
+class Extra_Tme <<SubKind>>
+Exception_Time <|-- Extra_Tme
+Time_Period <|-- Extra_Tme
+class Half_Time <<SubKind>>
+Time_Period <|-- Half_Time
+class Penalty_Period <<SubKind>>
+Time_Period <|-- Penalty_Period
+Exception_Time <|-- Penalty_Period
+class Centerline <<SubKind>>
+Zone <|-- Centerline
+class Center_Circle <<SubKind>>
+Zone <|-- Center_Circle
+class Time_Lost <<SubKind>>
+Exception_Time <|-- Time_Lost
+Time_Period <|-- Time_Lost
+@enduml

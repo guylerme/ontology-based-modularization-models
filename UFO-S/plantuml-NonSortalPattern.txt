@@ -1,0 +1,23 @@
+@startuml
+'7 occurrencies
+'7 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Target_Customer <<RoleMixin>>
+Agent <|-- Target_Customer
+class Service_Customer <<RoleMixin>>
+Target_Customer <|-- Service_Customer
+class Service_Offering_Description <<Category>>
+class Hired_Service_Provider <<RoleMixin>>
+Service_Provider <|-- Hired_Service_Provider
+class Service_Provider <<RoleMixin>>
+Agent <|-- Service_Provider
+class Agent <<Category>>
+class Service_Agreement_Description <<Category>>
+@enduml

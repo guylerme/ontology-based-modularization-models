@@ -1,0 +1,25 @@
+@startuml
+'5 occurrencies
+'7 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<SubKind>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Process_Evaluation_Criteria <<SubKind>>
+Evaluation_Criteria <|-- Process_Evaluation_Criteria
+class Evaluation_Criteria <<Kind>>
+class Work_Product_Evaluation_Criteria <<SubKind>>
+Evaluation_Criteria <|-- Work_Product_Evaluation_Criteria
+class Improvement_Suggestion <<SubKind>>
+Issue <|-- Improvement_Suggestion
+class Issue <<Kind>>
+class Corretive_Action <<SubKind>>
+Issue <|-- Corretive_Action
+class Preventive_Action <<SubKind>>
+Issue <|-- Preventive_Action
+@enduml

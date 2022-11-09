@@ -1,0 +1,139 @@
+@startuml
+class Active_Parking_Spot_Usage <<Phase>>
+Parking_Spot_Usage <|-- Active_Parking_Spot_Usage
+class Bus/Truck <<SubKind>>
+Vehicle <|-- Bus/Truck
+class Cash_Payment <<SubKind>>
+Payment <|-- Cash_Payment
+class Company <<Kind>>
+class Company_Customer <<Role>>
+Company <|-- Company_Customer
+Customer <|-- Company_Customer
+class Credit_Card_Payment <<SubKind>>
+Payment <|-- Credit_Card_Payment
+class Customer <<RoleMixin>>
+class Daily_Reservation <<Relator>>
+Parking_Reservation <|-- Daily_Reservation
+class Debit_Card_Payment <<SubKind>>
+Payment <|-- Debit_Card_Payment
+class Expired_Price_Table <<Phase>>
+Price_Table <|-- Expired_Price_Table
+class Fractioneted_Reservation <<Relator>>
+Parking_Reservation <|-- Fractioneted_Reservation
+class Income_Generator_Usage <<Relator>>
+Parking_Spot_Usage <|-- Income_Generator_Usage
+class Light/SUV <<SubKind>>
+Vehicle <|-- Light/SUV
+class Monthly_Reservation <<Relator>>
+Parking_Reservation <|-- Monthly_Reservation
+class Motorcycle <<SubKind>>
+Vehicle <|-- Motorcycle
+class Multiple_Parking_Reservation <<Relator>>
+Parking_Reservation <|-- Multiple_Parking_Reservation
+class Parked_Vehicle <<Role>>
+Vehicle <|-- Parked_Vehicle
+class Parking_Company <<SubKind>>
+Company <|-- Parking_Company
+class Parking_Lot <<Collective>>
+class Parking_Reservation <<Relator>>
+class Parking_Spot <<Kind>>
+class Parking_Spot_Provider <<Role>>
+Parking_Lot <|-- Parking_Spot_Provider
+class Parking_Spot_Type <<Class>>
+class Parking_Spot_Usage <<Relator>>
+class Payment <<Kind>>
+class Person <<Kind>>
+class Personal_Customer <<Role>>
+Person <|-- Personal_Customer
+Customer <|-- Personal_Customer
+class Price_Table <<Kind>>
+class Price_Table_Used_In_Reservation <<Role>>
+Price_Table <|-- Price_Table_Used_In_Reservation
+class ReservaTipoVaga <<Relator>>
+class Reservation_of_Parking_Spot_Type <<Relator>>
+Parking_Reservation <|-- Reservation_of_Parking_Spot_Type
+class Reservation_of_Spefic_Parking_Spot <<Relator>>
+Parking_Reservation <|-- Reservation_of_Spefic_Parking_Spot
+class Reserved_Parking_Spot <<Role>>
+Parking_Spot <|-- Reserved_Parking_Spot
+class Reserved_Parking_Spot_Type <<Role>>
+Parking_Spot_Type <|-- Reserved_Parking_Spot_Type
+class Short_Period_Price <<Kind>>
+class Single_Parking_Reservation <<Relator>>
+Parking_Reservation <|-- Single_Parking_Reservation
+class Specific_Spot_Usage <<Relator>>
+Parking_Spot_Usage <|-- Specific_Spot_Usage
+class Terminated_Parking_Spot_Usage <<Phase>>
+Parking_Spot_Usage <|-- Terminated_Parking_Spot_Usage
+class Usage_Without_Reservation <<Relator>>
+Parking_Spot_Usage <|-- Usage_Without_Reservation
+class Usage_of_Multiple_Parking_Reservation <<Relator>>
+Usage_of_Reservation <|-- Usage_of_Multiple_Parking_Reservation
+class Usage_of_Reservation <<Relator>>
+Parking_Spot_Usage <|-- Usage_of_Reservation
+class Usage_of_Single_Parking_Reservation <<Relator>>
+Usage_of_Reservation <|-- Usage_of_Single_Parking_Reservation
+class Used_Multiple_Parking_Reservation <<Phase>>
+Multiple_Parking_Reservation <|-- Used_Multiple_Parking_Reservation
+class Used_Parking_Spot <<Role>>
+Parking_Spot <|-- Used_Parking_Spot
+class Used_Price_Table <<Role>>
+Price_Table <|-- Used_Price_Table
+class Used_Single_Parking_Reservation <<Phase>>
+Single_Parking_Reservation <|-- Used_Single_Parking_Reservation
+class Valid_Price_Table <<Phase>>
+Price_Table <|-- Valid_Price_Table
+class Vehicle <<Kind>>
+class Vehicle_Type <<Class>>
+class  <<Mediation>>
+class  <<Formal>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<ComponentOf>>
+class  <<MemberOf>>
+class  <<Formal>>
+class  <<Mediation>>
+class  <<Formal>>
+class  <<Mediation>>
+class  <<Formal>>
+class  <<Mediation>>
+class  <<Formal>>
+class applicable_to <<Formal>>
+class  <<Formal>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Formal>>
+
+
+
+
+
+
+
+
+
+Parking_Reservation "1..*" -- "1..1" Customer : 
+Income_Generator_Usage "1..1" -- "1..1" Payment : 
+Income_Generator_Usage "1..*" -- "1..1" Used_Price_Table : 
+Parking_Spot_Usage "1..*" -- "1..1" Parked_Vehicle : 
+Parking_Company "1..1" o-- "1..*" Parking_Lot : 
+Parking_Lot "1..1" o-- "2..*" Parking_Spot : 
+Parking_Lot "1..1" -- "1..*" Price_Table : 
+Parking_Reservation "1..*" -- "1..1" Parking_Spot_Provider : 
+Parking_Reservation "1..1" -- "1..1" Payment : 
+Parking_Reservation "1..*" -- "1..1" Price_Table_Used_In_Reservation : 
+Parking_Spot "1..*" -- "1..1" Parking_Spot_Type : 
+Parking_Spot_Usage "1..*" -- "1..1" Parking_Spot_Provider : 
+Parking_Spot_Type "1..1" -- "1..*" Vehicle_Type : 
+Price_Table "1..1" -- "1..1" Parking_Spot_Type : applicable_to
+Price_Table "1..1" -- "1..*" Short_Period_Price : 
+Reservation_of_Parking_Spot_Type "1..*" -- "1..1" Reserved_Parking_Spot_Type : 
+Reservation_of_Spefic_Parking_Spot "1..*" -- "1..1" Reserved_Parking_Spot : 
+Specific_Spot_Usage "1..*" -- "1..1" Used_Parking_Spot : 
+Usage_of_Multiple_Parking_Reservation "1..*" -- "1..1" Used_Multiple_Parking_Reservation : 
+Usage_of_Single_Parking_Reservation "1..1" -- "1..1" Used_Single_Parking_Reservation : 
+Vehicle "1..*" -- "1..1" Vehicle_Type : 
+@enduml

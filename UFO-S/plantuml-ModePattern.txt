@@ -1,0 +1,36 @@
+@startuml
+'6 occurrencies
+'10 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Mode>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Hired_Provider_Claim <<Mode>>
+class Hired_Service_Provider <<RoleMixin>>
+Service_Provider <|-- Hired_Service_Provider
+class Service_Offering_Commitment <<Mode>>
+class Service_Provider <<RoleMixin>>
+class Service_Offering_Claim <<Mode>>
+class Target_Customer_Community <<Collective>>
+class Hired_Provider_Commitment <<Mode>>
+class Service_Customer_Claim <<Mode>>
+class Service_Customer <<RoleMixin>>
+class Service_Customer_Commitment <<Mode>>
+Hired_Provider_Claim "0..*" -- "1..1" Hired_Service_Provider : inheres_in
+Hired_Provider_Claim "0..*" -- "1..*" Service_Customer : externally_dependent_on
+Hired_Provider_Commitment "1..*" -- "1..1" Hired_Service_Provider : inheres_in
+Hired_Provider_Commitment "1..1" -- "1..1" Service_Customer : externally_dependent_on
+Service_Customer_Claim "1..1" -- "1..1" Hired_Service_Provider : externally_dependent_on
+Service_Customer_Commitment "0..*" -- "1..1" Hired_Service_Provider : externally_dependent_on
+Service_Customer_Commitment "0..*" -- "1..1" Service_Customer : inheres_in
+Service_Customer_Claim "1..*" -- "1..1" Service_Customer : inheres_in
+Service_Offering_Claim "1..*" -- "1..1" Service_Provider : externally_dependent_on
+Service_Offering_Claim "1..*" -- "1..1" Target_Customer_Community : inheres_in
+Service_Offering_Commitment "1..*" -- "1..1" Service_Provider : inheres_in
+Service_Offering_Commitment "1..*" -- "1..1" Target_Customer_Community : externally_dependent_on
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+'1 occurrencies
+'2 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Library_of_Reusable_Assets <<Collective>>
+class Reusable_Asset <<RoleMixin>>
+Library_of_Reusable_Assets "1..1" o-- "2..*" Reusable_Asset : éMembroDe
+@enduml

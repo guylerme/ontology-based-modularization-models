@@ -1,0 +1,23 @@
+@startuml
+'3 occurrencies
+'6 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Team <<Kind>>
+class Player <<Kind>>
+class Team_at_Play <<Role>>
+Team <|-- Team_at_Play
+class Player_at_Play <<Role>>
+Player <|-- Player_at_Play
+class Ground_with_Zone <<Role>>
+class Zone_at_Ground <<Role>>
+Ground_with_Zone "1..1" o-- "2..*" Zone_at_Ground : 
+Team "1..1" o-- "5..5" Player : 
+Team_at_Play "1..1" o-- "5..5" Player_at_Play : 
+@enduml

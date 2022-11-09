@@ -1,0 +1,104 @@
+@startuml
+class ActiveClass <<Phase>>
+Class <|-- ActiveClass
+class ActiveCurriculum <<Phase>>
+Curriculum <|-- ActiveCurriculum
+class ActiveProfessor <<Phase>>
+Professor <|-- ActiveProfessor
+class Center <<SubKind>>
+Organization <|-- Center
+class Class <<Role>>
+class Colegiado <<Role>>
+class Course <<Kind>>
+class CourseCoordinator <<Role>>
+Professor <|-- CourseCoordinator
+class Curriculum <<Kind>>
+class Department <<SubKind>>
+Organization <|-- Department
+class DepartmentChief <<Role>>
+Professor <|-- DepartmentChief
+class Discipline <<Kind>>
+class EgressStudent <<Phase>>
+Student <|-- EgressStudent
+class Enrollment <<Relator>>
+class Higher_Education_Institution <<SubKind>>
+Organization <|-- Higher_Education_Institution
+class InactiveClass <<Phase>>
+Class <|-- InactiveClass
+class InactiveCurriculum <<Phase>>
+Curriculum <|-- InactiveCurriculum
+class InactiveProfessor <<Phase>>
+Professor <|-- InactiveProfessor
+class Organization <<Kind>>
+class Person <<Kind>>
+class Professor <<Role>>
+Person <|-- Professor
+class ProfessorMandate <<Relator>>
+class RegularStudent <<Phase>>
+Student <|-- RegularStudent
+class Semester <<Class>>
+class Student <<Role>>
+Person <|-- Student
+class StudentMandate <<Relator>>
+class SuspendedStudent <<Phase>>
+Student <|-- SuspendedStudent
+class Date <<Datatype>>
+class Field <<Datatype>>
+class Parity <<Datatype>>
+class Year <<Datatype>>
+class  <<ComponentOf>>
+class boundTo <<Association>>
+class  <<ComponentOf>>
+class  <<Characterization>>
+class teaches <<Association>>
+class provided_trough <<Association>>
+class coordinatedBy <<Association>>
+class  <<Mediation>>
+class  <<Mediation>>
+class manages <<Association>>
+class organizes <<Association>>
+class  <<Mediation>>
+class fullfiledBy <<Association>>
+class  <<Association>>
+class offers <<Association>>
+class  <<Characterization>>
+class  <<Mediation>>
+class  <<Mediation>>
+class starts_at <<Association>>
+class ends_at <<Association>>
+class  <<Association>>
+class  <<Association>>
+class  <<Mediation>>
+class composedBy <<Material>>
+class  <<Material>>
+class hasStudent <<Material>>
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+Center "1..1" o-- "1..1" Department : 
+Course "1..*" -- "1..1" Center : boundTo
+Higher_Education_Institution "1..1" o-- "1..1" Center : 
+Class "0..*" -- "1..1" Semester : 
+Professor "1..*" -- "0..*" Class : teaches
+Discipline "1..1" -- "0..*" Class : provided_trough
+Colegiado "1..1" -- "1..1" CourseCoordinator : coordinatedBy
+StudentMandate "1..1" -- "1..1" Colegiado : 
+ProfessorMandate "1..1" -- "1..1" Colegiado : 
+CourseCoordinator "1..1" -- "1..1" Course : manages
+Curriculum "1..*" -- "1..1" Course : organizes
+Enrollment "1..1" -- "1..1" Course : 
+Curriculum "1..1" -- "0..*" Student : fullfiledBy
+Discipline "1..1" -- "1..1" Curriculum : 
+Department "1..1" -- "1..*" Discipline : offers
+Discipline "1..1" -- "1..1" Field : 
+Enrollment "1..1" -- "1..1" Student : 
+ProfessorMandate "1..1" -- "1..1" Professor : 
+Semester "1..1" -- "1..1" Date : starts_at
+Semester "1..1" -- "1..1" Date : ends_at
+Semester "1..1" -- "1..1" Year : 
+Semester "1..1" -- "1..1" Parity : 
+StudentMandate "1..1" -- "1..1" Student : 
+Colegiado "0..*" -- "1..*" Professor : composedBy
+Student "1..1" -- "1..1" Colegiado : 
+Course "1..*" -- "0..*" Student : hasStudent
+@enduml

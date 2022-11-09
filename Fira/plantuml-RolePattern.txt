@@ -1,0 +1,54 @@
+@startuml
+'16 occurrencies
+'21 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Right_Attacker <<Role>>
+Offensive_Player <|-- Right_Attacker
+class Offensive_Player <<Role>>
+Player <|-- Offensive_Player
+class Player <<Kind>>
+class Player_at_Play <<Role>>
+Player <|-- Player_at_Play
+class Visitor_Team <<Role>>
+Team_at_Play <|-- Visitor_Team
+class Team_at_Play <<Role>>
+Team <|-- Team_at_Play
+class Team <<Kind>>
+class Midfielder <<Role>>
+Defensive_Player <|-- Midfielder
+Offensive_Player <|-- Midfielder
+class Defensive_Player <<Role>>
+Player <|-- Defensive_Player
+class Local_Team <<Role>>
+Team_at_Play <|-- Local_Team
+class Ground_with_Zone <<Role>>
+Ground <|-- Ground_with_Zone
+class Ground <<Kind>>
+class Goalkeeper <<Role>>
+Player <|-- Goalkeeper
+class Zone_at_Ground <<Role>>
+Zone <|-- Zone_at_Ground
+class Zone <<Kind>>
+class Left_Attacker <<Role>>
+Offensive_Player <|-- Left_Attacker
+class Shooter <<Role>>
+Offensive_Player <|-- Shooter
+class Far_Defender <<Role>>
+Defensive_Player <|-- Far_Defender
+class Near_Defender <<Role>>
+Defensive_Player <|-- Near_Defender
+class Ball_at_Play <<Role>>
+Ball <|-- Ball_at_Play
+class Ball <<Kind>>
+Ground_with_Zone "1..1" o-- "2..*" Zone_at_Ground : 
+Team "1..1" o-- "5..5" Player : 
+Team_at_Play "1..1" o-- "5..5" Player_at_Play : 
+@enduml

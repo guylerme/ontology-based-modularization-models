@@ -1,0 +1,114 @@
+@startuml
+class Appraiser <<Role>>
+Human_Resource <|-- Appraiser
+class Canceled_NC <<Phase>>
+Noncompliance <|-- Canceled_NC
+class Cause <<Kind>>
+class Cause_Identification <<Relator>>
+class Corretive_Action <<SubKind>>
+Issue <|-- Corretive_Action
+class Effective_Issue <<Phase>>
+Finished_Issue <|-- Effective_Issue
+class Employment <<Relator>>
+class Evaluation_Checklist <<Collective>>
+class Evaluation_Criteria <<Kind>>
+class Evaluation_Find <<Category>>
+class Finished_Issue <<Phase>>
+Issue <|-- Finished_Issue
+class Finished_NC <<Role>>
+Registered_NC <|-- Finished_NC
+class Human_Resource <<Role>>
+Person <|-- Human_Resource
+class Identified_NC <<Phase>>
+Noncompliance <|-- Identified_NC
+class Implementing_Issue <<Phase>>
+Issue <|-- Implementing_Issue
+class Improvement_Suggestion <<SubKind>>
+Issue <|-- Improvement_Suggestion
+class Issue <<Kind>>
+class Item_Evaluation <<Relator>>
+class Lesson_Learned <<Kind>>
+Evaluation_Find <|-- Lesson_Learned
+class NC_Action_Item <<Relator>>
+class NC_Cause <<Role>>
+Cause <|-- NC_Cause
+class NC_Issue <<Role>>
+Issue <|-- NC_Issue
+class Non_Effective_Issue <<Phase>>
+Finished_Issue <|-- Non_Effective_Issue
+class Noncompliance <<Kind>>
+Evaluation_Find <|-- Noncompliance
+class Objective_Evaluation <<Relator>>
+class Organization <<Kind>>
+class Person <<Kind>>
+class Planned_Issue <<Phase>>
+Issue <|-- Planned_Issue
+class Planned_NC <<Role>>
+Registered_NC <|-- Planned_NC
+class Preventive_Action <<SubKind>>
+Issue <|-- Preventive_Action
+class Problem <<Kind>>
+Evaluation_Find <|-- Problem
+class Problem_Action_Item <<Relator>>
+class Problem_Issue <<Role>>
+Issue <|-- Problem_Issue
+class Process_Evaluation_Criteria <<SubKind>>
+Evaluation_Criteria <|-- Process_Evaluation_Criteria
+class Process_Occurrence <<Mode>>
+class Project <<Kind>>
+class Project_Process <<Kind>>
+class Registered_NC <<Phase>>
+Noncompliance <|-- Registered_NC
+class Resolving_NC <<Role>>
+Registered_NC <|-- Resolving_NC
+class Standard_Process <<Kind>>
+class Work_Product_Evaluation_Criteria <<SubKind>>
+Evaluation_Criteria <|-- Work_Product_Evaluation_Criteria
+class allocates <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<MemberOf>>
+class aplies <<Mediation>>
+class defined_for <<Formal>>
+class assesses <<Mediation>>
+class finds <<Mediation>>
+class composes <<Formal>>
+class  <<Mediation>>
+class  <<Mediation>>
+class assesses <<Mediation>>
+class defined_for <<Formal>>
+class  <<Mediation>>
+class  <<Mediation>>
+class caused_by <<Characterization>>
+class defined_for <<Formal>>
+class tailors <<Formal>>
+
+
+
+
+
+
+
+Objective_Evaluation "1..*" -- "1..1" Appraiser : allocates
+Cause_Identification "1..*" -- "1..1" NC_Cause : 
+Cause_Identification "1..*" -- "1..1" Registered_NC : 
+Employment "1..*" -- "1..1" Human_Resource : 
+Employment "1..*" -- "1..1" Organization : 
+Evaluation_Checklist "1..*" o-- "2..*" Evaluation_Criteria : 
+Objective_Evaluation "1..*" -- "1..*" Evaluation_Checklist : aplies
+Evaluation_Criteria "0..*" -- "1..1" Project_Process : defined_for
+Item_Evaluation "1..*" -- "1..1" Evaluation_Criteria : assesses
+Item_Evaluation "1..*" -- "1..*" Evaluation_Find : finds
+Item_Evaluation "0..*" -- "1..1" Objective_Evaluation : composes
+NC_Action_Item "1..*" -- "1..1" NC_Issue : 
+NC_Action_Item "1..*" -- "1..1" Registered_NC : 
+Objective_Evaluation "1..*" -- "1..1" Project : assesses
+Standard_Process "1..*" -- "1..1" Organization : defined_for
+Problem_Action_Item "1..*" -- "1..1" Problem : 
+Problem_Action_Item "1..*" -- "1..1" Problem_Issue : 
+Process_Occurrence "1..1" -- "1..1" Project_Process : caused_by
+Project "1..1" -- "1..*" Project_Process : defined_for
+Project_Process "0..*" -- "0..1" Standard_Process : tailors
+@enduml

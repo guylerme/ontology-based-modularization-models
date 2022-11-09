@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="ASCII"?>
+<RefOntoUML:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:RefOntoUML="http://nemo.inf.ufes.br/ontouml/refontouml" xmi:id="_y2H_VBE6EeSzrYTL80wrWA" name="FabianoRui_QualityAssurance_English" visibility="public">
+  <packagedElement xsi:type="RefOntoUML:Role" xmi:id="_y2H_VRE6EeSzrYTL80wrWA" name="Appraiser" visibility="public">
+    <generalization xmi:id="_y2H_VhE6EeSzrYTL80wrWA" general="_y2H_ZxE6EeSzrYTL80wrWA"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Phase" xmi:id="_y2H_VxE6EeSzrYTL80wrWA" name="Canceled NC" visibility="public">
+    <generalization xmi:id="_y2H_WBE6EeSzrYTL80wrWA" general="_y2H_fRE6EeSzrYTL80wrWA" generalizationSet="_y2IAKBE6EeSzrYTL80wrWA"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="_y2H_WRE6EeSzrYTL80wrWA" name="Cause" visibility="public"/>
+  <packagedElement xsi:type="RefOntoUML:Relator" xmi:id="_y2H_WhE6EeSzrYTL80wrWA" name="Cause Identification" visibility="public"/>
+  <packagedElement xsi:type="RefOntoUML:SubKind" xmi:id="_y2H_WxE6EeSzrYTL80wrWA" name="Corretive Action" visibility="public">
+    <generalization xmi:id="_y2H_XBE6EeSzrYTL80wrWA" general="_y2H_bxE6EeSzrYTL80wrWA" generalizationSet="_y2IAKRE6EeSzrYTL80wrWA"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Phase" xmi:id="_y2H_XRE6EeSzrYTL80wrWA" name="Effective Issue" visibility="public">
+    <generalization xmi:id="_y2H_XhE6EeSzrYTL80wrWA" general="_y2H_YxE6EeSzrYTL80wrWA" generalizationSet="_y2IAKhE6EeSzrYTL80wrWA"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Relator" xmi:id="_y2H_XxE6EeSzrYTL80wrWA" name="Employment" visibility="public"/>
+  <packagedElement xsi:type="RefOntoUML:Collective" xmi:id="_y2H_YBE6EeSzrYTL80wrWA" name="Evaluation Checklist" visibility="public"/>
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="_y2H_YRE6EeSzrYTL80wrWA" name="Evaluation Criteria" visibility="public"/>
+  <packagedElement xsi:type="RefOntoUML:Category" xmi:id="_y2H_YhE6EeSzrYTL80wrWA" name="Evaluation Find" visibility="public" isAbstract="true"/>
+  <packagedElement xsi:type="RefOntoUML:Phase" xmi:id="_y2H_YxE6EeSzrYTL80wrWA" name="Finished Issue" visibility="public">
+    <generalization xmi:id="_y2H_ZBE6EeSzrYTL80wrWA" general="_y2H_bxE6EeSzrYTL80wrWA" generalizationSet="_y2IAKxE6EeSzrYTL80wrWA"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Role" xmi:id="_y2H_ZRE6EeSzrYTL80wrWA" name="Finished NC" visibility="public">
+    <generalization xmi:id="_y2H_ZhE6EeSzrYTL80wrWA" general="_y2H_lRE6EeSzrYTL80wrWA" generalizationSet="_y2IALBE6EeSzrYTL80wrWA"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Role" xmi:id="_y2H_ZxE6EeSzrYTL80wrWA" name="Human Resource" visibility="public">
+    <generalization xmi:id="_y2H_aBE6EeSzrYTL80wrWA" general="_y2H_hBE6EeSzrYTL80wrWA"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Phase" xmi:id="_y2H_aRE6EeSzrYTL80wrWA" name="Identified NC" visibility="public">
+    <generalization xmi:id="_y2H_ahE6EeSzrYTL80wrWA" general="_y2H_fRE6EeSzrYTL80wrWA" generalizationSet="_y2IAKBE6EeSzrYTL80wrWA"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Phase" xmi:id="_y2H_axE6EeSzrYTL80wrWA" name="Implementing Issue" visibility="public">
+    <generalization xmi:id="_y2H_bBE6EeSzrYTL80wrWA" general="_y2H_bxE6EeSzrYTL80wrWA" generalizationSet="_y2IAKxE6EeSzrYTL80wrWA"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:SubKind" xmi:id="_y2H_bRE6EeSzrYTL80wrWA" name="Improvement Suggestion" visibility="public">
+    <generalization xmi:id="_y2H_bhE6EeSzrYTL80wrWA" general="_y2H_bxE6EeSzrYTL80wrWA" generalizationSet="_y2IAKRE6EeSzrYTL80wrWA"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="_y2H_bxE6EeSzrYTL80wrWA" name="Issue" visibility="public">
+    <ownedAttribute xmi:id="_y2H_cBE6EeSzrYTL80wrWA" name="status" visibility="private">
+      <type xsi:type="RefOntoUML:PrimitiveType" href="file:/Y:/Documents/oled_svn/br.ufes.inf.nemo.antipattern/models/allModels.refontouml#_y1FdSBE6EeSzrYTL80wrWA"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_cRE6EeSzrYTL80wrWA" value="1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_chE6EeSzrYTL80wrWA" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Relator" xmi:id="_y2H_cxE6EeSzrYTL80wrWA" name="Item Evaluation" visibility="public"/>
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="_y2H_dBE6EeSzrYTL80wrWA" name="Lesson Learned" visibility="public">
+    <generalization xmi:id="_y2H_dRE6EeSzrYTL80wrWA" general="_y2H_YhE6EeSzrYTL80wrWA" generalizationSet="_y2IALRE6EeSzrYTL80wrWA"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Relator" xmi:id="_y2H_dhE6EeSzrYTL80wrWA" name="NC Action Item" visibility="public"/>
+  <packagedElement xsi:type="RefOntoUML:Role" xmi:id="_y2H_dxE6EeSzrYTL80wrWA" name="NC Cause" visibility="public">
+    <generalization xmi:id="_y2H_eBE6EeSzrYTL80wrWA" general="_y2H_WRE6EeSzrYTL80wrWA"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Role" xmi:id="_y2H_eRE6EeSzrYTL80wrWA" name="NC Issue" visibility="public">
+    <generalization xmi:id="_y2H_ehE6EeSzrYTL80wrWA" general="_y2H_bxE6EeSzrYTL80wrWA"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Phase" xmi:id="_y2H_exE6EeSzrYTL80wrWA" name="Non Effective Issue" visibility="public">
+    <generalization xmi:id="_y2H_fBE6EeSzrYTL80wrWA" general="_y2H_YxE6EeSzrYTL80wrWA" generalizationSet="_y2IAKhE6EeSzrYTL80wrWA"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="_y2H_fRE6EeSzrYTL80wrWA" name="Noncompliance" visibility="public">
+    <generalization xmi:id="_y2H_fhE6EeSzrYTL80wrWA" general="_y2H_YhE6EeSzrYTL80wrWA" generalizationSet="_y2IALRE6EeSzrYTL80wrWA"/>
+    <ownedAttribute xmi:id="_y2H_fxE6EeSzrYTL80wrWA" name="status" visibility="private">
+      <type xsi:type="RefOntoUML:PrimitiveType" href="file:/Y:/Documents/oled_svn/br.ufes.inf.nemo.antipattern/models/allModels.refontouml#_y1FdSBE6EeSzrYTL80wrWA"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_gBE6EeSzrYTL80wrWA" value="1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_gRE6EeSzrYTL80wrWA" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Relator" xmi:id="_y2H_ghE6EeSzrYTL80wrWA" name="Objective Evaluation" visibility="public"/>
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="_y2H_gxE6EeSzrYTL80wrWA" name="Organization" visibility="public"/>
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="_y2H_hBE6EeSzrYTL80wrWA" name="Person" visibility="public"/>
+  <packagedElement xsi:type="RefOntoUML:Phase" xmi:id="_y2H_hRE6EeSzrYTL80wrWA" name="Planned Issue" visibility="public">
+    <generalization xmi:id="_y2H_hhE6EeSzrYTL80wrWA" general="_y2H_bxE6EeSzrYTL80wrWA" generalizationSet="_y2IAKxE6EeSzrYTL80wrWA"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Role" xmi:id="_y2H_hxE6EeSzrYTL80wrWA" name="Planned NC" visibility="public">
+    <generalization xmi:id="_y2H_iBE6EeSzrYTL80wrWA" general="_y2H_lRE6EeSzrYTL80wrWA" generalizationSet="_y2IALBE6EeSzrYTL80wrWA"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:SubKind" xmi:id="_y2H_iRE6EeSzrYTL80wrWA" name="Preventive Action" visibility="public">
+    <generalization xmi:id="_y2H_ihE6EeSzrYTL80wrWA" general="_y2H_bxE6EeSzrYTL80wrWA" generalizationSet="_y2IAKRE6EeSzrYTL80wrWA"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="_y2H_ixE6EeSzrYTL80wrWA" name="Problem" visibility="public">
+    <generalization xmi:id="_y2H_jBE6EeSzrYTL80wrWA" general="_y2H_YhE6EeSzrYTL80wrWA" generalizationSet="_y2IALRE6EeSzrYTL80wrWA"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Relator" xmi:id="_y2H_jRE6EeSzrYTL80wrWA" name="Problem Action Item" visibility="public"/>
+  <packagedElement xsi:type="RefOntoUML:Role" xmi:id="_y2H_jhE6EeSzrYTL80wrWA" name="Problem Issue" visibility="public">
+    <generalization xmi:id="_y2H_jxE6EeSzrYTL80wrWA" general="_y2H_bxE6EeSzrYTL80wrWA"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:SubKind" xmi:id="_y2H_kBE6EeSzrYTL80wrWA" name="Process Evaluation Criteria" visibility="public">
+    <generalization xmi:id="_y2H_kRE6EeSzrYTL80wrWA" general="_y2H_YRE6EeSzrYTL80wrWA" generalizationSet="_y2IALhE6EeSzrYTL80wrWA"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Mode" xmi:id="_y2H_khE6EeSzrYTL80wrWA" name="Process Occurrence" visibility="public"/>
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="_y2H_kxE6EeSzrYTL80wrWA" name="Project" visibility="public"/>
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="_y2H_lBE6EeSzrYTL80wrWA" name="Project Process" visibility="public"/>
+  <packagedElement xsi:type="RefOntoUML:Phase" xmi:id="_y2H_lRE6EeSzrYTL80wrWA" name="Registered NC" visibility="public">
+    <generalization xmi:id="_y2H_lhE6EeSzrYTL80wrWA" general="_y2H_fRE6EeSzrYTL80wrWA" generalizationSet="_y2IAKBE6EeSzrYTL80wrWA"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Role" xmi:id="_y2H_lxE6EeSzrYTL80wrWA" name="Resolving NC" visibility="public">
+    <generalization xmi:id="_y2H_mBE6EeSzrYTL80wrWA" general="_y2H_lRE6EeSzrYTL80wrWA" generalizationSet="_y2IALBE6EeSzrYTL80wrWA"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Kind" xmi:id="_y2H_mRE6EeSzrYTL80wrWA" name="Standard Process" visibility="public"/>
+  <packagedElement xsi:type="RefOntoUML:SubKind" xmi:id="_y2H_mhE6EeSzrYTL80wrWA" name="Work Product Evaluation Criteria" visibility="public">
+    <generalization xmi:id="_y2H_mxE6EeSzrYTL80wrWA" general="_y2H_YRE6EeSzrYTL80wrWA" generalizationSet="_y2IALhE6EeSzrYTL80wrWA"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Mediation" xmi:id="_y2H_nBE6EeSzrYTL80wrWA" name="allocates" visibility="public" memberEnd="_y2H_nRE6EeSzrYTL80wrWA _y2H_oBE6EeSzrYTL80wrWA">
+    <ownedEnd xmi:id="_y2H_nRE6EeSzrYTL80wrWA" visibility="public" type="_y2H_ghE6EeSzrYTL80wrWA" association="_y2H_nBE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_nhE6EeSzrYTL80wrWA" value="-1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_nxE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_y2H_oBE6EeSzrYTL80wrWA" visibility="public" type="_y2H_VRE6EeSzrYTL80wrWA" isReadOnly="true" association="_y2H_nBE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_oRE6EeSzrYTL80wrWA" value="1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_ohE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Mediation" xmi:id="_y2H_oxE6EeSzrYTL80wrWA" visibility="public" memberEnd="_y2H_pBE6EeSzrYTL80wrWA _y2H_pxE6EeSzrYTL80wrWA">
+    <name xsi:nil="true"/>
+    <ownedEnd xmi:id="_y2H_pBE6EeSzrYTL80wrWA" visibility="public" type="_y2H_WhE6EeSzrYTL80wrWA" association="_y2H_oxE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_pRE6EeSzrYTL80wrWA" value="-1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_phE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_y2H_pxE6EeSzrYTL80wrWA" visibility="public" type="_y2H_dxE6EeSzrYTL80wrWA" isReadOnly="true" association="_y2H_oxE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_qBE6EeSzrYTL80wrWA" value="1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_qRE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Mediation" xmi:id="_y2H_qhE6EeSzrYTL80wrWA" visibility="public" memberEnd="_y2H_qxE6EeSzrYTL80wrWA _y2H_rhE6EeSzrYTL80wrWA">
+    <name xsi:nil="true"/>
+    <ownedEnd xmi:id="_y2H_qxE6EeSzrYTL80wrWA" visibility="public" type="_y2H_WhE6EeSzrYTL80wrWA" association="_y2H_qhE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_rBE6EeSzrYTL80wrWA" value="-1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_rRE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_y2H_rhE6EeSzrYTL80wrWA" visibility="public" type="_y2H_lRE6EeSzrYTL80wrWA" isReadOnly="true" association="_y2H_qhE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_rxE6EeSzrYTL80wrWA" value="1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_sBE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Mediation" xmi:id="_y2H_sRE6EeSzrYTL80wrWA" visibility="public" memberEnd="_y2H_shE6EeSzrYTL80wrWA _y2H_tRE6EeSzrYTL80wrWA">
+    <name xsi:nil="true"/>
+    <ownedEnd xmi:id="_y2H_shE6EeSzrYTL80wrWA" visibility="public" type="_y2H_XxE6EeSzrYTL80wrWA" association="_y2H_sRE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_sxE6EeSzrYTL80wrWA" value="-1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_tBE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_y2H_tRE6EeSzrYTL80wrWA" visibility="public" type="_y2H_ZxE6EeSzrYTL80wrWA" isReadOnly="true" association="_y2H_sRE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_thE6EeSzrYTL80wrWA" value="1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_txE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Mediation" xmi:id="_y2H_uBE6EeSzrYTL80wrWA" visibility="public" memberEnd="_y2H_uRE6EeSzrYTL80wrWA _y2H_vBE6EeSzrYTL80wrWA">
+    <name xsi:nil="true"/>
+    <ownedEnd xmi:id="_y2H_uRE6EeSzrYTL80wrWA" visibility="public" type="_y2H_XxE6EeSzrYTL80wrWA" association="_y2H_uBE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_uhE6EeSzrYTL80wrWA" value="-1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_uxE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_y2H_vBE6EeSzrYTL80wrWA" visibility="public" type="_y2H_gxE6EeSzrYTL80wrWA" isReadOnly="true" association="_y2H_uBE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_vRE6EeSzrYTL80wrWA" value="1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_vhE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:memberOf" xmi:id="_y2H_vxE6EeSzrYTL80wrWA" visibility="public" memberEnd="_y2H_wBE6EeSzrYTL80wrWA _y2H_wxE6EeSzrYTL80wrWA">
+    <name xsi:nil="true"/>
+    <ownedEnd xmi:id="_y2H_wBE6EeSzrYTL80wrWA" visibility="public" type="_y2H_YBE6EeSzrYTL80wrWA" aggregation="shared" association="_y2H_vxE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_wRE6EeSzrYTL80wrWA" value="-1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_whE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_y2H_wxE6EeSzrYTL80wrWA" visibility="public" type="_y2H_YRE6EeSzrYTL80wrWA" association="_y2H_vxE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_xBE6EeSzrYTL80wrWA" value="-1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_xRE6EeSzrYTL80wrWA" value="2"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Mediation" xmi:id="_y2H_xhE6EeSzrYTL80wrWA" name="aplies" visibility="public" memberEnd="_y2H_xxE6EeSzrYTL80wrWA _y2H_yhE6EeSzrYTL80wrWA">
+    <ownedEnd xmi:id="_y2H_xxE6EeSzrYTL80wrWA" visibility="public" type="_y2H_ghE6EeSzrYTL80wrWA" association="_y2H_xhE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_yBE6EeSzrYTL80wrWA" value="-1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_yRE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_y2H_yhE6EeSzrYTL80wrWA" visibility="public" type="_y2H_YBE6EeSzrYTL80wrWA" isReadOnly="true" association="_y2H_xhE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_yxE6EeSzrYTL80wrWA" value="-1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_zBE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:FormalAssociation" xmi:id="_y2H_zRE6EeSzrYTL80wrWA" name="defined for" visibility="public" memberEnd="_y2H_zhE6EeSzrYTL80wrWA _y2H_0RE6EeSzrYTL80wrWA">
+    <ownedEnd xmi:id="_y2H_zhE6EeSzrYTL80wrWA" visibility="public" type="_y2H_YRE6EeSzrYTL80wrWA" association="_y2H_zRE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_zxE6EeSzrYTL80wrWA" value="-1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_0BE6EeSzrYTL80wrWA"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_y2H_0RE6EeSzrYTL80wrWA" visibility="public" type="_y2H_lBE6EeSzrYTL80wrWA" association="_y2H_zRE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_0hE6EeSzrYTL80wrWA" value="1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_0xE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Mediation" xmi:id="_y2H_1BE6EeSzrYTL80wrWA" name="assesses" visibility="public" memberEnd="_y2H_1RE6EeSzrYTL80wrWA _y2H_2BE6EeSzrYTL80wrWA">
+    <ownedEnd xmi:id="_y2H_1RE6EeSzrYTL80wrWA" visibility="public" type="_y2H_cxE6EeSzrYTL80wrWA" association="_y2H_1BE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_1hE6EeSzrYTL80wrWA" value="-1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_1xE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_y2H_2BE6EeSzrYTL80wrWA" visibility="public" type="_y2H_YRE6EeSzrYTL80wrWA" isReadOnly="true" association="_y2H_1BE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_2RE6EeSzrYTL80wrWA" value="1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_2hE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Mediation" xmi:id="_y2H_2xE6EeSzrYTL80wrWA" name="finds" visibility="public" memberEnd="_y2H_3BE6EeSzrYTL80wrWA _y2H_3xE6EeSzrYTL80wrWA">
+    <ownedEnd xmi:id="_y2H_3BE6EeSzrYTL80wrWA" visibility="public" type="_y2H_cxE6EeSzrYTL80wrWA" association="_y2H_2xE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_3RE6EeSzrYTL80wrWA" value="-1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_3hE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_y2H_3xE6EeSzrYTL80wrWA" visibility="public" type="_y2H_YhE6EeSzrYTL80wrWA" isReadOnly="true" association="_y2H_2xE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_4BE6EeSzrYTL80wrWA" value="-1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_4RE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:FormalAssociation" xmi:id="_y2H_4hE6EeSzrYTL80wrWA" name="composes" visibility="public" memberEnd="_y2H_4xE6EeSzrYTL80wrWA _y2H_5hE6EeSzrYTL80wrWA">
+    <ownedEnd xmi:id="_y2H_4xE6EeSzrYTL80wrWA" visibility="public" type="_y2H_cxE6EeSzrYTL80wrWA" association="_y2H_4hE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_5BE6EeSzrYTL80wrWA" value="-1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_5RE6EeSzrYTL80wrWA"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_y2H_5hE6EeSzrYTL80wrWA" visibility="public" type="_y2H_ghE6EeSzrYTL80wrWA" association="_y2H_4hE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_5xE6EeSzrYTL80wrWA" value="1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_6BE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Mediation" xmi:id="_y2H_6RE6EeSzrYTL80wrWA" visibility="public" memberEnd="_y2H_6hE6EeSzrYTL80wrWA _y2H_7RE6EeSzrYTL80wrWA">
+    <name xsi:nil="true"/>
+    <ownedEnd xmi:id="_y2H_6hE6EeSzrYTL80wrWA" visibility="public" type="_y2H_dhE6EeSzrYTL80wrWA" association="_y2H_6RE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_6xE6EeSzrYTL80wrWA" value="-1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_7BE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_y2H_7RE6EeSzrYTL80wrWA" visibility="public" type="_y2H_eRE6EeSzrYTL80wrWA" isReadOnly="true" association="_y2H_6RE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_7hE6EeSzrYTL80wrWA" value="1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_7xE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Mediation" xmi:id="_y2H_8BE6EeSzrYTL80wrWA" visibility="public" memberEnd="_y2H_8RE6EeSzrYTL80wrWA _y2H_9BE6EeSzrYTL80wrWA">
+    <name xsi:nil="true"/>
+    <ownedEnd xmi:id="_y2H_8RE6EeSzrYTL80wrWA" visibility="public" type="_y2H_dhE6EeSzrYTL80wrWA" association="_y2H_8BE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_8hE6EeSzrYTL80wrWA" value="-1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_8xE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_y2H_9BE6EeSzrYTL80wrWA" visibility="public" type="_y2H_lRE6EeSzrYTL80wrWA" isReadOnly="true" association="_y2H_8BE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_9RE6EeSzrYTL80wrWA" value="1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_9hE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Mediation" xmi:id="_y2H_9xE6EeSzrYTL80wrWA" name="assesses" visibility="public" memberEnd="_y2H_-BE6EeSzrYTL80wrWA _y2H_-xE6EeSzrYTL80wrWA">
+    <ownedEnd xmi:id="_y2H_-BE6EeSzrYTL80wrWA" visibility="public" type="_y2H_ghE6EeSzrYTL80wrWA" association="_y2H_9xE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H_-RE6EeSzrYTL80wrWA" value="-1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H_-hE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_y2H_-xE6EeSzrYTL80wrWA" visibility="public" type="_y2H_kxE6EeSzrYTL80wrWA" isReadOnly="true" association="_y2H_9xE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2H__BE6EeSzrYTL80wrWA" value="1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2H__RE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:FormalAssociation" xmi:id="_y2H__hE6EeSzrYTL80wrWA" name="defined for" visibility="public" memberEnd="_y2H__xE6EeSzrYTL80wrWA _y2IAAhE6EeSzrYTL80wrWA">
+    <ownedEnd xmi:id="_y2H__xE6EeSzrYTL80wrWA" visibility="public" type="_y2H_mRE6EeSzrYTL80wrWA" association="_y2H__hE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2IAABE6EeSzrYTL80wrWA" value="-1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2IAARE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_y2IAAhE6EeSzrYTL80wrWA" visibility="public" type="_y2H_gxE6EeSzrYTL80wrWA" association="_y2H__hE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2IAAxE6EeSzrYTL80wrWA" value="1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2IABBE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Mediation" xmi:id="_y2IABRE6EeSzrYTL80wrWA" visibility="public" memberEnd="_y2IABhE6EeSzrYTL80wrWA _y2IACRE6EeSzrYTL80wrWA">
+    <name xsi:nil="true"/>
+    <ownedEnd xmi:id="_y2IABhE6EeSzrYTL80wrWA" visibility="public" type="_y2H_jRE6EeSzrYTL80wrWA" association="_y2IABRE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2IABxE6EeSzrYTL80wrWA" value="-1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2IACBE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_y2IACRE6EeSzrYTL80wrWA" visibility="public" type="_y2H_ixE6EeSzrYTL80wrWA" isReadOnly="true" association="_y2IABRE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2IAChE6EeSzrYTL80wrWA" value="1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2IACxE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Mediation" xmi:id="_y2IADBE6EeSzrYTL80wrWA" visibility="public" memberEnd="_y2IADRE6EeSzrYTL80wrWA _y2IAEBE6EeSzrYTL80wrWA">
+    <name xsi:nil="true"/>
+    <ownedEnd xmi:id="_y2IADRE6EeSzrYTL80wrWA" visibility="public" type="_y2H_jRE6EeSzrYTL80wrWA" association="_y2IADBE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2IADhE6EeSzrYTL80wrWA" value="-1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2IADxE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_y2IAEBE6EeSzrYTL80wrWA" visibility="public" type="_y2H_jhE6EeSzrYTL80wrWA" isReadOnly="true" association="_y2IADBE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2IAERE6EeSzrYTL80wrWA" value="1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2IAEhE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:Characterization" xmi:id="_y2IAExE6EeSzrYTL80wrWA" name="caused by" visibility="public" memberEnd="_y2IAFBE6EeSzrYTL80wrWA _y2IAFxE6EeSzrYTL80wrWA">
+    <ownedEnd xmi:id="_y2IAFBE6EeSzrYTL80wrWA" visibility="public" type="_y2H_khE6EeSzrYTL80wrWA" association="_y2IAExE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2IAFRE6EeSzrYTL80wrWA" value="1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2IAFhE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_y2IAFxE6EeSzrYTL80wrWA" visibility="public" type="_y2H_lBE6EeSzrYTL80wrWA" isReadOnly="true" association="_y2IAExE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2IAGBE6EeSzrYTL80wrWA" value="1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2IAGRE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:FormalAssociation" xmi:id="_y2IAGhE6EeSzrYTL80wrWA" name="defined for" visibility="public" memberEnd="_y2IAGxE6EeSzrYTL80wrWA _y2IAHhE6EeSzrYTL80wrWA">
+    <ownedEnd xmi:id="_y2IAGxE6EeSzrYTL80wrWA" visibility="public" type="_y2H_kxE6EeSzrYTL80wrWA" association="_y2IAGhE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2IAHBE6EeSzrYTL80wrWA" value="1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2IAHRE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_y2IAHhE6EeSzrYTL80wrWA" visibility="public" type="_y2H_lBE6EeSzrYTL80wrWA" association="_y2IAGhE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2IAHxE6EeSzrYTL80wrWA" value="-1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2IAIBE6EeSzrYTL80wrWA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:FormalAssociation" xmi:id="_y2IAIRE6EeSzrYTL80wrWA" name="tailors" visibility="public" memberEnd="_y2IAIhE6EeSzrYTL80wrWA _y2IAJRE6EeSzrYTL80wrWA">
+    <ownedEnd xmi:id="_y2IAIhE6EeSzrYTL80wrWA" visibility="public" type="_y2H_lBE6EeSzrYTL80wrWA" association="_y2IAIRE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2IAIxE6EeSzrYTL80wrWA" value="-1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2IAJBE6EeSzrYTL80wrWA"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_y2IAJRE6EeSzrYTL80wrWA" visibility="public" type="_y2H_mRE6EeSzrYTL80wrWA" association="_y2IAIRE6EeSzrYTL80wrWA">
+      <name xsi:nil="true"/>
+      <upperValue xsi:type="RefOntoUML:LiteralUnlimitedNatural" xmi:id="_y2IAJhE6EeSzrYTL80wrWA" value="1"/>
+      <lowerValue xsi:type="RefOntoUML:LiteralInteger" xmi:id="_y2IAJxE6EeSzrYTL80wrWA"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:GeneralizationSet" xmi:id="_y2IAKBE6EeSzrYTL80wrWA" name="ga-noncompliance" visibility="public" isCovering="true" isDisjoint="true" generalization="_y2H_WBE6EeSzrYTL80wrWA _y2H_ahE6EeSzrYTL80wrWA _y2H_lhE6EeSzrYTL80wrWA"/>
+  <packagedElement xsi:type="RefOntoUML:GeneralizationSet" xmi:id="_y2IAKRE6EeSzrYTL80wrWA" name="IssueType" visibility="public" generalization="_y2H_XBE6EeSzrYTL80wrWA _y2H_bhE6EeSzrYTL80wrWA _y2H_ihE6EeSzrYTL80wrWA"/>
+  <packagedElement xsi:type="RefOntoUML:GeneralizationSet" xmi:id="_y2IAKhE6EeSzrYTL80wrWA" visibility="public" isCovering="true" generalization="_y2H_XhE6EeSzrYTL80wrWA _y2H_fBE6EeSzrYTL80wrWA">
+    <name xsi:nil="true"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:GeneralizationSet" xmi:id="_y2IAKxE6EeSzrYTL80wrWA" name="Issue States" visibility="public" isCovering="true" generalization="_y2H_ZBE6EeSzrYTL80wrWA _y2H_bBE6EeSzrYTL80wrWA _y2H_hhE6EeSzrYTL80wrWA"/>
+  <packagedElement xsi:type="RefOntoUML:GeneralizationSet" xmi:id="_y2IALBE6EeSzrYTL80wrWA" visibility="public" isCovering="true" generalization="_y2H_ZhE6EeSzrYTL80wrWA _y2H_iBE6EeSzrYTL80wrWA _y2H_mBE6EeSzrYTL80wrWA">
+    <name xsi:nil="true"/>
+  </packagedElement>
+  <packagedElement xsi:type="RefOntoUML:GeneralizationSet" xmi:id="_y2IALRE6EeSzrYTL80wrWA" name="DC" visibility="public" isCovering="true" generalization="_y2H_dRE6EeSzrYTL80wrWA _y2H_fhE6EeSzrYTL80wrWA _y2H_jBE6EeSzrYTL80wrWA"/>
+  <packagedElement xsi:type="RefOntoUML:GeneralizationSet" xmi:id="_y2IALhE6EeSzrYTL80wrWA" name="DC" visibility="public" isCovering="true" generalization="_y2H_kRE6EeSzrYTL80wrWA _y2H_mxE6EeSzrYTL80wrWA"/>
+</RefOntoUML:Package>

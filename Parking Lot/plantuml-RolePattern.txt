@@ -1,0 +1,45 @@
+@startuml
+'9 occurrencies
+'17 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Used_Price_Table <<Role>>
+Price_Table <|-- Used_Price_Table
+class Price_Table <<Kind>>
+class Parking_Spot_Provider <<Role>>
+Parking_Lot <|-- Parking_Spot_Provider
+class Parking_Lot <<Collective>>
+class Parked_Vehicle <<Role>>
+Vehicle <|-- Parked_Vehicle
+class Vehicle <<Kind>>
+class Personal_Customer <<Role>>
+Person <|-- Personal_Customer
+Customer <|-- Personal_Customer
+class Person <<Kind>>
+class Customer <<RoleMixin>>
+class Used_Parking_Spot <<Role>>
+Parking_Spot <|-- Used_Parking_Spot
+class Parking_Spot <<Kind>>
+class Reserved_Parking_Spot <<Role>>
+Parking_Spot <|-- Reserved_Parking_Spot
+class Company_Customer <<Role>>
+Company <|-- Company_Customer
+Customer <|-- Company_Customer
+class Company <<Kind>>
+class Price_Table_Used_In_Reservation <<Role>>
+Price_Table <|-- Price_Table_Used_In_Reservation
+class Reserved_Parking_Spot_Type <<Role>>
+Parking_Spot_Type <|-- Reserved_Parking_Spot_Type
+class Parking_Spot_Type <<Class>>
+Parking_Lot "1..1" o-- "2..*" Parking_Spot : 
+Parking_Lot "1..1" -- "1..*" Price_Table : 
+Parking_Spot "1..*" -- "1..1" Parking_Spot_Type : 
+Price_Table "1..1" -- "1..1" Parking_Spot_Type : applicable_to
+@enduml

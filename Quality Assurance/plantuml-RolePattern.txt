@@ -1,0 +1,35 @@
+@startuml
+'8 occurrencies
+'13 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Planned_NC <<Role>>
+Registered_NC <|-- Planned_NC
+class Registered_NC <<Phase>>
+Noncompliance <|-- Registered_NC
+class Noncompliance <<Kind>>
+class Human_Resource <<Role>>
+Person <|-- Human_Resource
+class Person <<Kind>>
+class Finished_NC <<Role>>
+Registered_NC <|-- Finished_NC
+class Appraiser <<Role>>
+Human_Resource <|-- Appraiser
+class NC_Issue <<Role>>
+Issue <|-- NC_Issue
+class Issue <<Kind>>
+class Problem_Issue <<Role>>
+Issue <|-- Problem_Issue
+class Resolving_NC <<Role>>
+Registered_NC <|-- Resolving_NC
+class NC_Cause <<Role>>
+Cause <|-- NC_Cause
+class Cause <<Kind>>
+@enduml

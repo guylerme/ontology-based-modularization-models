@@ -1,0 +1,15 @@
+@startuml
+'1 occurrencies
+'2 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Group_of_Organizations <<Collective>>
+class Organization_Member <<SubKind>>
+Group_of_Organizations "1..1" o-- "2..*" Organization_Member : 
+@enduml

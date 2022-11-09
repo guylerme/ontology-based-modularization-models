@@ -1,0 +1,66 @@
+@startuml
+class Administrative_Help_Desk_System <<Role>>
+Help_Desk_System <|-- Administrative_Help_Desk_System
+class Administrative_Service_Order <<Relator>>
+class Administrative_User <<Role>>
+User <|-- Administrative_User
+class Approval <<Relator>>
+class Corporate_System <<Kind>>
+class Grounding <<Relator>>
+class Help_Desk_System <<SubKind>>
+Corporate_System <|-- Help_Desk_System
+class IT_Analyst <<Role>>
+User <|-- IT_Analyst
+class IT_Analyst_SO <<Role>>
+IT_Analyst <|-- IT_Analyst_SO
+class IT_Board <<Collective>>
+class IT_Help_Desk_System <<Role>>
+Help_Desk_System <|-- IT_Help_Desk_System
+class IT_Service_Order <<Relator>>
+class IT_Strategy_Plan <<Kind>>
+class IT_Team <<Collective>>
+class Instructor <<Role>>
+User <|-- Instructor
+class Instructor_Help_Desk_System <<Role>>
+Help_Desk_System <|-- Instructor_Help_Desk_System
+class Intructor_Service_Order <<Relator>>
+class Management <<Relator>>
+class Plans <<Relator>>
+class User <<Kind>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<MemberOf>>
+class  <<Mediation>>
+class  <<SubCollectionOf>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+
+
+
+
+Administrative_Service_Order "1..1" -- "1..1" Administrative_Help_Desk_System : 
+Administrative_Service_Order "1..1" -- "1..1" Administrative_User : 
+Approval "1..1" -- "1..1" IT_Board : 
+Approval "1..1" -- "1..1" IT_Strategy_Plan : 
+Management "1..1" -- "1..1" Corporate_System : 
+Grounding "1..1" -- "1..1" IT_Strategy_Plan : 
+Grounding "1..1" -- "1..1" Help_Desk_System : 
+IT_Team "1..1" o-- "1..*" IT_Analyst : 
+IT_Service_Order "1..1" -- "1..1" IT_Analyst_SO : 
+IT_Team "1..*" o-- "1..1" IT_Board : 
+IT_Service_Order "1..1" -- "1..1" IT_Help_Desk_System : 
+Plans "1..1" -- "1..1" IT_Strategy_Plan : 
+Management "1..1" -- "1..1" IT_Team : 
+Plans "1..1" -- "1..1" IT_Team : 
+Intructor_Service_Order "1..1" -- "1..1" Instructor : 
+Intructor_Service_Order "1..1" -- "1..1" Instructor_Help_Desk_System : 
+@enduml

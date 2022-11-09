@@ -1,0 +1,67 @@
+@startuml
+class Connected_Flow_Table <<Role>>
+Flow_Table <|-- Connected_Flow_Table
+class Controller <<Kind>>
+class Flow_Entry <<Kind>>
+class Flow_Table <<Kind>>
+class Forwarded_Packet <<Role>>
+Packet <|-- Forwarded_Packet
+class Go_To_Table <<Relator>>
+class Incoming <<Relator>>
+class Incoming_Port <<Role>>
+Port <|-- Incoming_Port
+class Indexing <<Relator>>
+class Matched_Flow_Entry <<Role>>
+Flow_Entry <|-- Matched_Flow_Entry
+class Matched_Packet <<Role>>
+Packet <|-- Matched_Packet
+class OpenFlow_Protocol <<Relator>>
+class Outcoming <<Relator>>
+class Outcoming_Port <<Role>>
+Port <|-- Outcoming_Port
+class Packet <<Kind>>
+class Port <<Kind>>
+class Received_Packet <<Role>>
+Packet <|-- Received_Packet
+class Sink_Flow_Table <<Role>>
+Connected_Flow_Table <|-- Sink_Flow_Table
+class Source_Flow_Table <<Role>>
+Connected_Flow_Table <|-- Source_Flow_Table
+class Switch_OpenFlow <<Kind>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<ComponentOf>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<Mediation>>
+class matches <<Formal>>
+class  <<Mediation>>
+class  <<Mediation>>
+class  <<ComponentOf>>
+class is_Indexed <<Material>>
+class is_controlled_by <<Material>>
+class is_linked_with <<Material>>
+
+class  <<Derivation>>
+class  <<Derivation>>
+class  <<Derivation>>
+Indexing "1..*" -- "1..1" Connected_Flow_Table : 
+OpenFlow_Protocol "1..1" -- "1..1" Controller : 
+Switch_OpenFlow "1..1" o-- "0..*" Flow_Table : 
+Outcoming "1..1" -- "1..1" Forwarded_Packet : 
+Go_To_Table "1..1" -- "1..1" Sink_Flow_Table : 
+Go_To_Table "1..1" -- "1..1" Source_Flow_Table : 
+Incoming "1..1" -- "1..1" Received_Packet : 
+Incoming "1..*" -- "1..1" Incoming_Port : 
+Indexing "1..1" -- "1..1" Matched_Flow_Entry : 
+Matched_Packet "1..*" -- "1..*" Matched_Flow_Entry : matches
+OpenFlow_Protocol "1..1" -- "1..*" Switch_OpenFlow : 
+Outcoming "1..*" -- "1..1" Outcoming_Port : 
+Switch_OpenFlow "1..1" o-- "2..*" Port : 
+Matched_Flow_Entry "1..*" -- "1..1" Connected_Flow_Table : is_Indexed
+Switch_OpenFlow "1..*" -- "1..1" Controller : is_controlled_by
+Source_Flow_Table "1..1" -- "1..1" Sink_Flow_Table : is_linked_with
+@enduml

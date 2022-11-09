@@ -1,0 +1,28 @@
+@startuml
+'6 occurrencies
+'8 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Bank_Employee <<Role>>
+Person_With_Account <|-- Bank_Employee
+class Person_With_Account <<Role>>
+Person <|-- Person_With_Account
+class Person <<Kind>>
+class Customer <<Role>>
+Person <|-- Customer
+class Account_in_Deposit <<Role>>
+Account <|-- Account_in_Deposit
+class Account <<Kind>>
+class Bank_Employee_in_Operation <<Role>>
+Bank_Employee <|-- Bank_Employee_in_Operation
+class Account_in_Withdraw <<Role>>
+Account <|-- Account_in_Withdraw
+Account "1..*" -- "1..1" Person_With_Account : owns
+@enduml

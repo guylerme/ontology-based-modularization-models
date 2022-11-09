@@ -1,0 +1,16 @@
+@startuml
+'1 occurrencies
+'2 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Mode>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Location <<Mode>>
+class Spatial_Entity <<Category>>
+Location "1..1" -- "1..1" Spatial_Entity : 
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+'2 occurrencies
+'5 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Spatial_Entity <<Category>>
+class Device <<Kind>>
+Spatial_Entity <|-- Device
+class Client <<RoleMixin>>
+class Client_Organization <<Role>>
+Client <|-- Client_Organization
+class Client_Person <<Role>>
+Client <|-- Client_Person
+@enduml

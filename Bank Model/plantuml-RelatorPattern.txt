@@ -1,0 +1,37 @@
+@startuml
+'7 occurrencies
+'11 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Inactive_Account <<Relator>>
+Account <|-- Inactive_Account
+class Withdraw <<Relator>>
+class Withdrawed_Account <<Relator>>
+Account <|-- Withdrawed_Account
+class Withdrawing_ATM <<Role>>
+class Active_Account <<Relator>>
+Account <|-- Active_Account
+class Accessed_Account <<Relator>>
+Account <|-- Accessed_Account
+class Account <<Relator>>
+class Bank <<SubKind>>
+class Client <<RoleMixin>>
+class Access <<Relator>>
+class Accessing_Device <<Role>>
+Access "1..*" -- "1..1" Accessed_Account : 
+Access "1..*" -- "1..1" Accessing_Device : 
+Account "1..*" -- "1..1" Bank : mantains
+Account "1..*" -- "1..1" Client : belongs_to
+Withdraw "1..*" -- "1..1" Withdrawed_Account : 
+Withdraw "1..*" -- "1..1" Withdrawing_ATM : 
+Accessing_Device "1..*" -- "1..*" Accessed_Account : access
+Client "1..*" -- "1..*" Bank : has
+Withdrawing_ATM "1..*" -- "1..*" Withdrawed_Account : withdraw_from
+@enduml

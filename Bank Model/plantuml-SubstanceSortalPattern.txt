@@ -1,0 +1,17 @@
+@startuml
+'5 occurrencies
+'5 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Organization <<Kind>>
+class Spatial_Entity <<Kind>>
+class Person <<Kind>>
+class Device <<Kind>>
+class Group_of_Organizations <<Collective>>
+@enduml

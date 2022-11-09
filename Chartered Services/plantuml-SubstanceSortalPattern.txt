@@ -1,0 +1,13 @@
+@startuml
+'1 occurrencies
+'1 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class User_Community_of_PRCS <<Collective>>
+@enduml

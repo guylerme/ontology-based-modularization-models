@@ -1,0 +1,66 @@
+@startuml
+class Integer <<PrimitiveType>>
+class Boolean <<PrimitiveType>>
+class String <<PrimitiveType>>
+class Unlimited_Natural <<PrimitiveType>>
+class Account <<Kind>>
+class Account_in_Deposit <<Role>>
+Account <|-- Account_in_Deposit
+class Account_in_Withdraw <<Role>>
+Account <|-- Account_in_Withdraw
+class Bank_Employee <<Role>>
+Person_With_Account <|-- Bank_Employee
+class Bank_Employee_in_Operation <<Role>>
+Bank_Employee <|-- Bank_Employee_in_Operation
+class Check_Withdraw <<Relator>>
+Withdraw <|-- Check_Withdraw
+class Checking_Account <<SubKind>>
+Account <|-- Checking_Account
+class Customer <<Role>>
+Person <|-- Customer
+class Deposit <<Relator>>
+Operation <|-- Deposit
+class Money_Withdraw <<Relator>>
+Withdraw <|-- Money_Withdraw
+class Operation <<Relator>>
+class Person <<Kind>>
+class Person_With_Account <<Role>>
+Person <|-- Person_With_Account
+class Receipt <<Relator>>
+class Savings_Account <<SubKind>>
+Account <|-- Savings_Account
+class Wire_Transfer <<Relator>>
+Operation <|-- Wire_Transfer
+class Withdraw <<Relator>>
+Operation <|-- Withdraw
+class Withdraw_in_Wire_Transfer <<Relator>>
+Withdraw <|-- Withdraw_in_Wire_Transfer
+class owns <<Material>>
+class wires_to <<Mediation>>
+class deposits_funds_in <<Mediation>>
+class withdraws_funds_from <<Mediation>>
+class wires_from <<Mediation>>
+class issues <<Mediation>>
+class performs <<Mediation>>
+class receives <<Mediation>>
+class requires <<Mediation>>
+class performs <<Mediation>>
+class emite <<Mediation>>
+class performs <<Mediation>>
+
+
+
+
+Account "1..*" -- "1..1" Person_With_Account : owns
+Wire_Transfer "0..1" -- "1..1" Account_in_Deposit : wires_to
+Deposit "1..1" -- "1..1" Account_in_Deposit : deposits_funds_in
+Withdraw "1..1" -- "1..1" Account_in_Withdraw : withdraws_funds_from
+Wire_Transfer "0..1" -- "1..1" Account_in_Withdraw : wires_from
+Receipt "1..*" -- "1..1" Bank_Employee_in_Operation : issues
+Operation "1..*" -- "1..1" Bank_Employee_in_Operation : performs
+Receipt "1..*" -- "1..1" Customer : receives
+Operation "1..*" -- "1..1" Customer : requires
+Money_Withdraw "0..1" -- "1..1" Person_With_Account : performs
+Receipt "1..1" -- "1..1" Operation : emite
+Wire_Transfer "1..1" -- "1..1" Withdraw_in_Wire_Transfer : performs
+@enduml

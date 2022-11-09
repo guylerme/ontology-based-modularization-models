@@ -1,0 +1,21 @@
+@startuml
+'2 occurrencies
+'4 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Mode>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class PRCS_Offering_Commitment <<Mode>>
+class Interested_Agent <<Role>>
+class PRCS_Offering_Claim <<Mode>>
+class User_Community_of_PRCS <<Collective>>
+PRCS_Offering_Claim "1..1" -- "1..1" Interested_Agent : externally_dependent_in
+PRCS_Offering_Commitment "1..*" -- "1..1" Interested_Agent : inhers_in
+PRCS_Offering_Claim "1..*" -- "1..1" User_Community_of_PRCS : inheres_in
+PRCS_Offering_Commitment "1..1" -- "1..1" User_Community_of_PRCS : externally_dependent_in
+@enduml

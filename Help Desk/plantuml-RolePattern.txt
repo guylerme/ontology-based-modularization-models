@@ -1,0 +1,31 @@
+@startuml
+'7 occurrencies
+'10 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Instructor_Help_Desk_System <<Role>>
+Help_Desk_System <|-- Instructor_Help_Desk_System
+class Help_Desk_System <<SubKind>>
+Corporate_System <|-- Help_Desk_System
+class Corporate_System <<Kind>>
+class Administrative_User <<Role>>
+User <|-- Administrative_User
+class User <<Kind>>
+class IT_Analyst_SO <<Role>>
+IT_Analyst <|-- IT_Analyst_SO
+class IT_Analyst <<Role>>
+User <|-- IT_Analyst
+class Instructor <<Role>>
+User <|-- Instructor
+class IT_Help_Desk_System <<Role>>
+Help_Desk_System <|-- IT_Help_Desk_System
+class Administrative_Help_Desk_System <<Role>>
+Help_Desk_System <|-- Administrative_Help_Desk_System
+@enduml

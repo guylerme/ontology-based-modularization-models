@@ -1,0 +1,29 @@
+@startuml
+'4 occurrencies
+'9 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Withdrawing_ATM <<Role>>
+ATM <|-- Withdrawing_ATM
+class ATM <<SubKind>>
+Device <|-- ATM
+class Device <<Kind>>
+class Client_Person <<Role>>
+Person <|-- Client_Person
+Client <|-- Client_Person
+class Person <<Kind>>
+class Client <<RoleMixin>>
+class Accessing_Device <<Role>>
+Device <|-- Accessing_Device
+class Client_Organization <<Role>>
+Organization <|-- Client_Organization
+Client <|-- Client_Organization
+class Organization <<Kind>>
+@enduml

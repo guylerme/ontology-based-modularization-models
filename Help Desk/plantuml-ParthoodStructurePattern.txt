@@ -1,0 +1,17 @@
+@startuml
+'2 occurrencies
+'3 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class IT_Team <<Collective>>
+class IT_Analyst <<Role>>
+class IT_Board <<Collective>>
+IT_Team "1..1" o-- "1..*" IT_Analyst : 
+IT_Team "1..*" o-- "1..1" IT_Board : 
+@enduml

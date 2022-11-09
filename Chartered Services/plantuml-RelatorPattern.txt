@@ -1,0 +1,24 @@
+@startuml
+'2 occurrencies
+'6 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Railway_Usage_Agreement <<Relator>>
+class Interested_Agent <<Role>>
+class Railway_Concessionaire <<Role>>
+class Eventual_Passenger_Rail_Chartered_Service <<Relator>>
+class Regulatory_Agency <<Role>>
+class User_Community_of_PRCS <<Collective>>
+Eventual_Passenger_Rail_Chartered_Service "1..*" -- "1..1" User_Community_of_PRCS : offered_to
+Eventual_Passenger_Rail_Chartered_Service "1..1" -- "1..1" Regulatory_Agency : regulates
+Eventual_Passenger_Rail_Chartered_Service "1..*" -- "1..1" Interested_Agent : provides
+Railway_Usage_Agreement "1..1" -- "1..1" Interested_Agent : 
+Railway_Usage_Agreement "1..1" -- "1..1" Railway_Concessionaire : 
+@enduml

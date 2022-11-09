@@ -1,0 +1,21 @@
+@startuml
+'6 occurrencies
+'6 elements
+skinparam class {
+BackgroundColor LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Packet <<Kind>>
+class Controller <<Kind>>
+class Switch_OpenFlow <<Kind>>
+class Flow_Entry <<Kind>>
+class Flow_Table <<Kind>>
+class Port <<Kind>>
+Switch_OpenFlow "1..1" o-- "0..*" Flow_Table : 
+Switch_OpenFlow "1..1" o-- "2..*" Port : 
+Switch_OpenFlow "1..*" -- "1..1" Controller : is_controlled_by
+@enduml

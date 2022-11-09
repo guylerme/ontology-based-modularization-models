@@ -1,0 +1,41 @@
+@startuml
+class Eventual_Passenger_Rail_Chartered_Service <<Relator>>
+class Interested_Agent <<Role>>
+class PRCS_Description <<Category>>
+class PRCS_Offering_Claim <<Mode>>
+class PRCS_Offering_Commitment <<Mode>>
+class Railway_Concessionaire <<Role>>
+class Railway_Usage_Agreement <<Relator>>
+class Regulatory_Agency <<Role>>
+class Regulatory_Legislation <<Category>>
+class User_Community_of_PRCS <<Collective>>
+class User_of_PRCS <<Role>>
+class describes <<Formal>>
+class  <<Association>>
+class offered_to <<Mediation>>
+class  <<Association>>
+class regulates <<Mediation>>
+class provides <<Mediation>>
+class  <<Mediation>>
+class externally_dependent_in <<Formal>>
+class inhers_in <<Characterization>>
+class inheres_in <<Characterization>>
+class externally_dependent_in <<Formal>>
+class  <<Mediation>>
+class produces <<Formal>>
+class  <<MemberOf>>
+Eventual_Passenger_Rail_Chartered_Service "1..1" -- "1..1" PRCS_Description : describes
+Eventual_Passenger_Rail_Chartered_Service "1..1" -- "1..*" PRCS_Offering_Commitment : 
+Eventual_Passenger_Rail_Chartered_Service "1..*" -- "1..1" User_Community_of_PRCS : offered_to
+Eventual_Passenger_Rail_Chartered_Service "1..1" -- "1..*" PRCS_Offering_Claim : 
+Eventual_Passenger_Rail_Chartered_Service "1..1" -- "1..1" Regulatory_Agency : regulates
+Eventual_Passenger_Rail_Chartered_Service "1..*" -- "1..1" Interested_Agent : provides
+Railway_Usage_Agreement "1..1" -- "1..1" Interested_Agent : 
+PRCS_Offering_Claim "1..1" -- "1..1" Interested_Agent : externally_dependent_in
+PRCS_Offering_Commitment "1..*" -- "1..1" Interested_Agent : inhers_in
+PRCS_Offering_Claim "1..*" -- "1..1" User_Community_of_PRCS : inheres_in
+PRCS_Offering_Commitment "1..1" -- "1..1" User_Community_of_PRCS : externally_dependent_in
+Railway_Usage_Agreement "1..1" -- "1..1" Railway_Concessionaire : 
+Regulatory_Legislation "1..1" -- "1..1" Regulatory_Agency : produces
+User_Community_of_PRCS "1..1" o-- "2..*" User_of_PRCS : 
+@enduml

@@ -1,0 +1,43 @@
+@startuml
+'5 occurrencies
+'15 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Relator>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Go_To_Table <<Relator>>
+class Sink_Flow_Table <<Role>>
+Connected_Flow_Table <|-- Sink_Flow_Table
+class Source_Flow_Table <<Role>>
+Connected_Flow_Table <|-- Source_Flow_Table
+class OpenFlow_Protocol <<Relator>>
+class Controller <<Kind>>
+class Switch_OpenFlow <<Kind>>
+class Incoming <<Relator>>
+class Received_Packet <<Role>>
+class Incoming_Port <<Role>>
+class Outcoming <<Relator>>
+class Forwarded_Packet <<Role>>
+class Outcoming_Port <<Role>>
+class Indexing <<Relator>>
+class Matched_Flow_Entry <<Role>>
+class Connected_Flow_Table <<Role>>
+Indexing "1..*" -- "1..1" Connected_Flow_Table : 
+OpenFlow_Protocol "1..1" -- "1..1" Controller : 
+Outcoming "1..1" -- "1..1" Forwarded_Packet : 
+Go_To_Table "1..1" -- "1..1" Sink_Flow_Table : 
+Go_To_Table "1..1" -- "1..1" Source_Flow_Table : 
+Incoming "1..1" -- "1..1" Received_Packet : 
+Incoming "1..*" -- "1..1" Incoming_Port : 
+Indexing "1..1" -- "1..1" Matched_Flow_Entry : 
+OpenFlow_Protocol "1..1" -- "1..*" Switch_OpenFlow : 
+Outcoming "1..*" -- "1..1" Outcoming_Port : 
+Matched_Flow_Entry "1..*" -- "1..1" Connected_Flow_Table : is_Indexed
+Switch_OpenFlow "1..*" -- "1..1" Controller : is_controlled_by
+Source_Flow_Table "1..1" -- "1..1" Sink_Flow_Table : is_linked_with
+@enduml

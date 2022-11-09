@@ -1,0 +1,38 @@
+@startuml
+'9 occurrencies
+'13 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Incoming_Port <<Role>>
+Port <|-- Incoming_Port
+class Port <<Kind>>
+class Forwarded_Packet <<Role>>
+Packet <|-- Forwarded_Packet
+class Packet <<Kind>>
+class Outcoming_Port <<Role>>
+Port <|-- Outcoming_Port
+class Connected_Flow_Table <<Role>>
+Flow_Table <|-- Connected_Flow_Table
+class Flow_Table <<Kind>>
+class Source_Flow_Table <<Role>>
+Connected_Flow_Table <|-- Source_Flow_Table
+class Matched_Packet <<Role>>
+Packet <|-- Matched_Packet
+class Received_Packet <<Role>>
+Packet <|-- Received_Packet
+class Sink_Flow_Table <<Role>>
+Connected_Flow_Table <|-- Sink_Flow_Table
+class Matched_Flow_Entry <<Role>>
+Flow_Entry <|-- Matched_Flow_Entry
+class Flow_Entry <<Kind>>
+Matched_Packet "1..*" -- "1..*" Matched_Flow_Entry : matches
+Matched_Flow_Entry "1..*" -- "1..1" Connected_Flow_Table : is_Indexed
+Source_Flow_Table "1..1" -- "1..1" Sink_Flow_Table : is_linked_with
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+'4 occurrencies
+'4 elements
+skinparam class {
+BackgroundColor White
+BackgroundColor<<Role>> LightGreen
+BorderColor Black
+ArrowColor Black
+}
+hide circle
+hide empty members  
+
+class Regulatory_Agency <<Role>>
+class User_of_PRCS <<Role>>
+class Interested_Agent <<Role>>
+class Railway_Concessionaire <<Role>>
+@enduml
